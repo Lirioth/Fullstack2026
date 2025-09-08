@@ -1,4 +1,4 @@
-# Exercises XP - Sequence / List / Set / Tuple (beginner, one file)
+# Exercises XP - Sequence / List / Set / Tuple
 
 # -------- Exercise 1: Favorite Numbers (sets) --------
 my_fav_numbers = {7, 13, 27}
