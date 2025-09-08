@@ -22,8 +22,8 @@ print("I have a " + computer_brand + " computer.")
 
 # Exercise 5 : Your information
 name = "Kevin"
-age = 30
-shoe_size = 400
+age = 31
+shoe_size = 40
 info = "My name is " + name + ", I'm " + str(age) + " years old and my shoe size is " + str(shoe_size) + "."
 print(info)
 

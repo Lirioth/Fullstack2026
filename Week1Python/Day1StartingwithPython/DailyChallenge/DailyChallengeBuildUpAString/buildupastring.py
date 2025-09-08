@@ -1,4 +1,4 @@
-# Daily challenge: Build up a string (beginner version)
+# Daily challenge: Build up a string
 
 s = input("Enter a string (must be exactly 10 characters): ")
 
