@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Coloring Game</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <h1>Mini Project — Coloring Game</h1>
+    <p class="small">Pick a color, click & drag to draw • Press <kbd>Clear</kbd> to reset</p>
+
+    <div class="panel">
+      <label>Color: <input id="colorPicker" type="color" value="#3b82f6" /></label>
+
+      <div class="palette" aria-label="Quick colors">
+        <span class="swatch" data-color="#000000" style="background:#000" title="Black"></span>
+        <span class="swatch" data-color="#ffffff" style="background:#fff; border-color:#94a3b8" title="White"></span>
+        <span class="swatch" data-color="#ef4444" style="background:#ef4444" title="Red"></span>
+        <span class="swatch" data-color="#22c55e" style="background:#22c55e" title="Green"></span>
+        <span class="swatch" data-color="#3b82f6" style="background:#3b82f6" title="Blue"></span>
+        <span class="swatch" data-color="#f59e0b" style="background:#f59e0b" title="Orange"></span>
+        <span class="swatch" data-color="#a855f7" style="background:#a855f7" title="Purple"></span>
+      </div>
+
+      <label>Size:
+        <select id="sizeSelect">
+          <option value="8">8 × 8</option>
+          <option value="16" selected>16 × 16</option>
+          <option value="24">24 × 24</option>
+          <option value="32">32 × 32</option>
+        </select>
+      </label>
+
+      <button id="clearBtn">Clear</button>
+    </div>
+
+    <div id="grid" class="grid" aria-label="Drawing grid"></div>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
