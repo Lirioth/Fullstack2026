@@ -1,0 +1,77 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, Arial, sans-serif;
+  background: #0b1220;
+  color: #e2e8f0;
+}
+.wrap {
+  width: min(100% - 2rem, 720px);
+  margin: 2rem auto;
+}
+
+/* title */
+h1 { margin: 0 0 1rem; font-weight: 700; }
+
+/* form layout */
+form {
+  display: flex;
+  gap: .5rem;
+  background: #1119288c;
+  border: 1px solid #94a3b826;
+  padding: .7rem;
+  border-radius: 12px;
+}
+#taskInput {
+  flex: 1;
+  padding: .55rem .7rem;
+  border-radius: 10px;
+  border: 1px solid #94a3b840;
+  background: #0e1729;
+  color: #e2e8f0;
+  outline: none;
+}
+form button {
+  padding: .55rem .9rem;
+  border-radius: 10px;
+  border: 1px solid #94a3b840;
+  background: #1b2540;
+  color: #e2e8f0;
+  cursor: pointer;
+}
+
+/* task list container */
+.listTasks { margin-top: 1rem; display: grid; gap: .5rem; }
+
+/* each task line */
+.task {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .6rem .7rem;
+  border: 1px solid #94a3b826;
+  border-radius: 10px;
+  background: #0e1729;
+}
+
+/* checkbox size tweak */
+.task input[type="checkbox"] { width: 18px; height: 18px; }
+
+/* label text */
+.task label { flex: 1; }
+
+/* delete (X) button */
+.deleteBtn {
+  background: #1b2540;
+  border: 1px solid #94a3b840;
+  color: #e2e8f0;
+  border-radius: 10px;
+  padding: .4rem .55rem;
+  cursor: pointer;
+}
+
+/* done style (object-driven) */
+.task.done label {
+  color: #ef4444;
+  text-decoration: line-through;
+}
