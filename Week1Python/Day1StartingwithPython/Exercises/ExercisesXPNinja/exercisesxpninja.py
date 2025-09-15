@@ -1,4 +1,4 @@
-# Exercises XP Ninja - one file (beginner)
+# Exercises XP Ninja
 
 # Exercise 1 : Use the terminal (short notes)
 print("Exercise 1: In terminal run: python3")
