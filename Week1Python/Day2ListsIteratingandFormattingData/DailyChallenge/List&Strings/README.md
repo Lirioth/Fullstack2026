@@ -1,7 +1,6 @@
-# Exercises XP — Sequence / List / Set / Tuple (Beginner)
+# Exercises XP — Sequence / List / Set / Tuple
 
 A single Python script with small tasks about **sets, tuples, lists, loops, and input**.
-Kept **very simple** and **beginner‑friendly**.
 
 ---
 
