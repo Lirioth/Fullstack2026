@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercises XP — HTTP & Forms (GET, POST, JSON)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Exercises XP — HTTP & Forms</h1>
+    <p class="subtitle">Simple demo with GET / POST forms and a JSON example.</p>
+
+    <!-- ⭐ Exercise 1: HTML Form (GET) -->
+    <section class="card">
+      <h2>⭐ Exercise 1: HTML Form (GET)</h2>
+      <p class="hint">When I click <b>Send</b>, the data goes into the URL (query string).</p>
+
+      <!-- Small form with GET method. Action is current page. -->
+      <form method="GET" action="" class="form-grid" id="getForm">
+        <label for="getName">Name</label>
+        <input id="getName" name="name" type="text" placeholder="Mario" />
+
+        <label for="getMessage">Message</label>
+        <textarea id="getMessage" name="message" placeholder="Hello world!"></textarea>
+
+        <input type="submit" value="Send (GET)" />
+      </form>
+
+      <div class="output">
+        <h3>Where does GET data appear?</h3>
+        <ul>
+          <li>🟢 In the <b>URL</b> after the <code>?</code> (example: <code>?name=Mario&message=Hello</code>).</li>
+          <li>🟢 I also parse the URL and show a tiny JSON below:</li>
+        </ul>
+        <pre id="getOutput">{}</pre>
+      </div>
+    </section>
+
+    <!-- ⭐ Exercise 2: HTML Form #2 (POST) -->
+    <section class="card">
+      <h2>⭐ Exercise 2: HTML Form #2 (POST)</h2>
+      <p class="hint">POST does not show data in the URL. I need DevTools → Network to see it.</p>
+
+      <!-- POST form (same page). Classic encoding. -->
+      <form method="POST" action="" enctype="application/x-www-form-urlencoded" class="form-grid" id="postForm">
+        <label for="postName">Name</label>
+        <input id="postName" name="name" type="text" placeholder="Peach" />
+
+        <label for="postMessage">Message</label>
+        <textarea id="postMessage" name="message" placeholder="Hi! I am a message."></textarea>
+
+        <input type="submit" value="Send (POST)" />
+      </form>
+
+      <div class="output">
+        <h3>Where does POST data appear?</h3>
+        <ul>
+          <li>🟣 Not in the URL (clean URL).</li>
+          <li>🟣 In the <b>request body</b>. Open <b>DevTools → Network</b>, click the request, then see <b>Payload / Form Data</b>.</li>
+          <li>🟣 Tip: run a tiny local server so the request actually shows in the Network tab:
+            <pre>python -m http.server 8000</pre>
+            then open <code>http://localhost:8000/</code>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ⭐ Exercise 3: JSON Mario -->
+    <section class="card">
+      <h2>⭐ Exercise 3: JSON Mario</h2>
+      <p class="hint">Convert a JS object to JSON (stringify) and pretty print it.</p>
+
+      <div class="btns">
+        <button id="marioRun">Make JSON</button>
+        <button id="marioDebug">Make JSON (with debugger)</button>
+      </div>
+
+      <pre id="marioOutput">{}</pre>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

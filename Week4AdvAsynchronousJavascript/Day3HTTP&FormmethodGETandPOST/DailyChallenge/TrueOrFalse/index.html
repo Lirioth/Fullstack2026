@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daily Challenge: True or False</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Daily Challenge: True or False</h1>
+    <p class="subtitle">Goal: write a function that returns <b>true</b> only if <i>all</i> parameters are truthy.</p>
+
+    <section class="card">
+      <h2>Function</h2>
+      <pre><code>function allTruthy(...values) {
+  // If any value is falsy (false, 0, "", null, undefined, NaN) → return false
+  for (const v of values) {
+    if (!v) {
+      return false;
+    }
+  }
+  // If we get here, everything was truthy
+  return true;
+}</code></pre>
+    </section>
+
+    <section class="card">
+      <h2>Quick tests</h2>
+      <div class="btns">
+        <button id="btnA">Test: allTruthy(true, true, true)</button>
+        <button id="btnB">Test: allTruthy(true, false, true)</button>
+        <button id="btnC">Test: allTruthy(5, 4, 3, 2, 1, 0)</button>
+      </div>
+      <pre id="testOutput">{}</pre>
+    </section>
+
+    <section class="card">
+      <h2>Try your own</h2>
+      <p class="hint">Type comma-separated values. I will try to convert common literals (true/false/null/undefined/numbers/"").</p>
+      <div class="form-grid">
+        <label for="rawInput">Values</label>
+        <input id="rawInput" type="text" placeholder='Example: true, "hello", 1, 0, ""' />
+        <button id="runCustom">Run</button>
+      </div>
+      <pre id="customOutput">{}</pre>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
