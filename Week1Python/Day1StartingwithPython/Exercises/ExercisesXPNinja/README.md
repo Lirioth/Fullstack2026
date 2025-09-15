@@ -1,6 +1,6 @@
 # Exercises XP Ninja
 
-A single Python script with five quick exercisesKept.
+A single Python script with five quick exercises.
 
 ## ✅ What’s inside
 
