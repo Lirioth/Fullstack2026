@@ -1,6 +1,6 @@
-# Exercises XP Ninja — One File (Beginner)
+# Exercises XP Ninja
 
-A single Python script with five quick exercises. Kept **very simple** and **clear**.
+A single Python script with five quick exercisesKept.
 
 ## ✅ What’s inside
 

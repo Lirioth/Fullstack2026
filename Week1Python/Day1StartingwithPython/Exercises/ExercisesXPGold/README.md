@@ -1,6 +1,6 @@
 # Exercises XP Gold — Python Basics
 
-A tiny pair of beginner-friendly exercises. Kept **very simple** and **clear**.
+A tiny pair of beginner-friendly exercises.
 
 ## ✅ Exercise 1: Hello World — I love Python (one line)
 **Goal:** print multiple lines using **string multiplication** and `\n` newlines in a single statement.
