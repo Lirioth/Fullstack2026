@@ -77,5 +77,5 @@ Jumbled string: fdgijbaech   <-- (your result will vary each time)
 - If you want to **loop until correct length**, wrap the input logic in a `while True` and `break` when `len(s) == 10`.
 
 ## File list
-- `build_up_string.py` — the script
+- `buildupastring.py` — the script
 - `README.md` — this file

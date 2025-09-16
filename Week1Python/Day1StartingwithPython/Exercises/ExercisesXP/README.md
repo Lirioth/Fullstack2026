@@ -100,5 +100,5 @@ You are tall enough to ride.
 
 ## Files
 
-- `exercises_xp.py` — the script
+- `exercisesxp.py` — the script
 - `README.md` — this file
