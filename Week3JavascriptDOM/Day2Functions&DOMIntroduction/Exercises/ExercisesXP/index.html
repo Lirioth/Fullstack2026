@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercises XP — JS</title>
+  <style>
+    :root { --bg:#0b1220; --card:#121a2b; --text:#e9eefb; --muted:#99a3c4; --accent:#6aa9ff; }
+    *{box-sizing:border-box}
+    body{margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif; background:var(--bg); color:var(--text)}
+    header{padding:1rem 1.25rem; border-bottom:1px solid #1f2940; position:sticky; top:0; background:rgba(11,18,32,.9); backdrop-filter: blur(6px)}
+    h1{font-size:1.1rem; margin:.2rem 0}
+    .controls{display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.5rem}
+    button{background:#1a243b; color:var(--text); border:1px solid #263253; padding:.55rem .8rem; border-radius:.6rem; cursor:pointer}
+    button:hover{border-color:var(--accent)}
+    main{display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:1rem; padding:1rem}
+    .card{background:var(--card); border:1px solid #1f2940; border-radius:.9rem; padding:1rem}
+    .card h2{font-size:1rem; margin:0 0 .6rem}
+    pre{white-space:pre-wrap; background:#0f1628; border:1px dashed #223055; color:#cfe1ff; padding:.75rem; border-radius:.5rem; min-height:64px}
+    /* Exercise 5 demo area */
+    #ex5-root{background:#0f1628; padding:.5rem; border-radius:.6rem; margin-top:.5rem}
+    #ex5-root ul{margin:.25rem 0 .5rem; padding-left:1.25rem}
+    /* Exercise 6 demo area */
+    #ex6-root{background:#0f1628; padding:.5rem; border-radius:.6rem; margin-top:.5rem}
+    #navBar, #socialNetworkNavigation{background:#10192d; padding:.5rem; border-radius:.5rem}
+    #navBar ul, #socialNetworkNavigation ul{display:flex; gap:.5rem; list-style:none; padding:0; margin:0}
+    #navBar a, #socialNetworkNavigation a{color:#9fc0ff; text-decoration:none}
+    /* Exercise 7 listBooks */
+    .listBooks{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:.6rem; margin-top:.5rem}
+    .book{background:#10192d; border:1px solid #223055; border-radius:.6rem; padding:.6rem}
+    .book img{width:100px; height:auto; display:block; margin:.25rem 0}
+    .red{color:#ff8a8a}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Exercises XP — JavaScript</h1>
+    <div class="controls">
+      <button onclick="ex1()">Run 1</button>
+      <button onclick="ex2()">Run 2</button>
+      <button onclick="ex3()">Run 3</button>
+      <button onclick="ex4()">Run 4</button>
+      <button onclick="ex5()">Run 5</button>
+      <button onclick="ex6()">Run 6</button>
+      <button onclick="ex7()">Run 7</button>
+      <button onclick="runAll()">Run ALL</button>
+      <button onclick="clearAll()">Clear</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>🌟 Exercise 1 — Divisible by 23</h2>
+      <pre id="out1"></pre>
+    </section>
+
+    <section class="card">
+      <h2>🌟 Exercise 2 — Shopping List</h2>
+      <pre id="out2"></pre>
+    </section>
+
+    <section class="card">
+      <h2>🌟 Exercise 3 — What's in my wallet?</h2>
+      <pre id="out3"></pre>
+    </section>
+
+    <section class="card">
+      <h2>🌟 Exercise 4 — Vacations Costs</h2>
+      <pre id="out4"></pre>
+    </section>
+
+    <section class="card">
+      <h2>🌟 Exercise 5 — Users (DOM)</h2>
+      <div id="ex5-root">
+        <div id="container">Users:</div>
+        <ul class="list">
+            <li>John</li>
+            <li>Pete</li>
+        </ul>
+        <ul class="list">
+            <li>David</li>
+            <li>Sarah</li>
+            <li>Dan</li>
+        </ul>
+      </div>
+      <pre id="out5"></pre>
+    </section>
+
+    <section class="card">
+      <h2>🌟 Exercise 6 — Change the navbar (DOM)</h2>
+      <div id="ex6-root">
+        <div id="navBar">
+          <ul>
+              <li><a href="#">Profile</a></li>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">My Friends</a></li>
+              <li><a href="#">Messenger</a></li>
+              <li><a href="#">My Pics</a></li>
+          </ul>
+        </div>
+      </div>
+      <pre id="out6"></pre>
+    </section>
+
+    <section class="card">
+      <h2>🌟 Exercise 7 — My Book List (DOM)</h2>
+      <section class="listBooks"></section>
+      <pre id="out7"></pre>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

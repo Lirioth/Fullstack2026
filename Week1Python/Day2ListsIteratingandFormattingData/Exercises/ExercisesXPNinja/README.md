@@ -9,7 +9,7 @@ A tiny collection of Python practice exercises I wrote to train basics like inpu
 ## How to run
 
 ```bash
-exercisesxpninja main.py
+python3 main.py
 ```
 
 - The script prints the results for each exercise in order.
