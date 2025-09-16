@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daily Challenge — Groceries</title>
+  <style>
+    :root{--bg:#0b1220;--card:#121a2b;--text:#e9eefb;--muted:#aab5d6;--accent:#77b0ff;}
+    *{box-sizing:border-box}
+    body{margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif; background:var(--bg); color:var(--text)}
+    main{max-width:760px; margin:0 auto; padding:1.25rem}
+    h1{font-size:1.15rem; margin:.25rem 0 1rem}
+    .card{background:var(--card); border:1px solid #1f2940; border-radius:.9rem; padding:1rem}
+    .row{display:flex; gap:.5rem; flex-wrap:wrap; margin:.5rem 0}
+    button{background:#17233b; color:var(--text); border:1px solid #2b3a60; padding:.55rem .85rem; border-radius:.6rem; cursor:pointer}
+    button:hover{border-color:var(--accent)}
+    pre{background:#0f1628; border:1px solid #223055; padding:.7rem; border-radius:.6rem; overflow:auto}
+    small{color:var(--muted)}
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Daily Challenge — Groceries</h1>
+    <div class="card">
+      <p>Open the console to see outputs (<kbd>F12</kbd> → Console). Buttons below call the functions.</p>
+      <div class="row">
+        <button id="btn1">displayGroceries()</button>
+        <button id="btn2">cloneGroceries()</button>
+        <button id="btn3">runAll</button>
+      </div>
+      <pre><code>// Key object and variable are defined in script.js
+// client, groceries, displayGroceries, cloneGroceries</code></pre>
+      <small>Pass-by-value (primitives) vs pass-by-reference (objects) is demonstrated in the console.</small>
+    </div>
+  </main>
+  <script src="groceries.js"></script>
+</body>
+</html>
