@@ -70,5 +70,5 @@ py exercises_xp_gold.py
 - **Unit tests**: write a tiny `def month_to_season(m): ...` and test it.
 
 ## Files
-- `exercises_xp_gold.py` — the script.
+- `exercisesxpgold.py` — the script.
 - `README.md` — this file.

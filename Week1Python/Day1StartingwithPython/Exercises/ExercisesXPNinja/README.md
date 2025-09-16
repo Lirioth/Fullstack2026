@@ -93,5 +93,5 @@ Best sentence: this is longer
 ---
 
 ## Files
-- `exercises_xp_ninja.py` — the script.
+- `exercisesxpninja.py` — the script.
 - `README.md` — this file.
