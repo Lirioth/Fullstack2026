@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercises XP — Animations (Move the box)</title>
+  <style>
+    #container {
+      width: 400px;
+      height: 400px;
+      position: relative;
+      background: yellow;
+      margin-top: 8px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    #animate {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      background-color: red;
+      left: 0; top: 0;
+      border-radius: 6px;
+    }
+    button{padding:.45rem .8rem;border:1px solid #ccc;border-radius:8px;background:#f6f7fb;cursor:pointer}
+    button:hover{background:#eef1f9}
+  </style>
+</head>
+<body>
+  <h1>🌟 Exercise 2 — Move the box</h1>
+  <p><button onclick="myMove()">Click Me</button></p>
+  <div id="container">
+    <div id="animate"></div>
+  </div>
+
+  <script src="move.js"></script>
+</body>
+</html>
