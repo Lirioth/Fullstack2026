@@ -1,4 +1,4 @@
-# Daily Challenge — Letter Index Dictionary & Affordable Items (Python)
+# Daily Challenge — Letter Index Dictionary & Affordable Items (Dictionaries)
 
 Two small problems written in a clean, readable way with tiny comments.
 
