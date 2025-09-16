@@ -1,4 +1,4 @@
-# Exercises XP Gold — Python Basics
+# Exercises XP Gold
 
 A tiny pair of beginner-friendly exercises.
 
