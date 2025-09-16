@@ -95,5 +95,5 @@ games won: 0 games lost: 1
 ---
 
 ## Files
-- `exercises_xp_gold.py` — your script
+- `exercisesxpgold.py` — your script
 - `README.md` — this file

@@ -59,5 +59,5 @@ Other nice tweaks:
 - Internationalize: accept `DD-MM-YYYY` too, or auto-detect separators.
 
 ## Files
-- `happy_birthday.py` — the script
+- `happybirthday.py` — the script
 - `README.md` — this file

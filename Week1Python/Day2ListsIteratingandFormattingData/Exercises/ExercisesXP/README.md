@@ -97,5 +97,5 @@ Finished sandwiches: ['Tuna', 'Avocado', 'Egg', 'Chicken']
 ---
 
 ## Files
-- `exercises_xp_sequences.py` — your script
+- `exercisesxp.py` — your script
 - `README.md` — this file
