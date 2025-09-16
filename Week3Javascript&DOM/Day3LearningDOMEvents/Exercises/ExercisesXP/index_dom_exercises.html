@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercises XP — DOM, Events & Forms</title>
+  <style>
+    :root { --bg:#0b1220; --card:#121a2b; --text:#e9eefb; --muted:#9fb0d8; --accent:#79b7ff; }
+    *{box-sizing:border-box}
+    body{margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif; background:var(--bg); color:var(--text)}
+    header{padding:1rem 1.25rem; border-bottom:1px solid #1f2940; position:sticky; top:0; background:rgba(11,18,32,.9); backdrop-filter: blur(6px)}
+    h1{font-size:1.15rem; margin:.2rem 0}
+    main{display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:1rem; padding:1rem}
+    .card{background:var(--card); border:1px solid #1f2940; border-radius:.9rem; padding:1rem}
+    .card h2{font-size:1rem; margin:0 0 .6rem}
+    button{background:#19243c; color:var(--text); border:1px solid #273457; padding:.45rem .75rem; border-radius:.55rem; cursor:pointer}
+    button:hover{border-color:var(--accent)}
+    article p{line-height:1.45}
+    /* Bonus: fade animation for Exercise 1 */
+    @keyframes fadeout{to{opacity:.15}}
+    .fade{animation:fadeout 1.2s forwards}
+    /* Exercise 4 form tweaks */
+    #MyForm label, #MyForm input{display:block}
+    #MyForm input[type="text"]{width:100%; max-width:260px; padding:.45rem .6rem; border-radius:.5rem; border:1px solid #253257; background:#0e1730; color:var(--text)}
+    #MyForm input[type="submit"]{margin-top:.5rem}
+    small{color:var(--muted)}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Exercises XP — DOM, Events & Forms</h1>
+  </header>
+
+  <main>
+    <!-- Exercise 1 -->
+    <section class="card" id="ex1">
+      <h2>🌟 Exercise 1 — Change the article</h2>
+      <article>
+        <h1> Some Facts </h1>
+        <h2> The Chocolate </h2>
+        <h3> History of the chocolate </h3>
+        <p> Chocolate is made from tropical Theobroma cacao tree seeds. 
+        Its earliest use dates back to the Olmec civilization in Mesoamerica.</p>
+        <p> After the European discovery of the Americas, chocolate became 
+        very popular in the wider world, and its demand exploded. </p>
+        <p id="ex1p2"> Chocolate has since become a popular food product that millions enjoy every day, 
+        thanks to its unique, rich, and sweet taste.</p> 
+        <p> But what effect does eating chocolate have on our health?</p> 
+      </article>
+      <div style="margin-top:.6rem; display:flex; gap:.5rem; flex-wrap:wrap">
+        <button id="boldBtn">Make paragraphs bold</button>
+      </div>
+      <small>Open the console to see what is logged.</small>
+    </section>
+
+    <!-- Exercise 2 -->
+    <section class="card" id="ex2">
+      <h2>🌟 Exercise 2 — Work with forms</h2>
+      <form id="nameForm">
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="firstname">
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lastname">
+        <input type="submit" value="Submit" id="submit">
+      </form> 
+      <ul class="usersAnswer"></ul>
+      <small>Values will be appended as &lt;li&gt; elements below.</small>
+    </section>
+
+    <!-- Exercise 3 -->
+    <section class="card" id="ex3">
+      <h2>🌟 Exercise 3 — Transform the sentence</h2>
+      <p id="boldPara"><strong>Hello</strong> I hope you are enjoying <strong>this</strong> class. At the
+      <strong>end</strong> you <strong>will</strong> be great Developers!
+      <strong>Enjoy</strong> the <strong>JavaScript </strong> lessons</p>
+      <small>Hover over the paragraph to highlight / unhighlight bold words.</small>
+    </section>
+
+    <!-- Exercise 4 -->
+    <section class="card" id="ex4">
+      <h2>🌟 Exercise 4 — Volume of a sphere</h2>
+      <p>Input radius value and get the volume of a sphere.</p> 
+      <form  id="MyForm"> 
+          <label for="radius">Radius</label><input type="text" name="radius" id="radius" required> 
+          <label for="volume">Volume</label><input type="text" name="volume" id="volume" readonly> 
+          <input type="submit" value="Calculate" id="submitVol">    
+      </form> 
+      <small>Volume formula: (4/3) × π × r³</small>
+    </section>
+  </main>
+
+  <script src="dom_exercises.js"></script>
+</body>
+</html>
