@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daily Challenge — Mad Libs</title>
+  <style>
+    :root { --bg:#0b1220; --card:#121a2b; --text:#e9eefb; --muted:#a9b3d3; --accent:#77b0ff; }
+    *{box-sizing:border-box}
+    body{margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif; background:var(--bg); color:var(--text)}
+    main{max-width:720px; margin:0 auto; padding:1.25rem}
+    h1{font-size:1.2rem; margin:.5rem 0 1rem}
+    form{display:grid; gap:.6rem; background:var(--card); border:1px solid #1f2940; padding:1rem; border-radius:.8rem}
+    label{display:block; font-size:.9rem; color:var(--muted); margin-bottom:.25rem}
+    input[type="text"]{width:100%; padding:.55rem .7rem; border-radius:.5rem; border:1px solid #253257; background:#0e1730; color:var(--text)}
+    .row{display:grid; grid-template-columns:1fr 1fr; gap:.6rem}
+    .actions{display:flex; gap:.6rem; flex-wrap:wrap}
+    button{background:#17233b; color:var(--text); border:1px solid #2b3a60; padding:.55rem .85rem; border-radius:.6rem; cursor:pointer}
+    button:hover{border-color:var(--accent)}
+    #storyWrap{margin-top:1rem; background:#0f1628; border:1px dashed #223055; padding:.8rem; border-radius:.6rem}
+    #story{font-size:1rem}
+    small{color:var(--muted)}
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Mad Libs</h1>
+
+    <form id="libform" autocomplete="off">
+      <div class="row">
+        <div>
+          <label for="noun">Noun</label>
+          <input type="text" id="noun" placeholder="e.g., dragon" />
+        </div>
+        <div>
+          <label for="adjective">Adjective</label>
+          <input type="text" id="adjective" placeholder="e.g., shiny" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label for="person">Someone's Name</label>
+          <input type="text" id="person" placeholder="e.g., Kevin" />
+        </div>
+        <div>
+          <label for="verb">Verb</label>
+          <input type="text" id="verb" placeholder="e.g., dances" />
+        </div>
+      </div>
+
+      <div>
+        <label for="place">A place</label>
+        <input type="text" id="place" placeholder="e.g., Ramat Gan" />
+      </div>
+
+      <div class="actions">
+        <button id="lib-button" type="submit">Lib it!</button>
+        <button id="shuffle" type="button" disabled>Shuffle story</button>
+        <button type="reset" id="reset">Reset</button>
+      </div>
+      <small>Tip: Use simple words; the story uses them verbatim.</small>
+    </form>
+
+    <div id="storyWrap">
+      <strong>Generated story:</strong>
+      <p id="story" aria-live="polite"></p>
+    </div>
+  </main>
+
+  <script src="madlibs.js"></script>
+</body>
+</html>
