@@ -5,7 +5,7 @@ Short, commented solutions in vanilla JavaScript. Includes a minimal UI and the 
 ## Files
 - `index_daily_challenges.html` — Minimal UI to try both challenges.
 - `daily_promises_morse.js` — All exercises implemented (short & simple).
-- `README_Daily_Challenges.md` — This file.
+- `README` — This file.
 
 ## 1) makeAllCaps & sortWords
 ```js

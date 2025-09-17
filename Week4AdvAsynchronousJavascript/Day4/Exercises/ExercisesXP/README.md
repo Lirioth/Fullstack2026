@@ -3,7 +3,7 @@
 ## Files
 - `index_promises.html` — Minimal UI to run and see outputs.
 - `promises.js` — All exercises implemented (short & simple).
-- `README_Promises.md` — This file.
+- `README.md` — This file.
 
 ## What’s implemented
 ### Exercise 1 — Comparison
