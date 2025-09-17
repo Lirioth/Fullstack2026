@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Daily Challenges — Promises & Morse</title>
+  <style>
+    :root{--bg:#0b1220;--card:#121a2b;--text:#e9eefb;--muted:#9fb0d8;--accent:#79b7ff;}
+    *{box-sizing:border-box}
+    body{margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif; background:var(--bg); color:var(--text)}
+    main{max-width:960px; margin:0 auto; padding:1rem; display:grid; gap:1rem}
+    .card{background:var(--card); border:1px solid #1f2940; border-radius:.9rem; padding:1rem}
+    .row{display:flex; gap:.6rem; flex-wrap:wrap}
+    button{background:#17233b;color:var(--text);border:1px solid #2b3a60;padding:.5rem .85rem;border-radius:.6rem;cursor:pointer}
+    button:hover{border-color:var(--accent)}
+    .out{background:#0e1730; border:1px solid #223055; border-radius:.6rem; padding:.6rem; min-height:1.8rem; white-space:pre-wrap}
+    input[type="text"]{background:#0e1730;color:var(--text);border:1px solid #223055;border-radius:.5rem;padding:.5rem;min-width:260px}
+    small{color:var(--muted)}
+    pre{margin:0}
+  </style>
+</head>
+<body>
+  <main>
+    <section class="card">
+      <h2>1st Daily Challenge — <em>makeAllCaps</em> & <em>sortWords</em></h2>
+      <div class="row">
+        <button id="t1a">Run Example 1 (should reject)</button>
+        <button id="t1b">Run Example 2 (should reject)</button>
+        <button id="t1c">Run Example 3 (should resolve & sort)</button>
+      </div>
+      <div class="out" id="out1">Ready.</div>
+      <small>Open Console to see the full logs.</small>
+    </section>
+
+    <section class="card">
+      <h2>2nd Daily Challenge — Morse Translator</h2>
+      <div class="row" style="align-items:center">
+        <input type="text" id="textInput" placeholder="Type text to translate (or leave empty to use prompt)" />
+        <button id="btnTranslate">Translate to Morse</button>
+      </div>
+      <div class="out"><pre id="morseOut">Waiting…</pre></div>
+      <small>The chain uses: <code>toJs()</code> → <code>toMorse(morseJS)</code> → <code>joinWords(array)</code></small>
+    </section>
+  </main>
+  <script src="daily_promises_morse.js"></script>
+</body>
+</html>
