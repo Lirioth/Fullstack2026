@@ -1,27 +1,28 @@
+
 # 📄 Day 4 - Python File I/O, JSON and API
 
-## 🎯 Objetivos de Aprendizaje
+## 🎯 Learning Objectives
 
-Al finalizar este día, podrás:
-- 📁 **Manejar archivos** de manera eficiente y segura
-- 📄 **Procesar diferentes formatos** (TXT, CSV, JSON, XML)
-- 🌐 **Consumir APIs REST** y manejar respuestas HTTP
-- 🔄 **Serializar y deserializar** datos complejos
-- 🛡️ **Manejar errores** de I/O y conexiones de red
-- 🗃️ **Integrar datos externos** en aplicaciones OOP
+By the end of this day, you will be able to:
+- 📁 **Handle files** efficiently and safely
+- 📄 **Process different formats** (TXT, CSV, JSON, XML)
+- 🌐 **Consume REST APIs** and handle HTTP responses
+- 🔄 **Serialize and deserialize** complex data
+- 🛡️ **Handle I/O and network errors**
+- 🗃️ **Integrate external data** into OOP applications
 
-## 📚 Conceptos Clave
+## 📚 Key Concepts
 
 ### 📂 File I/O Fundamentals
 
-#### 🔹 Operaciones Básicas de Archivos
+#### 🔹 Basic File Operations
 ```python
 import os
 from pathlib import Path
 
 # Usando open() tradicional
 def read_file_traditional(filename):
-    """Lectura tradicional de archivos"""
+    """Traditional file reading"""
     try:
         with open(filename, 'r', encoding='utf-8') as file:
             content = file.read()
@@ -35,7 +36,7 @@ def read_file_traditional(filename):
 
 # Usando pathlib (moderno)
 def read_file_pathlib(filepath):
-    """Lectura moderna con pathlib"""
+    """Modern reading with pathlib"""
     try:
         path = Path(filepath)
         if path.exists():
@@ -49,7 +50,7 @@ def read_file_pathlib(filepath):
 
 # Lectura línea por línea (eficiente para archivos grandes)
 def read_file_lines(filename):
-    """Lectura línea por línea para archivos grandes"""
+    """Line-by-line reading for large files"""
     lines = []
     try:
         with open(filename, 'r', encoding='utf-8') as file:
@@ -66,7 +67,7 @@ def read_file_lines(filename):
 
 # Escritura de archivos
 def write_file_safe(filename, content, mode='w'):
-    """Escritura segura de archivos"""
+    """Safe file writing"""
     try:
         # Crear directorio si no existe
         path = Path(filename)
@@ -93,11 +94,11 @@ import tempfile
 from datetime import datetime
 
 class FileManager:
-    """Gestor avanzado de archivos con funcionalidades OOP"""
+    """Advanced file manager with OOP features"""
     
     def __init__(self, base_directory="."):
         """
-        Inicializar gestor de archivos
+    Initialize file manager
         
         Args:
             base_directory (str): Directorio base para operaciones
@@ -108,7 +109,7 @@ class FileManager:
     
     def create_backup(self, filename, backup_suffix=None):
         """
-        Crear backup de archivo
+    Create file backup
         
         Args:
             filename (str): Nombre del archivo
@@ -134,7 +135,7 @@ class FileManager:
     
     def get_file_info(self, filename):
         """
-        Obtener información detallada de archivo
+    Get detailed file information
         
         Args:
             filename (str): Nombre del archivo
@@ -163,7 +164,7 @@ class FileManager:
         }
     
     def _format_file_size(self, size_bytes):
-        """Formatear tamaño de archivo en formato legible"""
+    """Format file size in human-readable format"""
         if size_bytes == 0:
             return "0 B"
         
@@ -178,7 +179,7 @@ class FileManager:
     
     def find_files(self, pattern="*", recursive=True):
         """
-        Buscar archivos por patrón
+    Search files by pattern
         
         Args:
             pattern (str): Patrón de búsqueda (glob)
@@ -194,7 +195,7 @@ class FileManager:
     
     def create_temp_file(self, content="", suffix=".tmp"):
         """
-        Crear archivo temporal
+    Create temporary file
         
         Args:
             content (str): Contenido inicial
@@ -217,7 +218,7 @@ class FileManager:
         return temp_file.name
     
     def cleanup_temp_files(self):
-        """Limpiar archivos temporales creados"""
+    """Clean up created temporary files"""
         for temp_file in self.temp_files:
             try:
                 Path(temp_file).unlink()
@@ -227,13 +228,13 @@ class FileManager:
         self.temp_files.clear()
     
     def __del__(self):
-        """Destructor: limpiar archivos temporales"""
+    """Destructor: clean up temporary files"""
         self.cleanup_temp_files()
 ```
 
-### 📊 Procesamiento de CSV
+### 📊 CSV Processing
 
-#### 📈 CSV con el Módulo csv
+#### 📈 CSV with the csv Module
 ```python
 import csv
 from typing import List, Dict, Any
@@ -241,11 +242,11 @@ from decimal import Decimal
 from datetime import datetime
 
 class CSVProcessor:
-    """Procesador avanzado de archivos CSV"""
+    """Advanced CSV file processor"""
     
     def __init__(self, delimiter=',', quotechar='"'):
         """
-        Inicializar procesador CSV
+    Initialize CSV processor
         
         Args:
             delimiter (str): Delimitador de campos
@@ -256,7 +257,7 @@ class CSVProcessor:
     
     def read_csv_to_dict(self, filename: str) -> List[Dict[str, Any]]:
         """
-        Leer CSV y convertir a lista de diccionarios
+    Read CSV and convert to list of dictionaries
         
         Args:
             filename (str): Nombre del archivo CSV
@@ -294,7 +295,7 @@ class CSVProcessor:
     def write_dict_to_csv(self, filename: str, data: List[Dict[str, Any]], 
                          fieldnames: List[str] = None) -> bool:
         """
-        Escribir lista de diccionarios a CSV
+    Write list of dictionaries to CSV
         
         Args:
             filename (str): Nombre del archivo CSV
@@ -339,7 +340,7 @@ class CSVProcessor:
     def convert_types(self, data: List[Dict[str, Any]], 
                      type_mapping: Dict[str, type]) -> List[Dict[str, Any]]:
         """
-        Convertir tipos de datos en CSV
+    Convert data types in CSV
         
         Args:
             data (List[Dict[str, Any]]): Datos originales
@@ -381,7 +382,7 @@ class CSVProcessor:
     def filter_data(self, data: List[Dict[str, Any]], 
                    filters: Dict[str, Any]) -> List[Dict[str, Any]]:
         """
-        Filtrar datos CSV
+    Filter CSV data
         
         Args:
             data (List[Dict[str, Any]]): Datos originales
@@ -431,7 +432,7 @@ class CSVProcessor:
     def get_statistics(self, data: List[Dict[str, Any]], 
                       numeric_fields: List[str]) -> Dict[str, Dict[str, float]]:
         """
-        Calcular estadísticas para campos numéricos
+    Calculate statistics for numeric fields
         
         Args:
             data (List[Dict[str, Any]]): Datos del CSV
@@ -477,7 +478,7 @@ class CSVProcessor:
 
 ### 🔄 JSON Processing
 
-#### 📋 JSON Avanzado con Validación
+#### 📋 Advanced JSON with Validation
 ```python
 import json
 from typing import Any, Dict, List, Optional, Union
@@ -486,11 +487,11 @@ from decimal import Decimal
 from pathlib import Path
 
 class JSONProcessor:
-    """Procesador avanzado de JSON con validación y serialización custom"""
+    """Advanced JSON processor with validation and custom serialization"""
     
     def __init__(self, indent=2, ensure_ascii=False):
         """
-        Inicializar procesador JSON
+    Initialize JSON processor
         
         Args:
             indent (int): Indentación para pretty printing
@@ -501,7 +502,7 @@ class JSONProcessor:
     
     def load_json(self, filename: str) -> Any:
         """
-        Cargar JSON desde archivo
+    Load JSON from file
         
         Args:
             filename (str): Nombre del archivo JSON
@@ -519,7 +520,7 @@ class JSONProcessor:
     
     def save_json(self, data: Any, filename: str) -> bool:
         """
-        Guardar datos como JSON
+    Save data as JSON
         
         Args:
             data (Any): Datos a serializar
@@ -549,7 +550,7 @@ class JSONProcessor:
     
     def _json_serializer(self, obj: Any) -> Any:
         """
-        Serializer custom para tipos no JSON nativos
+    Custom serializer for non-native JSON types
         
         Args:
             obj (Any): Objeto a serializar
@@ -570,7 +571,7 @@ class JSONProcessor:
     
     def validate_schema(self, data: Any, schema: Dict[str, Any]) -> Dict[str, Any]:
         """
-        Validar datos contra un schema simple
+    Validate data against a simple schema
         
         Args:
             data (Any): Datos a validar
@@ -583,7 +584,7 @@ class JSONProcessor:
         warnings = []
         
         def validate_field(field_name: str, value: Any, field_schema: Dict[str, Any]):
-            """Validar campo individual"""
+            """Validate individual field"""
             # Verificar tipo requerido
             if 'type' in field_schema:
                 expected_type = field_schema['type']
@@ -653,7 +654,7 @@ class JSONProcessor:
                   update_data: Dict[str, Any], 
                   deep_merge: bool = True) -> Dict[str, Any]:
         """
-        Fusionar dos objetos JSON
+    Merge two JSON objects
         
         Args:
             base_data (Dict[str, Any]): Datos base
@@ -680,7 +681,7 @@ class JSONProcessor:
     
     def extract_fields(self, data: Any, field_paths: List[str]) -> Dict[str, Any]:
         """
-        Extraer campos específicos usando dot notation
+    Extract specific fields using dot notation
         
         Args:
             data (Any): Datos JSON
@@ -713,7 +714,7 @@ class JSONProcessor:
     
     def transform_data(self, data: Any, transformations: Dict[str, callable]) -> Any:
         """
-        Aplicar transformaciones a datos JSON
+    Apply transformations to JSON data
         
         Args:
             data (Any): Datos originales
@@ -740,7 +741,7 @@ class JSONProcessor:
 
 ### 🌐 API Consumption
 
-#### 🔌 HTTP Client con requests
+#### 🔌 HTTP Client with requests
 ```python
 import requests
 from typing import Dict, Any, Optional, List, Union
@@ -749,12 +750,12 @@ import json
 import time
 
 class APIClient:
-    """Cliente HTTP avanzado para consumo de APIs REST"""
+    """Advanced HTTP client for consuming REST APIs"""
     
     def __init__(self, base_url: str, timeout: int = 30, 
                  retry_attempts: int = 3, retry_delay: float = 1.0):
         """
-        Inicializar cliente API
+    Initialize API client
         
         Args:
             base_url (str): URL base de la API
@@ -786,7 +787,7 @@ class APIClient:
     
     def set_authentication(self, auth_type: str, **kwargs):
         """
-        Configurar autenticación
+    Configure authentication
         
         Args:
             auth_type (str): Tipo de autenticación
@@ -813,7 +814,7 @@ class APIClient:
     
     def set_rate_limit(self, requests_per_second: float):
         """
-        Configurar limitación de velocidad
+    Configure rate limiting
         
         Args:
             requests_per_second (float): Requests permitidos por segundo
@@ -821,7 +822,7 @@ class APIClient:
         self.rate_limit_delay = 1.0 / requests_per_second if requests_per_second > 0 else 0
     
     def _wait_for_rate_limit(self):
-        """Esperar si es necesario para respetar rate limiting"""
+    """Wait if necessary to respect rate limiting"""
         if self.rate_limit_delay > 0:
             current_time = time.time()
             time_since_last_request = current_time - self.last_request_time
@@ -834,7 +835,7 @@ class APIClient:
     
     def _make_request(self, method: str, endpoint: str, **kwargs) -> requests.Response:
         """
-        Realizar request HTTP con reintentos
+    Make HTTP request with retries
         
         Args:
             method (str): Método HTTP
@@ -899,7 +900,7 @@ class APIClient:
     
     def get(self, endpoint: str, params: Dict[str, Any] = None) -> Dict[str, Any]:
         """
-        Realizar GET request
+    Make GET request
         
         Args:
             endpoint (str): Endpoint de la API
@@ -914,7 +915,7 @@ class APIClient:
     def post(self, endpoint: str, data: Dict[str, Any] = None, 
              json_data: Dict[str, Any] = None) -> Dict[str, Any]:
         """
-        Realizar POST request
+    Make POST request
         
         Args:
             endpoint (str): Endpoint de la API
@@ -934,18 +935,18 @@ class APIClient:
         return self._parse_response(response)
     
     def put(self, endpoint: str, json_data: Dict[str, Any] = None) -> Dict[str, Any]:
-        """Realizar PUT request"""
+    """Make PUT request"""
         response = self._make_request('PUT', endpoint, json=json_data)
         return self._parse_response(response)
     
     def delete(self, endpoint: str) -> Dict[str, Any]:
-        """Realizar DELETE request"""
+    """Make DELETE request"""
         response = self._make_request('DELETE', endpoint)
         return self._parse_response(response)
     
     def _parse_response(self, response: requests.Response) -> Dict[str, Any]:
         """
-        Parsear respuesta HTTP
+    Parse HTTP response
         
         Args:
             response (requests.Response): Respuesta HTTP
@@ -980,7 +981,7 @@ class APIClient:
                      page_param: str = 'page', per_page_param: str = 'per_page',
                      per_page: int = 100) -> List[Dict[str, Any]]:
         """
-        Obtener todos los resultados de un endpoint paginado
+    Get all results from a paginated endpoint
         
         Args:
             endpoint (str): Endpoint de la API
@@ -1035,7 +1036,7 @@ class APIClient:
         return all_results
     
     def get_statistics(self) -> Dict[str, Any]:
-        """Obtener estadísticas del cliente"""
+    """Get client statistics"""
         return {
             'total_requests': self.request_count,
             'successful_requests': self.success_count,
@@ -1045,52 +1046,52 @@ class APIClient:
         }
 ```
 
-## 📋 Actividades del Día
+## 📋 Daily Activities
 
-### 🥉 **Nivel Principiante**
-- [ ] Leer y escribir archivos de texto simples
-- [ ] Procesar archivos CSV básicos
-- [ ] Trabajar con JSON simple
-- [ ] Hacer requests GET básicos a APIs públicas
+### 🥉 **Beginner Level**
+- [ ] Read and write simple text files
+- [ ] Process basic CSV files
+- [ ] Work with simple JSON
+- [ ] Make basic GET requests to public APIs
 
-### 🥈 **Nivel Intermedio**
-- [ ] Crear sistema de backup y gestión de archivos
-- [ ] Procesar CSV con validación y transformación de tipos
-- [ ] Validar y transformar datos JSON complejos
-- [ ] Implementar cliente API con autenticación y reintentos
+### 🥈 **Intermediate Level**
+- [ ] Create a backup and file management system
+- [ ] Process CSV with validation and type transformation
+- [ ] Validate and transform complex JSON data
+- [ ] Implement API client with authentication and retries
 
-### 🥇 **Nivel Avanzado**
-- [ ] Desarrollar procesador de múltiples formatos de archivo
-- [ ] Sistema de ETL (Extract, Transform, Load) completo
-- [ ] Cliente API con paginación y rate limiting
-- [ ] Integración de datos desde múltiples fuentes
+### 🥇 **Advanced Level**
+- [ ] Develop a multi-format file processor
+- [ ] Complete ETL (Extract, Transform, Load) system
+- [ ] API client with pagination and rate limiting
+- [ ] Data integration from multiple sources
 
-### 💪 **Desafío Ninja**
-- [ ] Framework de procesamiento de datos en tiempo real
-- [ ] Sistema distribuido de scraping de datos
-- [ ] API Gateway con caching y balanceeo
-- [ ] Pipeline de datos con monitoreo y alertas
+### 💪 **Ninja Challenge**
+- [ ] Real-time data processing framework
+- [ ] Distributed data scraping system
+- [ ] API Gateway with caching and load balancing
+- [ ] Data pipeline with monitoring and alerts
 
-## 🎮 Ejercicios Prácticos
+## 🎮 Practical Exercises
 
 ### 📁 [Exercises](./Exercises/README.md)
-- **Exercise 1**: 📊 Sistema de Análisis de Datos CSV
-- **Exercise 2**: 🌐 Aggregador de Noticias desde APIs
-- **Exercise 3**: 💾 Sistema de Backup y Sincronización
-- **Exercise 4**: 🔄 Pipeline de Procesamiento de Datos
+- **Exercise 1**: 📊 CSV Data Analysis System
+- **Exercise 2**: 🌐 News Aggregator from APIs
+- **Exercise 3**: 💾 Backup and Synchronization System
+- **Exercise 4**: 🔄 Data Processing Pipeline
 
 ### 🏆 [Daily Challenge](./DailyChallenge/README.md)
-**🌍 Sistema de Monitoreo Climático Global**
-- Integración con múltiples APIs meteorológicas
-- Procesamiento de datos históricos desde CSV
-- Almacenamiento y análisis en JSON
-- Dashboard de reportes con alertas automáticas
+**🌍 Global Climate Monitoring System**
+- Integration with multiple weather APIs
+- Processing historical data from CSV
+- Storage and analysis in JSON
+- Reporting dashboard with automatic alerts
 
-## 📚 Herramientas y Mejores Prácticas
+## 📚 Tools and Best Practices
 
-### 🛠️ Librerías Importantes
+### 🛠️ Important Libraries
 
-#### 📦 Requests y HTTP
+#### 📦 Requests and HTTP
 ```python
 import requests
 import urllib3
@@ -1122,7 +1123,7 @@ import pandas as pd
 
 # Lectura avanzada de CSV
 def read_csv_advanced(filename, **kwargs):
-    """Lectura robusta de CSV con pandas"""
+    """Robust CSV reading with pandas"""
     try:
         df = pd.read_csv(
             filename,
@@ -1142,9 +1143,9 @@ def read_csv_advanced(filename, **kwargs):
         raise ValueError("Could not decode file with any encoding")
 ```
 
-### 🔒 Seguridad y Mejores Prácticas
+### 🔒 Security and Best Practices
 
-#### 🛡️ Manejo Seguro de APIs
+#### 🛡️ Secure API Handling
 ```python
 import os
 from dotenv import load_dotenv
@@ -1153,10 +1154,10 @@ from dotenv import load_dotenv
 load_dotenv()
 
 class SecureAPIClient:
-    """Cliente API con prácticas de seguridad"""
+    """API client with security best practices"""
     
     def __init__(self):
-        # Obtener credentials desde variables de entorno
+    # Get credentials from environment variables
         self.api_key = os.getenv('API_KEY')
         self.api_secret = os.getenv('API_SECRET')
         
@@ -1164,7 +1165,7 @@ class SecureAPIClient:
             raise ValueError("API_KEY environment variable is required")
     
     def make_secure_request(self, url, **kwargs):
-        """Request con validación de SSL y timeouts"""
+    """Request with SSL validation and timeouts"""
         return requests.get(
             url,
             timeout=(5, 30),  # (connect timeout, read timeout)
@@ -1173,22 +1174,22 @@ class SecureAPIClient:
         )
 ```
 
-#### 📁 Validación de Archivos
+#### 📁 File Validation
 ```python
 import mimetypes
 from pathlib import Path
 
 def validate_file_upload(file_path, allowed_types=None, max_size_mb=10):
     """
-    Validar archivo antes de procesarlo
+    Validate file before processing
     
     Args:
-        file_path (str): Ruta del archivo
-        allowed_types (list): Tipos MIME permitidos
-        max_size_mb (int): Tamaño máximo en MB
+        file_path (str): File path
+        allowed_types (list): Allowed MIME types
+        max_size_mb (int): Maximum size in MB
     
     Returns:
-        dict: Resultado de validación
+        dict: Validation result
     """
     path = Path(file_path)
     
@@ -1208,117 +1209,117 @@ def validate_file_upload(file_path, allowed_types=None, max_size_mb=10):
     return {'valid': True, 'mime_type': mime_type, 'size_mb': size_mb}
 ```
 
-## ✅ Checklist de Progreso
+## ✅ Progress Checklist
 
-### 🎯 Objetivos Completados
-- [ ] Manejo eficiente de archivos con context managers
-- [ ] Procesamiento de CSV con validación y transformación
-- [ ] Serialización/deserialización JSON compleja
-- [ ] Consumo de APIs REST con manejo de errores
-- [ ] Implementación de reintentos y rate limiting
-- [ ] Validación de datos y esquemas
+### 🎯 Completed Objectives
+- [ ] Efficient file handling with context managers
+- [ ] CSV processing with validation and transformation
+- [ ] Complex JSON serialization/deserialization
+- [ ] REST API consumption with error handling
+- [ ] Implementation of retries and rate limiting
+- [ ] Data and schema validation
 
-### 🛠️ Habilidades Técnicas
-- [ ] Uso de pathlib para operaciones de archivos
-- [ ] Manejo de diferentes encodings y formatos
-- [ ] Transformación y limpieza de datos
-- [ ] Autenticación en APIs (Bearer, API Key, Basic)
-- [ ] Paginación y manejo de grandes datasets
-- [ ] Manejo de errores de red y I/O
+### 🛠️ Technical Skills
+- [ ] Using pathlib for file operations
+- [ ] Handling different encodings and formats
+- [ ] Data transformation and cleaning
+- [ ] API authentication (Bearer, API Key, Basic)
+- [ ] Pagination and handling large datasets
+- [ ] Handling network and I/O errors
 
-### 🎨 Proyecto del Día
-- [ ] Sistema completo de procesamiento de datos
-- [ ] Integración con al menos 2 APIs externas
-- [ ] Almacenamiento en múltiples formatos
-- [ ] Validación y transformación de datos robusta
-- [ ] Manejo de errores comprehensivo
+### 🎨 Day Project
+- [ ] Complete data processing system
+- [ ] Integration with at least 2 external APIs
+- [ ] Storage in multiple formats
+- [ ] Robust data validation and transformation
+- [ ] Comprehensive error handling
 
-## 🔍 Conceptos para Investigar
+## 🔍 Concepts to Research
 
-### 🤔 Preguntas de Reflexión
-1. **¿Cuándo usar CSV vs JSON vs XML?**
-2. **¿Cómo manejar archivos muy grandes que no caben en memoria?**
-3. **¿Qué consideraciones de seguridad hay al descargar archivos?**
-4. **¿Cómo implementar caché efectivo para APIs?**
+### 🤔 Reflection Questions
+1. **When to use CSV vs JSON vs XML?**
+2. **How to handle very large files that don't fit in memory?**
+3. **What security considerations are there when downloading files?**
+4. **How to implement effective caching for APIs?**
 
-### 🔬 Experimentos
-- Comparar rendimiento de diferentes métodos de lectura de archivos
-- Analizar el comportamiento de APIs con diferentes estrategias de reintentos
-- Implementar compresión de datos en tiempo real
-- Crear sistema de validación de datos personalizados
+### 🔬 Experiments
+- Compare performance of different file reading methods
+- Analyze API behavior with different retry strategies
+- Implement real-time data compression
+- Create a custom data validation system
 
-## 🚀 Preparación para Mañana
+## 🚀 Preparation for Tomorrow
 
-### 📖 Lecturas Recomendadas
-- Patrones de diseño para aplicaciones complejas
-- Gestión de proyectos de software
-- Testing y documentación avanzada
-- Deployment y distribución de aplicaciones
+### 📖 Recommended Readings
+- Design patterns for complex applications
+- Software project management
+- Advanced testing and documentation
+- Application deployment and distribution
 
-### 🎯 Próximos Temas
-- **Day 5**: 🚀 Mini Project - Integración de todos los conceptos
-- Arquitectura de aplicación completa
-- Testing comprehensivo
-- Documentación profesional
-- Deployment y distribución
+### 🎯 Next Topics
+- **Day 5**: 🚀 Mini Project - Integration of all concepts
+- Complete application architecture
+- Comprehensive testing
+- Professional documentation
+- Deployment and distribution
 
 ## 🆘 Troubleshooting
 
-### ❌ Errores Comunes
-1. **UnicodeDecodeError en archivos**
-   ```python
-   # ❌ Problema
-   with open('file.txt', 'r') as f:  # Encoding por defecto
+### ❌ Common Errors
+1. **UnicodeDecodeError in files**
+    ```python
+    # ❌ Problem
+    with open('file.txt', 'r') as f:  # Default encoding
    
-   # ✅ Solución
-   with open('file.txt', 'r', encoding='utf-8-sig') as f:
-   ```
+    # ✅ Solution
+    with open('file.txt', 'r', encoding='utf-8-sig') as f:
+    ```
 
-2. **Timeouts en APIs**
-   ```python
-   # ❌ Problema
-   response = requests.get(url)  # Sin timeout
+2. **Timeouts in APIs**
+    ```python
+    # ❌ Problem
+    response = requests.get(url)  # No timeout
    
-   # ✅ Solución
-   response = requests.get(url, timeout=(5, 30))
-   ```
+    # ✅ Solution
+    response = requests.get(url, timeout=(5, 30))
+    ```
 
-3. **Memory issues con archivos grandes**
-   ```python
-   # ❌ Problema
-   content = file.read()  # Cargar todo en memoria
+3. **Memory issues with large files**
+    ```python
+    # ❌ Problem
+    content = file.read()  # Loads everything into memory
    
-   # ✅ Solución
-   for line in file:  # Procesar línea por línea
-       process_line(line)
-   ```
+    # ✅ Solution
+    for line in file:  # Process line by line
+         process_line(line)
+    ```
 
-### 🔧 Tips de Debugging
-- Usar logging en lugar de print para debugging
-- Validar datos antes de procesarlos
-- Implementar checkpoints en operaciones largas
-- Monitorear uso de memoria y recursos
+### 🔧 Debugging Tips
+- Use logging instead of print for debugging
+- Validate data before processing
+- Implement checkpoints in long operations
+- Monitor memory and resource usage
 
-## 📚 Recursos Adicionales
+## 📚 Additional Resources
 
-### 🎥 Videos Recomendados
+### 🎥 Recommended Videos
 - "Python File I/O Best Practices"
 - "Working with APIs in Python"
 - "Data Processing Pipelines"
 
-### 📖 Documentación
+### 📖 Documentation
 - [Python File I/O](https://docs.python.org/3/tutorial/inputoutput.html)
 - [Requests Documentation](https://docs.python-requests.org/)
 - [JSON in Python](https://docs.python.org/3/library/json.html)
 
-### 🛠️ Herramientas
-- **httpx**: Cliente HTTP moderno alternativo a requests
-- **aiofiles**: I/O de archivos asíncrono
-- **jsonschema**: Validación de esquemas JSON
-- **pandas**: Análisis de datos estructurados
+### 🛠️ Tools
+- **httpx**: Modern HTTP client alternative to requests
+- **aiofiles**: Asynchronous file I/O
+- **jsonschema**: JSON schema validation
+- **pandas**: Structured data analysis
 
 ---
 
-**💡 Recuerda**: El manejo de datos externos requiere siempre validación, manejo de errores y consideraciones de rendimiento. Nunca asumas que los datos están en el formato correcto.
+**💡 Remember**: Handling external data always requires validation, error handling, and performance considerations. Never assume data is in the correct format.
 
-**🎯 Meta del día**: Crear un sistema robusto que pueda manejar datos del mundo real con todas sus irregularidades y problemas potenciales.
+**🎯 Goal of the day**: Build a robust system that can handle real-world data with all its irregularities and potential issues.

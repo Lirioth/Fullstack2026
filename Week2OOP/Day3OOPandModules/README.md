@@ -1,29 +1,29 @@
 # 📦 Day 3 - OOP and Modules
 
-## 🎯 Objetivos de Aprendizaje
+## 🎯 Learning Objectives
 
-Al finalizar este día, podrás:
-- 📚 **Organizar código** en módulos y paquetes efectivamente
-- 🏗️ **Estructurar proyectos** OOP de gran escala
-- 🔗 **Importar y utilizar** módulos propios y de terceros
-- 📖 **Documentar APIs** y crear interfaces claras
-- 🧩 **Aplicar patrones** de diseño con módulos
-- 🚀 **Distribuir código** como paquetes reutilizables
+By the end of this day, you will be able to:
+- 📚 **Organize code** into modules and packages effectively
+- 🏗️ **Structure large-scale OOP projects**
+- 🔗 **Import and use** custom and third-party modules
+- 📖 **Document APIs** and create clear interfaces
+- 🧩 **Apply design patterns** with modules
+- 🚀 **Distribute code** as reusable packages
 
-## 📚 Conceptos Clave
+## 📚 Key Concepts
 
-### 📁 Estructura de Módulos y Paquetes
+### 📁 Module and Package Structure
 
-#### 🔹 Módulo Simple
+#### 🔹 Simple Module
 ```python
 # math_utils.py
 """
-Módulo de utilidades matemáticas
-Proporciona funciones para cálculos comunes
+Math utilities module
+Provides functions for common calculations
 """
 
 class Calculator:
-    """Calculadora avanzada con operaciones OOP"""
+    """Advanced calculator with OOP operations"""
     
     def __init__(self):
         self.history = []
@@ -44,7 +44,7 @@ class Calculator:
         return self.history.copy()
 
 def fibonacci(n):
-    """Generar secuencia de Fibonacci hasta n términos"""
+    """Generate Fibonacci sequence up to n terms"""
     if n <= 0:
         return []
     elif n == 1:
@@ -57,18 +57,18 @@ def fibonacci(n):
         sequence.append(sequence[i-1] + sequence[i-2])
     return sequence
 
-# Constantes del módulo
+# Module constants
 PI = 3.14159265359
 E = 2.71828182846
 
-# Variable de módulo
+# Module variable
 _module_version = "1.0.0"
 
 def get_version():
     return _module_version
 ```
 
-#### 📂 Paquete Completo
+#### 📂 Complete Package
 ```
 my_game_engine/
 ├── __init__.py
@@ -89,9 +89,9 @@ my_game_engine/
     └── file_helpers.py
 ```
 
-### 🏗️ Archivo `__init__.py`
+### 🏗️ The `__init__.py` File
 
-#### 📋 Configuración Básica
+#### 📋 Basic Setup
 ```python
 # my_game_engine/__init__.py
 """
@@ -122,15 +122,15 @@ EMAIL = "dev@gameengine.com"
 # Función de conveniencia
 def create_game(title="My Game", width=800, height=600):
     """
-    Función de conveniencia para crear un juego rápidamente
+    Convenience function to quickly create a game
     
     Args:
-        title (str): Título del juego
-        width (int): Ancho de la ventana
-        height (int): Alto de la ventana
+        title (str): Game title
+        width (int): Window width
+        height (int): Window height
     
     Returns:
-        GameEngine: Instancia configurada del motor de juego
+        GameEngine: Configured game engine instance
     """
     engine = GameEngine(title, width, height)
     return engine
@@ -157,38 +157,38 @@ CORE_VERSION = "1.0.0"
 DEBUG_MODE = False
 
 def enable_debug():
-    """Habilitar modo debug para el core"""
+    """Enable debug mode for the core"""
     global DEBUG_MODE
     DEBUG_MODE = True
     print("🐛 Core Debug Mode enabled")
 
 def disable_debug():
-    """Deshabilitar modo debug"""
+    """Disable debug mode"""
     global DEBUG_MODE
     DEBUG_MODE = False
     print("✅ Core Debug Mode disabled")
 ```
 
-### 🔗 Patrones de Importación
+### 🔗 Import Patterns
 
-#### 📥 Importaciones Básicas
+#### 📥 Basic Imports
 ```python
-# Importar módulo completo
+# Import entire module
 import math_utils
 calculator = math_utils.Calculator()
 
-# Importar elementos específicos
+# Import specific elements
 from math_utils import Calculator, fibonacci
 
-# Importar con alias
+# Import with alias
 from math_utils import Calculator as Calc
 import math_utils as math
 
-# Importar todo (usar con cuidado)
+# Import all (use with caution)
 from math_utils import *
 ```
 
-#### 🎯 Importaciones Avanzadas
+#### 🎯 Advanced Imports
 ```python
 # Importación condicional
 try:
@@ -205,7 +205,7 @@ class AdvancedCalculator:
 
 # Importación dinámica
 def load_plugin(plugin_name):
-    """Cargar plugin dinámicamente"""
+    """Dynamically load plugin"""
     import importlib
     
     try:
@@ -215,12 +215,12 @@ def load_plugin(plugin_name):
         print(f"Failed to load plugin {plugin_name}: {e}")
         return None
 
-# Importación relativa
-from .core import GameEngine  # Relativa al paquete actual
-from ..utils import math_helpers  # Subir un nivel y luego bajar
+# Relative import
+from .core import GameEngine  # Relative to current package
+from ..utils import math_helpers  # Go up one level then down
 ```
 
-### 🧩 Patrones de Diseño con Módulos
+### 🧩 Design Patterns with Modules
 
 #### 🏭 Factory Pattern
 ```python
@@ -260,7 +260,7 @@ class Rectangle(Shape):
         return 2 * (self.width + self.height)
 
 class ShapeFactory:
-    """Factory para crear diferentes formas"""
+    """Factory to create different shapes"""
     
     _shapes = {
         'circle': Circle,
@@ -270,14 +270,14 @@ class ShapeFactory:
     @classmethod
     def create_shape(cls, shape_type, **kwargs):
         """
-        Crear forma según el tipo especificado
+        Create shape according to specified type
         
         Args:
-            shape_type (str): Tipo de forma ('circle', 'rectangle')
-            **kwargs: Parámetros específicos de la forma
+            shape_type (str): Shape type ('circle', 'rectangle')
+            **kwargs: Shape-specific parameters
         
         Returns:
-            Shape: Instancia de la forma creada
+            Shape: Instance of the created shape
         """
         if shape_type not in cls._shapes:
             raise ValueError(f"Unknown shape type: {shape_type}")
@@ -287,12 +287,12 @@ class ShapeFactory:
     
     @classmethod
     def register_shape(cls, name, shape_class):
-        """Registrar nueva forma en el factory"""
+        """Register new shape in the factory"""
         cls._shapes[name] = shape_class
     
     @classmethod
     def available_shapes(cls):
-        """Obtener lista de formas disponibles"""
+        """Get list of available shapes"""
         return list(cls._shapes.keys())
 ```
 
@@ -303,32 +303,32 @@ from abc import ABC, abstractmethod
 from typing import List, Any
 
 class Observer(ABC):
-    """Interface para observadores"""
+    """Observer interface"""
     
     @abstractmethod
     def update(self, subject: 'Subject', event_data: Any):
-        """Método llamado cuando el sujeto notifica cambios"""
+        """Method called when subject notifies changes"""
         pass
 
 class Subject:
-    """Sujeto que puede ser observado"""
+    """Subject that can be observed"""
     
     def __init__(self):
         self._observers: List[Observer] = []
         self._state = None
     
     def attach(self, observer: Observer):
-        """Agregar observador"""
+        """Add observer"""
         if observer not in self._observers:
             self._observers.append(observer)
     
     def detach(self, observer: Observer):
-        """Remover observador"""
+        """Remove observer"""
         if observer in self._observers:
             self._observers.remove(observer)
     
     def notify(self, event_data: Any = None):
-        """Notificar a todos los observadores"""
+        """Notify all observers"""
         for observer in self._observers:
             observer.update(self, event_data)
     
@@ -341,7 +341,7 @@ class Subject:
         self._state = value
         self.notify({'state_changed': value})
 
-# Ejemplo de uso del patrón Observer
+# Observer pattern usage example
 class EmailNotifier(Observer):
     def update(self, subject, event_data):
         print(f"📧 Email notification: {event_data}")
@@ -370,33 +370,33 @@ class UserAccount(Subject):
 #### 📝 Docstrings Completos
 ```python
 # documentation_example.py
-"""
-Módulo de gestión de usuarios
-=============================
+    """
+    User management module
+    =====================
 
-Este módulo proporciona clases y funciones para gestionar usuarios
-en una aplicación web.
+    This module provides classes and functions to manage users
+    in a web application.
 
-Ejemplo de uso básico:
-    >>> from user_management import UserManager, User
-    >>> manager = UserManager()
-    >>> user = manager.create_user("john_doe", "john@example.com")
-    >>> print(user.username)
-    john_doe
+    Basic usage example:
+        >>> from user_management import UserManager, User
+        >>> manager = UserManager()
+        >>> user = manager.create_user("john_doe", "john@example.com")
+        >>> print(user.username)
+        john_doe
 
-Clases principales:
-    User: Representa un usuario individual
-    UserManager: Gestiona operaciones CRUD de usuarios
-    UserGroup: Representa grupos de usuarios
+    Main classes:
+        User: Represents an individual user
+        UserManager: Manages CRUD operations for users
+        UserGroup: Represents user groups
 
-Funciones utilitarias:
-    validate_email: Valida formato de email
-    hash_password: Encripta contraseñas
+    Utility functions:
+        validate_email: Validates email format
+        hash_password: Encrypts passwords
     
-Author: Development Team
-Version: 2.1.0
-Since: 1.0.0
-"""
+    Author: Development Team
+    Version: 2.1.0
+    Since: 1.0.0
+    """
 
 from typing import List, Optional, Dict, Any
 from datetime import datetime
@@ -405,16 +405,16 @@ import hashlib
 
 class User:
     """
-    Representa un usuario en el sistema
+    """Represents a user in the system
     
-    Esta clase encapsula toda la información y comportamiento
-    relacionado con un usuario individual.
+    This class encapsulates all information and behavior
+    related to an individual user.
     
     Attributes:
-        username (str): Nombre único del usuario
-        email (str): Dirección de correo electrónico
-        created_at (datetime): Fecha de creación de la cuenta
-        is_active (bool): Estado activo del usuario
+        username (str): Unique username
+        email (str): Email address
+        created_at (datetime): Account creation date
+        is_active (bool): User active status
         
     Example:
         >>> user = User("john_doe", "john@example.com")
@@ -424,34 +424,34 @@ class User:
         True
     
     Note:
-        Los usernames deben ser únicos en todo el sistema.
-        Los emails deben tener formato válido.
+        Usernames must be unique in the system.
+        Emails must have a valid format.
     """
     
     def __init__(self, username: str, email: str, password: str):
         """
-        Inicializar nuevo usuario
+        Initialize new user
         
         Args:
-            username (str): Nombre único del usuario (3-20 caracteres)
-            email (str): Email válido del usuario
-            password (str): Contraseña en texto plano (será encriptada)
+            username (str): Unique username (3-20 characters)
+            email (str): Valid user email
+            password (str): Plain text password (will be encrypted)
             
         Raises:
-            ValueError: Si username o email no son válidos
-            TypeError: Si los parámetros no son strings
+            ValueError: If username or email are not valid
+            TypeError: If parameters are not strings
             
         Example:
             >>> user = User("alice", "alice@example.com", "secret123")
         """
         if not isinstance(username, str) or not isinstance(email, str):
-            raise TypeError("Username y email deben ser strings")
+            raise TypeError("Username and email must be strings")
         
         if len(username) < 3 or len(username) > 20:
-            raise ValueError("Username debe tener entre 3 y 20 caracteres")
+            raise ValueError("Username must be between 3 and 20 characters")
         
         if not self._validate_email(email):
-            raise ValueError("Email no tiene formato válido")
+            raise ValueError("Email is not in a valid format")
         
         self.username = username
         self.email = email
@@ -462,38 +462,38 @@ class User:
     
     def _validate_email(self, email: str) -> bool:
         """
-        Validar formato de email
+        Validate email format
         
         Args:
-            email (str): Email a validar
+            email (str): Email to validate
             
         Returns:
-            bool: True si el email es válido, False en caso contrario
+            bool: True if email is valid, False otherwise
         """
         pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$'
         return re.match(pattern, email) is not None
     
     def _hash_password(self, password: str) -> str:
         """
-        Encriptar contraseña usando SHA-256
+        Encrypt password using SHA-256
         
         Args:
-            password (str): Contraseña en texto plano
+            password (str): Plain text password
             
         Returns:
-            str: Hash de la contraseña
+            str: Password hash
         """
         return hashlib.sha256(password.encode()).hexdigest()
     
     def verify_password(self, password: str) -> bool:
         """
-        Verificar si la contraseña proporcionada es correcta
+        Verify if the provided password is correct
         
         Args:
-            password (str): Contraseña a verificar
+            password (str): Password to verify
             
         Returns:
-            bool: True si la contraseña es correcta
+            bool: True if the password is correct
             
         Example:
             >>> user = User("alice", "alice@example.com", "secret123")
@@ -506,9 +506,9 @@ class User:
     
     def deactivate(self) -> None:
         """
-        Desactivar cuenta de usuario
+        Deactivate user account
         
-        Una vez desactivada, el usuario no puede iniciar sesión.
+        Once deactivated, the user cannot log in.
         
         Example:
             >>> user.deactivate()
@@ -518,60 +518,60 @@ class User:
         self.is_active = False
     
     def __str__(self) -> str:
-        """Representación string del usuario"""
+    """String representation of the user"""
         return f"User(username='{self.username}', email='{self.email}')"
     
     def __repr__(self) -> str:
-        """Representación técnica del usuario"""
+    """Technical representation of the user"""
         return f"User('{self.username}', '{self.email}', created_at={self.created_at})"
 ```
 
-## 📋 Actividades del Día
+## 📋 Daily Activities
 
-### 🥉 **Nivel Principiante**
-- [ ] Crear módulo de utilidades matemáticas con clases y funciones
-- [ ] Organizar código en múltiples archivos .py
-- [ ] Implementar importaciones básicas entre módulos
-- [ ] Documentar módulos con docstrings
+### 🥉 **Beginner Level**
+- [ ] Create a math utilities module with classes and functions
+- [ ] Organize code into multiple .py files
+- [ ] Implement basic imports between modules
+- [ ] Document modules with docstrings
 
-### 🥈 **Nivel Intermedio**
-- [ ] Crear paquete completo con estructura de directorios
-- [ ] Implementar patrón Factory usando módulos
-- [ ] Configurar `__init__.py` para exposición de API
-- [ ] Manear importaciones condicionales y dinámicas
+### 🥈 **Intermediate Level**
+- [ ] Create a complete package with directory structure
+- [ ] Implement Factory pattern using modules
+- [ ] Configure `__init__.py` for API exposure
+- [ ] Handle conditional and dynamic imports
 
-### 🥇 **Nivel Avanzado**
-- [ ] Desarrollar sistema de plugins cargables dinámicamente
-- [ ] Implementar patrón Observer distribuido en módulos
-- [ ] Crear documentación automática con Sphinx
-- [ ] Sistema de configuración multi-módulo
+### 🥇 **Advanced Level**
+- [ ] Develop a dynamically loadable plugin system
+- [ ] Implement Observer pattern distributed across modules
+- [ ] Create automatic documentation with Sphinx
+- [ ] Multi-module configuration system
 
-### 💪 **Desafío Ninja**
-- [ ] Framework OOP modular extensible
-- [ ] Sistema de hooks y middlewares
-- [ ] Distribución como paquete PyPI
-- [ ] Testing automático multi-módulo
+### 💪 **Ninja Challenge**
+- [ ] Extensible modular OOP framework
+- [ ] Hooks and middleware system
+- [ ] Distribution as a PyPI package
+- [ ] Multi-module automatic testing
 
-## 🎮 Ejercicios Prácticos
+## 🎮 Practical Exercises
 
 ### 📁 [Exercises](./Exercises/README.md)
-- **Exercise 1**: 🧮 Sistema de Calculadora Modular
-- **Exercise 2**: 🎮 Motor de Juegos con Arquitectura Modular
-- **Exercise 3**: 🏪 Sistema de E-commerce Multi-módulo
-- **Exercise 4**: 🔌 Framework de Plugins Dinámicos
+- **Exercise 1**: 🧮 Modular Calculator System
+- **Exercise 2**: 🎮 Game Engine with Modular Architecture
+- **Exercise 3**: 🏪 Multi-module E-commerce System
+- **Exercise 4**: 🔌 Dynamic Plugin Framework
 
 ### 🏆 [Daily Challenge](./DailyChallenge/README.md)
-**🏗️ Sistema de Gestión de Biblioteca Digital**
-- Arquitectura modular completa
-- Múltiples tipos de recursos (libros, revistas, multimedia)
-- Sistema de préstamos y reservas
-- Gestión de usuarios y permisos
+**🏗️ Digital Library Management System**
+- Complete modular architecture
+- Multiple resource types (books, magazines, multimedia)
+- Loan and reservation system
+- User and permissions management
 
-## 📚 Herramientas y Mejores Prácticas
+## 📚 Tools and Best Practices
 
-### 🛠️ Herramientas de Desarrollo
+### 🛠️ Development Tools
 
-#### 📦 Gestión de Dependencias
+#### 📦 Dependency Management
 ```python
 # requirements.txt
 requests>=2.25.0
@@ -612,7 +612,7 @@ import unittest
 import sys
 import os
 
-# Añadir el directorio padre al path para importar módulos
+# Add parent directory to path to import modules
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from math_utils import Calculator, fibonacci
@@ -645,9 +645,9 @@ if __name__ == '__main__':
     unittest.main()
 ```
 
-### 📖 Documentación Automática
+### 📖 Automatic Documentation
 
-#### 🔧 Configuración Sphinx
+#### 🔧 Sphinx Setup
 ```python
 # docs/conf.py
 import os
@@ -670,130 +670,130 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
 
-# Napoleon settings para Google/NumPy docstrings
+# Napoleon settings for Google/NumPy docstrings
 napoleon_google_docstring = True
 napoleon_numpy_docstring = True
 napoleon_include_init_with_doc = False
 napoleon_include_private_with_doc = False
 ```
 
-## ✅ Checklist de Progreso
+## ✅ Progress Checklist
 
-### 🎯 Objetivos Completados
-- [ ] Comprendo la diferencia entre módulos y paquetes
-- [ ] Puedo estructurar proyectos grandes con múltiples módulos
-- [ ] Sé configurar `__init__.py` efectivamente
-- [ ] Manejo importaciones relativas y absolutas
-- [ ] Implemento patrones de diseño usando módulos
-- [ ] Documento código siguiendo estándares PEP
+### 🎯 Completed Objectives
+- [ ] I understand the difference between modules and packages
+- [ ] I can structure large projects with multiple modules
+- [ ] I know how to configure `__init__.py` effectively
+- [ ] I handle relative and absolute imports
+- [ ] I implement design patterns using modules
+- [ ] I document code following PEP standards
 
-### 🛠️ Habilidades Técnicas
-- [ ] Creación de paquetes distribuibles
-- [ ] Gestión de dependencias con requirements.txt
-- [ ] Testing multi-módulo con unittest/pytest
-- [ ] Documentación automática con Sphinx
-- [ ] Manejo de namespace packages
-- [ ] Implementación de plugins dinámicos
+### 🛠️ Technical Skills
+- [ ] Creating distributable packages
+- [ ] Dependency management with requirements.txt
+- [ ] Multi-module testing with unittest/pytest
+- [ ] Automatic documentation with Sphinx
+- [ ] Handling namespace packages
+- [ ] Implementing dynamic plugins
 
-### 🎨 Proyecto del Día
-- [ ] Arquitectura modular bien diseñada
-- [ ] Separación clara de responsabilidades
-- [ ] APIs bien documentadas
-- [ ] Tests comprehensivos
-- [ ] Distribución como paquete
+### 🎨 Day Project
+- [ ] Well-designed modular architecture
+- [ ] Clear separation of responsibilities
+- [ ] Well-documented APIs
+- [ ] Comprehensive tests
+- [ ] Distribution as a package
 
-## 🔍 Conceptos para Investigar
+## 🔍 Concepts to Research
 
-### 🤔 Preguntas de Reflexión
-1. **¿Cuándo crear un módulo vs un paquete?**
-2. **¿Cómo manejar dependencias circulares?**
-3. **¿Qué es el namespace pollution y cómo evitarlo?**
-4. **¿Cuándo usar importaciones relativas vs absolutas?**
+### 🤔 Reflection Questions
+1. **When to create a module vs a package?**
+2. **How to handle circular dependencies?**
+3. **What is namespace pollution and how to avoid it?**
+4. **When to use relative vs absolute imports?**
 
-### 🔬 Experimentos
-- Comparar rendimiento de diferentes estrategias de importación
-- Analizar el module search path de Python
-- Implementar diferentes patrones de singleton en módulos
-- Crear sistema de configuration management
+### 🔬 Experiments
+- Compare performance of different import strategies
+- Analyze Python's module search path
+- Implement different singleton patterns in modules
+- Create a configuration management system
 
-## 🚀 Preparación para Mañana
+## 🚀 Preparation for Tomorrow
 
-### 📖 Lecturas Recomendadas
-- File I/O y manejo de archivos
-- JSON y serialización de datos
-- APIs REST y requests
-- Manejo de errores y excepciones
+### 📖 Recommended Readings
+- File I/O and file handling
+- JSON and data serialization
+- REST APIs and requests
+- Error and exception handling
 
-### 🎯 Próximos Temas
+### 🎯 Next Topics
 - **Day 4**: 📄 Python File I/O, JSON and API
-- Lectura y escritura de archivos
-- Procesamiento de JSON
-- Consumo de APIs REST
-- Manejo de datos externos
+- Reading and writing files
+- Processing JSON
+- Consuming REST APIs
+- Handling external data
 
 ## 🆘 Troubleshooting
 
-### ❌ Errores Comunes
+### ❌ Common Errors
 1. **ModuleNotFoundError**
-   ```python
-   # ❌ Problema
-   # Archivo no en el path o nombre incorrecto
+    ```python
+    # ❌ Problem
+    # File not in path or incorrect name
    
-   # ✅ Solución
-   import sys
-   sys.path.append('/path/to/module')
-   # O usar PYTHONPATH
-   ```
+    # ✅ Solution
+    import sys
+    sys.path.append('/path/to/module')
+    # Or use PYTHONPATH
+    ```
 
 2. **Circular imports**
-   ```python
-   # ❌ Problema
-   # module_a.py imports module_b
-   # module_b.py imports module_a
+    ```python
+    # ❌ Problem
+    # module_a.py imports module_b
+    # module_b.py imports module_a
    
-   # ✅ Solución
-   # Importar dentro de funciones o usar importlib
-   def get_dependency():
-       from . import module_b
-       return module_b.function()
-   ```
+    # ✅ Solution
+    # Import inside functions or use importlib
+    def get_dependency():
+         from . import module_b
+         return module_b.function()
+    ```
 
-3. **__init__.py mal configurado**
-   ```python
-   # ❌ Problema
-   # __init__.py vacío o mal estructurado
+3. **Misconfigured __init__.py**
+    ```python
+    # ❌ Problem
+    # Empty or poorly structured __init__.py
    
-   # ✅ Solución
-   from .module import Class
-   __all__ = ['Class']
-   ```
+    # ✅ Solution
+    from .module import Class
+    __all__ = ['Class']
+    ```
 
-### 🔧 Tips de Debugging
-- Usar `python -m module` para ejecutar módulos
-- `__file__` y `__name__` para debugging de paths
-- `importlib.reload()` para recargar módulos durante desarrollo
-- `sys.modules` para ver módulos cargados
+### 🔧 Debugging Tips
+- Use `python -m module` to run modules
+- `__file__` and `__name__` for path debugging
+- `importlib.reload()` to reload modules during development
+- `sys.modules` to see loaded modules
 
-## 📚 Recursos Adicionales
+## 📚 Additional Resources
 
-### 🎥 Videos Recomendados
+### 🎥 Recommended Videos
 - "Python Modules and Packages"
 - "Advanced Python Module Systems"
 - "Building Distributable Python Packages"
 
-### 📖 Documentación
+### 📖 Documentation
 - [Python Module Tutorial](https://docs.python.org/3/tutorial/modules.html)
 - [Python Packaging User Guide](https://packaging.python.org/)
 - [PEP 8 Style Guide](https://www.python.org/dev/peps/pep-0008/)
 
-### 🛠️ Herramientas
-- **setuptools**: Para crear paquetes distribuibles
-- **pip**: Gestión de paquetes
-- **virtualenv**: Entornos virtuales
-- **sphinx**: Documentación automática
+### 🛠️ Tools
+- **setuptools**: For creating distributable packages
+- **pip**: Package management
+- **virtualenv**: Virtual environments
+- **sphinx**: Automatic documentation
 
 ---
 
-**💡 Recuerda**: Un código bien organizado en módulos es más fácil de mantener, testear y escalar. Piensa en la separación de responsabilidades.
+**💡 Remember**: Well-organized code in modules is easier to maintain, test, and scale. Think about separation of responsibilities.
 
-**🎯 Meta del día**: Crear un sistema modular que demuestre organización profesional de código y mejores prácticas de desarrollo.
+**🎯 Goal of the day**: Build a modular system that demonstrates professional code organization and best development practices.

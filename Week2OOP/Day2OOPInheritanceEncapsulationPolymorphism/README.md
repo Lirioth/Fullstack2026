@@ -1,20 +1,20 @@
 # 🏗️ Day 2 - OOP: Inheritance, Encapsulation, Polymorphism
 
-## 🎯 Objetivos de Aprendizaje
+## 🎯 Learning Objectives
 
-Al finalizar este día, podrás:
-- 👨‍👩‍👧‍👦 **Implementar herencia** entre clases de manera efectiva
-- 🔒 **Aplicar encapsulación** para proteger datos y métodos
-- 🎭 **Utilizar polimorfismo** para crear código flexible y reutilizable
-- 🏛️ **Diseñar jerarquías** de clases bien estructuradas
-- 🔧 **Sobrescribir métodos** y utilizar `super()`
-- 🎨 **Crear interfaces** consistentes a través del polimorfismo
+By the end of this day, you will be able to:
+- 👨‍👩‍👧‍👦 **Implement inheritance** between classes effectively
+- 🔒 **Apply encapsulation** to protect data and methods
+- 🎭 **Use polymorphism** to create flexible and reusable code
+- 🏛️ **Design well-structured class hierarchies**
+- 🔧 **Override methods** and use `super()`
+- 🎨 **Create consistent interfaces** through polymorphism
 
-## 📚 Conceptos Clave
+## 📚 Key Concepts
 
-### 👨‍👩‍👧‍👦 Herencia (Inheritance)
+### 👨‍👩‍👧‍👦 Inheritance
 ```python
-# Clase padre (superclase)
+# Parent class (superclass)
 class Animal:
     def __init__(self, name, species):
         self.name = name
@@ -26,35 +26,35 @@ class Animal:
     def info(self):
         return f"{self.name} is a {self.species}"
 
-# Clase hija (subclase)
+# Child class (subclass)
 class Dog(Animal):
     def __init__(self, name, breed):
         super().__init__(name, "Dog")
         self.breed = breed
     
-    def make_sound(self):  # Método sobrescrito
+    def make_sound(self):  # Overridden method
         return "Woof!"
     
-    def fetch(self):  # Método específico
+    def fetch(self):  # Specific method
         return f"{self.name} is fetching the ball!"
 ```
 
-### 🔒 Encapsulación (Encapsulation)
+### 🔒 Encapsulation
 ```python
 class BankAccount:
     def __init__(self, owner, initial_balance=0):
-        self.owner = owner  # Público
-        self._account_number = self._generate_account()  # Protegido
-        self.__balance = initial_balance  # Privado
+        self.owner = owner  # Public
+        self._account_number = self._generate_account()  # Protected
+        self.__balance = initial_balance  # Private
     
-    def _generate_account(self):  # Método protegido
+    def _generate_account(self):  # Protected method
         import random
         return f"ACC{random.randint(100000, 999999)}"
     
-    def __validate_amount(self, amount):  # Método privado
+    def __validate_amount(self, amount):  # Private method
         return amount > 0
     
-    def deposit(self, amount):  # Método público
+    def deposit(self, amount):  # Public method
         if self.__validate_amount(amount):
             self.__balance += amount
             return True
@@ -68,9 +68,9 @@ class BankAccount:
         return self.__balance
 ```
 
-### 🎭 Polimorfismo (Polymorphism)
+### 🎭 Polymorphism
 ```python
-# Diferentes clases con la misma interfaz
+# Different classes with the same interface
 class Shape:
     def area(self):
         raise NotImplementedError("Subclass must implement")
@@ -101,19 +101,19 @@ class Circle(Shape):
         import math
         return 2 * math.pi * self.radius
 
-# Polimorfismo en acción
+# Polymorphism in action
 def print_shape_info(shape):
     print(f"Area: {shape.area():.2f}")
     print(f"Perimeter: {shape.perimeter():.2f}")
 
 shapes = [Rectangle(5, 3), Circle(4)]
 for shape in shapes:
-    print_shape_info(shape)  # Mismo método, diferentes comportamientos
+    print_shape_info(shape)  # Same method, different behaviors
 ```
 
-## 🛠️ Características Avanzadas
+## 🛠️ Advanced Features
 
-### 🔧 Método `super()`
+### 🔧 The `super()` Method
 ```python
 class Vehicle:
     def __init__(self, brand, model, year):
@@ -126,15 +126,15 @@ class Vehicle:
 
 class ElectricCar(Vehicle):
     def __init__(self, brand, model, year, battery_capacity):
-        super().__init__(brand, model, year)  # Llamar al constructor padre
+        super().__init__(brand, model, year)  # Call parent constructor
         self.battery_capacity = battery_capacity
     
     def start_engine(self):
-        base_message = super().start_engine()  # Llamar al método padre
+        base_message = super().start_engine()  # Call parent method
         return f"{base_message} (Electric mode)"
 ```
 
-### 🏛️ Herencia Múltiple
+### 🏛️ Multiple Inheritance
 ```python
 class Flyable:
     def fly(self):
@@ -152,7 +152,7 @@ class Duck(Animal, Flyable, Swimmable):
         return "Quack!"
 ```
 
-### 🎨 Métodos Abstractos
+### 🎨 Abstract Methods
 ```python
 from abc import ABC, abstractmethod
 
@@ -173,149 +173,149 @@ class CreditCardProcessor(PaymentProcessor):
         return len(payment_data.get('card_number', '')) == 16
 ```
 
-## 📋 Actividades del Día
+## 📋 Daily Activities
 
-### 🥉 **Nivel Principiante**
-- [ ] Crear clase base `Vehicle` con clases hijas `Car`, `Motorcycle`, `Bicycle`
-- [ ] Implementar encapsulación en clase `Student` con atributos privados
-- [ ] Practicar sobrescritura de métodos con `__str__` y `__repr__`
+### 🥉 **Beginner Level**
+- [ ] Create a base class `Vehicle` with child classes `Car`, `Motorcycle`, `Bicycle`
+- [ ] Implement encapsulation in a `Student` class with private attributes
+- [ ] Practice method overriding with `__str__` and `__repr__`
 
-### 🥈 **Nivel Intermedio**
-- [ ] Diseñar jerarquía de empleados con diferentes tipos y salarios
-- [ ] Implementar sistema de formas geométricas con polimorfismo
-- [ ] Crear clase `BankAccount` con validaciones y encapsulación completa
+### 🥈 **Intermediate Level**
+- [ ] Design an employee hierarchy with different types and salaries
+- [ ] Implement a geometric shapes system using polymorphism
+- [ ] Create a `BankAccount` class with validations and full encapsulation
 
-### 🥇 **Nivel Avanzado**
-- [ ] Sistema de animales con herencia múltiple y traits
-- [ ] Implementar patrón Strategy usando polimorfismo
-- [ ] Crear sistema de notificaciones con diferentes canales
+### 🥇 **Advanced Level**
+- [ ] Animal system with multiple inheritance and traits
+- [ ] Implement the Strategy pattern using polymorphism
+- [ ] Create a notification system with different channels
 
-### 💪 **Desafío Ninja**
-- [ ] Desarrollar mini-framework OOP para juegos
-- [ ] Sistema de plugins con carga dinámica de clases
-- [ ] Implementar patrón Observer con herencia
+### 💪 **Ninja Challenge**
+- [ ] Develop a mini OOP framework for games
+- [ ] Plugin system with dynamic class loading
+- [ ] Implement the Observer pattern with inheritance
 
-## 🎮 Ejercicios Prácticos
+## 🎮 Practical Exercises
 
 ### 📁 [Exercises](./Exercises/README.md)
-- **Exercise 1**: 🏠 Sistema de Propiedades Inmobiliarias
-- **Exercise 2**: 🎵 Reproductor de Música con Polimorfismo
-- **Exercise 3**: 🏦 Sistema Bancario con Encapsulación
-- **Exercise 4**: 🐾 Zoológico Virtual con Herencia
+- **Exercise 1**: 🏠 Real Estate Property System
+- **Exercise 2**: 🎵 Music Player with Polymorphism
+- **Exercise 3**: 🏦 Banking System with Encapsulation
+- **Exercise 4**: 🐾 Virtual Zoo with Inheritance
 
 ### 🏆 [Daily Challenge](./DailyChallenge/README.md)
-**🏰 Sistema de Gestión de Reino Medieval**
-- Crear jerarquía completa de personajes (Rey, Nobles, Caballeros, Campesinos)
-- Implementar sistema de combate polimórfico
-- Gestión de recursos del reino con encapsulación
+**🏰 Medieval Kingdom Management System**
+- Create a complete character hierarchy (King, Nobles, Knights, Peasants)
+- Implement a polymorphic combat system
+- Manage kingdom resources with encapsulation
 
-## 🔍 Conceptos para Investigar
+## 🔍 Concepts to Research
 
-### 🤔 Preguntas de Reflexión
-1. **¿Cuándo usar herencia vs composición?**
-2. **¿Qué problemas resuelve la encapsulación?**
-3. **¿Cómo mejora el polimorfismo la mantenibilidad del código?**
-4. **¿Cuáles son las desventajas de la herencia múltiple?**
+### 🤔 Reflection Questions
+1. **When to use inheritance vs composition?**
+2. **What problems does encapsulation solve?**
+3. **How does polymorphism improve code maintainability?**
+4. **What are the disadvantages of multiple inheritance?**
 
-### 🔬 Experimentos
-- Comparar rendimiento: herencia vs composición
-- Analizar Method Resolution Order (MRO) en Python
-- Implementar diferentes patrones de diseño con OOP
+### 🔬 Experiments
+- Compare performance: inheritance vs composition
+- Analyze Method Resolution Order (MRO) in Python
+- Implement different design patterns with OOP
 
-## ✅ Checklist de Progreso
+## ✅ Progress Checklist
 
-### 🎯 Objetivos Completados
-- [ ] Comprendo la diferencia entre herencia, encapsulación y polimorfismo
-- [ ] Puedo crear jerarquías de clases efectivas
-- [ ] Sé cuándo y cómo usar `super()`
-- [ ] Implemento encapsulación con atributos privados y protegidos
-- [ ] Aplico polimorfismo para crear código flexible
-- [ ] Entiendo el MRO en herencia múltiple
+### 🎯 Completed Objectives
+- [ ] I understand the difference between inheritance, encapsulation, and polymorphism
+- [ ] I can create effective class hierarchies
+- [ ] I know when and how to use `super()`
+- [ ] I implement encapsulation with private and protected attributes
+- [ ] I apply polymorphism to create flexible code
+- [ ] I understand MRO in multiple inheritance
 
-### 🛠️ Habilidades Técnicas
-- [ ] Sobrescritura de métodos especiales (`__str__`, `__repr__`, etc.)
-- [ ] Uso de properties para getters y setters
-- [ ] Implementación de métodos abstractos
-- [ ] Manejo de herencia múltiple
-- [ ] Aplicación de principios SOLID básicos
+### 🛠️ Technical Skills
+- [ ] Overriding special methods (`__str__`, `__repr__`, etc.)
+- [ ] Using properties for getters and setters
+- [ ] Implementing abstract methods
+- [ ] Handling multiple inheritance
+- [ ] Applying basic SOLID principles
 
-### 🎨 Proyecto del Día
-- [ ] Diseño de arquitectura OOP completa
-- [ ] Implementación de al menos 3 niveles de herencia
-- [ ] Uso efectivo de encapsulación en todos los atributos críticos
-- [ ] Demostración de polimorfismo en múltiples contextos
+### 🎨 Day Project
+- [ ] Design a complete OOP architecture
+- [ ] Implement at least 3 levels of inheritance
+- [ ] Use encapsulation effectively for all critical attributes
+- [ ] Demonstrate polymorphism in multiple contexts
 
-## 🚀 Preparación para Mañana
+## 🚀 Preparation for Tomorrow
 
-### 📖 Lecturas Recomendadas
-- Patrones de diseño en Python
-- Módulos y paquetes de Python
-- Organización de código en proyectos grandes
+### 📖 Recommended Readings
+- Design patterns in Python
+- Python modules and packages
+- Organizing code in large projects
 
-### 🎯 Próximos Temas
-- **Day 3**: 📦 OOP and Modules - Organización y estructura de código
-- Importación de módulos y paquetes
-- Creación de librerías personalizadas
-- Documentación de código y APIs
+### 🎯 Next Topics
+- **Day 3**: 📦 OOP and Modules - Code organization and structure
+- Importing modules and packages
+- Creating custom libraries
+- Code and API documentation
 
 ## 🆘 Troubleshooting
 
-### ❌ Errores Comunes
-1. **AttributeError con herencia**
-   ```python
-   # ❌ Problema
-   class Child(Parent):
-       def __init__(self):
-           self.child_attr = "value"  # Falta super().__init__()
+### ❌ Common Errors
+1. **AttributeError with inheritance**
+    ```python
+    # ❌ Problem
+    class Child(Parent):
+         def __init__(self):
+              self.child_attr = "value"  # Missing super().__init__()
    
-   # ✅ Solución
-   class Child(Parent):
-       def __init__(self):
-           super().__init__()
-           self.child_attr = "value"
-   ```
+    # ✅ Solution
+    class Child(Parent):
+         def __init__(self):
+              super().__init__()
+              self.child_attr = "value"
+    ```
 
-2. **Acceso a atributos privados**
-   ```python
-   # ❌ Problema
-   account.__balance  # AttributeError
+2. **Accessing private attributes**
+    ```python
+    # ❌ Problem
+    account.__balance  # AttributeError
    
-   # ✅ Solución
-   account.get_balance()  # Usar método público
-   ```
+    # ✅ Solution
+    account.get_balance()  # Use public method
+    ```
 
-3. **Herencia múltiple confusa**
-   ```python
-   # ✅ Verificar MRO
-   print(MyClass.__mro__)
-   # ✅ Usar super() consistentemente
-   ```
+3. **Confusing multiple inheritance**
+    ```python
+    # ✅ Check MRO
+    print(MyClass.__mro__)
+    # ✅ Use super() consistently
+    ```
 
-### 🔧 Tips de Debugging
-- Usar `isinstance()` y `issubclass()` para verificar tipos
-- Imprimir `__dict__` para ver atributos de instancia
-- Usar `help()` para documentación de métodos
-- Debugger paso a paso para entender herencia
+### 🔧 Debugging Tips
+- Use `isinstance()` and `issubclass()` to check types
+- Print `__dict__` to see instance attributes
+- Use `help()` for method documentation
+- Step-by-step debugger to understand inheritance
 
-## 📚 Recursos Adicionales
+## 📚 Additional Resources
 
-### 🎥 Videos Recomendados
+### 🎥 Recommended Videos
 - "Python OOP Tutorial: Inheritance, Encapsulation, Polymorphism"
 - "Design Patterns in Python"
 - "Advanced Python OOP Concepts"
 
-### 📖 Documentación
+### 📖 Documentation
 - [Python Class Tutorial](https://docs.python.org/3/tutorial/classes.html)
 - [Python Data Model](https://docs.python.org/3/reference/datamodel.html)
 - [Python ABC Module](https://docs.python.org/3/library/abc.html)
 
-### 🛠️ Herramientas
-- **pylint**: Análisis de código OOP
-- **mypy**: Type checking para clases
-- **pydoc**: Generación de documentación
+### 🛠️ Tools
+- **pylint**: OOP code analysis
+- **mypy**: Type checking for classes
+- **pydoc**: Documentation generation
 
 ---
 
-**💡 Recuerda**: La programación orientada a objetos es sobre modelar el mundo real en código. Piensa en objetos, sus propiedades y cómo interactúan entre sí.
+**💡 Remember**: Object-oriented programming is about modeling the real world in code. Think in terms of objects, their properties, and how they interact.
 
-**🎯 Meta del día**: Crear un sistema completo que demuestre los tres pilares de OOP trabajando juntos armoniosamente.
+**🎯 Goal of the day**: Build a complete system that demonstrates the three pillars of OOP working together harmoniously.
