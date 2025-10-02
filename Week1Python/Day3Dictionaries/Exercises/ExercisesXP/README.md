@@ -1,12 +1,12 @@
-# Python Practice — Dictionaries
+# 🏋️ Python Practice — Dictionaries
 
 Compact notes for four small dictionary exercises. Clear steps and tiny code snippets with comments.
 
-> Run with **Python 3.10+**. No external packages required.
+> ▶️ Run with **Python 3.10+**. No external packages required.
 
 ---
 
-## How to run
+## 🚀 How to run
 
 ```bash
 python3 main.py
@@ -16,9 +16,9 @@ Parts of the script read input (bonus in Exercise 2), the rest just print.
 
 ---
 
-## Exercise 1 — Converting Lists into Dictionaries
+## 1️⃣ Exercise 1 — Converting Lists into Dictionaries
 
-**Goal:** build a dictionary from two parallel lists.
+**🎯 Goal:** build a dictionary from two parallel lists.
 
 ```python
 keys = ['Ten', 'Twenty', 'Thirty']

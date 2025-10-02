@@ -1,12 +1,12 @@
-# Python Practice — Functions, Defaults & Simple Logic (Exercises XP)
+# 🏋️ Python Practice — Functions, Defaults & Simple Logic (Exercises XP)
 
 A compact set of small function exercises: printing messages, default parameters, basic conditionals, list mutation, and random-based branches. Clear and simple with tiny comments.
 
-> Run with **Python 3.10+** (any recent Python 3 works). Uses only the standard library (`random`).
+> ▶️ Run with **Python 3.10+** (any recent Python 3 works). Uses only the standard library (`random`).
 
 ---
 
-## How to run
+## 🚀 How to run
 
 ```bash
 python3 exercisesxp.py
@@ -16,7 +16,7 @@ The script **runs each exercise once** in order and prints to the console.
 
 ---
 
-## What’s inside
+## 📋 What's inside
 
 ### ✅ Exercise 1 — `display_message()`
 **Goal:** define a function and call it.  

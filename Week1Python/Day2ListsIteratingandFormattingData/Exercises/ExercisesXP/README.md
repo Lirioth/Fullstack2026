@@ -1,4 +1,4 @@
-# Exercises XP — Sequence / List / Set / Tuple 
+# 🏋️ ## 📋 What's inside (quick tour)xercises XP — Sequence / List / Set / Tuple 
 
 A small, single-file collection that practices **sets, tuples, lists, loops, and user input**.
 
@@ -6,25 +6,25 @@ A small, single-file collection that practices **sets, tuples, lists, loops, and
 
 ## ✅ What’s inside (quick tour)
 
-### 1) Favorite Numbers — *sets*
+### 1) 💖 Favorite Numbers — *sets*
 - Start with a set, add items, remove the temporary one with `.discard(...)`.
 - Merge with friend’s favorites using `.union(...)` → `our_fav_numbers`.
-- *Reminder:* sets are **unordered** and only keep **unique** elements.
+- *🔍 Reminder:* sets are **unordered** and only keep **unique** elements.
 
-### 2) Tuple — *immutability*
+### 2) 📦 Tuple — *immutability*
 - `t = (1, 2, 3)` then `t = t + (4, 5)`.
 - Tuples **cannot** be changed in place; concatenation returns a **new** tuple.
 
-### 3) List Manipulation
+### 3) 📝 List Manipulation
 - Remove items, append `"Kiwi"`, insert `"Apples"` at index `0`, count `Apples`, then `.clear()`.
 - `.remove(x)` deletes the **first** match; lists keep **order**.
 
-### 4) Floats
+### 4) 🔢 Floats
 - Build values from **1.5** to **5** stepping by **0.5**.
 - If a step is whole (like `2.0`), cast to `int` so it prints `2` instead of `2.0`.
 - Result: `[1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5]`.
 
-### 5) For Loop
+### 5) 🔄 For Loop
 - Print numbers **1..20**.
 - Then, with `enumerate(range(1, 21))`, print numbers where the **index is even** (`0,2,4,...`).  
   👉 Because `0` is the first index, this ends up printing the **odd numbers** `1,3,5,...,19`.
