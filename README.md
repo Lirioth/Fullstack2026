@@ -252,6 +252,11 @@ node dist/week5/day1.js # Run specific compiled file
 - **🔧 Modularity**: Single responsibility principle, reusable functions
 - **🔷 Type Safety**: TypeScript interfaces, Python type hints (future)
 
+### 🚫 Version Control Hygiene
+- **🧼 Clean Commits**: Keep version history focused on source code and learning materials.
+- **📦 Ignore Build Artifacts**: Exclude compiled assets (e.g., `__pycache__/`, `dist/`, `node_modules/`) and local environment files via the project `.gitignore`.
+- **🔁 Regenerate Locally**: Rebuild assets as needed instead of committing generated outputs.
+
 ---
 ## 8. 📊 Assessment & Progress Tracking
 
