@@ -101,23 +101,44 @@ Each week follows a consistent structure:
 - **Day5**: Comprehensive OOP project
 
 ### 🌐 Week3JavaScriptandDOM - Client-Side Development
-**🎯 Objective**: Master DOM manipulation and event-driven programming
+**🎯 Objective**: Master DOM manipulation, browser events, and mini front-end projects
 
-#### 🚧 Planned Content (To Be Implemented)
-- **📅 Day1**: DOM selection, element manipulation
-- **📅 Day2**: Event handling, form processing  
-- **📅 Day3**: Dynamic content generation
-- **📅 Day4**: Local storage, browser APIs
-- **📅 Day5**: Interactive web application project
+#### 📅 Day1 — Introduction to JavaScript
+- **Key skills**: Array iteration, conditionals, prompt validation, object traversal, basic DOM output helpers.
+- **Representative work**: [`ExercisesXP/script.js`](Week3JavaScriptandDOM/Day1IntroductiontoJavaScript/Exercises/ExercisesXP/script.js) implements seven warm-up challenges plus reusable logging utilities; daily challenges explore string manipulation patterns.
+
+#### 📅 Day2 — Functions & DOM Foundations
+- **Key skills**: Function decomposition, higher-order utilities, control flow with prompts, and introductory DOM querying/styling.
+- **Representative work**: [`ExercisesXP/script.js`](Week3JavaScriptandDOM/Day2FunctionsandDOMIntroduction/Exercises/ExercisesXP/script.js) refactors billing calculators, travel estimators, and multi-step DOM edits (class toggling, element creation, alert-driven interactions). The [`DailyChallengePlanets`](Week3JavaScriptandDOM/Day2FunctionsandDOMIntroduction/DailyChallenge/DailyChallengePlanets/) folder reinforces dynamic element creation.
+
+#### 📅 Day3 — DOM Events & Animations
+- **Key skills**: Event listeners, hover/scroll effects, form handling with `preventDefault`, incremental animations via timers.
+- **Representative work**: The [`ExercisesXP`](Week3JavaScriptandDOM/Day3LearningDOMEvents/Exercises/ExercisesXP/) bundle wires click/hover handlers, bold text toggles, and form submissions, while [`ExercisesXPAnimations`](Week3JavaScriptandDOM/Day3LearningDOMEvents/Exercises/ExercisesXPAnimations/) showcases timed alerts and box-movement logic. The [`TellTheStory`](Week3JavaScriptandDOM/Day3LearningDOMEvents/DailyChallenge/TellTheStory/) challenge applies template-driven storytelling to DOM nodes.
+
+#### 📅 Day4 — Advanced JavaScript Functions
+- **Key skills**: Scope tracing, arrow/IIFE patterns, template strings, DOM updates from modular functions.
+- **Representative work**: [`ExercisesXP`](Week3JavaScriptandDOM/Day4AdvancedJavaScriptFunctions/Exercises/ExercisesXP/) summarises scope predictions, ternary decisions, and nested “Juice Bar” closures directly in the DOM; the [`Groceries` daily challenge](Week3JavaScriptandDOM/Day4AdvancedJavaScriptFunctions/DailyChallenge/Groceries/) adds data-driven list rendering.
+
+#### 📅 Day5 — Mini Project: Coloring Game
+- **Key skills**: Stateful UI management, grid generation, mouse-driven drawing, responsive CSS grid layouts.
+- **Representative work**: [`MiniProjectColoringGame`](Week3JavaScriptandDOM/Day5MiniProject/MiniProjectColoringGame/) delivers a paint-board experience with palette shortcuts, brush-size switching, and drag-to-draw interactions.
+
+#### 🔜 Upcoming enhancements
+- Expand Day2 content with form validation best practices and accessibility notes.
+- Add Day5 stretch goals (e.g., export/import of drawings, mobile touch support).
+- Document cross-day integration ideas (tying prompts, DOM events, and mini projects together).
 
 ### ⚡ Week4AdvAsynchronousJavaScript - Modern JS Patterns
 **🎯 Objective**: Handle asynchronous operations and API integration
 
-#### 🏗️ Current Structure
-- **📅 Day1**: Promises, async/await fundamentals
-- **📅 Day3**: HTTP methods, form handling (GET/POST)
-- **📅 Day4**: Advanced async patterns
-- **📅 Day5**: Full async application
+#### 📦 Current implementation
+- **📅 Day3**: [`HTTPandFormmethodGETandPOST`](Week4AdvAsynchronousJavascript/Day3HTTPandFormmethodGETandPOST/) focuses on using `fetch`, query-string parsing, and form submissions against remote APIs.
+- **📅 Day4**: [`Day4`](Week4AdvAsynchronousJavascript/Day4/) introduces promise utilities, chaining patterns, and async/await refactors through the daily challenge and XP exercises.
+
+#### 🔜 Upcoming enhancements
+- Build Day1 and Day2 primers that bridge Week3 event handling with asynchronous workflows.
+- Add a consolidated Day5 project demonstrating real-world API orchestration and error handling dashboards.
+- Supplement existing days with automated testing examples once the tooling is in place.
 
 ### 🔷 Week5 - TypeScript Introduction
 **🎯 Objective**: Add type safety and modern tooling to JavaScript development
@@ -328,7 +349,7 @@ After each week, verify:
 ## 11. 🚀 Future Enhancements
 
 ### 📅 Short-term (Next 4 weeks)
-- [ ] 🌐 Complete Week3 DOM exercises and examples
+- [ ] 🌐 Publish Week3 DOM integration guide and additional capstone scenarios
 - [ ] ✅ Add ESLint + Prettier configuration
 - [ ] 🧪 Implement basic testing framework (pytest + vitest)
 - [ ] 🔗 Create Week6 backend integration content
