@@ -1,4 +1,6 @@
-# Exercises XP Ninja — Python Notes
+# 🥇 Exercises XP Ninj## 📋 What's inside
+
+### 1️⃣ Exercise 1 — Formula Python Notes
 
 A tiny collection of Python practice exercises I wrote to train basics like input/output, lists, loops, strings, and simple math. The code stays simple on purpose and uses only the standard library (`math`, `collections`).
 
@@ -6,7 +8,7 @@ A tiny collection of Python practice exercises I wrote to train basics like inpu
 
 ---
 
-## How to run
+## 🚀 How to run
 
 ```bash
 python3 main.py

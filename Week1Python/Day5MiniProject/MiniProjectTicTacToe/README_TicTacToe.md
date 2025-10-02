@@ -1,22 +1,22 @@
-# Mini-Project — Tic Tac Toe (CLI)
+# 🎮 Mini-Project — Tic Tac Toe (CLI)
 
 A tiny 2‑player Tic Tac Toe you can run in the terminal. Simple, readable, and fully commented in English.
 
-## How to run
+## 🚀 How to run
 ```bash
 python3 tic_tac_toe.py
 ```
 
-## How to play
-- The board is 3×3. Player **X** starts, then **O**.
+## 🎯 How to play
+- The board is 3×3. Player **❌ X** starts, then **⭕ O**.
 - On your turn, type **row** and **col** (numbers 1..3). Example: `2 3`
-- A move is valid only if it’s inside the grid and the cell is empty.
-- First player with 3 in a row (row, column, or diagonal) **wins**.
-- If the board fills up with no winner, it’s a **tie**.
+- A move is valid only if it's inside the grid and the cell is empty.
+- First player with 3 in a row (row, column, or diagonal) **🏆 wins**.
+- If the board fills up with no winner, it's a **🤝 tie**.
 
-## Files
+## 📁 Files
 - `tic_tac_toe.py` — complete game implementation.
-- Functions:
+- **⚙️ Functions:**
   - `new_board()` — create an empty board.
   - `display_board(board)` — print the board.
   - `player_input(board, player)` — read/validate a move.

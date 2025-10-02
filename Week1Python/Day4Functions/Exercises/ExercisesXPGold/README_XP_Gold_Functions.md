@@ -1,24 +1,24 @@
-# XP Gold — Functions (Short & Simple)
+# 🥈 XP Gold — Functions (Short & Simple)
 
 This repo contains a tiny Python script solving **three function-based exercises**:
 
-1) **When will I retire?**  
+1) **⏰ When will I retire?**  
    - Hard-coded today: **2025-09-16** (as the exercise requests).  
    - `get_age(year, month, day)` returns whole years.  
-   - `can_retire(gender, dob)` returns **True** if: men **67+**, women **62+**.  
+   - `can_retire(gender, dob)` returns **✅ True** if: men **67+**, women **62+**.  
    - Input format for DOB: `yyyy/mm/dd`.
 
-2) **Sum: X + XX + XXX + XXXX**  
+2) **🧮 Sum: X + XX + XXX + XXXX**  
    - `series_sum(x)` uses string repetition for clarity.
 
-3) **Double Dice**  
+3) **🎲 Double Dice**  
    - `throw_dice()` returns 1..6.  
    - `throw_until_doubles()` counts throws until both dice match.  
    - `main()` repeats **100** doubles → prints **Total** and **Average** (2 decimals).
 
 ---
 
-## How to run
+## 🚀 How to run
 
 ```bash
 python3 xp_gold_functions.py

@@ -1,32 +1,32 @@
-# Exercises XP Ninja
+# 🥇 Exercises XP Ninja
 
 A single Python script with five quick exercises.
 
-## ✅ What’s inside
+## 📋 What's inside
 
-### Exercise 1 — Use the terminal (short notes)
+### 1️⃣ Exercise 1 — Use the terminal (short notes)
 - Prints tiny notes about running Python from the terminal: `python3` and the **PATH** concept.
-- **PATH** = list of folders your OS searches for programs. If Python is in PATH, you can run `python3` anywhere.
+- **🛤️ PATH** = list of folders your OS searches for programs. If Python is in PATH, you can run `python3` anywhere.
 
-### Exercise 2 — Alias (short notes)
-- On **Windows**, `py` is the official Python **launcher** (it chooses the right Python version).
-- On **Linux/macOS**, you can create a shell alias like `alias py='python3'` in your shell config.
+### 2️⃣ Exercise 2 — Alias (short notes)
+- On **🪟 Windows**, `py` is the official Python **launcher** (it chooses the right Python version).
+- On **🐧 Linux/macOS**, you can create a shell alias like `alias py='python3'` in your shell config.
 
-### Exercise 3 — Outputs (predict and show)
+### 3️⃣ Exercise 3 — Outputs (predict and show)
 The script prints and demonstrates:
-- `3 <= 3 < 9` → **True** (chained comparisons)
-- `3 == 3 == 3` → **True** (all equal)
-- `bool(0)` → **False** (`0` is falsy)
-- `bool(5 == "5")` → **False** (`5 == "5"` is `False` → `bool(False)` → `False`)
-- `bool(4 == 4) == bool("4" == "4")` → **True** (`True == True`)
-- `bool(bool(None))` → **False** (`None` is falsy, so `bool(None)` is `False`)
+- `3 <= 3 < 9` → **✅ True** (chained comparisons)
+- `3 == 3 == 3` → **✅ True** (all equal)
+- `bool(0)` → **❌ False** (`0` is falsy)
+- `bool(5 == "5")` → **❌ False** (`5 == "5"` is `False` → `bool(False)` → `False`)
+- `bool(4 == 4) == bool("4" == "4")` → **✅ True** (`True == True`)
+- `bool(bool(None))` → **❌ False** (`None` is falsy, so `bool(None)` is `False`)
 
 And some boolean ↔ integer tricks:
-- `x = (1 == True)` → **True**; `y = (1 == False)` → **False**
-- `a = True + 4` → **5** (because `True` behaves like `1`)
-- `b = False + 10` → **10** (because `False` behaves like `0`)
+- `x = (1 == True)` → **✅ True**; `y = (1 == False)` → **❌ False**
+- `a = True + 4` → **5️⃣** (because `True` behaves like `1`)
+- `b = False + 10` → **🔟** (because `False` behaves like `0`)
 
-### Exercise 4 — How many characters?
+### 4️⃣ Exercise 4 — How many characters?
 - Uses a triple-quoted string with multiple lines and prints its length.
 - With the provided text **exactly as written**, `len(my_text)` is **452** (newlines and spaces count!).
 

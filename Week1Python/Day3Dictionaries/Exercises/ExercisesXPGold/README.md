@@ -1,27 +1,27 @@
-# Python Practice — Birthdays & Fruit Shop
+# 🥈 Python Practice — Birthdays & Fruit Shop
 
 Two tiny console exercises: a birthday lookup (with optional insert) and a fruit shop inventory cost calculator. Code is kept simple with small comments.
 
-> Run with **Python 3.10+**. No extra packages required.
+> ▶️ Run with **Python 3.10+**. No extra packages required.
 
 ---
 
-## How to run
+## 🚀 How to run
 
 ```bash
 python3 main.py
 ```
 Replace `main.py` with your filename if different.
 
-This script **asks for input** a few times in the Birthdays section (adding a contact and doing a lookup). The Fruit Shop section just prints results.
+This script **📝 asks for input** a few times in the Birthdays section (adding a contact and doing a lookup). The Fruit Shop section just prints results.
 
 ---
 
-## Exercise 1–3 — Birthdays
+## 🎂 Exercise 1–3 — Birthdays
 
-**Goal:** store some birthdays, optionally add a new person, show the names list, and look up one birthday.
+**🎯 Goal:** store some birthdays, optionally add a new person, show the names list, and look up one birthday.
 
-**Data shape:**
+**📊 Data shape:**
 ```python
 birthdays = {
     "Alice": "1995/06/12",

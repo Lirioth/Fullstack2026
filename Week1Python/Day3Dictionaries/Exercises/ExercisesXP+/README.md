@@ -1,12 +1,12 @@
-# Python Practice — Student Grade Summary & Sales Data Analysis
+# 📈 Python Practice — Student Grade Summary & Sales Data Analysis
 
 Two small exercises: one for computing grade summaries and letter grades, and one for basic data analysis over a list of sales transactions. The code stays clean with tiny comments.
 
-> Run with **Python 3.10+**. No external packages needed.
+> ▶️ Run with **Python 3.10+**. No external packages needed.
 
 ---
 
-## How to run
+## 🚀 How to run
 
 ```bash
 python3 main.py
@@ -15,14 +15,14 @@ Replace `main.py` with your filename if different.
 
 ---
 
-## Exercise 1 — Student Grade Summary
+## 📚 Exercise 1 — Student Grade Summary
 
-**Goal:** for each student, compute the **average** and assign a **letter grade**. Also compute the **class average**.
+**🎯 Goal:** for each student, compute the **average** and assign a **letter grade**. Also compute the **class average**.
 
-**Letter rule:**  
-- `avg >= 90 → "A"`  
-- `avg >= 80 → "B"`  
-- `avg >= 70 → "C"`  
+**📊 Letter rule:**  
+- `avg >= 90 → "🅰️ A"`  
+- `avg >= 80 → "🅱️ B"`  
+- `avg >= 70 → "🇨 C"`  
 - `avg >= 60 → "D"`  
 - otherwise `"F"`
 

@@ -1,25 +1,25 @@
-# Daily Challenge — Challenges (Sorting & Longest Word)
+# 💪 Daily Challenge — Challenges (Sorting & Longest Word)
 
-Short Python solutions for two small problems: **alphabetical sorting** of a comma-separated string and **finding the longest word** in a sentence.
+Short Python solutions for two small problems: **🔤 alphabetical sorting** of a comma-separated string and **📏 finding the longest word** in a sentence.
 
 ---
 
-## Files
+## 📁 Files
 - `challenges.py` — solutions for both challenges.
 
-## How to run
+## 🚀 How to run
 ```bash
 python3 challenges.py
 ```
-- **Challenge 1** will prompt you for a comma-separated list of words.
-- **Challenge 2** prints sample calls to `longest_word(...)` (you can replace them with your own tests).
+- **1️⃣ Challenge 1** will prompt you for a comma-separated list of words.
+- **2️⃣ Challenge 2** prints sample calls to `longest_word(...)` (you can replace them with your own tests).
 
 ---
 
-## Challenge 1 — Sorting (comma-separated words)
-**Goal:** read a single comma-separated string, sort words alphabetically, and print them back joined by commas.
+## 1️⃣ Challenge 1 — Sorting (comma-separated words)
+**🎯 Goal:** read a single comma-separated string, sort words alphabetically, and print them back joined by commas.
 
-**Approach:**
+**🔧 Approach:**
 1. `input()` to read the string.
 2. `split(",")` to get raw parts.
 3. `strip()` each part and ignore empty items.

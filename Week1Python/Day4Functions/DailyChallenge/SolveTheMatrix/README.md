@@ -1,13 +1,13 @@
-# Solve The Matrix — Column‑Wise Decoder (Python)
+# 💪 Solve The Matrix — Column‑Wise Decoder (Python)
 
 A tiny script that reads a block of text **column by column** and reconstructs a clean English sentence by:
-1) concatenating all **letters** in reading order, and  
+1) concatenating all **🔤 letters** in reading order, and  
 2) replacing any **run of non‑letters** (digits, punctuation, spaces) that appears *between* letters with a **single space**.  
 Leading and trailing non‑letters are ignored.
 
 ---
 
-## What it does (at a glance)
+## 🔍 What it does (at a glance)
 
 Given this matrix (rows can be jagged in length):
 
@@ -21,7 +21,7 @@ $a
 #t%
 ```
 
-The script first reads it **column‑wise** (top → bottom, left → right), then cleans it, and finally prints:
+The script first reads it **🔽 column‑wise** (top → bottom, left → right), then cleans it, and finally prints:
 
 ```
 This is Matrix

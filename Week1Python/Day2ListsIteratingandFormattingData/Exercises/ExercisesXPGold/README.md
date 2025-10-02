@@ -1,32 +1,32 @@
-# Exercises XP Gold
+# 🥈 Exercises XP Gold
 
 A compact set of nine small exercises. 
 
 ---
 
-## ✅ What’s inside (quick tour)
+## 📋 What's inside (quick tour)
 
-### 1) Concatenate lists (without `+`)
+### 1️⃣ Concatenate lists (without `+`)
 - Make a **copy** with `list(a)` and **extend** it with `c.extend(b)`.
 - This avoids using `a + b` and shows how `extend` mutates the list (shallow copy here, which is fine for numbers).
 
-### 2) Range of numbers (multiples of 5 and 7)
+### 2️⃣ Range of numbers (multiples of 5 and 7)
 - Loops from **1500 to 2500 inclusive** and prints numbers divisible by **both** 5 and 7 (i.e., by **35**).
 
-### 3) Check the index
+### 3️⃣ Check the index
 - Given a list of names (with duplicates), asks the user for a name.
-- Prints the **first index** using `.index(...)` if found, else prints “name not found”.
+- Prints the **first index** using `.index(...)` if found, else prints "name not found".
 
-### 4) Greatest Number
+### 4️⃣ Greatest Number
 - Reads three integers and prints the maximum using `max(x, y, z)`.
 
-### 5) The Alphabet (vowel or consonant)
-- Iterates the alphabet; if the letter is in `aeiou`, prints “vowel”, otherwise “consonant”.
+### 5️⃣ The Alphabet (vowel or consonant)
+- Iterates the alphabet; if the letter is in `aeiou`, prints "vowel", otherwise "consonant".
 - (Here, **`y`** is treated as a consonant; you can change that if you wish.)
 
-### 6) Words and letters
+### 6️⃣ Words and letters
 - Collects **7 words** and then asks for **1 character** (only first char is used).
-- For each word, prints the **index** of the first occurrence (`.find`), or a “not found” message.
+- For each word, prints the **index** of the first occurrence (`.find`), or a "not found" message.
 
 ### 7) Min, Max, Sum
 - Builds a list of `1..1_000_000` and prints its min, max, and sum.
