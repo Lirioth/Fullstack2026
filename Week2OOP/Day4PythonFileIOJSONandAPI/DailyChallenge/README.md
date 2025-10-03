@@ -1,62 +1,55 @@
-# 🌍 Daily Challenge - Sistema de Monitoreo Climático Global
+# 🌍 Daily Challenge – Climate Monitoring Concept
 
-## 🎯 Descripción del Desafío
+## 🚧 Current Status
 
-Desarrolla un sistema completo que integre datos meteorológicos de múltiples fuentes (APIs y archivos históricos) para monitoreo, análisis y alertas climáticas.
-
----
-
-## 🏗️ Arquitectura Sugerida
-
-- **Módulo de Ingesta**: Lee datos históricos desde CSV y consume APIs meteorológicas públicas (ej: OpenWeatherMap, WeatherAPI).
-- **Procesador de Datos**: Limpia, valida y transforma los datos (unifica formatos, corrige valores atípicos).
-- **Almacenamiento**: Guarda los datos procesados en archivos JSON estructurados.
-- **Sistema de Alertas**: Detecta condiciones extremas (ej: temperaturas fuera de rango, lluvias intensas) y genera alertas.
-- **Dashboard/Reporte**: Genera reportes diarios/semanales en texto o JSON.
+This directory does **not** include an implemented climate-monitoring system. The outline below documents the original challenge idea for future reference.
 
 ---
 
-## 📋 Requisitos Técnicos
+## 🧠 Challenge Overview
 
-- Leer archivos CSV históricos de clima (mínimo 1 año de datos)
-- Consumir al menos 1 API meteorológica y combinar los datos con los históricos
-- Validar y transformar los datos (fechas, unidades, valores nulos)
-- Detectar eventos extremos y registrar alertas en un archivo
-- Exportar reportes diarios/semanales en JSON
-- Manejar errores de red, formato y datos faltantes
-- Documentar el flujo de datos y decisiones tomadas
+Design a modular climate-monitoring pipeline capable of ingesting historical CSV data and live weather APIs, validating and transforming records, persisting the cleaned dataset, and raising alerts for extreme events.
 
 ---
 
-## 📝 Sugerencia de Estructura de Archivos
-```
+## 🗂️ Suggested Structure
+
+```text
 DailyChallenge/
 ├── data/
-│   ├── historical_weather.csv
-│   └── processed_weather.json
+│   ├── historical_weather.csv        # Placeholder – create when you start building the solution 🌦️
+│   └── processed_weather.json        # Placeholder output file
 ├── alerts/
-│   └── alerts_log.txt
+│   └── alerts_log.txt                # Placeholder log file
 ├── src/
-│   ├── ingest.py
+│   ├── ingest.py                     # Placeholder module entrypoints
 │   ├── processor.py
 │   ├── storage.py
 │   ├── alert_system.py
 │   └── report.py
-├── main.py
+├── main.py                           # Placeholder orchestrator
 └── README.md
 ```
 
----
-
-## 🏆 Criterios de Éxito
-- [ ] Integración real de datos de al menos 2 fuentes
-- [ ] Validación y limpieza robusta de datos
-- [ ] Generación de alertas automáticas
-- [ ] Reportes claros y útiles
-- [ ] Código modular y documentado
+Create the files when you are ready to implement the pipeline.
 
 ---
 
-**💡 Consejo**: Prioriza la validación y el manejo de errores. Documenta cada paso del pipeline y justifica tus decisiones de diseño.
+## ✅ Success Criteria (When Implemented)
 
-**🎯 Meta**: Demostrar dominio en integración de datos externos, manejo de archivos y APIs, y generación de reportes útiles para usuarios reales.
+- Combine at least one historical CSV dataset with live API data.
+- Validate and normalize fields (dates, units, missing values).
+- Persist cleaned data and alert logs to disk.
+- Generate readable daily or weekly reports.
+- Handle API and I/O errors gracefully with clear logging.
+
+---
+
+## 📝 Next Steps
+
+1. Gather sample weather data and choose a public API (e.g., OpenWeatherMap).
+2. Define the schema for processed records and alerts.
+3. Implement modules iteratively, starting with ingestion and validation.
+4. Add unit tests and documentation as functionality grows.
+
+This README will be updated once a working implementation is added. 🌤️
