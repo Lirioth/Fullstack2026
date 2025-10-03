@@ -46,17 +46,17 @@ A compact set of nine small exercises.
 ## ▶️ How to run
 
 ### Option A — Double click (if `.py` is associated to Python on your OS)
-- Save as `exercises_xp_gold.py` and double click.
+- Save as `exercisesxpgold.py` and double click.
 
 ### Option B — Terminal / Command Prompt
 ```bash
 # macOS / Linux
-python3 exercises_xp_gold.py
+python3 exercisesxpgold.py
 
 # Windows
-python exercises_xp_gold.py
+python exercisesxpgold.py
 # or
-py exercises_xp_gold.py
+py exercisesxpgold.py
 ```
 
 You’ll be prompted for input in several exercises (3–4, 6, 8–9).

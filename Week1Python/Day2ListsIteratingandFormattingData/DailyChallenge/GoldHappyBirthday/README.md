@@ -1,6 +1,6 @@
 # Daily Challenge GOLD — Happy Birthday
 
-A tiny Python script that asks for your **birthdate**, prints your **age**, and draws a cute ASCII **birthday cake** with candles equal to the **last digit** of your age. If you were **born in a leap year**, it prints **two cakes** (bonus!).
+A tiny Python script that asks for your **birthdate**, computes your **age** to size the candles, and draws a cute ASCII **birthday cake** with candles equal to the **last digit** of your age. If you were **born in a leap year**, it prints **two cakes** (bonus!).
 
 ## 🎯 What it does (step by step)
 1. **Asks for your birthdate** in the format `DD/MM/YYYY` (example: `16/06/1994`).
@@ -28,17 +28,17 @@ If `candles = 3`, the top looks like:
 
 ## ▶️ How to run
 ### Option A — Double click (if `.py` is associated to Python on your OS)
-- Save the file as `happy_birthday.py` and double click.
+- Save the file as `happybirthday.py` and double click.
 
 ### Option B — Terminal / Command Prompt
 ```bash
 # macOS / Linux
-python3 happy_birthday.py
+python3 happybirthday.py
 
 # Windows
-python happy_birthday.py
+python happybirthday.py
 # or
-py happy_birthday.py
+py happybirthday.py
 ```
 When prompted, type your birthdate as `DD/MM/YYYY` and press Enter.
 
