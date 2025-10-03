@@ -9,9 +9,9 @@ Two small exercises: one for computing grade summaries and letter grades, and on
 ## 🚀 How to run
 
 ```bash
-python3 main.py
+python3 exercisesxpplus.py
 ```
-Replace `main.py` with your filename if different.
+Run the bundled script `exercisesxpplus.py`.
 
 ---
 

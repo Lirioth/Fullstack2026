@@ -9,9 +9,9 @@ Compact notes for four small dictionary exercises. Clear steps and tiny code sni
 ## 🚀 How to run
 
 ```bash
-python3 main.py
+python3 exercisesxp.py
 ```
-Replace `main.py` with your filename if different.  
+The script lives in `exercisesxp.py`.
 Parts of the script read input (bonus in Exercise 2), the rest just print.
 
 ---
