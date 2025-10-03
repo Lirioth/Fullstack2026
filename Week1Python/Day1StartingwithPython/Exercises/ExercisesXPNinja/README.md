@@ -41,17 +41,17 @@ And some boolean ↔ integer tricks:
 
 ## ▶️ How to run
 ### Option A — Double click (if `.py` is associated with Python)
-- Save as `exercises_xp_ninja.py` and double click to run.
+- Save as `exercisesxpninja.py` and double click to run.
 
 ### Option B — Terminal
 ```bash
 # macOS / Linux
-python3 exercises_xp_ninja.py
+python3 exercisesxpninja.py
 
 # Windows
-python exercises_xp_ninja.py
+python exercisesxpninja.py
 # or
-py exercises_xp_ninja.py
+py exercisesxpninja.py
 ```
 
 You will be prompted for input during **Exercise 5**.

@@ -17,18 +17,18 @@ A tiny Python script that checks an input string and prints info step by step.
 
 ## 🚀 How to run
 ### Option A — 🖱️ Double click (if you have Python associated to `.py` files)
-- Save the code as `build_up_string.py`
+- Save the code as `buildupastring.py`
 - Double click to run (on some systems it opens a console automatically).
 
 ### Option B — 💻 Terminal
 ```bash
 # macOS / Linux
-python3 build_up_string.py
+python3 buildupastring.py
 
 # Windows (sometimes python or py)
-python build_up_string.py
+python buildupastring.py
 # or
-py build_up_string.py
+py buildupastring.py
 ```
 
 When prompted, type a string of **exactly 10 characters** and press Enter.

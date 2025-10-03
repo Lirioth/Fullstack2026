@@ -41,17 +41,17 @@ Invalid month
 
 ## ▶️ How to run
 ### Option A — Double click (if `.py` files run with Python on your OS)
-- Save as `exercises_xp_gold.py` and double click.
+- Save as `exercisesxpgold.py` and double click.
 
 ### Option B — Terminal / Command Prompt
 ```bash
 # macOS / Linux
-python3 exercises_xp_gold.py
+python3 exercisesxpgold.py
 
 # Windows
-python exercises_xp_gold.py
+python exercisesxpgold.py
 # or
-py exercises_xp_gold.py
+py exercisesxpgold.py
 ```
 
 ## 🌟 Optional improvements (nice practice)

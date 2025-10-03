@@ -40,18 +40,18 @@ A small collection of beginner Python exercises.
 ## 🚀 How to run
 
 ### Option A — 🖱️ Double click (if `.py` is associated to Python)
-- Save the script as `exercises_xp.py`
+- Save the script as `exercisesxp.py`
 - Double click to run (your OS may open a console window).
 
 ### Option B — 💻 Terminal
 ```bash
 # macOS / Linux
-python3 exercises_xp.py
+python3 exercisesxp.py
 
 # Windows
-python exercises_xp.py
+python exercisesxp.py
 # or
-py exercises_xp.py
+py exercisesxp.py
 ```
 
 You will be prompted for input in **📝 Exercises 7–9**.
