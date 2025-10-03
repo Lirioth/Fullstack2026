@@ -9,9 +9,9 @@ Two tiny console exercises: a birthday lookup (with optional insert) and a fruit
 ## 🚀 How to run
 
 ```bash
-python3 main.py
+python3 exercisesxpgold.py
 ```
-Replace `main.py` with your filename if different.
+Execute the exercises via `exercisesxpgold.py`.
 
 This script **📝 asks for input** a few times in the Birthdays section (adding a contact and doing a lookup). The Fruit Shop section just prints results.
 

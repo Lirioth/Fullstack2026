@@ -9,9 +9,9 @@ Two small problems written in a clean, readable way with tiny comments.
 ## How to run
 
 ```bash
-python3 main.py
+python3 dictionaries.py
 ```
-Replace `main.py` with your filename if it’s different.
+Run the provided `dictionaries.py` script.
 
 ---
 
