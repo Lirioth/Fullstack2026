@@ -1,93 +1,58 @@
-# 🚀 Day 5 - Mini Project: Integrating OOP and Data Concepts
+# 🔤 Day 5 Mini Project – Anagram Checker
 
-## 🎯 Goal of the Day
+Welcome to the final project of the Python OOP module! Instead of building a large library system, Day 5 now focuses on a compact but complete **Anagram Checker** that lets you practise object-oriented design, modular thinking, file handling, and simple CLI flows all in one place.
 
-Develop a **complete project** that integrates all the concepts learned during the week:
-- Advanced object-oriented programming
-- Modular organization and packages
-- File and external data handling (CSV, JSON, APIs)
-- Validation, testing, and documentation
+If you prefer a detailed, learner-friendly walkthrough, jump straight to [`DailyChallenge/README_ANAGRAMS.md`](DailyChallenge/README_ANAGRAMS.md). The highlights are summarised below so the whole folder stays in sync.
 
 ---
 
-## 🏆 Main Challenge: "Comprehensive Digital Library Management System"
+## 🧩 What You Will Build
 
-### 📚 General Description
-Create a digital library system that allows you to:
-- Manage users, books, loans, and returns
-- Integrate book data from CSV files and external APIs (e.g., Google Books)
-- Store and query information in JSON files
-- Generate usage reports and statistics
-- Validate data and handle errors robustly
+You will create an `AnagramChecker` class and a lightweight command-line interface that work together to:
+
+- Validate whether a user-provided word exists in the supplied dictionary.
+- Find all valid anagrams for that word (excluding the word itself).
+- Offer a tiny menu so learners can explore different inputs quickly.
+
+All of this lives in a single script, [`DailyChallenge/anagram_checker_all.py`](DailyChallenge/anagram_checker_all.py), which keeps the mini-project approachable while still demonstrating good design practices.
 
 ---
 
-## 🏗️ Suggested Architecture
+## 📂 Project Layout
 
 ```
 Day5MiniProject/
-├── data/
-│   ├── books.csv
-│   ├── users.json
-│   └── loans.json
-├── src/
-│   ├── models/
-│   │   ├── user.py
-│   │   ├── book.py
-│   │   └── loan.py
-│   ├── services/
-│   │   ├── user_service.py
-│   │   ├── book_service.py
-│   │   └── loan_service.py
-│   ├── api/
-│   │   └── google_books.py
-│   ├── utils/
-│   │   ├── validators.py
-│   │   └── file_manager.py
-│   ├── main.py
-│   └── report.py
-├── tests/
-│   ├── test_users.py
-│   ├── test_books.py
-│   └── test_loans.py
-└── README.md
+├── DailyChallenge/
+│   ├── README_ANAGRAMS.md   # Canonical, in-depth guide
+│   ├── README.md            # Mirrors this overview for daily challenge context
+│   └── anagram_checker_all.py
+├── Exercises/
+│   └── README.md            # Optional milestones if you want to rebuild the tool in stages
+└── README.md                # (you are here)
 ```
 
----
-
-## 📋 Technical Requirements
-
-- Implement OOP classes for users, books, and loans
-- Read and load book data from CSV and/or external API
-- Store users and loans in JSON
-- Validate input data and handle errors
-- Generate reports for most borrowed books, active users, etc.
-- Unit testing for main modules
-- Document the system and its modules
+Feel free to split the code into multiple modules (`anagram_checker.py`, `anagrams.py`) if you want a multi-file structure. The README_ANAGRAMS file explains how to do that refactor safely.
 
 ---
 
-## 📝 Suggested Workflow
+## ▶️ Quick Start
 
-1. **Class and Module Design**: Define the main classes and their relationships.
-2. **Data Loading**: Implement book import from CSV and API.
-3. **User and Loan Management**: Methods for adding, removing, loaning, and returning.
-4. **Persistence**: Save and load data in JSON.
-5. **Reports**: Generate useful reports and statistics.
-6. **Testing**: Create unit tests for key modules.
-7. **Documentation**: Explain the design, usage, and decisions.
+```bash
+cd Week2OOP/Day5MiniProject/DailyChallenge
+python anagram_checker_all.py
+```
 
----
-
-## ✅ Evaluation Criteria
-- [ ] Integration of all weekly concepts
-- [ ] Modular, clean, and well-documented code
-- [ ] Robust validation and error handling
-- [ ] Functional testing
-- [ ] Useful and well-presented reports
+You will see a two-option menu: enter a word or exit. Provide a single alphabetical word and the CLI will print whether it is valid and list any anagrams.
 
 ---
 
-**💡 Tip**: Prioritize clarity and maintainability. Document each module and justify your design decisions.
+## 📘 Need More Detail?
 
-**🎯 Goal**: Deliver a functional, professional, and well-documented system that demonstrates mastery of OOP, data handling, and development best practices.
+Head over to [`DailyChallenge/README_ANAGRAMS.md`](DailyChallenge/README_ANAGRAMS.md) for:
+
+- A full description of the helper methods and CLI flow
+- Notes about the bundled `words.txt` (including its auto-generation behaviour)
+- Tips for extending or refactoring the project
+- Git workflow reminders when you are ready to publish your work
+
+Happy word play! 🐍✨
