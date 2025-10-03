@@ -1,5 +1,7 @@
 # Mini‑Project – Anagram Checker (All‑In‑One) ✨
 
+> Looking for the quick overview? The parent [`README.md`](../README.md) and the Daily Challenge [`README.md`](README.md) both summarise this guide and link back here. Everything below remains the canonical, in-depth reference.
+
 This mini‑project bundles both the **logic class** and a **simple CLI** into a single file for convenience. Code is simple, commented in English, and includes friendly emojis.
 
 ---
@@ -24,10 +26,10 @@ python anagram_checker_all.py
 ```
 
 You’ll see a simple menu:
-1) Input a word  
+1) Input a word
 2) Exit
 
-Type `1`, then enter a **single alphabetic word** (no spaces, no digits, no symbols).  
+Type `1`, then enter a **single alphabetic word** (no spaces, no digits, no symbols).
 The program will print:
 - `YOUR WORD : "WORDINUPPERCASE"`
 - Whether it is a valid English word (present in `words.txt`)
@@ -37,8 +39,8 @@ The program will print:
 
 ## 🧠 How It Works
 
-- The class loads `words.txt`, keeping a **set** for quick validity checks and a **signature index**:  
-  `signature = letters of the word sorted (e.g., "meat" -> "aemt")`  
+- The class loads `words.txt`, keeping a **set** for quick validity checks and a **signature index**:
+  `signature = letters of the word sorted (e.g., "meat" -> "aemt")`
   Words with the same signature are anagrams of each other.
 - `is_valid_word(word)` checks membership in the set.
 - `get_anagrams(word)` looks up by signature and **excludes the original word**.
@@ -48,7 +50,7 @@ The program will print:
 
 ## 📝 Customize
 
-- Edit `words.txt` to add/remove words. You can separate by whitespace or put one word per line.  
+- Edit `words.txt` to add/remove words. You can separate by whitespace or put one word per line.
 - You can replace the fallback list entirely with your own dictionary (for example, a larger English word list).
 
 ---

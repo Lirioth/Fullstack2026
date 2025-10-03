@@ -1,81 +1,53 @@
-# 🏆 Daily Challenge - Sistema Integral de Biblioteca Digital
+# 🏆 Daily Challenge – Build the Anagram Checker
 
-## 🎯 Desafío Final de la Semana
+The Day 5 daily challenge is identical to the mini-project: create a playful yet well-structured **Anagram Checker**. This README now mirrors the canonical instructions in [`README_ANAGRAMS.md`](README_ANAGRAMS.md) so you always land on the correct guidance.
 
-Desarrolla un sistema completo de gestión de biblioteca digital que integre:
-- OOP avanzada
-- Organización modular
-- Manejo de archivos (CSV, JSON)
-- Consumo de APIs externas
-- Validación, testing y documentación
+> ✨ Looking for the story-style walkthrough? Jump directly to [`README_ANAGRAMS.md`](README_ANAGRAMS.md). Everything below is a concise summary.
 
 ---
 
-## 🏗️ Requisitos del Desafío
+## 🎯 Challenge Goals
 
-- Implementar clases para usuarios, libros y préstamos
-- Cargar libros desde CSV y/o API externa
-- Registrar usuarios y préstamos en JSON
-- Validar datos y manejar errores
-- Generar reportes de uso y estadísticas
-- Crear pruebas unitarias para los módulos principales
-- Documentar el sistema y justificar decisiones de diseño
+1. Implement the `AnagramChecker` class that:
+   - Loads words from `words.txt` into fast lookup structures.
+   - Validates whether a string is a real word.
+   - Finds all anagrams for a given word, excluding the word itself.
+2. Provide a lightweight CLI inside [`anagram_checker_all.py`](anagram_checker_all.py) that:
+   - Presents a simple menu (enter a word / exit).
+   - Ensures the user input is a single alphabetical word.
+   - Displays validation results and any discovered anagrams.
 
----
-
-## 📋 Sugerencia de Flujo de Trabajo
-
-1. **Modelado OOP**: Define las clases y relaciones principales
-2. **Carga de Datos**: Implementa importación desde CSV y API
-3. **Gestión de Préstamos**: Métodos para préstamo y devolución
-4. **Persistencia**: Guarda y carga datos en JSON
-5. **Reportes**: Genera reportes útiles y claros
-6. **Testing**: Pruebas unitarias para los módulos clave
-7. **Documentación**: Explica el diseño y uso del sistema
+All required logic and the menu already live together in `anagram_checker_all.py`, making it easy to review and extend.
 
 ---
 
-## 📝 Estructura de Archivos Sugerida
-```
-DailyChallenge/
-├── data/
-│   ├── books.csv
-│   ├── users.json
-│   └── loans.json
-├── src/
-│   ├── models/
-│   │   ├── user.py
-│   │   ├── book.py
-│   │   └── loan.py
-│   ├── services/
-│   │   ├── user_service.py
-│   │   ├── book_service.py
-│   │   └── loan_service.py
-│   ├── api/
-│   │   └── google_books.py
-│   ├── utils/
-│   │   ├── validators.py
-│   │   └── file_manager.py
-│   ├── main.py
-│   └── report.py
-├── tests/
-│   ├── test_users.py
-│   ├── test_books.py
-│   └── test_loans.py
-└── README.md
+## ▶️ Run the Challenge
+
+```bash
+cd Week2OOP/Day5MiniProject/DailyChallenge
+python anagram_checker_all.py
 ```
 
----
-
-## ✅ Criterios de Éxito
-- [ ] Integración de todos los conceptos de la semana
-- [ ] Código modular, limpio y documentado
-- [ ] Validación y manejo de errores robusto
-- [ ] Testing funcional
-- [ ] Reportes útiles y bien presentados
+You should see output similar to the screenshot described in the main README_ANAGRAMS guide: the program echoes the uppercase version of your word, states if it is valid, and lists its anagrams.
 
 ---
 
-**💡 Consejo**: Prioriza la claridad, la validación y la documentación. Justifica tus decisiones de diseño y asegúrate de que el sistema sea fácil de mantener y extender.
+## 🛠️ Want to Extend It?
 
-**🎯 Meta**: Entregar un sistema profesional, funcional y bien documentado que demuestre dominio de OOP, manejo de datos y buenas prácticas de desarrollo.
+`README_ANAGRAMS.md` includes ideas for:
+
+- Splitting the all-in-one script into `anagram_checker.py` (logic) and `anagrams.py` (CLI).
+- Swapping in a larger dictionary for `words.txt`.
+- Adding unit tests or alternative interfaces.
+
+Treat those as stretch goals once you understand the baseline solution.
+
+---
+
+## ✅ Deliverable Checklist
+
+- [ ] Review `README_ANAGRAMS.md` to understand the project expectations.
+- [ ] Run `anagram_checker_all.py` and test several valid and invalid words.
+- [ ] Capture notes or screenshots if your instructor asks for proof of completion.
+
+Have fun discovering new anagrams! 🔤🐍

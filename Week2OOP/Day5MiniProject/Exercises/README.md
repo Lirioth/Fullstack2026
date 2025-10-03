@@ -1,70 +1,38 @@
-# 🛠️ Day 5 Exercises - Mini Project
+# 🛠️ Optional Day 5 Milestones – Anagram Checker
 
-## 🎯 Objetivo de los Ejercicios
+The original step-by-step exercises for a library system are now **deprecated**. Day 5 focuses solely on the Anagram Checker mini-project that lives in [`../DailyChallenge`](../DailyChallenge). If you would like structured milestones to rebuild the solution from scratch, follow the sequence below.
 
-Estos ejercicios te ayudarán a construir paso a paso el sistema integral de biblioteca digital, aplicando todos los conceptos de la semana.
-
----
-
-## 🥉 Exercise 1: Modelado de Clases
-
-### 📚 Descripción
-Diseña las clases principales del sistema: `User`, `Book`, `Loan`.
-
-### 📋 Requisitos
-- Definir atributos y métodos clave para cada clase
-- Implementar relaciones entre clases (ej: un usuario puede tener varios préstamos)
-- Añadir validaciones básicas en los constructores
-- Documentar cada clase con docstrings
+> 📚 Need the complete write-up? Read [`../DailyChallenge/README_ANAGRAMS.md`](../DailyChallenge/README_ANAGRAMS.md). It contains the official project description, file details, and extension ideas.
 
 ---
 
-## 🥈 Exercise 2: Carga y Validación de Datos
+## 🥉 Milestone 1 – Load the Dictionary
 
-### 📊 Descripción
-Implementa la carga de datos de libros desde un archivo CSV y/o una API externa.
+- Create a helper function that reads `words.txt` and returns both a set of valid words and a mapping of sorted-letter signatures to word lists.
+- Ensure the loader can create `words.txt` with a sensible default list when the file is missing (see README_ANAGRAMS for the fallback content).
+- Add light error handling so the script exits gracefully if the file cannot be created or read.
 
-### 📋 Requisitos
-- Leer datos de libros desde CSV usando pandas o csv
-- Validar y transformar los datos cargados
-- Integrar datos adicionales desde una API (ej: Google Books)
-- Manejar errores de formato y datos faltantes
+## 🥈 Milestone 2 – Implement `AnagramChecker`
 
----
+- Build the `AnagramChecker` class around the loader from Milestone 1.
+- Implement and test the trio of public methods used by the CLI:
+  - `is_valid_word(word)`
+  - `get_anagrams(word)`
+  - `is_anagram(word_one, word_two)`
+- Keep the methods free of `print` statements; return values instead so they can be reused.
 
-## 🥇 Exercise 3: Gestión de Préstamos y Persistencia
+## 🥇 Milestone 3 – Craft the CLI
 
-### 💾 Descripción
-Desarrolla la lógica para registrar préstamos y devoluciones, y almacena los datos en archivos JSON.
-
-### 📋 Requisitos
-- Métodos para registrar préstamo y devolución de libros
-- Validar disponibilidad de libros y usuarios
-- Guardar y cargar usuarios y préstamos en JSON
-- Manejar errores de concurrencia y duplicados
+- Wrap the class in a small menu-driven interface (exactly what `anagram_checker_all.py` provides).
+- Validate user input, format the output clearly, and display friendly emojis to match the all-in-one reference implementation.
+- When everything works, compare your solution with `anagram_checker_all.py` to spot improvements or refactors you might borrow.
 
 ---
 
-## 💪 Exercise 4: Reportes y Testing
+## ✅ When Are You Done?
 
-### 📈 Descripción
-Implementa generación de reportes y pruebas unitarias para el sistema.
+- [ ] Each milestone runs without errors and uses the same behaviours documented in `README_ANAGRAMS.md`.
+- [ ] Your final script can either be the provided `anagram_checker_all.py` or a refactored two-file version.
+- [ ] You have explored at least a couple of stretch ideas (larger dictionary, unit tests, different UI) if time permits.
 
-### 📋 Requisitos
-- Generar reportes de libros más prestados, usuarios activos, etc.
-- Crear pruebas unitarias para los módulos principales
-- Documentar el flujo de trabajo y decisiones de diseño
-
----
-
-## ✅ Criterios de Evaluación
-- [ ] Modelado OOP correcto y documentado
-- [ ] Carga y validación de datos robusta
-- [ ] Persistencia y gestión de préstamos funcional
-- [ ] Reportes útiles y pruebas unitarias
-
----
-
-**💡 Consejo**: Trabaja de forma incremental, validando cada parte antes de avanzar. Usa tests para asegurar la calidad del sistema.
-
-**🎯 Meta**: Construir un sistema profesional, modular y bien probado que integre todos los aprendizajes de la semana.
+Enjoy levelling up your string-manipulation skills! 🔡🚀
