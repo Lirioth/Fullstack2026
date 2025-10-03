@@ -1,72 +1,52 @@
-# Full-Stack Coding Bootcamp – Files & JSON XP (All-In-One) ✨
+# Files & JSON XP – Combined Solutions ✨
 
-This folder includes a **single Python file** that solves both XP exercises (Random Sentence Generator + JSON) in one place, plus this README with instructions. Simple, clean, and commented in English (with friendly emojis).
+This folder contains a single script, `xp_files_json_all.py`, that solves the two Files & JSON XP tasks:
 
----
+1. **Random Sentence Generator** – builds a sentence of user-defined length by reading from `words.txt`.
+2. **JSON Manipulation** – reads a sample employee record, displays the salary, adds a `birth_date`, and saves the updated data.
 
-## 📂 Files
-
-- `xp_files_json_all.py` — All exercises combined in one script.  
-  Exercises included:
-  1. **Random Sentence Generator** (file handling, lists, random, validation)
-  2. **Working with JSON** (parse, access nested key, modify, save)
-
-> ℹ️ Exercise 1 originally references a **word list file**. This script will **auto-create** a minimal `words.txt` if it doesn’t exist, so it “just works.” You can edit `words.txt` to add or replace words anytime.
+`words.txt` is created automatically the first time the script runs (with a small default list) so you can launch the exercises immediately. Feel free to edit the file to include your own vocabulary.
 
 ---
 
 ## ✅ Requirements
 
-- Python **3.10+** recommended (no third‑party packages needed).
+- Python **3.10+** (standard library only)
 
 ---
 
-## ▶️ How to Run
+## ▶️ Quick Demo
 
-From the folder that contains the files:
+From this directory run:
 
 ```bash
 python xp_files_json_all.py
 ```
 
-This will run a **short demo** for both exercises:
-- Exercise 1 prints a random **6‑word** sentence.
-- Exercise 2 loads the sample JSON, prints the **salary**, adds a `birth_date`, and saves the result to `modified_employee.json`.
+The script will:
+
+- Generate a lowercase random sentence with 6 words.
+- Display the original salary stored in the JSON payload.
+- Save the modified data to `modified_employee.json` in the same folder.
 
 ---
 
-## 🧑‍💻 Interactive Mode (Exercise 1)
+## 🧑‍💻 Interactive Sentence Generator
 
-The exercise specifies a `main()` that asks for user input and validates it.  
-It is included in the file. If you want to use it interactively, open Python and do:
+To use the interactive prompt from Exercise 1, import and call `main()`:
 
 ```python
 from xp_files_json_all import main
-main()  # follow the on-screen instructions
+main()  # Follow the on-screen instructions 😊
 ```
 
-- Valid input is an **integer between 2 and 20** (inclusive).  
-- The program reads words from `words.txt`. If the file is missing, it is created automatically with a small default list.
-
-> Tip: Edit `words.txt` to include your own word list. One word per line or separated by whitespace works fine.
+Valid input is an integer between **2 and 20** (inclusive). The words are sourced from `words.txt` every time you run the generator, so updates to the file are reflected automatically.
 
 ---
 
-## 🔎 What You’ll See
+## 📦 Output Files
 
-- **Exercise 1**: A random sentence (lowercase), built from `words.txt`.  
-- **Exercise 2**: Console output shows the nested **salary**, and a prettified JSON file named `modified_employee.json` is written to disk with the added `"birth_date"` field.
+- `modified_employee.json` – Created after the JSON exercise runs, containing the additional `"birth_date"` field.
+- `words.txt` – Auto-generated on first run if missing; you may customize it anytime.
 
----
-
-## 🚀 Pushing to GitHub
-
-```bash
-git add -A
-git commit -m "Add all-in-one Files & JSON XP solutions + README ✨"
-git push
-```
-
----
-
-**Happy coding — keep it simple and solid.** 🐍💙
+Enjoy exploring both exercises in one place! 🐍💙
