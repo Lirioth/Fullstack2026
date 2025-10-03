@@ -9,9 +9,9 @@ A short practice file with two tiny problems: generating multiples and cleaning 
 ## How to run
 
 ```bash
-python3 main.py
+python3 dailychallenge_list_and_strings.py
 ```
-Replace `main.py` with your script name if different.
+Run the command from the `ListAndStrings` folder so Python can find the script easily.
 
 The program asks for input twice in Challenge 1 (a number, then a length) and once in Challenge 2 (a word).
 
