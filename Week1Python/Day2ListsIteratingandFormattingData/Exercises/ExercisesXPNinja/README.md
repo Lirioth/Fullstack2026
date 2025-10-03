@@ -11,14 +11,14 @@ A tiny collection of Python practice exercises I wrote to train basics like inpu
 ## 🚀 How to run
 
 ```bash
-python3 main.py
+python3 exercisesxpninja.py
 ```
 
 - The script prints the results for each exercise in order.
 - It **asks for input** in Exercise 1 (comma‑separated numbers) and in Exercise 4 (a line of text).
 - Everything else runs automatically and prints to the console.
 
-If your file has a different name, just replace `main.py` with your filename.
+If your file has a different name, just replace `exercisesxpninja.py` with your filename.
 
 ---
 
