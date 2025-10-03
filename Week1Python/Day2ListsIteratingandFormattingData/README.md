@@ -37,7 +37,7 @@ Day2ListsIteratingandFormattingData/
 │   ├── 🥈 ExercisesXPGold/         # Advanced data manipulation
 │   └── 🥇 ExercisesXPNinja/        # Complex iteration challenges
 └── 💪 DailyChallenge/
-    ├── List&Strings/               # String and list manipulation
+    ├── ListAndStrings/             # String and list manipulation
     └── GoldHappyBirthday/          # Birthday formatting challenge
 ```
 
@@ -74,10 +74,10 @@ python exercisesxpninja.py
 ### 4. 💪 Daily Challenges
 Apply your skills to real-world problems:
 
-**List & Strings Challenge:**
+**List and Strings Challenge:**
 ```bash
-cd DailyChallenge/List&Strings
-python dailychallengelist&strings.py
+cd DailyChallenge/ListAndStrings
+python dailychallenge_list_and_strings.py
 ```
 
 **Birthday Formatting (Gold):**
@@ -109,7 +109,7 @@ Track your progress through each level:
 - [ ] Handle edge cases in data processing
 
 ### 💪 Challenges (Bonus)
-- [ ] Complete List&Strings daily challenge
+- [ ] Complete ListAndStrings daily challenge
 - [ ] Solve GoldHappyBirthday formatting challenge
 - [ ] Create elegant, readable solutions
 
