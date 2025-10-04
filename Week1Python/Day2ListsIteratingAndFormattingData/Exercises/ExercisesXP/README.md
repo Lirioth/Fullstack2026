@@ -1,4 +1,4 @@
-# 🏋️ ## 📋 What's inside (quick tour)xercises XP — Sequence / List / Set / Tuple 
+# 🏋️ Exercises XP — Sequence / List / Set / Tuple
 
 A small, single-file collection that practices **sets, tuples, lists, loops, and user input**.
 
@@ -52,17 +52,17 @@ A small, single-file collection that practices **sets, tuples, lists, loops, and
 
 ## ▶️ How to run
 ### Option A — Double-click (if `.py` is associated with Python)
-- Save as `exercises_xp_sequences.py` and double-click.
+- Save as `exercisesxp.py` and double-click.
 
 ### Option B — Terminal / Command Prompt
 ```bash
 # macOS / Linux
-python3 exercises_xp_sequences.py
+python3 exercisesxp.py
 
 # Windows
-python exercises_xp_sequences.py
+python exercisesxp.py
 # or
-py exercises_xp_sequences.py
+py exercisesxp.py
 ```
 You’ll be prompted for input in several parts (Exercises **6–9**).
 
