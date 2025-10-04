@@ -35,9 +35,12 @@ Day3Dictionaries/
 ├── 🏋️ Exercises/
 │   ├── 🥉 ExercisesXP/             # Basic dictionary operations
 │   ├── 🥈 ExercisesXPGold/         # Intermediate data manipulation
-│   └── 📈 ExercisesXP+/            # Extended practice set
+│   ├── 🥷 ExercisesXPNinja/        # High-difficulty practice set
+│   ├── 🕒 TimedChallenge1/         # Speed-focused sentence tasks
+│   └── 🕒 TimedChallenge2/         # Speed-focused number analysis
 └── 💪 DailyChallenge/
-    └── Dictionaries/               # Complex dictionary challenges
+    ├── Dictionaries/               # Complex dictionary challenges
+    └── CaesarCypher/               # Encryption-themed challenge
 ```
 
 ## 🚀 Getting Started
@@ -74,6 +77,34 @@ Apply skills to real-world problems:
 ```bash
 cd DailyChallenge/Dictionaries
 python dictionaries.py
+```
+
+### 5. 🥷 Ninja Practice
+Push your skills with high-intensity exercises:
+```bash
+cd Exercises/ExercisesXPNinja
+python xpninjacars.py
+```
+
+### 6. 🕒 Timed Challenge 1
+Test your speed with a sentence-focused task:
+```bash
+cd Exercises/TimedChallenge1
+python timedsentence.py
+```
+
+### 7. 🕒 Timed Challenge 2
+Race the clock with number analysis:
+```bash
+cd Exercises/TimedChallenge2
+python perfectnumber.py
+```
+
+### 8. 🔐 Caesar Cipher Challenge
+Decode and encode messages using classic cryptography:
+```bash
+cd DailyChallenge/CaesarCypher
+python caesarcipher.py
 ```
 
 ## 📊 Assessment Checklist
