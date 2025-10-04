@@ -1,0 +1,15 @@
+{
+  "name": "ExercisesXPGold",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "start": "ts-node ExercisesXPGold.ts",
+    "build": "tsc ExercisesXPGold.ts",
+    "run:js": "node ExercisesXPGold.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "ts-node": "^10.9.1"
+  }
+}
