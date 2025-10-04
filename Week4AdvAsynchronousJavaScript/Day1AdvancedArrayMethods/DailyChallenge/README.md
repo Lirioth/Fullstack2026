@@ -1,23 +1,29 @@
 
-# GoWildcats — Daily Challenge (TypeScript)
+# GoWildcats — Daily Challenge (TypeScript) 🐾🏈
 
-Single-file solution using **forEach** to:
-1) Build `usernames` with `!` appended.
-2) Build `winners` containing usernames with score > 5.
-3) Compute `totalScore` across all players (should be **71**).
+Single‑file solution using **`forEach`** to practice advanced array methods.
 
-## Files
-- `GoWildcats.ts` — all code. Exports `gameInfo`, `usernames`, `winners`, `totalScore` and includes a small demo.
+## ✅ What this does
+- 1️⃣ Build `usernames` with an exclamation mark: `["john!", "becky!", "susy!", "tyson!"]`
+- 2️⃣ Build `winners` (score > 5): `["becky", "susy"]`
+- 3️⃣ Compute `totalScore` across all players: **71** 🔢
 
-## How to run locally
+## 📂 Files
+- `GoWildcats.ts` — All code in one file. Exports `gameInfo`, `usernames`, `winners`, `totalScore`. Includes a small demo block.
+
+## ▶️ How to run
 ```bash
-# with ts-node
+# Using ts-node
 npx ts-node GoWildcats.ts
 
-# or compile and run JS
+# Or compile to JS and run
 npx tsc GoWildcats.ts
 node GoWildcats.js
 ```
 
-## Submission note
-If your autograder evaluates every file in the folder, place **only** `GoWildcats.ts` in the assignment directory to avoid false negatives on non-TS files.
+## 🧪 Quick check (expected console)
+```
+usernames: [ 'john!', 'becky!', 'susy!', 'tyson!' ]
+winners:   [ 'becky', 'susy' ]
+totalScore: 71
+```
