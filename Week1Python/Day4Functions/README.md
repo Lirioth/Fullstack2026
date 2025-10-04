@@ -35,7 +35,9 @@ Day4Functions/
 ├── 📄 README.md                    # This overview file
 ├── 🏋️ Exercises/
 │   ├── 🥉 ExercisesXP/             # Basic function practice
-│   └── 🥈 ExercisesXPGold/         # Advanced function patterns
+│   ├── 🥈 ExercisesXPGold/         # Advanced function patterns
+│   ├── 🥷 ExercisesXPNinja/        # Single-script drills for speed and accuracy
+│   └── ⏱️ TimedChallenge1/         # Rapid-fire count occurrences challenge
 └── 💪 DailyChallenge/
     └── SolveTheMatrix/             # Matrix manipulation challenge
 ```
@@ -63,11 +65,25 @@ cd Exercises/ExercisesXPGold
     python xpgoldfunctions.py
 ```
 
+### 2.5 🥷 Ninja Speed Drills
+Sharpen your reflexes with compact, high-intensity exercises:
+```bash
+cd Exercises/ExercisesXPNinja
+python xpninjafunctionssingle.py
+```
+
 ### 3. 💪 Matrix Challenge
 Apply your skills to complex problem-solving:
 ```bash
 cd DailyChallenge/SolveTheMatrix
 python solvethematrix.py
+```
+
+### 3.5 ⏱️ Timed Challenge
+Test your accuracy under pressure with timed occurrence counting:
+```bash
+cd Exercises/TimedChallenge1
+python countoccurence.py
 ```
 
 ## 📊 Assessment Checklist
