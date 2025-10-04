@@ -54,9 +54,18 @@ def exercise_6():
         print("Hello World")
 
 
+def read_int(prompt: str) -> int:
+    """Prompt the user until a valid integer is provided."""
+    while True:
+        try:
+            return int(input(prompt))
+        except ValueError:
+            print("Please enter a valid integer 🤖")
+
+
 def exercise_7():
     """Determine whether a number is odd or even."""
-    n = int(input("Enter a number: "))
+    n = read_int("Enter a number: ")
     if n % 2 == 0:
         print("Even")
     else:
@@ -75,7 +84,7 @@ def exercise_8():
 
 def exercise_9():
     """Check whether the user is tall enough to ride."""
-    height = int(input("Enter your height in cm: "))
+    height = read_int("Enter your height in cm: ")
     if height > 145:
         print("You are tall enough to ride.")
     else:
