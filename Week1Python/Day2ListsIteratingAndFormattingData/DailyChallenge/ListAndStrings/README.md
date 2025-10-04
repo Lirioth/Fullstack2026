@@ -1,4 +1,4 @@
-# Daily Challenge — Lists & Strings (Python)
+# 🌟 Daily Challenge — Lists & Strings (Python)
 
 A short practice file with two tiny problems: generating multiples and cleaning repeated letters. The code is kept simple with small comments.
 
@@ -9,7 +9,7 @@ A short practice file with two tiny problems: generating multiples and cleaning 
 ## How to run
 
 ```bash
-python3 dailychallenge_list_and_strings.py
+python3 dailychallengelistandstrings.py
 ```
 Run the command from the `ListAndStrings` folder so Python can find the script easily.
 
