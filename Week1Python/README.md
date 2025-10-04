@@ -42,7 +42,7 @@ By the end of Week1, you should be able to:
 - Boolean logic and decision making
 - User interaction design
 
-### 📋 Day2ListsIteratingandFormattingData - Data Structures
+### 📋 Day2ListsIteratingAndFormattingData - Data Structures
 **Duration**: ⏱️ 5-7 hours | **Difficulty**: 🟡 Beginner-Intermediate
 
 **Learning Goals**: 🎯
