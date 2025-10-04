@@ -4,12 +4,12 @@ This package includes a **single Python file** with clear, commented solutions f
 Everything is **English-only**, with a friendly README full of emojis. ✅
 
 ## 📦 Files
-- `challenges_solutions.py` — all 20 exercises implemented + a small demo runner
+- `challengessolutions.py` — all 20 exercises implemented + a small demo runner
 - `README.md` — this guide
 
 ## 🚀 Run
 ```bash
-python3 challenges_solutions.py
+python3 challengessolutions.py
 ```
 You’ll see a quick demo of each function with sample inputs and outputs.
 

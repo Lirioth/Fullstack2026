@@ -11,7 +11,7 @@
 #   5) Demo runner in __main__
 #
 # 🚀 Quick Start
-#   python3 xp_ninja_functions_single.py
+#   python3 xpninjafunctionssingle.py
 #
 # 🧪 Expected sample output (abridged)
 #   === Exercise 1: Names ===

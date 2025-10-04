@@ -1,6 +1,6 @@
 # Tic Tac Toe (short & simple)
 # Two players take turns on a 3x3 grid. First to 3 in a row wins.
-# Run: python3 tic_tac_toe.py
+# 🚀 Run: python3 tictactoe.py
 
 def new_board():
     """Return a fresh 3x3 board filled with spaces."""

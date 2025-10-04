@@ -33,7 +33,7 @@ This day combines everything from Week 1:
 Day5MiniProject/
 ├── 📄 README.md                    # This overview file
 ├── 🎮 MiniProjectTicTacToe/        # Main project: Game implementation
-│   ├── 📄 tic_tac_toe.py          # Complete game code
+│   ├── 📄 tictactoe.py            # Complete game code
 │   └── 📄 README_TicTacToe.md     # Project documentation
 └── 💪 DailyChallenge/              # Additional challenges
     ├── 📄 challenges.py           # Various coding challenges
@@ -47,7 +47,7 @@ Day5MiniProject/
 
 ```bash
 cd MiniProjectTicTacToe
-python tic_tac_toe.py
+python tictactoe.py
 ```
 
 **What it includes:**

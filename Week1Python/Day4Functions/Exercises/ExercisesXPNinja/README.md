@@ -3,12 +3,12 @@
 Welcome! This package contains a **single Python file** with clean, commented solutions to the four function exercises, plus a tiny demo runner. Everything is **English-only** as requested ✅
 
 ## 📂 Files
-- `xp_ninja_functions_single.py` — all solutions + comments + demo
+- `xpninjafunctionssingle.py` — all solutions + comments + demo
 - `README.md` — this guide with emojis
 
 ## 🚀 Run
 ```bash
-python3 xp_ninja_functions_single.py
+python3 xpninjafunctionssingle.py
 ```
 You’ll see demos for all tasks printed to the console.
 
