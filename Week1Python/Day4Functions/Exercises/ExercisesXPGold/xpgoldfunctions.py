@@ -1,5 +1,5 @@
 # XP Gold — Functions (short & simple)
-# Run: python3 xp_gold_functions.py
+# 🚀 Run: python3 xpgoldfunctions.py
 
 import random
 

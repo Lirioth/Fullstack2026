@@ -3,7 +3,7 @@ Demo runner for Challenges #2.
 Prints the three required patterns and runs Exercise 2 analysis with a trace.
 """
 from src.patterns import pattern_a, pattern_b, pattern_c
-from src.ex2_analysis import ANNOTATED, selection_like_sort_with_trace, pretty_trace
+from src.ex2analysis import ANNOTATED, selection_like_sort_with_trace, pretty_trace
 
 def main():
     print("=== Exercise 1: Patterns ===\n")

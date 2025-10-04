@@ -160,7 +160,7 @@ python exercisesxp.py
 
 # Run mini-project
 cd Day5MiniProject/MiniProjectTicTacToe/
-python tic_tac_toe.py
+python tictactoe.py
 ```
 
 ---

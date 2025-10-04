@@ -4,7 +4,7 @@ A tiny 2‑player Tic Tac Toe you can run in the terminal. Simple, readable, and
 
 ## 🚀 How to run
 ```bash
-python3 tic_tac_toe.py
+python3 tictactoe.py
 ```
 
 ## 🎯 How to play
@@ -15,7 +15,7 @@ python3 tic_tac_toe.py
 - If the board fills up with no winner, it's a **🤝 tie**.
 
 ## 📁 Files
-- `tic_tac_toe.py` — complete game implementation.
+- `tictactoe.py` — complete game implementation.
 - **⚙️ Functions:**
   - `new_board()` — create an empty board.
   - `display_board(board)` — print the board.

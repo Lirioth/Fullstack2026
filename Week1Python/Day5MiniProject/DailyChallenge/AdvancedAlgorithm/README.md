@@ -8,7 +8,7 @@ This package includes clean Python code (English-only), comments, and a tiny CLI
 daily_advanced_pairs/
 ├─ src/
 │  ├─ pairs.py      # Core algorithms: hash-map (O(n)) and two-pointer (O(n log n))
-│  └─ demo_data.py  # Starter data generation (matches the prompt) + optional seeding
+│  └─ demodata.py   # Starter data generation (matches the prompt) + optional seeding
 └─ main.py          # CLI: run the finder, print stats & sample pairs
 └─ README.md        # This guide
 ```

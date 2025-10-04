@@ -21,7 +21,7 @@ This repo contains a tiny Python script solving **three function-based exercises
 ## 🚀 How to run
 
 ```bash
-python3 xp_gold_functions.py
+python3 xpgoldfunctions.py
 ```
 
 - For deterministic tests in Exercise 3, you can uncomment `random.seed(0)`.

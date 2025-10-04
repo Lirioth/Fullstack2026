@@ -10,7 +10,7 @@ This mini‑package delivers:
 challenges2_project/
 ├─ src/
 │  ├─ patterns.py   # Exercise 1 — draw three patterns using for-loops
-│  └─ ex2_analysis.py  # Exercise 2 — annotated code + step-by-step trace
+│  └─ ex2analysis.py   # Exercise 2 — annotated code + step-by-step trace
 └─ main.py          # Demo runner
 ```
 

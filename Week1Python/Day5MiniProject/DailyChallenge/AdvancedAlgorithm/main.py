@@ -2,7 +2,7 @@
 CLI runner: generate 20k numbers and find all pairs summing to target.
 """
 import argparse, time
-from src.demo_data import make_dataset
+from src.demodata import make_dataset
 from src.pairs import find_value_pairs_hash, find_value_pairs_two_pointer
 
 def main():

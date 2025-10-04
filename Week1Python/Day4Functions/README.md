@@ -60,7 +60,7 @@ python exercisesxp.py
 Explore sophisticated function techniques:
 ```bash
 cd Exercises/ExercisesXPGold
-python xp_gold_functions.py
+    python xpgoldfunctions.py
 ```
 
 ### 3. 💪 Matrix Challenge
