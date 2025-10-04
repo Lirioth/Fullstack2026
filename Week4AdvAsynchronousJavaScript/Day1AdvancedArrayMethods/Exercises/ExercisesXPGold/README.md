@@ -4,6 +4,7 @@
 Practice **array methods** and **destructuring** with focused analyses and clean one-liners.
 
 ## ✅ What’s inside
+*(Now includes a safe `deepFlatten` helper for maximum compatibility.)*
 - 1️⃣ `map` analysis → output is `[2, 4, 6]`
 - 2️⃣ `reduce` analysis → output is `[1, 2, 0, 1, 2, 3]`
 - 3️⃣ Map callback index `i` → for 6 elements: `0..5`
