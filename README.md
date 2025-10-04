@@ -2,6 +2,8 @@
 
 Comprehensive guide to the progressive full-stack learning track, covering Python foundations through TypeScript development.
 
+**🌍 Language Note**: This README stays entirely in English while using emojis to highlight key ideas and milestones.
+
 ---
 ## 📑 Table of Contents
 1. 🗺️ Overview & Learning Path
