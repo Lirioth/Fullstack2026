@@ -31,13 +31,21 @@ This day combines everything from Week 1:
 
 ```
 Day5MiniProject/
-├── 📄 README.md                    # This overview file
-├── 🎮 MiniProjectTicTacToe/        # Main project: Game implementation
-│   ├── 📄 tictactoe.py            # Complete game code
-│   └── 📄 README_TicTacToe.md     # Project documentation
-└── 💪 DailyChallenge/              # Additional challenges
-    ├── 📄 challenges.py           # Various coding challenges
-    └── 📄 README.md               # Challenge descriptions
+├── 📄 README.md                        # This overview file
+├── 🧠 Exercises/                       # Practice exercises and mini projects
+│   ├── 💡 Challenges1/                 # Challenge set one solutions
+│   │   └── 📄 challengessolutions.py   # Run to review solution implementations
+│   ├── 💡 Challenges2/                 # Challenge set two implementations
+│   │   └── 📄 main.py                  # Run to explore advanced practice problems
+│   ├── 🎯 Hangman/                     # Hangman word game
+│   │   └── 📄 main.py                  # Run to play the Hangman game
+│   └── 🎮 TicTacToe/                   # Tic-Tac-Toe project files
+│       └── 📄 tictactoe.py             # Complete game code
+└── 💪 DailyChallenge/                  # Additional challenges
+    ├── 🚀 AdvancedAlgorithm/           # Extended algorithm challenge set
+    │   └── 📄 main.py                  # Entry point for advanced algorithms
+    └── 🧩 Challenges/                  # Daily coding challenge collection
+        └── 📄 challenges.py            # Core challenge scripts
 ```
 
 ## 🚀 Projects Overview
@@ -46,7 +54,7 @@ Day5MiniProject/
 **The flagship project that demonstrates comprehensive Python skills:**
 
 ```bash
-cd MiniProjectTicTacToe
+cd Exercises/TicTacToe
 python tictactoe.py
 ```
 
@@ -58,12 +66,37 @@ python tictactoe.py
 - 🔄 Input validation and error handling
 - 🏆 Win condition detection algorithms
 
+### 🧠 Practice Exercise Launchpad
+Run these supporting exercises to reinforce your skills before tackling the daily challenges:
+
+```bash
+cd Exercises/Challenges1
+python challengessolutions.py
+```
+
+```bash
+cd Exercises/Challenges2
+python main.py
+```
+
+```bash
+cd Exercises/Hangman
+python main.py
+```
+
+These exercises provide quick wins and targeted practice before diving into the daily challenges.
+
 ### 💪 Daily Challenges
 **Additional practice problems for skill reinforcement:**
 
 ```bash
-cd DailyChallenge
+cd DailyChallenge/Challenges
 python challenges.py
+```
+
+```bash
+cd DailyChallenge/AdvancedAlgorithm
+python main.py
 ```
 
 **Challenge categories:**
