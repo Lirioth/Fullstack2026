@@ -1,22 +1,22 @@
 
-# exercises xp ninja — cars 🚗🧠
+# Exercises XP Ninja — Cars 🚗🧠
 
-Script en **Python** que resuelve el ejercicio de fabricantes (arrays, condicionales y sets).
+**Python** script that solves the manufacturers exercise (arrays, conditionals, and sets).
 
-## ✅ Qué hace
-- Convierte el string en lista.
-- Muestra cuántos fabricantes hay.
-- Imprime el listado en **orden descendente (Z‑A)**.
-- Cuenta cuántos contienen la letra **'o'** y cuántos **no** contienen **'i'** (sin distinción de mayúsculas).
-- **Bonus**: elimina duplicados preservando el orden e imprime la lista en una sola línea con el **nuevo total**.
-- **Bonus**: imprime la lista **ascendente (A‑Z)** pero con **cada nombre al revés**.
+## ✅ What it does
+- Converts the string into a list.
+- Shows how many manufacturers there are.
+- Prints the list in **descending order (Z‑A)**.
+- Counts how many contain the letter **"o"** and how many **do not** contain **"i"** (case-insensitive).
+- **Bonus**: removes duplicates while preserving order and prints the list on a single line with the **new total**.
+- **Bonus**: prints the list in **ascending order (A‑Z)** but with **each name reversed**.
 
-## ▶️ Cómo ejecutar
+## ▶️ How to run
 ```bash
 python xpninjacars.py
 ```
 
-## 🧪 Salida esperada (resumen)
+## 🧪 Expected output (summary)
 ```
 Total manufacturers: 5
 Descending (Z-A): ['Volkswagen', 'Toyota', 'Honda', 'Ford Motor', 'Chevrolet']
