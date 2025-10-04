@@ -77,7 +77,7 @@ Apply your skills to real-world problems:
 **List and Strings Challenge:**
 ```bash
 cd DailyChallenge/ListAndStrings
-python dailychallenge_list_and_strings.py
+python dailychallengelistandstrings.py
 ```
 
 **Birthday Formatting (Gold):**
