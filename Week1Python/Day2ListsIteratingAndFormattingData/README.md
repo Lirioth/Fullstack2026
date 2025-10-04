@@ -30,7 +30,7 @@ By the end of this day, you will be able to:
 ## 📁 Directory Structure
 
 ```
-Day2ListsIteratingandFormattingData/
+Day2ListsIteratingAndFormattingData/
 ├── 📄 README.md                    # This overview file
 ├── 🏋️ Exercises/
 │   ├── 🥉 ExercisesXP/             # Lists, sets, tuples practice
