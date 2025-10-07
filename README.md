@@ -114,132 +114,89 @@ Each week follows a consistent structure:
 - **Representative work**: [`ExercisesXP/script.js`](Week3JavaScriptandDOM/Day2FunctionsandDOMIntroduction/Exercises/ExercisesXP/script.js) refactors billing calculators, travel estimators, and multi-step DOM edits (class toggling, element creation, alert-driven interactions). The [`DailyChallengePlanets`](Week3JavaScriptandDOM/Day2FunctionsandDOMIntroduction/DailyChallenge/DailyChallengePlanets/) folder reinforces dynamic element creation.
 
 #### 📅 Day3 — DOM Events & Animations
-- **Key skills**: Event listeners, hover/scroll effects, form handling with `preventDefault`, incremental animations via timers.
-- **Representative work**: The [`ExercisesXP`](Week3JavaScriptandDOM/Day3LearningDOMEvents/Exercises/ExercisesXP/) bundle wires click/hover handlers, bold text toggles, and form submissions, while [`ExercisesXPAnimations`](Week3JavaScriptandDOM/Day3LearningDOMEvents/Exercises/ExercisesXPAnimations/) showcases timed alerts and box-movement logic. The [`TellTheStory`](Week3JavaScriptandDOM/Day3LearningDOMEvents/DailyChallenge/TellTheStory/) challenge applies template-driven storytelling to DOM nodes.
+- **Exercises XP**: Event-driven DOM manipulations, hover interactions, and paragraph animations highlighted in [`README_DOM_XP.md`](Week3JavaScriptandDOM/Day3LearningDOMEvents/Exercises/ExercisesXP/README_DOM_XP.md) and [`README_Animations_XP.md`](Week3JavaScriptandDOM/Day3LearningDOMEvents/Exercises/ExercisesXPAnimations/README_Animations_XP.md).
+- **Daily Challenge**: A Mad Libs generator with shuffle support (`TellTheStory`) encourages form validation and accessible announcements.【F:Week3JavaScriptandDOM/Day3LearningDOMEvents/Exercises/ExercisesXP/README_DOM_XP.md†L1-L33】【F:Week3JavaScriptandDOM/Day3LearningDOMEvents/DailyChallenge/TellTheStory/README_MadLibs.md†L1-L27】
 
-#### 📅 Day4 — Advanced JavaScript Functions
-- **Key skills**: Scope tracing, arrow/IIFE patterns, template strings, DOM updates from modular functions.
-- **Representative work**: [`ExercisesXP`](Week3JavaScriptandDOM/Day4AdvancedJavaScriptFunctions/Exercises/ExercisesXP/) summarises scope predictions, ternary decisions, and nested “Juice Bar” closures directly in the DOM; the [`Groceries` daily challenge](Week3JavaScriptandDOM/Day4AdvancedJavaScriptFunctions/DailyChallenge/Groceries/) adds data-driven list rendering.
+#### 📅 Day4 — Advanced Functions
+- **Exercises XP**: Arrow functions, scope practice, ternaries, and self-invoking modules rendered via a single-page playground.【F:Week3JavaScriptandDOM/Day4AdvancedJavaScriptFunctions/Exercises/ExercisesXP/README_Advanced_JS.md†L1-L29】
+- **Daily Challenge**: `Groceries` highlights pass-by-value vs pass-by-reference and introduces deep cloning with `structuredClone`.【F:Week3JavaScriptandDOM/Day4AdvancedJavaScriptFunctions/DailyChallenge/Groceries/README_Groceries.md†L1-L21】
 
-#### 📅 Day5 — Mini Project: Coloring Game
-- **Key skills**: Stateful UI management, grid generation, mouse-driven drawing, responsive CSS grid layouts.
-- **Representative work**: [`MiniProjectColoringGame`](Week3JavaScriptandDOM/Day5MiniProject/MiniProjectColoringGame/) delivers a paint-board experience with palette shortcuts, brush-size switching, and drag-to-draw interactions.
+#### 📅 Day5 — Mini Project & Daily Challenge
+- **Mini Project**: `MiniProjectColoringGame` builds a responsive pixel painter with dynamic grid sizing, color swatches, and click-and-drag painting.【F:Week3JavaScriptandDOM/Day5MiniProject/MiniProjectColoringGame/script.js†L1-L40】
+- **Daily Challenge**: `TodoList` manages task objects with completion toggles and deletions, emphasising DOM data binding best practices.【F:Week3JavaScriptandDOM/Day5MiniProject/DailyChallenge/TodoList/script.js†L1-L86】
 
-#### 🔜 Upcoming enhancements
-- Expand Day2 content with form validation best practices and accessibility notes.
-- Add Day5 stretch goals (e.g., export/import of drawings, mobile touch support).
-- Document cross-day integration ideas (tying prompts, DOM events, and mini projects together).
+#### 🔁 Integration ideas
+- Combine Day3 event patterns with Day4 function modules to build reusable UI helpers.
+- Extend the coloring game with async saving (Week4) or typed configs (Week5) to cement cross-week learning.
 
-### ⚡ Week4AdvAsynchronousJavaScript - Modern JS Patterns
-**🎯 Objective**: Handle asynchronous operations and API integration
+### ⚡ Week4AdvAsynchronousJavaScript — Async Patterns & HTTP
+**🎯 Objective**: Consolidate higher-order JavaScript, HTTP workflows, and promise-based async code.
 
-#### 📦 Current implementation
-- **📅 Day3**: [`HTTPandFormmethodGETandPOST`](Week4AdvAsynchronousJavascript/Day3HTTPandFormmethodGETandPOST/) focuses on using `fetch`, query-string parsing, and form submissions against remote APIs.
-- **📅 Day4**: [`Day4`](Week4AdvAsynchronousJavascript/Day4/) introduces promise utilities, chaining patterns, and async/await refactors through the daily challenge and XP exercises.
+#### 📅 Day1 — Advanced Array Methods
+- **Daily Challenge (`GoWildcats.ts`)**: Applies `forEach` transformations to produce username lists, filter winners, and aggregate scores in TypeScript.【F:Week4AdvAsynchronousJavaScript/Day1AdvancedArrayMethods/DailyChallenge/README.md†L1-L24】
 
-#### 🔜 Upcoming enhancements
-- Build Day1 and Day2 primers that bridge Week3 event handling with asynchronous workflows.
-- Add a consolidated Day5 project demonstrating real-world API orchestration and error handling dashboards.
-- Supplement existing days with automated testing examples once the tooling is in place.
+#### 📅 Day2 — Advanced Object Methods
+- **Exercises XP (`ObjectsDestructuringClassesXP.ts`)**: Covers destructuring, `Object.entries`, and class inheritance patterns in strongly typed TypeScript.【F:Week4AdvAsynchronousJavaScript/Day2AdvancedObjectMethods/Exercises/ExercisesXP/README.md†L1-L26】
+- **Daily Challenge**: Video metadata manipulation reinforces object method fluency (see `VideoObjects.ts`).
 
-### 🔷 Week5 - TypeScript Introduction
-**🎯 Objective**: Add type safety and modern tooling to JavaScript development
+#### 📅 Day3 — HTTP & Forms
+- **Exercises XP**: Demonstrates GET vs POST submissions, devtools payload inspection, and JSON serialization walkthroughs.【F:Week4AdvAsynchronousJavascript/Day3HTTPandFormmethodGETandPOST/Exercises/exercises-xp-http-forms/README.md†L1-L37】
+- **Daily Challenges**: Includes a truthiness utility and a form-to-JSON converter with running history to reinforce event handling and validation patterns.【F:Week4AdvAsynchronousJavascript/Day3HTTPandFormmethodGETandPOST/DailyChallenge/TrueOrFalse/README.md†L1-L20】【F:Week4AdvAsynchronousJavascript/Day3HTTPandFormmethodGETandPOST/DailyChallenge/HTMLForm/README.md†L1-L17】
 
-#### 🏗️ Current Implementation
-- **🔧 Basic Setup**: `tsconfig.json`, build pipeline
-- **💡 Core Examples**: Typed functions, interfaces, generics
-- **🛠️ Tooling**: Compilation, debugging, npm scripts
+#### 📅 Day4 — Promises & Async Flows
+- **Exercises XP**: Promise construction practice, including timed resolution and error handling utilities, runnable via browser UI or Node.【F:Week4AdvAsynchronousJavaScript/Day4AsynchronousJavascript/Exercises/ExercisesXP/README.md†L1-L36】
+- **Daily Challenge (`PlayWithWords`)**: Chains promise-based string transformations and a Morse translator UI with graceful rejection flows.【F:Week4AdvAsynchronousJavaScript/Day4AsynchronousJavascript/DailyChallenge/PlayWithWords/README.md†L1-L35】
 
-**📄 File**: `day1.ts` - Demonstrates typed functions, interfaces, array operations
+#### 🔁 Integration ideas
+- Convert Week3 DOM projects into async-ready apps by layering HTTP requests from Day3.
+- Pair Day1/Day2 TypeScript exercises with Day4 promise utilities to enforce typing on async operations.
+
+### 🔷 Week5MiniprojectAndTypescript — TypeScript Deep Dive
+**🎯 Objective**: Practice type guards, discriminated unions, and object-oriented design using TypeScript tooling.
+
+#### 📅 Day2 — Union Types
+- **Daily Challenge (`UnionTypeValidator.ts`)**: Validates runtime values against whitelisted type strings, including aliases for arrays, null, and dates.【F:Week5MiniprojectAndTypescript/Day2IntroductionToTypeScriptAnd KeyConcepts/DailyChallenge/README.md†L1-L27】
+
+#### 📅 Day3 — Classes & Interfaces
+- **Daily Challenge (`LibrarySystem.ts`)**: Implements a library domain model with inheritance, optional fields, and readonly modifiers to contrast physical vs digital catalogues.【F:Week5MiniprojectAndTypescript/Day3AdvancedTypeScriptConceptsAndApplications/DailyChallenge/README.md†L1-L15】
+
+#### 📅 Day4 — Type Guards & Unions
+- **Daily Challenge (`TypeGuardUnion.ts`)**: Demonstrates discriminated unions, custom guard predicates, and resilient fallbacks when unexpected payloads arrive.【F:Week5MiniprojectAndTypescript/Day4AdvancedTypeScriptConceptsAndApplications/DailyChallenge/README.md†L1-L20】
+
+> ℹ️ **Week5 Tip**: Each TypeScript exercise includes both `ts-node` and `tsc` execution instructions for rapid feedback loops.
 
 ---
 ## 4. 🛠️ Technology Stack & Tools
 
-### 💬 Core Languages
-- **🐍 Python 3.8+**: Primary backend language
-- **🌐 JavaScript ES6+**: Frontend scripting
-- **🔷 TypeScript 5.0+**: Type-safe JavaScript development
-- **🎨 HTML5/CSS3**: Structure and styling (Week3+)
-
-### 🔧 Development Tools
-- **🟢 Node.js**: JavaScript runtime and package management
-- **📦 npm**: Package manager and script runner
-- **🔷 TypeScript Compiler**: Build toolchain
-- **🌳 Git**: Version control
-
-### 🚀 Planned Additions
-- **✅ ESLint + Prettier**: Code quality and formatting
-- **🧪 Pytest**: Python testing framework
-- **⚡ Vitest/Jest**: JavaScript/TypeScript testing
-- **🤖 GitHub Actions**: CI/CD pipeline
+- **Languages**: Python (Weeks 1–2), JavaScript/TypeScript (Weeks 3–5) with growing emphasis on modern ES features and strong typing.
+- **Tooling**: Node.js 18+ for JS/TS execution, `ts-node`/`tsc` for TypeScript compilation, and browser DevTools for DOM/HTTP debugging.【F:Week4AdvAsynchronousJavaScript/Day4AsynchronousJavascript/Exercises/ExercisesXP/README.md†L28-L36】【F:Week5MiniprojectAndTypescript/Day4AdvancedTypeScriptConceptsAndApplications/DailyChallenge/README.md†L9-L18】
+- **Testing Helpers**: Inline demo blocks (guarded against auto-graders) provide quick sanity checks across TypeScript challenges.【F:Week4AdvAsynchronousJavaScript/Day1AdvancedArrayMethods/DailyChallenge/README.md†L15-L24】【F:Week5MiniprojectAndTypescript/Day3AdvancedTypeScriptConceptsAndApplications/DailyChallenge/README.md†L5-L15】
+- **Planned Additions**: ESLint/Prettier, pytest, and Vitest/Jest remain roadmap priorities (see §11).
 
 ---
 ## 5. 💻 Development Environment Setup
 
-### 🐍 Python Environment
-```bash
-# Create isolated environment (outside repo)
-python -m venv ../fullstack2026_env
-
-# Activate environment
-source ../fullstack2026_env/bin/activate  # macOS/Linux
-..\fullstack2026_env\Scripts\activate    # Windows
-
-# Install dependencies (when requirements.txt exists)
-pip install -r requirements.txt
-```
-
-### 🔷 Node.js / TypeScript Environment
-```bash
-# Install dependencies
-npm install
-
-# Build TypeScript
-npm run build
-
-# Run examples
-npm start
-
-# 🔄 Development workflow
-npm run build:week5    # Compile Week5 TS files
-node dist/week5/day1.js # Run compiled output
-```
-
-### 🖥️ Editor Configuration
-Recommended VS Code extensions:
-- 🐍 Python (Microsoft)
-- 🔷 TypeScript Importer
-- ✅ ESLint (when configured)
-- 🎨 Prettier (when configured)
+1. **Install prerequisites**
+   - Python 3.11+ for Weeks 1–2.
+   - Node.js 18+ plus `npm` for DOM, HTTP, async, and TypeScript modules.【F:Week4AdvAsynchronousJavascript/Day3HTTPandFormmethodGETandPOST/Exercises/exercises-xp-http-forms/README.md†L24-L32】【F:Week5MiniprojectAndTypescript/Day4AdvancedTypeScriptConceptsAndApplications/DailyChallenge/README.md†L9-L18】
+2. **Global tooling (optional but recommended)**
+   - `npx ts-node` for running `.ts` files without intermediate builds.【F:Week4AdvAsynchronousJavaScript/Day1AdvancedArrayMethods/DailyChallenge/README.md†L15-L24】
+   - Simple static servers (`python -m http.server`, `npx http-server`) for HTTP form demos.【F:Week4AdvAsynchronousJavascript/Day3HTTPandFormmethodGETandPOST/Exercises/exercises-xp-http-forms/README.md†L24-L32】
+3. **Editor setup**
+   - Enable ESLint/Prettier or equivalent formatters to keep JS/TS code consistent.
+   - Install Python and TypeScript language extensions for intellisense and type checking.
 
 ---
 ## 6. ▶️ Running & Testing Code
 
-### 🐍 Python Execution
-```bash
-# Direct execution
-python Week1Python/Day1StartingwithPython/Exercises/ExercisesXP/exercisesxp.py
+| Week | Quick start |
+|------|-------------|
+| 🐍 Week1–2 | Run Python files with `python <file>.py`; add virtual environments for package isolation. |
+| 🌐 Week3 | Open HTML files directly in a browser; keep DevTools console visible for logs and interactive debugging.【F:Week3JavaScriptandDOM/Day3LearningDOMEvents/Exercises/ExercisesXP/README_DOM_XP.md†L11-L33】 |
+| ⚡ Week4 | Combine browser sessions with Node CLI (`node` or `npx ts-node`) to inspect promises, HTTP submissions, and TypeScript utilities.【F:Week4AdvAsynchronousJavascript/Day3HTTPandFormmethodGETandPOST/Exercises/exercises-xp-http-forms/README.md†L24-L37】【F:Week4AdvAsynchronousJavaScript/Day4AsynchronousJavascript/Exercises/ExercisesXP/README.md†L28-L36】 |
+| 🔷 Week5 | Execute TypeScript via `npx ts-node` or compile with `npx tsc` followed by `node` for grader-friendly outputs.【F:Week5MiniprojectAndTypescript/Day2IntroductionToTypeScriptAnd KeyConcepts/DailyChallenge/README.md†L15-L23】 |
 
-# Interactive testing (modify scripts to disable input() for automation)
-python -c "import sys; sys.path.append('Week1Python'); import module_name"
-```
-
-### 🔷 TypeScript Development
-```bash
-# Development cycle
-npm run build          # Compile all TS files
-npm run build:week5    # Compile Week5 only
-npm start              # Build and run main example
-
-# Manual execution
-npx tsc                # Direct TypeScript compilation
-node dist/week5/day1.js # Run specific compiled file
-```
-
-### 🧪 Testing Strategy (Planned)
-- **🐍 Python**: Unit tests with pytest, integration tests for projects
-- **🌐 JavaScript/TypeScript**: Component tests with Vitest, E2E with Playwright
-- **🤖 Continuous Integration**: Automated testing on pull requests
+> 💡 **Automation idea**: Add npm scripts (`npm run dev:week4`) to standardise local servers and TS execution.
 
 ---
 ## 7. 📁 Project Structure & Standards
@@ -248,16 +205,17 @@ node dist/week5/day1.js # Run specific compiled file
 ```
 📁 Fullstack2026/
   🐍 Week1Python/
-    📄 README.md               # Week overview and learning objectives
-    📅 Day1StartingwithPython/
-      🏋️ Exercises/
-        🥉 ExercisesXP/
-          📄 exercisesxp.py    # Main exercise file
-          📄 README.md         # Exercise documentation
-      💪 DailyChallenge/       # Problem-solving exercises
-  🔷 Week5/
-    📄 day1.ts                 # TypeScript examples
-    📁 (future: day2.ts, projects/, tests/)
+  🏗️ Week2OOP/
+  🌐 Week3JavaScriptandDOM/
+    📅 Day3LearningDOMEvents/...
+    📅 Day5MiniProject/
+  ⚡ Week4AdvAsynchronousJavaScript/
+    📅 Day1AdvancedArrayMethods/
+    📅 Day4AsynchronousJavascript/
+  ⚡ Week4AdvAsynchronousJavascript/      # HTTP/forms focus (Day3 assets)
+  🔷 Week5MiniprojectAndTypescript/
+    📅 Day2IntroductionToTypeScriptAnd KeyConcepts/
+    📅 Day4AdvancedTypeScriptConceptsAndApplications/
 ```
 
 ### 🏷️ Naming Conventions
@@ -265,7 +223,7 @@ node dist/week5/day1.js # Run specific compiled file
 |---------|------------|---------|
 | 📁 Folders | PascalCase or Week#Topic | `Week1Python`, `ExercisesXP` |
 | 🐍 Python files | snake_case | `exercisesxp.py`, `daily_challenge.py` |
-| 🌐 JS/TS files | camelCase | `day1.ts`, `userInterface.ts` |
+| 🌐 JS/TS files | camelCase/PascalCase per spec | `UnionTypeValidator.ts`, `dom_exercises.js` |
 | 🏗️ Classes | PascalCase | `Student`, `DatabaseManager` |
 | 🔧 Functions/variables | camelCase (JS/TS), snake_case (Python) | `getUserData()`, `get_user_data()` |
 
@@ -377,8 +335,8 @@ When adding content:
 5. ✅ Test all code before committing
 
 ---
-**📅 Last Updated**: October 2025  
-**🔖 Version**: 1.0  
+**📅 Last Updated**: May 2024
+**🔖 Version**: 1.1
 **👥 Maintainer**: Course Development Team
 
 For questions, suggestions, or contributions, please refer to the main repository or create an issue in the project tracker.
