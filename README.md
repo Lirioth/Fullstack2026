@@ -140,8 +140,8 @@ Each week follows a consistent structure:
 - **Daily Challenge**: Video metadata manipulation reinforces object method fluency (see `VideoObjects.ts`).
 
 #### 📅 Day3 — HTTP & Forms
-- **Exercises XP**: Demonstrates GET vs POST submissions, devtools payload inspection, and JSON serialization walkthroughs.【F:Week4AdvAsynchronousJavascript/Day3HTTPandFormmethodGETandPOST/Exercises/exercises-xp-http-forms/README.md†L1-L37】
-- **Daily Challenges**: Includes a truthiness utility and a form-to-JSON converter with running history to reinforce event handling and validation patterns.【F:Week4AdvAsynchronousJavascript/Day3HTTPandFormmethodGETandPOST/DailyChallenge/TrueOrFalse/README.md†L1-L20】【F:Week4AdvAsynchronousJavascript/Day3HTTPandFormmethodGETandPOST/DailyChallenge/HTMLForm/README.md†L1-L17】
+- **Exercises XP**: Demonstrates GET vs POST submissions, devtools payload inspection, and JSON serialization walkthroughs.【F:Week4AdvAsynchronousJavaScript/Day3HTTPandFormmethodGETandPOST/Exercises/exercises-xp-http-forms/README.md†L1-L37】
+- **Daily Challenges**: Includes a truthiness utility and a form-to-JSON converter with running history to reinforce event handling and validation patterns.【F:Week4AdvAsynchronousJavaScript/Day3HTTPandFormmethodGETandPOST/DailyChallenge/TrueOrFalse/README.md†L1-L20】【F:Week4AdvAsynchronousJavaScript/Day3HTTPandFormmethodGETandPOST/DailyChallenge/HTMLForm/README.md†L1-L17】
 
 #### 📅 Day4 — Promises & Async Flows
 - **Exercises XP**: Promise construction practice, including timed resolution and error handling utilities, runnable via browser UI or Node.【F:Week4AdvAsynchronousJavaScript/Day4AsynchronousJavascript/Exercises/ExercisesXP/README.md†L1-L36】
@@ -155,7 +155,7 @@ Each week follows a consistent structure:
 **🎯 Objective**: Practice type guards, discriminated unions, and object-oriented design using TypeScript tooling.
 
 #### 📅 Day2 — Union Types
-- **Daily Challenge (`UnionTypeValidator.ts`)**: Validates runtime values against whitelisted type strings, including aliases for arrays, null, and dates.【F:Week5MiniprojectAndTypescript/Day2IntroductionToTypeScriptAnd KeyConcepts/DailyChallenge/README.md†L1-L27】
+- **Daily Challenge (`UnionTypeValidator.ts`)**: Validates runtime values against whitelisted type strings, including aliases for arrays, null, and dates.【F:Week5MiniprojectAndTypescript/Day2IntroductionToTypeScriptAndKeyConcepts/DailyChallenge/README.md†L1-L27】
 
 #### 📅 Day3 — Classes & Interfaces
 - **Daily Challenge (`LibrarySystem.ts`)**: Implements a library domain model with inheritance, optional fields, and readonly modifiers to contrast physical vs digital catalogues.【F:Week5MiniprojectAndTypescript/Day3AdvancedTypeScriptConceptsAndApplications/DailyChallenge/README.md†L1-L15】
@@ -178,10 +178,10 @@ Each week follows a consistent structure:
 
 1. **Install prerequisites**
    - Python 3.11+ for Weeks 1–2.
-   - Node.js 18+ plus `npm` for DOM, HTTP, async, and TypeScript modules.【F:Week4AdvAsynchronousJavascript/Day3HTTPandFormmethodGETandPOST/Exercises/exercises-xp-http-forms/README.md†L24-L32】【F:Week5MiniprojectAndTypescript/Day4AdvancedTypeScriptConceptsAndApplications/DailyChallenge/README.md†L9-L18】
+   - Node.js 18+ plus `npm` for DOM, HTTP, async, and TypeScript modules.【F:Week4AdvAsynchronousJavaScript/Day3HTTPandFormmethodGETandPOST/Exercises/exercises-xp-http-forms/README.md†L24-L32】【F:Week5MiniprojectAndTypescript/Day4AdvancedTypeScriptConceptsAndApplications/DailyChallenge/README.md†L9-L18】
 2. **Global tooling (optional but recommended)**
    - `npx ts-node` for running `.ts` files without intermediate builds.【F:Week4AdvAsynchronousJavaScript/Day1AdvancedArrayMethods/DailyChallenge/README.md†L15-L24】
-   - Simple static servers (`python -m http.server`, `npx http-server`) for HTTP form demos.【F:Week4AdvAsynchronousJavascript/Day3HTTPandFormmethodGETandPOST/Exercises/exercises-xp-http-forms/README.md†L24-L32】
+   - Simple static servers (`python -m http.server`, `npx http-server`) for HTTP form demos.【F:Week4AdvAsynchronousJavaScript/Day3HTTPandFormmethodGETandPOST/Exercises/exercises-xp-http-forms/README.md†L24-L32】
 3. **Editor setup**
    - Enable ESLint/Prettier or equivalent formatters to keep JS/TS code consistent.
    - Install Python and TypeScript language extensions for intellisense and type checking.
@@ -193,8 +193,8 @@ Each week follows a consistent structure:
 |------|-------------|
 | 🐍 Week1–2 | Run Python files with `python <file>.py`; add virtual environments for package isolation. |
 | 🌐 Week3 | Open HTML files directly in a browser; keep DevTools console visible for logs and interactive debugging.【F:Week3JavaScriptandDOM/Day3LearningDOMEvents/Exercises/ExercisesXP/README_DOM_XP.md†L11-L33】 |
-| ⚡ Week4 | Combine browser sessions with Node CLI (`node` or `npx ts-node`) to inspect promises, HTTP submissions, and TypeScript utilities.【F:Week4AdvAsynchronousJavascript/Day3HTTPandFormmethodGETandPOST/Exercises/exercises-xp-http-forms/README.md†L24-L37】【F:Week4AdvAsynchronousJavaScript/Day4AsynchronousJavascript/Exercises/ExercisesXP/README.md†L28-L36】 |
-| 🔷 Week5 | Execute TypeScript via `npx ts-node` or compile with `npx tsc` followed by `node` for grader-friendly outputs.【F:Week5MiniprojectAndTypescript/Day2IntroductionToTypeScriptAnd KeyConcepts/DailyChallenge/README.md†L15-L23】 |
+| ⚡ Week4 | Combine browser sessions with Node CLI (`node` or `npx ts-node`) to inspect promises, HTTP submissions, and TypeScript utilities.【F:Week4AdvAsynchronousJavaScript/Day3HTTPandFormmethodGETandPOST/Exercises/exercises-xp-http-forms/README.md†L24-L37】【F:Week4AdvAsynchronousJavaScript/Day4AsynchronousJavascript/Exercises/ExercisesXP/README.md†L28-L36】 |
+| 🔷 Week5 | Execute TypeScript via `npx ts-node` or compile with `npx tsc` followed by `node` for grader-friendly outputs.【F:Week5MiniprojectAndTypescript/Day2IntroductionToTypeScriptAndKeyConcepts/DailyChallenge/README.md†L15-L23】 |
 
 > 💡 **Automation idea**: Add npm scripts (`npm run dev:week4`) to standardise local servers and TS execution.
 
@@ -212,9 +212,9 @@ Each week follows a consistent structure:
   ⚡ Week4AdvAsynchronousJavaScript/
     📅 Day1AdvancedArrayMethods/
     📅 Day4AsynchronousJavascript/
-  ⚡ Week4AdvAsynchronousJavascript/      # HTTP/forms focus (Day3 assets)
+  ⚡ Week4AdvAsynchronousJavaScript/      # HTTP/forms focus (Day3 assets)
   🔷 Week5MiniprojectAndTypescript/
-    📅 Day2IntroductionToTypeScriptAnd KeyConcepts/
+    📅 Day2IntroductionToTypeScriptAndKeyConcepts/
     📅 Day4AdvancedTypeScriptConceptsAndApplications/
 ```
 
