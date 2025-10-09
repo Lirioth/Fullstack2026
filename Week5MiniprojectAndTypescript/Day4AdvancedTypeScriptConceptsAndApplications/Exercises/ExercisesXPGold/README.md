@@ -23,3 +23,9 @@ node ExercisesXPGold.js
 ## Notes
 - Type assertions (e.g., `value as string`) do not convert values at runtime. For real conversion, use `String(value)` or `value.toString()`.
 - Exercise 2 uses a constructor/mapper function to perform a real runtime conversion in a generic way.
+
+---
+
+## 📜 License
+
+This exercise follows the repository-wide MIT terms; see the [LICENSE](../../../../LICENSE) file for details.
