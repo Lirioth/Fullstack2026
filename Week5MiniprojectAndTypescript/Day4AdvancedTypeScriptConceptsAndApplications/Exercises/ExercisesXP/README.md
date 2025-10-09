@@ -28,3 +28,9 @@ node ExercisesXP.js
 
 ## Notes
 Type assertions (e.g., `value as string`) do not convert values at runtime. For real conversion use `String(value)` or `value.toString()`.
+
+---
+
+## 📜 License
+
+This exercise follows the repository-wide MIT terms; see the [LICENSE](../../../../LICENSE) file for details.

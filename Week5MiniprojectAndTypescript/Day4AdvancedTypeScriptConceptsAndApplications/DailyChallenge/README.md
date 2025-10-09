@@ -23,3 +23,9 @@ node TypeGuardUnion.js
 ## Notes
 - Uses discriminated unions via the `type` field and predicate functions (`isUser`, `isProduct`, `isOrder`).
 - `handleData` returns an array of messages and handles unexpected cases by returning a descriptive string instead of throwing.
+
+---
+
+## 📜 License
+
+This exercise follows the repository-wide MIT terms; see the [LICENSE](../../../LICENSE) file for details.

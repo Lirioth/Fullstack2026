@@ -335,6 +335,11 @@ When adding content:
 5. ✅ Test all code before committing
 
 ---
+## 📜 License
+
+This repository is distributed under the [MIT License](LICENSE). Feel free to explore, remix, and build upon the content while retaining the copyright notice.
+
+---
 **📅 Last Updated**: May 2024
 **🔖 Version**: 1.1
 **👥 Maintainer**: Course Development Team
