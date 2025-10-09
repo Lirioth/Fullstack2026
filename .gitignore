@@ -1,25 +1,35 @@
-# Python artifacts
+# Module: gitignore
+# Purpose: Prevent temporary, build, and environment artifacts from polluting version control.
+# Author: Kevin "Lirioth" Cusnir
+# Date: 2025-02-15 | TZ: Asia/Jerusalem
+# Notes: Comments in ENGLISH; emojis sparingly.
+
+# Python cache directories
 __pycache__/
 *.py[cod]
-*$py.class
+*.pyo
 .Python
-env/
-venv/
-ENV/
-.venv/
-.ipynb_checkpoints/
 .pytest_cache/
 .mypy_cache/
-.coverage
-htmlcov/
+.ipynb_checkpoints/
+
+# Virtual environments
+.env
+.venv/
+venv/
+env/
+ENV/
+
+# Node and frontend tooling
+node_modules/
 dist/
 build/
-*.egg-info/
-.eggs/
-instance/
+.npm/
+.next/
+.nuxt/
+.svelte-kit/
 
-# Node/TypeScript artifacts
-node_modules/
+# Package manager logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
@@ -27,34 +37,31 @@ pnpm-debug.log*
 package-lock.json
 pnpm-lock.yaml
 yarn.lock
-.next/
-.nuxt/
-.svelte-kit/
-coverage/
-web-dist/
 
-# Build outputs
-/dist/
-/out/
-/tmp/
-.DS_Store
-Thumbs.db
+# TypeScript build cache
+*.tsbuildinfo
+
+# Logs and coverage
 *.log
 *.tmp
-*.swp
-.idea/
-.vscode/
-*.iml
-*.local
-*.cache/
+coverage/
+.coverage
+htmlcov/
 
-# Environment files
-.env
-.env.*
-!.env.example
+# Local data artifacts
+*.sqlite3
+*.sqlite
+*.db
+data/*.db
+data/*.sqlite
 
-# Misc
+# OS generated files
 .DS_Store
+Thumbs.db
 *.bak
 *.orig
 *.rej
+
+# Editor folders
+.vscode/
+.idea/
