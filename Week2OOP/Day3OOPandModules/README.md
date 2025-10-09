@@ -100,12 +100,12 @@ Version: 1.0.0
 Author: Developer
 """
 
-# Importar clases principales para acceso directo
+# 🌟 Import main classes for direct access
 from .core.engine import GameEngine
 from .graphics.renderer import Renderer
 from .audio.sound_manager import SoundManager
 
-# Definir qué se exporta cuando se hace "from my_game_engine import *"
+# 📦 Define what is exported when using "from my_game_engine import *"
 __all__ = [
     'GameEngine',
     'Renderer', 
@@ -114,12 +114,12 @@ __all__ = [
     'VERSION'
 ]
 
-# Metadatos del paquete
+# 🧾 Package metadata
 VERSION = "1.0.0"
 AUTHOR = "Developer Team"
 EMAIL = "dev@gameengine.com"
 
-# Función de conveniencia
+# 🤝 Convenience helper function
 def create_game(title="My Game", width=800, height=600):
     """
     Convenience function to quickly create a game
@@ -135,24 +135,24 @@ def create_game(title="My Game", width=800, height=600):
     engine = GameEngine(title, width, height)
     return engine
 
-# Configuración al importar el paquete
+# ⚙️ Package initialization feedback
 print(f"Game Engine v{VERSION} loaded successfully!")
 ```
 
-#### 🔧 Configuración Avanzada
+#### 🔧 Advanced Configuration
 ```python
 # my_game_engine/core/__init__.py
 """
-Core module - Motor principal del juego
+Core module - Main game engine
 """
 
 from .engine import GameEngine, GameState
 from .events import EventManager, Event
 
-# Re-exportar para facilitar importaciones
+# 🔁 Re-export for easier imports
 __all__ = ['GameEngine', 'GameState', 'EventManager', 'Event']
 
-# Configuración específica del módulo core
+# ⚙️ Core module configuration
 CORE_VERSION = "1.0.0"
 DEBUG_MODE = False
 
@@ -190,7 +190,7 @@ from math_utils import *
 
 #### 🎯 Advanced Imports
 ```python
-# Importación condicional
+# 🎯 Conditional import
 try:
     import numpy as np
     HAS_NUMPY = True
@@ -203,7 +203,7 @@ class AdvancedCalculator:
             raise ImportError("NumPy required for AdvancedCalculator")
         self.np = np
 
-# Importación dinámica
+# 🧠 Dynamic import
 def load_plugin(plugin_name):
     """Dynamically load plugin"""
     import importlib
@@ -365,9 +365,9 @@ class UserAccount(Subject):
         })
 ```
 
-### 📖 Documentación de Módulos
+### 📖 Module Documentation
 
-#### 📝 Docstrings Completos
+#### 📝 Comprehensive Docstrings
 ```python
 # documentation_example.py
     """
@@ -579,7 +579,7 @@ numpy>=1.21.0
 pytest>=6.0.0
 sphinx>=4.0.0
 
-# setup.py para distribución
+# 🚀 setup.py for distribution
 from setuptools import setup, find_packages
 
 setup(
@@ -605,7 +605,7 @@ setup(
 )
 ```
 
-#### 🧪 Testing Multi-módulo
+#### 🧪 Multi-module Testing
 ```python
 # tests/test_math_utils.py
 import unittest
