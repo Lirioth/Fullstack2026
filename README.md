@@ -144,24 +144,24 @@ Each week follows a consistent structure:
 - **Daily Challenges**: Includes a truthiness utility and a form-to-JSON converter with running history to reinforce event handling and validation patterns.【F:Week4AdvAsynchronousJavaScript/Day3HTTPandFormmethodGETandPOST/DailyChallenge/TrueOrFalse/README.md†L1-L20】【F:Week4AdvAsynchronousJavaScript/Day3HTTPandFormmethodGETandPOST/DailyChallenge/HTMLForm/README.md†L1-L17】
 
 #### 📅 Day4 — Promises & Async Flows
-- **Exercises XP**: Promise construction practice, including timed resolution and error handling utilities, runnable via browser UI or Node.【F:Week4AdvAsynchronousJavaScript/Day4AsynchronousJavascript/Exercises/ExercisesXP/README.md†L1-L36】
-- **Daily Challenge (`PlayWithWords`)**: Chains promise-based string transformations and a Morse translator UI with graceful rejection flows.【F:Week4AdvAsynchronousJavaScript/Day4AsynchronousJavascript/DailyChallenge/PlayWithWords/README.md†L1-L35】
+- **Exercises XP**: Promise construction practice, including timed resolution and error handling utilities, runnable via browser UI or Node.【F:Week4AdvAsynchronousJavaScript/Day4AsynchronousJavaScript/Exercises/ExercisesXP/README.md†L1-L36】
+- **Daily Challenge (`PlayWithWords`)**: Chains promise-based string transformations and a Morse translator UI with graceful rejection flows.【F:Week4AdvAsynchronousJavaScript/Day4AsynchronousJavaScript/DailyChallenge/PlayWithWords/README.md†L1-L35】
 
 #### 🔁 Integration ideas
 - Convert Week3 DOM projects into async-ready apps by layering HTTP requests from Day3.
 - Pair Day1/Day2 TypeScript exercises with Day4 promise utilities to enforce typing on async operations.
 
-### 🔷 Week5MiniprojectAndTypescript — TypeScript Deep Dive
+### 🔷 Week5MiniProjectAndTypeScript — TypeScript Deep Dive
 **🎯 Objective**: Practice type guards, discriminated unions, and object-oriented design using TypeScript tooling.
 
 #### 📅 Day2 — Union Types
-- **Daily Challenge (`UnionTypeValidator.ts`)**: Validates runtime values against whitelisted type strings, including aliases for arrays, null, and dates.【F:Week5MiniprojectAndTypescript/Day2IntroductionToTypeScriptAndKeyConcepts/DailyChallenge/README.md†L1-L27】
+- **Daily Challenge (`UnionTypeValidator.ts`)**: Validates runtime values against whitelisted type strings, including aliases for arrays, null, and dates.【F:Week5MiniProjectAndTypeScript/Day2IntroductionToTypeScriptAndKeyConcepts/DailyChallenge/README.md†L1-L27】
 
 #### 📅 Day3 — Classes & Interfaces
-- **Daily Challenge (`LibrarySystem.ts`)**: Implements a library domain model with inheritance, optional fields, and readonly modifiers to contrast physical vs digital catalogues.【F:Week5MiniprojectAndTypescript/Day3AdvancedTypeScriptConceptsAndApplications/DailyChallenge/README.md†L1-L15】
+- **Daily Challenge (`LibrarySystem.ts`)**: Implements a library domain model with inheritance, optional fields, and readonly modifiers to contrast physical vs digital catalogues.【F:Week5MiniProjectAndTypeScript/Day3AdvancedTypeScriptConceptsAndApplications/DailyChallenge/README.md†L1-L15】
 
 #### 📅 Day4 — Type Guards & Unions
-- **Daily Challenge (`TypeGuardUnion.ts`)**: Demonstrates discriminated unions, custom guard predicates, and resilient fallbacks when unexpected payloads arrive.【F:Week5MiniprojectAndTypescript/Day4AdvancedTypeScriptConceptsAndApplications/DailyChallenge/README.md†L1-L20】
+- **Daily Challenge (`TypeGuardUnion.ts`)**: Demonstrates discriminated unions, custom guard predicates, and resilient fallbacks when unexpected payloads arrive.【F:Week5MiniProjectAndTypeScript/Day4AdvancedTypeScriptConceptsAndApplications/DailyChallenge/README.md†L1-L20】
 
 > ℹ️ **Week5 Tip**: Each TypeScript exercise includes both `ts-node` and `tsc` execution instructions for rapid feedback loops.
 
@@ -169,8 +169,8 @@ Each week follows a consistent structure:
 ## 4. 🛠️ Technology Stack & Tools
 
 - **Languages**: Python (Weeks 1–2), JavaScript/TypeScript (Weeks 3–5) with growing emphasis on modern ES features and strong typing.
-- **Tooling**: Node.js 18+ for JS/TS execution, `ts-node`/`tsc` for TypeScript compilation, and browser DevTools for DOM/HTTP debugging.【F:Week4AdvAsynchronousJavaScript/Day4AsynchronousJavascript/Exercises/ExercisesXP/README.md†L28-L36】【F:Week5MiniprojectAndTypescript/Day4AdvancedTypeScriptConceptsAndApplications/DailyChallenge/README.md†L9-L18】
-- **Testing Helpers**: Inline demo blocks (guarded against auto-graders) provide quick sanity checks across TypeScript challenges.【F:Week4AdvAsynchronousJavaScript/Day1AdvancedArrayMethods/DailyChallenge/README.md†L15-L24】【F:Week5MiniprojectAndTypescript/Day3AdvancedTypeScriptConceptsAndApplications/DailyChallenge/README.md†L5-L15】
+- **Tooling**: Node.js 18+ for JS/TS execution, `ts-node`/`tsc` for TypeScript compilation, and browser DevTools for DOM/HTTP debugging.【F:Week4AdvAsynchronousJavaScript/Day4AsynchronousJavaScript/Exercises/ExercisesXP/README.md†L28-L36】【F:Week5MiniProjectAndTypeScript/Day4AdvancedTypeScriptConceptsAndApplications/DailyChallenge/README.md†L9-L18】
+- **Testing Helpers**: Inline demo blocks (guarded against auto-graders) provide quick sanity checks across TypeScript challenges.【F:Week4AdvAsynchronousJavaScript/Day1AdvancedArrayMethods/DailyChallenge/README.md†L15-L24】【F:Week5MiniProjectAndTypeScript/Day3AdvancedTypeScriptConceptsAndApplications/DailyChallenge/README.md†L5-L15】
 - **Planned Additions**: ESLint/Prettier, pytest, and Vitest/Jest remain roadmap priorities (see §11).
 
 ---
@@ -178,7 +178,7 @@ Each week follows a consistent structure:
 
 1. **Install prerequisites**
    - Python 3.11+ for Weeks 1–2.
-   - Node.js 18+ plus `npm` for DOM, HTTP, async, and TypeScript modules.【F:Week4AdvAsynchronousJavaScript/Day3HTTPandFormmethodGETandPOST/Exercises/exercises-xp-http-forms/README.md†L24-L32】【F:Week5MiniprojectAndTypescript/Day4AdvancedTypeScriptConceptsAndApplications/DailyChallenge/README.md†L9-L18】
+   - Node.js 18+ plus `npm` for DOM, HTTP, async, and TypeScript modules.【F:Week4AdvAsynchronousJavaScript/Day3HTTPandFormmethodGETandPOST/Exercises/exercises-xp-http-forms/README.md†L24-L32】【F:Week5MiniProjectAndTypeScript/Day4AdvancedTypeScriptConceptsAndApplications/DailyChallenge/README.md†L9-L18】
 2. **Global tooling (optional but recommended)**
    - `npx ts-node` for running `.ts` files without intermediate builds.【F:Week4AdvAsynchronousJavaScript/Day1AdvancedArrayMethods/DailyChallenge/README.md†L15-L24】
    - Simple static servers (`python -m http.server`, `npx http-server`) for HTTP form demos.【F:Week4AdvAsynchronousJavaScript/Day3HTTPandFormmethodGETandPOST/Exercises/exercises-xp-http-forms/README.md†L24-L32】
@@ -193,8 +193,8 @@ Each week follows a consistent structure:
 |------|-------------|
 | 🐍 Week1–2 | Run Python files with `python <file>.py`; add virtual environments for package isolation. |
 | 🌐 Week3 | Open HTML files directly in a browser; keep DevTools console visible for logs and interactive debugging.【F:Week3JavaScriptandDOM/Day3LearningDOMEvents/Exercises/ExercisesXP/README_DOM_XP.md†L11-L33】 |
-| ⚡ Week4 | Combine browser sessions with Node CLI (`node` or `npx ts-node`) to inspect promises, HTTP submissions, and TypeScript utilities.【F:Week4AdvAsynchronousJavaScript/Day3HTTPandFormmethodGETandPOST/Exercises/exercises-xp-http-forms/README.md†L24-L37】【F:Week4AdvAsynchronousJavaScript/Day4AsynchronousJavascript/Exercises/ExercisesXP/README.md†L28-L36】 |
-| 🔷 Week5 | Execute TypeScript via `npx ts-node` or compile with `npx tsc` followed by `node` for grader-friendly outputs.【F:Week5MiniprojectAndTypescript/Day2IntroductionToTypeScriptAndKeyConcepts/DailyChallenge/README.md†L15-L23】 |
+| ⚡ Week4 | Combine browser sessions with Node CLI (`node` or `npx ts-node`) to inspect promises, HTTP submissions, and TypeScript utilities.【F:Week4AdvAsynchronousJavaScript/Day3HTTPandFormmethodGETandPOST/Exercises/exercises-xp-http-forms/README.md†L24-L37】【F:Week4AdvAsynchronousJavaScript/Day4AsynchronousJavaScript/Exercises/ExercisesXP/README.md†L28-L36】 |
+| 🔷 Week5 | Execute TypeScript via `npx ts-node` or compile with `npx tsc` followed by `node` for grader-friendly outputs.【F:Week5MiniProjectAndTypeScript/Day2IntroductionToTypeScriptAndKeyConcepts/DailyChallenge/README.md†L15-L23】 |
 
 > 💡 **Automation idea**: Add npm scripts (`npm run dev:week4`) to standardise local servers and TS execution.
 
@@ -211,9 +211,9 @@ Each week follows a consistent structure:
     📅 Day5MiniProject/
   ⚡ Week4AdvAsynchronousJavaScript/
     📅 Day1AdvancedArrayMethods/
-    📅 Day4AsynchronousJavascript/
-  ⚡ Week4AdvAsynchronousJavaScript/      # HTTP/forms focus (Day3 assets)
-  🔷 Week5MiniprojectAndTypescript/
+    📅 Day3HTTPandFormmethodGETandPOST/
+    📅 Day4AsynchronousJavaScript/
+  🔷 Week5MiniProjectAndTypeScript/
     📅 Day2IntroductionToTypeScriptAndKeyConcepts/
     📅 Day4AdvancedTypeScriptConceptsAndApplications/
 ```
@@ -340,8 +340,8 @@ When adding content:
 This repository is distributed under the [MIT License](LICENSE). Feel free to explore, remix, and build upon the content while retaining the copyright notice.
 
 ---
-**📅 Last Updated**: May 2024
-**🔖 Version**: 1.1
+**📅 Last Updated**: February 2025
+**🔖 Version**: 1.2
 **👥 Maintainer**: Course Development Team
 
 For questions, suggestions, or contributions, please refer to the main repository or create an issue in the project tracker.
