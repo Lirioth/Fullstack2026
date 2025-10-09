@@ -1,18 +1,25 @@
 # XP Gold — Functions (short & simple)
 # 🚀 Run: python3 xpgoldfunctions.py
 
+import datetime
 import random
 
 # --- Exercise 1: When will I retire? ---
 
-# Hard-code today's date as required by the exercise
-CURRENT_YEAR, CURRENT_MONTH, CURRENT_DAY = 2025, 9, 16
+# Allow overriding today's date for deterministic tests 📆
+TODAY_OVERRIDE = None
+
+
+def get_today():
+    """Return today's date, using an override when provided."""
+    return TODAY_OVERRIDE or datetime.date.today()
 
 def get_age(year, month, day):
-    """Return age in whole years based on the hard-coded 'today' above."""
-    age = CURRENT_YEAR - year
-    # if birthday hasn't happened yet this year -> subtract 1
-    if (CURRENT_MONTH, CURRENT_DAY) < (month, day):
+    """Return age in whole years based on the current date."""
+    today = get_today()
+    age = today.year - year
+    # If birthday hasn't happened yet this year -> subtract 1 🎂
+    if (today.month, today.day) < (month, day):
         age -= 1
     return age
 
@@ -20,8 +27,11 @@ def can_retire(gender, date_of_birth):
     """Return True if person can retire (men:67, women:62), else False.
     - gender: 'm' or 'f' (case-insensitive)
     - date_of_birth: 'yyyy/mm/dd'
+    - Raises ValueError for invalid gender inputs.
     """
     gender = gender.strip().lower()
+    if gender not in {"m", "f"}:
+        raise ValueError("Invalid gender 🚫: expected 'm' or 'f'.")
     y, m, d = map(int, date_of_birth.strip().split("/"))
     age = get_age(y, m, d)
     retirement_age = 67 if gender == "m" else 62
