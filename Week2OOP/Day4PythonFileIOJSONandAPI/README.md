@@ -20,7 +20,7 @@ By the end of this day, you will be able to:
 import os
 from pathlib import Path
 
-# Usando open() tradicional
+# 🕰️ Using classic open()
 def read_file_traditional(filename):
     """Traditional file reading"""
     try:
@@ -34,7 +34,7 @@ def read_file_traditional(filename):
         print(f"Error reading file: {e}")
         return None
 
-# Usando pathlib (moderno)
+# 🌉 Using pathlib (modern approach)
 def read_file_pathlib(filepath):
     """Modern reading with pathlib"""
     try:
@@ -48,7 +48,7 @@ def read_file_pathlib(filepath):
         print(f"Error reading file: {e}")
         return None
 
-# Lectura línea por línea (eficiente para archivos grandes)
+# 📏 Line-by-line reading (efficient for large files)
 def read_file_lines(filename):
     """Line-by-line reading for large files"""
     lines = []
@@ -65,11 +65,11 @@ def read_file_lines(filename):
         print(f"Error reading file: {e}")
         return []
 
-# Escritura de archivos
+# ✍️ File writing
 def write_file_safe(filename, content, mode='w'):
     """Safe file writing"""
     try:
-        # Crear directorio si no existe
+        # 🏗️ Create directory if it does not exist
         path = Path(filename)
         path.parent.mkdir(parents=True, exist_ok=True)
         
@@ -87,7 +87,7 @@ def write_file_safe(filename, content, mode='w'):
         return False
 ```
 
-#### 📋 Manejo Avanzado de Archivos
+#### 📋 Advanced File Handling
 ```python
 import shutil
 import tempfile
@@ -101,7 +101,7 @@ class FileManager:
     Initialize file manager
         
         Args:
-            base_directory (str): Directorio base para operaciones
+            base_directory (str): Base directory for operations
         """
         self.base_path = Path(base_directory)
         self.base_path.mkdir(exist_ok=True)
@@ -112,11 +112,11 @@ class FileManager:
     Create file backup
         
         Args:
-            filename (str): Nombre del archivo
-            backup_suffix (str): Sufijo para el backup
+            filename (str): File name
+            backup_suffix (str): Backup suffix
         
         Returns:
-            str: Ruta del archivo de backup
+            str: Backup file path
         """
         original_path = self.base_path / filename
         
@@ -138,10 +138,10 @@ class FileManager:
     Get detailed file information
         
         Args:
-            filename (str): Nombre del archivo
+            filename (str): File name
         
         Returns:
-            dict: Información del archivo
+            dict: File information
         """
         file_path = self.base_path / filename
         
@@ -180,13 +180,13 @@ class FileManager:
     def find_files(self, pattern="*", recursive=True):
         """
     Search files by pattern
-        
+
         Args:
-            pattern (str): Patrón de búsqueda (glob)
-            recursive (bool): Búsqueda recursiva
-        
+            pattern (str): Search pattern (glob)
+            recursive (bool): Recursive search toggle
+
         Returns:
-            list: Lista de archivos encontrados
+            list: List of discovered files
         """
         if recursive:
             return list(self.base_path.rglob(pattern))
@@ -196,13 +196,13 @@ class FileManager:
     def create_temp_file(self, content="", suffix=".tmp"):
         """
     Create temporary file
-        
+
         Args:
-            content (str): Contenido inicial
-            suffix (str): Sufijo del archivo
-        
+            content (str): Initial content
+            suffix (str): File suffix
+
         Returns:
-            str: Ruta del archivo temporal
+            str: Temporary file path
         """
         temp_file = tempfile.NamedTemporaryFile(
             mode='w',
@@ -249,8 +249,8 @@ class CSVProcessor:
     Initialize CSV processor
         
         Args:
-            delimiter (str): Delimitador de campos
-            quotechar (str): Carácter de comillas
+            delimiter (str): Field delimiter
+            quotechar (str): Quote character
         """
         self.delimiter = delimiter
         self.quotechar = quotechar
@@ -260,10 +260,10 @@ class CSVProcessor:
     Read CSV and convert to list of dictionaries
         
         Args:
-            filename (str): Nombre del archivo CSV
+            filename (str): CSV file name
         
         Returns:
-            List[Dict[str, Any]]: Datos del CSV
+            List[Dict[str, Any]]: CSV data
         """
         data = []
         
@@ -275,11 +275,11 @@ class CSVProcessor:
                     quotechar=self.quotechar
                 )
                 
-                for row_number, row in enumerate(reader, 2):  # Empezar en 2 (fila 1 = headers)
-                    # Limpiar espacios en blanco
+                for row_number, row in enumerate(reader, 2):  # 🚀 Start at 2 (row 1 = headers)
+                    # 🧼 Trim whitespace
                     cleaned_row = {k.strip(): v.strip() for k, v in row.items()}
                     
-                    # Añadir metadatos
+                    # 🏷️ Append metadata
                     cleaned_row['_row_number'] = row_number
                     cleaned_row['_original_row'] = dict(row)
                     
@@ -298,20 +298,20 @@ class CSVProcessor:
     Write list of dictionaries to CSV
         
         Args:
-            filename (str): Nombre del archivo CSV
-            data (List[Dict[str, Any]]): Datos a escribir
-            fieldnames (List[str]): Nombres de campos (opcional)
-        
+            filename (str): CSV file name
+            data (List[Dict[str, Any]]): Data to write
+            fieldnames (List[str]): Field names (optional)
+
         Returns:
-            bool: True si se escribió correctamente
+            bool: True if the write succeeded
         """
         if not data:
             raise ValueError("No data provided to write")
         
-        # Determinar fieldnames si no se proporcionan
+        # 🧠 Determine fieldnames if not provided
         if fieldnames is None:
             fieldnames = list(data[0].keys())
-            # Filtrar metadatos si existen
+            # 🪄 Filter metadata columns when present
             fieldnames = [f for f in fieldnames if not f.startswith('_')]
         
         try:
@@ -327,7 +327,7 @@ class CSVProcessor:
                 writer.writeheader()
                 
                 for row in data:
-                    # Filtrar solo los campos especificados
+                    # 🎯 Write only the requested fields
                     filtered_row = {k: v for k, v in row.items() if k in fieldnames}
                     writer.writerow(filtered_row)
             
@@ -343,11 +343,11 @@ class CSVProcessor:
     Convert data types in CSV
         
         Args:
-            data (List[Dict[str, Any]]): Datos originales
-            type_mapping (Dict[str, type]): Mapeo de campos a tipos
-        
+            data (List[Dict[str, Any]]): Original data
+            type_mapping (Dict[str, type]): Field-to-type mapping
+
         Returns:
-            List[Dict[str, Any]]: Datos con tipos convertidos
+            List[Dict[str, Any]]: Data with converted types
         """
         converted_data = []
         
@@ -372,7 +372,7 @@ class CSVProcessor:
                     
                     except (ValueError, TypeError) as e:
                         print(f"Warning: Could not convert '{row[field]}' to {target_type.__name__} for field '{field}': {e}")
-                        # Mantener valor original en caso de error
+                        # 🤗 Keep original value if conversion fails
                         pass
             
             converted_data.append(converted_row)
@@ -385,11 +385,11 @@ class CSVProcessor:
     Filter CSV data
         
         Args:
-            data (List[Dict[str, Any]]): Datos originales
-            filters (Dict[str, Any]): Filtros a aplicar
-        
+            data (List[Dict[str, Any]]): Original data
+            filters (Dict[str, Any]): Filters to apply
+
         Returns:
-            List[Dict[str, Any]]: Datos filtrados
+            List[Dict[str, Any]]: Filtered data
         """
         filtered_data = []
         
@@ -403,9 +403,9 @@ class CSVProcessor:
                 
                 row_value = row[field]
                 
-                # Diferentes tipos de filtros
+                # 🎛️ Different filter styles
                 if isinstance(filter_value, dict):
-                    # Filtros avanzados: {'gte': 100}, {'contains': 'text'}
+                    # 🧪 Advanced filters: {'gte': 100}, {'contains': 'text'}
                     if 'gte' in filter_value and row_value < filter_value['gte']:
                         match = False
                         break
@@ -419,7 +419,7 @@ class CSVProcessor:
                         match = False
                         break
                 else:
-                    # Filtro directo por valor
+                    # 🎯 Direct value match
                     if row_value != filter_value:
                         match = False
                         break
@@ -435,11 +435,11 @@ class CSVProcessor:
     Calculate statistics for numeric fields
         
         Args:
-            data (List[Dict[str, Any]]): Datos del CSV
-            numeric_fields (List[str]): Campos numéricos a analizar
-        
+            data (List[Dict[str, Any]]): CSV data
+            numeric_fields (List[str]): Numeric fields to analyze
+
         Returns:
-            Dict[str, Dict[str, float]]: Estadísticas por campo
+            Dict[str, Dict[str, float]]: Field-by-field statistics
         """
         statistics = {}
         
@@ -494,8 +494,8 @@ class JSONProcessor:
     Initialize JSON processor
         
         Args:
-            indent (int): Indentación para pretty printing
-            ensure_ascii (bool): Forzar ASCII en output
+            indent (int): Indentation level for pretty printing
+            ensure_ascii (bool): Force ASCII output
         """
         self.indent = indent
         self.ensure_ascii = ensure_ascii
@@ -505,10 +505,10 @@ class JSONProcessor:
     Load JSON from file
         
         Args:
-            filename (str): Nombre del archivo JSON
+            filename (str): JSON file name
         
         Returns:
-            Any: Datos deserializados
+            Any: Deserialized data
         """
         try:
             with open(filename, 'r', encoding='utf-8') as file:
@@ -523,14 +523,14 @@ class JSONProcessor:
     Save data as JSON
         
         Args:
-            data (Any): Datos a serializar
-            filename (str): Nombre del archivo
+            data (Any): Data to serialize
+            filename (str): File name
         
         Returns:
-            bool: True si se guardó correctamente
+            bool: True if the file was saved successfully
         """
         try:
-            # Crear directorio si no existe
+            # 🏗️ Create directory if it does not exist
             Path(filename).parent.mkdir(parents=True, exist_ok=True)
             
             with open(filename, 'w', encoding='utf-8') as file:
@@ -553,10 +553,10 @@ class JSONProcessor:
     Custom serializer for non-native JSON types
         
         Args:
-            obj (Any): Objeto a serializar
-        
+            obj (Any): Object to serialize
+
         Returns:
-            Any: Objeto serializable
+            Any: Serializable representation
         """
         if isinstance(obj, (datetime, date)):
             return obj.isoformat()
@@ -574,18 +574,18 @@ class JSONProcessor:
     Validate data against a simple schema
         
         Args:
-            data (Any): Datos a validar
-            schema (Dict[str, Any]): Schema de validación
+            data (Any): Data to validate
+            schema (Dict[str, Any]): Validation schema
         
         Returns:
-            Dict[str, Any]: Resultado de validación
+            Dict[str, Any]: Validation result
         """
         errors = []
         warnings = []
         
         def validate_field(field_name: str, value: Any, field_schema: Dict[str, Any]):
             """Validate individual field"""
-            # Verificar tipo requerido
+            # 🔍 Check required type
             if 'type' in field_schema:
                 expected_type = field_schema['type']
                 if expected_type == 'string' and not isinstance(value, str):
@@ -597,11 +597,11 @@ class JSONProcessor:
                 elif expected_type == 'object' and not isinstance(value, dict):
                     errors.append(f"Field '{field_name}' must be object, got {type(value).__name__}")
             
-            # Verificar valor requerido
+            # ✅ Confirm required value
             if field_schema.get('required', False) and (value is None or value == ""):
                 errors.append(f"Field '{field_name}' is required")
             
-            # Verificar longitud mínima/máxima
+            # 📏 Check minimum/maximum length
             if isinstance(value, (str, list)):
                 min_length = field_schema.get('min_length')
                 max_length = field_schema.get('max_length')
@@ -612,7 +612,7 @@ class JSONProcessor:
                 if max_length and len(value) > max_length:
                     errors.append(f"Field '{field_name}' must have at most {max_length} characters/items")
             
-            # Verificar rango para números
+            # 📊 Check numeric range
             if isinstance(value, (int, float)):
                 min_value = field_schema.get('min_value')
                 max_value = field_schema.get('max_value')
@@ -623,22 +623,22 @@ class JSONProcessor:
                 if max_value is not None and value > max_value:
                     errors.append(f"Field '{field_name}' must be at most {max_value}")
             
-            # Verificar valores permitidos
+            # 🧾 Check allowed values
             allowed_values = field_schema.get('allowed_values')
             if allowed_values and value not in allowed_values:
                 errors.append(f"Field '{field_name}' must be one of {allowed_values}")
         
-        # Validar estructura principal
+        # 🧱 Validate main structure
         if not isinstance(data, dict):
             errors.append("Data must be a JSON object")
             return {'valid': False, 'errors': errors, 'warnings': warnings}
         
-        # Validar campos definidos en schema
+        # 🗂️ Validate fields defined in the schema
         for field_name, field_schema in schema.get('fields', {}).items():
             value = data.get(field_name)
             validate_field(field_name, value, field_schema)
         
-        # Verificar campos no definidos en schema
+        # 🚨 Flag fields not defined in the schema
         if schema.get('strict', False):
             for field_name in data:
                 if field_name not in schema.get('fields', {}):
@@ -657,12 +657,12 @@ class JSONProcessor:
     Merge two JSON objects
         
         Args:
-            base_data (Dict[str, Any]): Datos base
-            update_data (Dict[str, Any]): Datos a fusionar
-            deep_merge (bool): Fusión profunda de objetos anidados
-        
+            base_data (Dict[str, Any]): Base data
+            update_data (Dict[str, Any]): Data to merge in
+            deep_merge (bool): Perform deep merge for nested objects
+
         Returns:
-            Dict[str, Any]: Datos fusionados
+            Dict[str, Any]: Merged data
         """
         result = base_data.copy()
         
@@ -684,11 +684,11 @@ class JSONProcessor:
     Extract specific fields using dot notation
         
         Args:
-            data (Any): Datos JSON
-            field_paths (List[str]): Rutas de campos (ej: 'user.profile.name')
-        
+            data (Any): JSON data
+            field_paths (List[str]): Field paths (e.g., 'user.profile.name')
+
         Returns:
-            Dict[str, Any]: Campos extraídos
+            Dict[str, Any]: Extracted fields
         """
         result = {}
         
@@ -717,11 +717,11 @@ class JSONProcessor:
     Apply transformations to JSON data
         
         Args:
-            data (Any): Datos originales
-            transformations (Dict[str, callable]): Transformaciones a aplicar
-        
+            data (Any): Original data
+            transformations (Dict[str, callable]): Transformations to apply
+
         Returns:
-            Any: Datos transformados
+            Any: Transformed data
         """
         if isinstance(data, dict):
             transformed = {}
@@ -758,17 +758,17 @@ class APIClient:
     Initialize API client
         
         Args:
-            base_url (str): URL base de la API
-            timeout (int): Timeout para requests
-            retry_attempts (int): Intentos de reintento
-            retry_delay (float): Delay entre reintentos
+            base_url (str): Base URL for the API
+            timeout (int): Timeout for requests
+            retry_attempts (int): Retry attempts
+            retry_delay (float): Delay between retries
         """
         self.base_url = base_url.rstrip('/')
         self.timeout = timeout
         self.retry_attempts = retry_attempts
         self.retry_delay = retry_delay
         
-        # Configuración de sesión
+        # ⚙️ Session configuration
         self.session = requests.Session()
         self.session.headers.update({
             'User-Agent': 'Python-API-Client/1.0',
@@ -780,7 +780,7 @@ class APIClient:
         self.rate_limit_delay = 0
         self.last_request_time = 0
         
-        # Estadísticas
+        # 📊 Statistics
         self.request_count = 0
         self.success_count = 0
         self.error_count = 0
@@ -790,8 +790,8 @@ class APIClient:
     Configure authentication
         
         Args:
-            auth_type (str): Tipo de autenticación
-            **kwargs: Parámetros de autenticación
+            auth_type (str): Authentication type
+            **kwargs: Authentication parameters
         """
         if auth_type == 'bearer_token':
             token = kwargs.get('token')
@@ -817,7 +817,7 @@ class APIClient:
     Configure rate limiting
         
         Args:
-            requests_per_second (float): Requests permitidos por segundo
+            requests_per_second (float): Allowed requests per second
         """
         self.rate_limit_delay = 1.0 / requests_per_second if requests_per_second > 0 else 0
     
@@ -838,12 +838,12 @@ class APIClient:
     Make HTTP request with retries
         
         Args:
-            method (str): Método HTTP
-            endpoint (str): Endpoint de la API
-            **kwargs: Parámetros adicionales
-        
+            method (str): HTTP method
+            endpoint (str): API endpoint
+            **kwargs: Additional parameters
+
         Returns:
-            requests.Response: Respuesta HTTP
+            requests.Response: HTTP response
         """
         url = f"{self.base_url}/{endpoint.lstrip('/')}"
         
@@ -863,23 +863,23 @@ class APIClient:
                     **kwargs
                 )
                 
-                # Verificar códigos de estado que indican éxito
+                # ✅ Check status codes that signal success
                 if response.status_code < 400:
                     self.success_count += 1
                     return response
                 
-                # Para códigos 4xx, no reintentar (error del cliente)
+                # ⛔ For 4xx codes, do not retry (client error)
                 if 400 <= response.status_code < 500:
                     self.error_count += 1
                     response.raise_for_status()
                 
-                # Para códigos 5xx, reintentar
+                # 🔁 Retry for 5xx codes
                 if response.status_code >= 500 and attempt < self.retry_attempts - 1:
                     print(f"Server error {response.status_code}, retrying in {self.retry_delay}s...")
-                    time.sleep(self.retry_delay * (attempt + 1))  # Backoff exponencial
+                    time.sleep(self.retry_delay * (attempt + 1))  # Exponential backoff
                     continue
-                
-                # Si llegamos aquí, es el último intento
+
+                # 🛑 Last attempt reached
                 self.error_count += 1
                 response.raise_for_status()
                 
@@ -894,7 +894,7 @@ class APIClient:
                     self.error_count += 1
                     raise
         
-        # Si llegamos aquí, todos los intentos fallaron
+        # ❗ All retry attempts failed
         if last_exception:
             raise last_exception
     
@@ -903,11 +903,11 @@ class APIClient:
     Make GET request
         
         Args:
-            endpoint (str): Endpoint de la API
-            params (Dict[str, Any]): Parámetros de query
-        
+            endpoint (str): API endpoint
+            params (Dict[str, Any]): Query parameters
+
         Returns:
-            Dict[str, Any]: Respuesta JSON
+            Dict[str, Any]: JSON response
         """
         response = self._make_request('GET', endpoint, params=params)
         return self._parse_response(response)
@@ -918,12 +918,12 @@ class APIClient:
     Make POST request
         
         Args:
-            endpoint (str): Endpoint de la API
-            data (Dict[str, Any]): Datos form-encoded
-            json_data (Dict[str, Any]): Datos JSON
-        
+            endpoint (str): API endpoint
+            data (Dict[str, Any]): Form-encoded data
+            json_data (Dict[str, Any]): JSON payload
+
         Returns:
-            Dict[str, Any]: Respuesta JSON
+            Dict[str, Any]: JSON response
         """
         kwargs = {}
         if json_data is not None:
@@ -949,16 +949,16 @@ class APIClient:
     Parse HTTP response
         
         Args:
-            response (requests.Response): Respuesta HTTP
-        
+            response (requests.Response): HTTP response
+
         Returns:
-            Dict[str, Any]: Datos parseados
+            Dict[str, Any]: Parsed data
         """
         try:
-            # Intentar parsear como JSON
+            # 🧪 Attempt to parse JSON
             json_data = response.json()
             
-            # Añadir metadatos de la respuesta
+            # 🧾 Add response metadata
             return {
                 'data': json_data,
                 'status_code': response.status_code,
@@ -968,7 +968,7 @@ class APIClient:
             }
             
         except json.JSONDecodeError:
-            # Si no es JSON, devolver texto
+            # 📜 If not JSON, return text
             return {
                 'data': response.text,
                 'status_code': response.status_code,
@@ -984,14 +984,14 @@ class APIClient:
     Get all results from a paginated endpoint
         
         Args:
-            endpoint (str): Endpoint de la API
-            params (Dict[str, Any]): Parámetros base
-            page_param (str): Nombre del parámetro de página
-            per_page_param (str): Nombre del parámetro de items por página
-            per_page (int): Items por página
-        
+            endpoint (str): API endpoint
+            params (Dict[str, Any]): Base parameters
+            page_param (str): Page parameter name
+            per_page_param (str): Items-per-page parameter name
+            per_page (int): Items per page
+
         Returns:
-            List[Dict[str, Any]]: Todos los resultados
+            List[Dict[str, Any]]: All results
         """
         all_results = []
         page = 1
@@ -1000,15 +1000,15 @@ class APIClient:
             params = {}
         
         while True:
-            # Configurar parámetros de paginación
+            # ⚙️ Configure pagination parameters
             page_params = params.copy()
             page_params[page_param] = page
             page_params[per_page_param] = per_page
             
-            # Realizar request
+            # 🚀 Make the request
             response = self.get(endpoint, page_params)
             
-            # Extraer datos (esto puede variar según la API)
+            # 📤 Extract data (this can vary per API)
             if 'data' in response and 'data' in response['data']:
                 page_data = response['data']['data']
             elif 'data' in response:
@@ -1021,14 +1021,14 @@ class APIClient:
             
             all_results.extend(page_data)
             
-            # Verificar si hay más páginas
-            # (esto puede variar según la API)
+            # 🔍 Check for more pages
+            # 🤷 (behavior may vary per API)
             if len(page_data) < per_page:
                 break
             
             page += 1
             
-            # Seguridad: evitar bucles infinitos
+            # 🛡️ Safety: avoid infinite loops
             if page > 1000:
                 print("Warning: Stopped pagination after 1000 pages")
                 break
@@ -1098,11 +1098,11 @@ import urllib3
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
-# Configuración avanzada de requests
+# ⚙️ Advanced requests configuration
 def create_robust_session():
     session = requests.Session()
     
-    # Estrategia de reintentos
+    # 🔁 Retry strategy
     retry_strategy = Retry(
         total=3,
         status_forcelist=[429, 500, 502, 503, 504],
@@ -1117,11 +1117,11 @@ def create_robust_session():
     return session
 ```
 
-#### 📊 Pandas para Análisis de Datos
+#### 📊 Pandas for Data Analysis
 ```python
 import pandas as pd
 
-# Lectura avanzada de CSV
+# 📚 Advanced CSV reading
 def read_csv_advanced(filename, **kwargs):
     """Robust CSV reading with pandas"""
     try:
@@ -1134,7 +1134,7 @@ def read_csv_advanced(filename, **kwargs):
         )
         return df
     except UnicodeDecodeError:
-        # Intentar con diferentes encodings
+        # 🔄 Try different encodings
         for encoding in ['latin1', 'cp1252', 'iso-8859-1']:
             try:
                 return pd.read_csv(filename, encoding=encoding, **kwargs)
@@ -1150,14 +1150,14 @@ def read_csv_advanced(filename, **kwargs):
 import os
 from dotenv import load_dotenv
 
-# Cargar variables de entorno
+# 🌱 Load environment variables
 load_dotenv()
 
 class SecureAPIClient:
     """API client with security best practices"""
     
     def __init__(self):
-    # Get credentials from environment variables
+        # 🔑 Get credentials from environment variables
         self.api_key = os.getenv('API_KEY')
         self.api_secret = os.getenv('API_SECRET')
         
@@ -1169,7 +1169,7 @@ class SecureAPIClient:
         return requests.get(
             url,
             timeout=(5, 30),  # (connect timeout, read timeout)
-            verify=True,       # Verificar certificados SSL
+            verify=True,       # 🔒 Verify SSL certificates
             **kwargs
         )
 ```
@@ -1196,12 +1196,12 @@ def validate_file_upload(file_path, allowed_types=None, max_size_mb=10):
     if not path.exists():
         return {'valid': False, 'error': 'File does not exist'}
     
-    # Verificar tamaño
+    # 📐 Validate size
     size_mb = path.stat().st_size / (1024 * 1024)
     if size_mb > max_size_mb:
         return {'valid': False, 'error': f'File too large: {size_mb:.2f}MB > {max_size_mb}MB'}
     
-    # Verificar tipo MIME
+    # 🧾 Validate MIME type
     mime_type, _ = mimetypes.guess_type(str(path))
     if allowed_types and mime_type not in allowed_types:
         return {'valid': False, 'error': f'Invalid file type: {mime_type}'}

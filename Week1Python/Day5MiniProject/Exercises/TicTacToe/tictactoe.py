@@ -16,18 +16,38 @@ def display_board(b):
         if i < 3:
             print("  -----")
 
+def parse_move(user_input):
+    """Return zero-based row/col from raw user input or raise ValueError."""
+    parts = user_input.split()
+    if len(parts) != 2:
+        raise ValueError("Please enter two numbers like: 2 3")
+    try:
+        row, col = map(int, parts)
+    except ValueError as exc:
+        raise ValueError("Please enter two numbers like: 2 3") from exc
+    return row - 1, col - 1
+
+
+def validate_move(board, user_input):
+    """Validate a move string against the current board and return coordinates."""
+    row, col = parse_move(user_input)
+    if row not in (0, 1, 2) or col not in (0, 1, 2):
+        raise ValueError("Invalid move. Try again.")
+    if board[row][col] != " ":
+        raise ValueError("Invalid move. Try again.")
+    return row, col
+
+
 def player_input(b, player):
     """Ask user for 'row col' (1..3 1..3) until a valid empty cell is chosen."""
     while True:
         try:
-            s = input(f"Player {player}, enter row and col (1-3 1-3): ").strip()
-            r_str, c_str = s.split()
-            r, c = int(r_str) - 1, int(c_str) - 1
-            if r in (0,1,2) and c in (0,1,2) and b[r][c] == " ":
-                return r, c
+            s = input(f"Player {player}, enter row and col (1-3 1-3) 🙂: ").strip()
+            return validate_move(b, s)
+        except ValueError as err:
+            print(err)
+        except IndexError:
             print("Invalid move. Try again.")
-        except Exception:
-            print("Please enter two numbers like: 2 3")
 
 def check_win(b, p):
     """Return True if player p has 3 in a row anywhere."""
