@@ -335,8 +335,13 @@ When adding content:
 5. ✅ Test all code before committing
 
 ---
-**📅 Last Updated**: May 2024
-**🔖 Version**: 1.1
+**📅 Last Updated**: October 2025
+**🔖 Version**: 1.2
 **👥 Maintainer**: Course Development Team
+
+### ✨ Changelog Highlights Since May 2024
+- 🚀 Expanded Week5 TypeScript coverage with union types, discriminated guards, and class-driven library simulations.
+- ⚡ Deepened asynchronous JavaScript practice through promise chaining labs and HTTP form integrations in Week4.
+- 🧭 Refined curriculum roadmap with clearer automation ideas, testing goals, and future enhancement milestones.
 
 For questions, suggestions, or contributions, please refer to the main repository or create an issue in the project tracker.
