@@ -185,6 +185,10 @@ Each week follows a consistent structure:
 3. **Editor setup**
    - Enable ESLint/Prettier or equivalent formatters to keep JS/TS code consistent.
    - Install Python and TypeScript language extensions for intellisense and type checking.
+4. **Project tooling**
+   - Run `npm install` in the repository root once to download the shared ESLint/Prettier toolchain ⚙️.
+   - Run `npm run lint` to audit Week3 JavaScript and Week5 TypeScript sources for common pitfalls before submitting work.
+   - Run `npm run format` to apply Prettier's consistent spacing and punctuation rules across those folders.
 
 ---
 ## 6. ▶️ Running & Testing Code
@@ -197,6 +201,11 @@ Each week follows a consistent structure:
 | 🔷 Week5 | Execute TypeScript via `npx ts-node` or compile with `npx tsc` followed by `node` for grader-friendly outputs.【F:Week5MiniProjectAndTypeScript/Day2IntroductionToTypeScriptAndKeyConcepts/DailyChallenge/README.md†L15-L23】 |
 
 > 💡 **Automation idea**: Add npm scripts (`npm run dev:week4`) to standardise local servers and TS execution.
+
+### 🧰 Shared npm scripts
+
+- `npm run lint`: Executes ESLint against `Week3JavaScriptandDOM/**/*.js` and `Week5MiniProjectAndTypeScript/**/*.ts`, blending browser and Node environments for accurate feedback.
+- `npm run format`: Runs Prettier in write mode across the same paths to keep diffs minimal and beginner-friendly.
 
 ---
 ## 7. 📁 Project Structure & Standards
