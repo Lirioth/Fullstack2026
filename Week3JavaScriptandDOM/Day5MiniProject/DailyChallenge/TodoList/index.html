@@ -1,28 +1,34 @@
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Daily Challenge — Todo List</title>
-  <!-- Font Awesome for the "X" button (🗙) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-1Gm5lT6+..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Todo List</title>
+
+  <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Font Awesome for the “X” icon (optional) -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <main class="container">
     <h1>📝 Todo List</h1>
 
-    <!-- ✅ Form with one text input and a Submit button -->
-    <form id="taskForm" class="task-form" autocomplete="off">
+    <!-- Required form -->
+    <form id="taskForm" autocomplete="off">
       <input id="taskInput" type="text" placeholder="What needs to be done?" aria-label="Task text" />
       <button id="submit" type="submit">Submit</button>
     </form>
 
-    <!-- ✅ Empty div to host tasks -->
+    <!-- Required tasks host -->
     <div class="listTasks" id="listTasks"></div>
   </main>
 
-  <script src="script.js"></script>
+  <!-- Load behavior after DOM is parsed -->
+  <script src="script.js" defer></script>
 </body>
 </html>

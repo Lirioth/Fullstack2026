@@ -1,50 +1,44 @@
 
 // Daily Challenge — Todo List
-// 🧠 Features: addTask, doneTask, deleteTask; DOM updates & data attributes.
+// IDs used: taskForm, taskInput, listTasks
 
-// ✅ Required: start with an empty array (can store objects for BONUS)
+// Data model
 const tasks = []; // Each item: { task_id:number, text:string, done:boolean }
-let nextId = 0;   // Simple incremental id
+let nextId = 0;
 
-// DOM references
+// DOM refs
 const form = document.getElementById('taskForm');
 const input = document.getElementById('taskInput');
 const list = document.getElementById('listTasks');
 
-// 🧱 Render a single task row into the DOM
+// Render one task row
 function renderTask(task) {
   const row = document.createElement('div');
   row.className = 'task' + (task.done ? ' done' : '');
-  row.dataset.taskId = String(task.task_id); // BONUS: data-task-id
+  row.dataset.taskId = String(task.task_id); // data-task-id
 
-  // Checkbox (done)
   const checkbox = document.createElement('input');
   checkbox.type = 'checkbox';
   checkbox.checked = task.done;
   checkbox.setAttribute('aria-label', 'Mark as done');
 
-  // Label (task text)
   const label = document.createElement('label');
   label.textContent = task.text;
 
-  // Delete button with Font Awesome "X"
   const delBtn = document.createElement('button');
   delBtn.className = 'delete';
   delBtn.setAttribute('aria-label', 'Delete task');
   delBtn.innerHTML = '<i class="fa-solid fa-xmark" aria-hidden="true"></i>';
 
-  // Assemble
-  row.appendChild(checkbox);
-  row.appendChild(label);
-  row.appendChild(delBtn);
+  row.append(checkbox, label, delBtn);
   list.prepend(row); // newest on top
 }
 
-// ➕ addTask(): validate, push to array, render to DOM
+// Add task
 function addTask(text) {
   const trimmed = String(text).trim();
   if (!trimmed) {
-    alert('Please enter a task.'); // 🚦 guard
+    alert('Please enter a task.');
     return;
   }
   const task = { task_id: nextId++, text: trimmed, done: false };
@@ -54,19 +48,17 @@ function addTask(text) {
   input.focus();
 }
 
-// ✅ doneTask(): toggle done both in data & DOM
+// Toggle done
 function doneTask(taskId, checked) {
   const idNum = Number(taskId);
   const task = tasks.find(t => t.task_id === idNum);
   if (!task) return;
-  task.done = !!checked;
+  task.done = Boolean(checked);
   const row = list.querySelector(`[data-task-id="${taskId}"]`);
-  if (row) {
-    row.classList.toggle('done', task.done);
-  }
+  if (row) row.classList.toggle('done', task.done);
 }
 
-// ❌ deleteTask(): remove from array & DOM
+// Delete task
 function deleteTask(taskId) {
   const idNum = Number(taskId);
   const idx = tasks.findIndex(t => t.task_id === idNum);
@@ -75,17 +67,16 @@ function deleteTask(taskId) {
   if (row) row.remove();
 }
 
-// 🧵 Event wiring
+// Submit handler
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   addTask(input.value);
 });
 
-// Event delegation for checkbox & delete button
+// Event delegation for delete clicks (and checkbox changes)
 list.addEventListener('click', (e) => {
-  const target = e.target;
-  // Handle delete clicks from <button> or the <i> inside
-  const btn = target.closest && target.closest('button.delete');
+  // Handle delete via the button or its child icon
+  const btn = e.target.closest && e.target.closest('button.delete');
   if (btn) {
     const row = btn.closest('.task');
     if (!row) return;
@@ -94,15 +85,14 @@ list.addEventListener('click', (e) => {
 });
 
 list.addEventListener('change', (e) => {
-  const target = e.target;
-  if (target && target.matches('input[type="checkbox"]')) {
-    const row = target.closest('.task');
+  if (e.target.matches('input[type="checkbox"]')) {
+    const row = e.target.closest('.task');
     if (!row) return;
-    doneTask(row.dataset.taskId, target.checked);
+    doneTask(row.dataset.taskId, e.target.checked);
   }
 });
 
-// 🔑 Convenience: Enter key triggers submit (already handled by form), Escape clears input
+// Convenience: Esc clears input
 input.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') input.value = '';
 });
