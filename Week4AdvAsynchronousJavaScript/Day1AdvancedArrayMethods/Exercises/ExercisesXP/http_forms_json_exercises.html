@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercises XP — HTTP & Forms & JSON</title>
+  <style>
+    :root { --gap: 14px; --border:#e5e7eb; --bg:#fafafa; --ink:#111827; --muted:#6b7280; }
+    * { box-sizing: border-box; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin: 24px; color: var(--ink); }
+    h1 { margin: 0 0 8px; }
+    h2 { margin: 18px 0 8px; }
+    p.muted, small { color: var(--muted); }
+    .card { border: 1px solid var(--border); border-radius: 10px; padding: 16px; background: #fff; margin-bottom: 18px; }
+    .row { display: flex; gap: var(--gap); align-items: center; flex-wrap: wrap; }
+    input[type="text"], textarea { width: 100%; max-width: 520px; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; }
+    textarea { min-height: 100px; }
+    button, input[type="submit"] { padding: 10px 16px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); cursor: pointer; }
+    code, pre { background:#f6f8fa; padding: 10px; border-radius: 8px; overflow:auto; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+    @media (min-width: 800px) { .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; } }
+  </style>
+</head>
+<body>
+  <h1>Exercises XP — HTTP & Forms</h1>
+  <p class="muted">Last Updated: October 8th, 2025</p>
+
+  <section class="card">
+    <h2>🌟 Exercise 1 — HTML Form (GET)</h2>
+    <form id="formGet" method="get" action="">
+      <div class="grid">
+        <label>
+          Name
+          <input type="text" name="name" placeholder="e.g., Sam" />
+        </label>
+        <label>
+          Message
+          <textarea name="message" placeholder="Write something..."></textarea>
+        </label>
+        <input type="submit" value="Send (GET)" />
+      </div>
+    </form>
+    <p><strong>Where will the data appear?</strong> In the URL as a <em>query string</em> (e.g., <code>?name=Sam&message=Hello</code>), visible in the address bar and DevTools → Network.</p>
+    <div id="getEcho" class="grid2">
+      <div>
+        <h3>Parsed query (from current URL)</h3>
+        <pre id="getParsed">{}</pre>
+      </div>
+      <div>
+        <h3>Full URL</h3>
+        <pre id="fullUrl"></pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>🌟 Exercise 2 — HTML Form (POST)</h2>
+    <form id="formPost" method="post" action="">
+      <div class="grid">
+        <label>
+          Name
+          <input type="text" name="name" placeholder="e.g., Taylor" />
+        </label>
+        <label>
+          Message
+          <textarea name="message" placeholder="Write something..."></textarea>
+        </label>
+        <input type="submit" value="Send (POST)" />
+      </div>
+    </form>
+    <p><strong>Where will the data appear?</strong> In the request <em>body</em> (Network tab → select the POST request → Payload/Request Body). It will not be in the URL.</p>
+    <p class="muted">Tip: Serve this file over HTTP (e.g., VS Code Live Server) instead of <code>file://</code> to see the POST request in Network.</p>
+  </section>
+
+  <section class="card">
+    <h2>🌟 Exercise 3 — JSON Mario</h2>
+    <div class="row">
+      <button id="btnJson">Make JSON</button>
+      <small class="muted">Generates compact & pretty JSON and triggers a <code>debugger;</code> so you can inspect it.</small>
+    </div>
+    <div class="grid2" style="margin-top:10px;">
+      <div>
+        <h3>Compact JSON</h3>
+        <pre id="jsonCompact"></pre>
+      </div>
+      <div>
+        <h3>Pretty JSON</h3>
+        <pre id="jsonPretty"></pre>
+      </div>
+    </div>
+    <div style="margin-top:10px;">
+      <h3>What happens to nested objects?</h3>
+      <p class="muted">They become nested JSON objects; keys turn into strings, numbers stay numbers. Non-serializable values (functions/undefined) would be omitted. This object contains only serializable values.</p>
+    </div>
+  </section>
+
+  <script>
+    function parseQuery() {
+      const params = new URLSearchParams(location.search);
+      const obj = {};
+      for (const [k, v] of params.entries()) obj[k] = v;
+      return obj;
+    }
+    function renderGetEcho() {
+      document.getElementById('getParsed').textContent = JSON.stringify(parseQuery(), null, 2);
+      document.getElementById('fullUrl').textContent = location.href;
+    }
+    renderGetEcho();
+
+    document.getElementById('formPost').addEventListener('submit', (e) => {
+      // Keep UX on this page. You can remove preventDefault to do a real navigation.
+      e.preventDefault();
+      const data = new FormData(e.target);
+      console.log('POST payload (simulated):', Object.fromEntries(data.entries()));
+      alert('POST submitted. To see it in Network, serve this file over HTTP and submit again.');
+    });
+
+    const marioGame = {
+      detail : "An amazing game!",
+      characters : {
+          mario : { description:"Small and jumpy. Likes princesses.", height: 10, weight: 3, speed: 12 },
+          bowser : { description:"Big and green, Hates princesses.",  height: 16, weight: 6, speed: 4 },
+          princessPeach : { description:"Beautiful princess.", height: 12, weight: 2, speed: 2 }
+      },
+    };
+
+    document.getElementById('btnJson').addEventListener('click', () => {
+      const compact = JSON.stringify(marioGame);
+      const pretty = JSON.stringify(marioGame, null, 2);
+      document.getElementById('jsonCompact').textContent = compact;
+      document.getElementById('jsonPretty').textContent = pretty;
+      debugger; // set your breakpoint here and inspect `compact` / `pretty`
+    });
+  </script>
+</body>
+</html>
