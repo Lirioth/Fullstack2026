@@ -1,35 +1,28 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Daily Challenge — Todo List (Bonus)</title>
-
-  <!-- Font Awesome for the "X" icon -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    integrity="sha512-1ycn6IcaQQ40/MKBW2W4RhisfWZL2Q5hV0b8C1og6lsqzOaA0ZQKZl5aq8U0Q5Q2+V2T3JRS1v0C5xK8r7jYig=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
-
-  <link rel="stylesheet" href="./styles.css" />
+  <title>Daily Challenge — Todo List</title>
+  <!-- Font Awesome for the "X" button (🗙) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-1Gm5lT6+..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="wrap">
-    <h1>Daily Challenge — Todo List (Bonus)</h1>
+  <main class="container">
+    <h1>📝 Todo List</h1>
 
-    <!-- Simple form: text + submit -->
-    <form id="taskForm" autocomplete="off">
-      <input id="taskInput" type="text" placeholder="Write a task..." />
-      <button type="submit">Submit</button>
+    <!-- ✅ Form with one text input and a Submit button -->
+    <form id="taskForm" class="task-form" autocomplete="off">
+      <input id="taskInput" type="text" placeholder="What needs to be done?" aria-label="Task text" />
+      <button id="submit" type="submit">Submit</button>
     </form>
 
-    <!-- Where tasks will be added -->
-    <div id="listTasks" class="listTasks"></div>
-  </div>
+    <!-- ✅ Empty div to host tasks -->
+    <div class="listTasks" id="listTasks"></div>
+  </main>
 
-  <script src="./script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

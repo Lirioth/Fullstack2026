@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Daily Challenge: Letters Only</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root { --gap: 12px; --border: #ddd; --bg: #fafafa; }
+    body { font-family: system-ui, Arial, sans-serif; margin: 24px; line-height: 1.4; }
+    .card { border: 1px solid var(--border); padding: var(--gap); border-radius: 8px; background: var(--bg); max-width: 520px; }
+    label { display: block; margin-bottom: 6px; }
+    input[type="text"] { padding: 8px 10px; width: 100%; }
+    small { color: #666; }
+    .row { display: flex; gap: 8px; margin-top: 10px; align-items: center; }
+  </style>
+</head>
+<body>
+  <h1>Daily Challenge: Letters Only ✍️</h1>
+  <div class="card">
+    <form id="lettersForm" autocomplete="off" novalidate>
+      <label for="lettersInput">Enter letters only (A–Z, a–z)</label>
+      <input id="lettersInput" type="text" placeholder="Type here…" />
+      <div class="row">
+        <small id="helper">Numbers and special characters will be removed automatically. ✨</small>
+      </div>
+      <div class="row">
+        <button type="submit">Submit</button>
+        <small id="echo" aria-live="polite"></small>
+      </div>
+    </form>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,129 +1,108 @@
-// todo list with BONUS: objects, doneTask, deleteTask
 
-// my tasks as objects
-// example: { task_id: 0, text: "Buy milk", done: false }
-const tasks = [];
+// Daily Challenge — Todo List
+// 🧠 Features: addTask, doneTask, deleteTask; DOM updates & data attributes.
 
-// get elements
+// ✅ Required: start with an empty array (can store objects for BONUS)
+const tasks = []; // Each item: { task_id:number, text:string, done:boolean }
+let nextId = 0;   // Simple incremental id
+
+// DOM references
 const form = document.getElementById('taskForm');
 const input = document.getElementById('taskInput');
 const list = document.getElementById('listTasks');
 
-// id counter starts at 0
-let nextId = 0;
-
-// add a new task (object) and render it
-function addTask(text) {
-  // create the object
-  const task = {
-    task_id: nextId++, // unique id
-    text: text,
-    done: false // default
-  };
-
-  // save in array
-  tasks.push(task);
-
-  // show on the page
-  renderTask(task);
-}
-
-// build one row in the DOM
+// 🧱 Render a single task row into the DOM
 function renderTask(task) {
-  // main row
   const row = document.createElement('div');
-  row.className = 'task';
-  // add data attribute with the same value as task_id
-  row.dataset.taskId = String(task.task_id);
+  row.className = 'task' + (task.done ? ' done' : '');
+  row.dataset.taskId = String(task.task_id); // BONUS: data-task-id
 
-  // checkbox
-  const check = document.createElement('input');
-  check.type = 'checkbox';
-  check.id = 'task-' + task.task_id;
-  check.checked = task.done; // if true, keep it checked
+  // Checkbox (done)
+  const checkbox = document.createElement('input');
+  checkbox.type = 'checkbox';
+  checkbox.checked = task.done;
+  checkbox.setAttribute('aria-label', 'Mark as done');
 
-  // label
+  // Label (task text)
   const label = document.createElement('label');
-  label.htmlFor = check.id;
   label.textContent = task.text;
 
-  // delete button (Font Awesome "X")
-  const btn = document.createElement('button');
-  btn.className = 'deleteBtn';
-  btn.innerHTML = '<i class="fa-solid fa-xmark" aria-hidden="true"></i>';
+  // Delete button with Font Awesome "X"
+  const delBtn = document.createElement('button');
+  delBtn.className = 'delete';
+  delBtn.setAttribute('aria-label', 'Delete task');
+  delBtn.innerHTML = '<i class="fa-solid fa-xmark" aria-hidden="true"></i>';
 
-  // set initial done style if needed
-  if (task.done) {
-    row.classList.add('done');
-  }
-
-  // when checkbox changes => toggle done
-  check.addEventListener('change', function () {
-    doneTask(task.task_id, check.checked, row);
-  });
-
-  // when delete is clicked => remove
-  btn.addEventListener('click', function () {
-    deleteTask(task.task_id, row);
-  });
-
-  // put elements inside row
-  row.appendChild(check);
+  // Assemble
+  row.appendChild(checkbox);
   row.appendChild(label);
-  row.appendChild(btn);
-
-  // add row to the list
-  list.appendChild(row);
+  row.appendChild(delBtn);
+  list.prepend(row); // newest on top
 }
 
-// toggle done property in the object and update the DOM
-function doneTask(id, isDone, rowEl) {
-  // find the object in the array
-  const task = tasks.find(t => t.task_id === id);
-  if (!task) return; // simple guard
-
-  // update object
-  task.done = isDone;
-
-  // update DOM style
-  if (isDone) {
-    rowEl.classList.add('done');
-  } else {
-    rowEl.classList.remove('done');
-  }
-}
-
-// delete a task by id from array and from DOM
-function deleteTask(id, rowEl) {
-  // remove from array
-  const index = tasks.findIndex(t => t.task_id === id);
-  if (index > -1) {
-    tasks.splice(index, 1);
-  }
-
-  // remove from DOM
-  if (rowEl && rowEl.parentNode) {
-    rowEl.parentNode.removeChild(rowEl);
-  }
-}
-
-// handle form submit
-form.addEventListener('submit', function (e) {
-  e.preventDefault(); // stop page refresh
-
-  // read text
-  const text = input.value.trim();
-
-  // basic validation
-  if (text === '') {
-    alert('Please write a task :)');
+// ➕ addTask(): validate, push to array, render to DOM
+function addTask(text) {
+  const trimmed = String(text).trim();
+  if (!trimmed) {
+    alert('Please enter a task.'); // 🚦 guard
     return;
   }
-
-  // add task
-  addTask(text);
-
-  // reset input
+  const task = { task_id: nextId++, text: trimmed, done: false };
+  tasks.push(task);
+  renderTask(task);
   input.value = '';
   input.focus();
+}
+
+// ✅ doneTask(): toggle done both in data & DOM
+function doneTask(taskId, checked) {
+  const idNum = Number(taskId);
+  const task = tasks.find(t => t.task_id === idNum);
+  if (!task) return;
+  task.done = !!checked;
+  const row = list.querySelector(`[data-task-id="${taskId}"]`);
+  if (row) {
+    row.classList.toggle('done', task.done);
+  }
+}
+
+// ❌ deleteTask(): remove from array & DOM
+function deleteTask(taskId) {
+  const idNum = Number(taskId);
+  const idx = tasks.findIndex(t => t.task_id === idNum);
+  if (idx !== -1) tasks.splice(idx, 1);
+  const row = list.querySelector(`[data-task-id="${taskId}"]`);
+  if (row) row.remove();
+}
+
+// 🧵 Event wiring
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  addTask(input.value);
+});
+
+// Event delegation for checkbox & delete button
+list.addEventListener('click', (e) => {
+  const target = e.target;
+  // Handle delete clicks from <button> or the <i> inside
+  const btn = target.closest && target.closest('button.delete');
+  if (btn) {
+    const row = btn.closest('.task');
+    if (!row) return;
+    deleteTask(row.dataset.taskId);
+  }
+});
+
+list.addEventListener('change', (e) => {
+  const target = e.target;
+  if (target && target.matches('input[type="checkbox"]')) {
+    const row = target.closest('.task');
+    if (!row) return;
+    doneTask(row.dataset.taskId, target.checked);
+  }
+});
+
+// 🔑 Convenience: Enter key triggers submit (already handled by form), Escape clears input
+input.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') input.value = '';
 });
