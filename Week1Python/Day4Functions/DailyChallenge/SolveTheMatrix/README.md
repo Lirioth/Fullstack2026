@@ -1,15 +1,32 @@
-# 💪 Solve The Matrix — Column‑Wise Decoder (Python)
+# 💪 Daily Challenge - Solve The Matrix
 
-A tiny script that reads a block of text **column by column** and reconstructs a clean English sentence by:
-1) concatenating all **🔤 letters** in reading order, and  
-2) replacing any **run of non‑letters** (digits, punctuation, spaces) that appears *between* letters with a **single space**.  
-Leading and trailing non‑letters are ignored.
+Decode a matrix by reading column-by-column and extracting letters to reconstruct a hidden message.
 
----
+## 📊 Quick Stats
 
-## 🔍 What it does (at a glance)
+- **Difficulty**: 🥈 Intermediate  
+- **Time Required**: 45-60 minutes  
+- **Concepts**: Matrix traversal, string processing, character filtering  
+- **Prerequisites**: Understanding of 2D data structures and loops
 
-Given this matrix (rows can be jagged in length):
+## 🎓 Learning Objectives
+
+- ✅ Traverse matrices column-wise instead of row-wise
+- ✅ Handle jagged arrays (rows of different lengths)
+- ✅ Filter characters based on type (letters vs non-letters)
+- ✅ Implement state machines for text cleaning
+- ✅ Optimize string concatenation
+
+## 🚀 Quick Start
+
+```bash
+cd DailyChallenge/SolveTheMatrix
+python solvethematrix.py
+```
+
+## 🎯 Challenge Description
+
+### Input Matrix
 
 ```
 7ir
@@ -21,72 +38,154 @@ $a
 #t%
 ```
 
-The script first reads it **🔽 column‑wise** (top → bottom, left → right), then cleans it, and finally prints:
+### Algorithm Steps
 
-```
-This is Matrix
-```
+1. **Read Column-Wise**: Top → Bottom, Left → Right
+2. **Extract Letters**: Keep only alphabetic characters
+3. **Clean Noise**: Replace non-letter sequences between words with single spaces
+4. **Output**: `This is Matrix`
 
----
+### How It Works
 
-## How to run
-
-```bash
-python3 solvethematrix.py
-```
-
-- Requires **Python 3.8+** (any recent Python 3 is fine).  
-- No external packages needed.  
-- Output is printed to standard output.
-
----
-
-## How it works
-
-1. **Split** the multiline string into `rows` and compute `cols = max(len(row))` so we know how many columns to scan.
-2. **Column read:** for each column index `c` in `0..cols-1`, append `rows[r][c]` if that row is long enough.
-3. **Clean up noise:** walk the concatenated text once:
-   - If the character is a **letter**, append it to the result.
-   - If it is **not** a letter:
-     - **Before** the first letter has been seen → skip it.
-     - **After** at least one letter → skip the whole run of non‑letters and insert **one single space** (but only if the previous output isn’t already a space).
-4. **Stop** if the end contains only non‑letters (they’re ignored).
-
-This preserves natural word spacing while removing junk symbols between words.
-
----
-
-## Customizing
-
-- Edit the `MATRIX_STR` triple‑quoted string and paste your own block.  
-- Rows may have different lengths; the scan safely checks bounds per row.  
-- If you want to **keep digits** as valid characters, change the `isalpha()` checks to accept digits too (e.g., `ch.isalnum()`).
-
----
-
-## Complexity
-
-- **Time:** `O(R × C)` to read the grid + `O(R × C)` to clean → overall linear in the number of characters.  
-- **Space:** `O(R × C)` for the intermediate concatenation (can be streamed if needed).
-
----
-
-## Example (quick test)
-
-Try replacing `MATRIX_STR` with a small custom block like:
 ```python
-MATRIX_STR = """
-A0!
- b?
-  c
-"""
+def decode_matrix(matrix_str: str) -> str:
+    """
+    Decode matrix by column-wise reading and letter extraction.
+    
+    Process:
+    1. Split into rows and find max column count
+    2. Read each column top to bottom
+    3. Filter: keep letters, replace non-letter runs with spaces
+    4. Trim leading/trailing non-letters
+    """
 ```
-Expected: `A b c`
+
+**Example**:
+- Column 0: `7`, `T`, `h`, `i`, `s`, `$`, `#` → Extract `This`
+- Column 1: `i`, `s`, `%`, ` `, `M`, `a`, `t` → Extract `is Mat`
+- Column 2: `r`, `i`, `x`, `?`, `#`, ` `, `%` → Extract `rix`
+
+Result: `This is Matrix`
 
 ---
 
-## Notes
+## 💡 Key Concepts
 
-- Uses only built‑in Python features.
-- Safe on ragged matrices (rows of unequal length).
-- Easy to adapt if you’d like to keep punctuation marks selectively.
+### Column-Wise Traversal
+```python
+rows = matrix_str.split("\n")
+cols = max(len(r) for r in rows)
+
+for c in range(cols):          # Iterate columns
+    for r in rows:             # Iterate rows
+        if c < len(r):         # Check bounds
+            process(r[c])
+```
+
+### Character Filtering
+```python
+if ch.isalpha():
+    # It's a letter - keep it
+else:
+    # Non-letter - handle as separator
+```
+
+### State Machine
+```python
+seen_letter = False
+
+if ch.isalpha():
+    result += ch
+    seen_letter = True
+else:
+    if seen_letter:
+        # Add space between words
+        if result and result[-1] != " ":
+            result += " "
+```
+
+---
+
+## 🔧 Implementation Details
+
+### Handling Jagged Arrays
+
+**Problem**: Rows may have different lengths
+
+**Solution**: Check bounds before accessing
+```python
+for c in range(cols):
+    for r in rows:
+        if c < len(r):  # Safe access
+            char = r[c]
+```
+
+### Complexity Analysis
+
+- **Time**: O(R × C) where R = rows, C = columns
+- **Space**: O(R × C) for intermediate concatenation
+- **Can be optimized**: Stream processing instead of full concatenation
+
+### Edge Cases
+
+1. **Empty matrix**: Returns empty string
+2. **All non-letters**: Returns empty string
+3. **Single column**: Works normally
+4. **Single row**: Works normally
+
+---
+
+## 🔧 Troubleshooting
+
+| Issue | Solution |
+|-------|----------|
+| Extra spaces in output | Check space insertion logic |
+| Missing characters | Verify column bounds checking |
+| Wrong order | Confirm column-wise (not row-wise) traversal |
+| IndexError | Add bounds check: `if c < len(r)` |
+
+### Testing Strategy
+
+```python
+# Test with simple matrix
+test_matrix = """
+Abc
+Def
+"""
+# Expected: "ADef" (column 0: A,D; column 1: b,e; column 2: c,f)
+# Actual output: "AD be cf" or "ADbecf" depending on spacing logic
+```
+
+---
+
+## 🎯 Extension Ideas
+
+1. **Keep Digits**: Modify to include numbers as valid characters
+2. **Preserve Punctuation**: Keep certain punctuation marks
+3. **Multiple Matrices**: Decode several matrices in one run
+4. **Reverse Operation**: Encode a message into a matrix
+5. **Visualization**: Print the column-reading process step-by-step
+
+---
+
+## 🚀 Success Criteria
+
+- [ ] Correctly reads matrix column-by-column
+- [ ] Handles jagged rows without errors
+- [ ] Extracts only letters from the sequence
+- [ ] Inserts spaces appropriately between words
+- [ ] Returns clean, properly formatted message
+
+---
+
+## 📚 Additional Resources
+
+- [2D Array Traversal Patterns](https://www.geeksforgeeks.org/print-2-d-array-matrix/)
+- [String Processing in Python](https://realpython.com/python-strings/)
+- [State Machines Explained](https://brilliant.org/wiki/finite-state-machines/)
+
+---
+
+**Author**: Kevin Cusnir 'Lirioth'  
+**Repository**: [Fullstack2026](https://github.com/Lirioth/Fullstack2026)  
+**Week 1 Day 4** - Functions - Daily Challenge

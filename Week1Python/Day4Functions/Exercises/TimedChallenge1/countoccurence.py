@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
-"""Timed Challenge #1 — Count occurrence (character in string)
+"""
+Timed Challenge #1 — Count Character Occurrence
+===============================================
+Counts how many times a character appears in a string (case-sensitive).
 
-Reads two lines from standard input:
-1) The string
-2) The character to count (if longer than 1, the first character is used)
+Author: Kevin Cusnir 'Lirioth'
+Repository: Fullstack2026
+Week 1 Day 4 - Functions
+Python Version: 3.8+
 
-Prints the number of occurrences (case-sensitive).
 Examples:
 Input:
 Programming is cool!

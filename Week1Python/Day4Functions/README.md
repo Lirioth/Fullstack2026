@@ -770,3 +770,11 @@ After mastering functions:
 **📋 Prerequisites**: Days 1-3 completion
 
 Ready to build organized, professional code! ⚙️
+
+---
+
+## 👤 Author
+
+**Kevin Cusnir 'Lirioth'**  
+📂 Repository: [Fullstack2026](https://github.com/Lirioth/Fullstack2026)  
+📅 Week 1 Day 4 - Functions

@@ -1,7 +1,14 @@
 """
-🎯 Challenges — 20 Python Exercises (Functions, Loops, Conditionals)
-Language: English-only
-This single file contains clean, commented solutions and a tiny demo runner.
+Challenges Set 1 - 20 Python Exercises
+======================================
+Functions, Loops, Conditionals practice with clean, commented solutions.
+Covers: list manipulation, string processing, mathematical operations,
+type checking, palindromes, and data structure transformations.
+
+Author: Kevin Cusnir 'Lirioth'
+Repository: Fullstack2026
+Week 1 Day 5 - Mini Project
+Python Version: 3.8+
 """
 
 from typing import Any, Dict, Iterable, List, Tuple

@@ -1,5 +1,13 @@
 """
+Advanced Algorithm - Two-Sum Pairs Finder
+=========================================
 CLI runner: generate 20k numbers and find all pairs summing to target.
+Implements both hash-map O(n) and two-pointer O(n log n) approaches.
+
+Author: Kevin Cusnir 'Lirioth'
+Repository: Fullstack2026
+Week 1 Day 5 - Mini Project
+Python Version: 3.8+
 """
 import argparse, time
 from src.demodata import make_dataset

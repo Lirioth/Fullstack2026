@@ -1,3 +1,15 @@
+"""
+💪 Daily Challenge - Solve the Matrix
+======================================
+Column-wise matrix decoder that extracts letters and reconstructs
+a clean English sentence by replacing non-letter sequences with spaces.
+
+Author: Kevin Cusnir 'Lirioth'
+Repository: Fullstack2026
+Week 1 Day 4 - Functions
+Python Version: 3.8+
+"""
+
 # 💪 Daily Challenge - Solve the Matrix
 # ✅ Improved: Wrapped in main() guard and added clearer variable names
 

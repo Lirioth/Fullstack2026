@@ -1,4 +1,15 @@
-s = input("Enter comma-separated words: ")
+"""
+Daily Challenge - Sorting & Longest Word
+========================================
+Solutions for alphabetical sorting of comma-separated strings
+and finding the longest word in a sentence.
+
+Author: Kevin Cusnir 'Lirioth'
+Repository: Fullstack2026
+Week 1 Day 5 - Mini Project
+Python Version: 3.8+
+"""
+
 import re
 from typing import List
 

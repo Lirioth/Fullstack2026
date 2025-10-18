@@ -1,3 +1,19 @@
+"""
+🥷 Exercises XP Ninja — Functions (Single File Edition)
+=======================================================
+Advanced function exercises covering:
+- Full name builder with smart capitalization
+- English ⇄ Morse code translation with validation
+- Star-framed box printer with dynamic sizing
+- Insertion sort algorithm implementation
+
+Author: Kevin Cusnir 'Lirioth'
+Repository: Fullstack2026
+Week 1 Day 4 - Functions
+Python Version: 3.8+
+Language: English-only ✅
+"""
+
 # 🥷 Exercises XP Ninja — Functions (Single File) ✨
 # -------------------------------------------------
 # Everything in **one** Python file, as requested.

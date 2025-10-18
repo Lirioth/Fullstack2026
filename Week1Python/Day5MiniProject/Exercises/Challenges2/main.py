@@ -1,6 +1,12 @@
 """
-Demo runner for Challenges #2.
-Prints the three required patterns and runs Exercise 2 analysis with a trace.
+Challenges Set 2 - Pattern Drawing & Algorithm Analysis
+=======================================================
+Demo runner for: pattern generation with loops and selection sort analysis.
+
+Author: Kevin Cusnir 'Lirioth'
+Repository: Fullstack2026
+Week 1 Day 5 - Mini Project
+Python Version: 3.8+
 """
 from src.patterns import pattern_a, pattern_b, pattern_c
 from src.ex2analysis import ANNOTATED, selection_like_sort_with_trace, pretty_trace

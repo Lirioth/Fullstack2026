@@ -8,7 +8,9 @@ Function practice covering:
 - List manipulation in-place
 - Multi-function systems with composition
 
-Author: Week1Python Course
+Author: Kevin Cusnir 'Lirioth'
+Repository: Fullstack2026
+Week 1 Day 4 - Functions
 Python Version: 3.8+
 """
 

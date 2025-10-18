@@ -1,3 +1,15 @@
+"""
+Tic-Tac-Toe Game - Two-Player CLI
+==================================
+Complete 3x3 grid strategy game demonstrating Week 1 Python mastery.
+Features: board display, input validation, win detection, and tie detection.
+
+Author: Kevin Cusnir 'Lirioth'
+Repository: Fullstack2026
+Week 1 Day 5 - Mini Project
+Python Version: 3.8+
+"""
+
 # Tic Tac Toe (short & simple)
 # Two players take turns on a 3x3 grid. First to 3 in a row wins.
 # 🚀 Run: python3 tictactoe.py
