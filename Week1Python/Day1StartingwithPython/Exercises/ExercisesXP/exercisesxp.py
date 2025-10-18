@@ -51,15 +51,7 @@ def exercise_5() -> None:
     name = "Kevin"
     age = 31
     shoe_size = 40
-    info = (
-        "My name is "
-        + name
-        + ", I'm "
-        + str(age)
-        + " years old and my shoe size is "
-        + str(shoe_size)
-        + "."
-    )
+    info = f"My name is {name}, I'm {age} years old and my shoe size is {shoe_size}."
     print(info)
 
 

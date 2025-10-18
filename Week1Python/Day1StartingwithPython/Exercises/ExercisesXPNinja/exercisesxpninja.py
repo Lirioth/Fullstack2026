@@ -62,11 +62,6 @@ sunt in culpa qui officia deserunt mollit anim id est laborum."""
     print(f"📏 Text length (including spaces/newlines): {len(my_text)}")
 
 
-def contains_letter_a(text: str) -> bool:
-    """Check if text contains letter 'A' or 'a'."""
-    return 'a' in text.lower()
-
-
 def exercise_5_no_a_challenge() -> None:
     """Challenge user to type sentences without letter 'A' with attempt limit."""
     print("\n🥇 Exercise 5: No 'A' Challenge")
@@ -83,7 +78,8 @@ def exercise_5_no_a_challenge() -> None:
         if sentence.lower() == "quit":
             break
             
-        if contains_letter_a(sentence):
+        # ✅ IMPROVED: Inlined simple check for better readability
+        if 'a' in sentence.lower():
             print("❌ Contains 'A'. Try again.")
             continue
             

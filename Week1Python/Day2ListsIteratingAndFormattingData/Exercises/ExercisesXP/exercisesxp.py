@@ -26,6 +26,23 @@ RESTRICTED_MOVIE_MIN_AGE = 16
 RESTRICTED_MOVIE_MAX_AGE = 21
 
 
+def calculate_pizza_price(toppings: list[str]) -> float:
+    """
+    Calculate total pizza price based on toppings.
+    
+    Args:
+        toppings: List of topping names
+        
+    Returns:
+        Total price including base and all toppings
+        
+    Example:
+        >>> calculate_pizza_price(['cheese', 'pepperoni'])
+        15.0
+    """
+    return BASE_PIZZA_PRICE + (TOPPING_PRICE * len(toppings))
+
+
 def get_valid_age(prompt: str) -> int:
     """
     Get a valid age from user with validation.
@@ -146,7 +163,9 @@ def main():
         if t.strip():  # Only add non-empty toppings
             toppings.append(t)
             print(f"✅ Adding {t} to your pizza.")
-    total_price = BASE_PIZZA_PRICE + (TOPPING_PRICE * len(toppings))
+    
+    # ✅ IMPROVED: Using helper function for better modularity
+    total_price = calculate_pizza_price(toppings)
     print(f"\n🍕 Toppings: {', '.join(toppings)}")
     print(f"💰 Total price: ${total_price:.2f}")
 

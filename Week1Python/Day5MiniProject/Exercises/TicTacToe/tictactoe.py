@@ -86,5 +86,21 @@ def play():
 
         player = "O" if player == "X" else "X"
 
+
+def main():
+    """Main entry point with replay option."""
+    print("🎮 Welcome to Tic Tac Toe! 🎮\n")
+    
+    while True:
+        play()
+        
+        # ✅ IMPROVED: Added replay functionality
+        replay = input("\n🔄 Play again? (y/n): ").strip().lower()
+        if replay != 'y' and replay != 'yes':
+            print("\n👋 Thanks for playing! Goodbye! 🎉")
+            break
+        print("\n" + "="*40 + "\n")
+
+
 if __name__ == "__main__":
-    play()
+    main()
