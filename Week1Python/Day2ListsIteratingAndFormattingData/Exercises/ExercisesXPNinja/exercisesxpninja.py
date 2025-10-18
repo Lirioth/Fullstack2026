@@ -1,118 +1,146 @@
 # Exercises XP Ninja
 
-# ---------- Exercise 1: Formula ----------
-# Q = sqrt((2 * C * D) / H), C=50, H=30
-import math
+from __future__ import annotations
 
-data = input("Enter D values (comma-separated): ")  # e.g. 100,150,180
-Ds = [x.strip() for x in data.split(",") if x.strip() != ""]
-C, H = 50, 30
-results = []
-for d in Ds:
-    D = int(d)
-    q = int(round(math.sqrt((2 * C * D) / H)))
-    results.append(str(q))
-print(",".join(results))   # e.g. 18,22,24
+from collections import Counter
+from typing import Dict, Iterable, List
+
+C = 50
+H = 30
+
+
+# ---------- Exercise 1: Formula ----------
+def q_values(d_values: Iterable[int], *, c: int = C, h: int = H) -> List[int]:
+    """Return rounded integers calculated with Q = sqrt((2 * c * d) / h)."""
+
+    results: List[int] = []
+    for d in d_values:
+        q = int(round(((2 * c * d) / h) ** 0.5))
+        results.append(q)
+    return results
+
 
 # ---------- Exercise 2: List of integers ----------
-# use one example list
-nums = [3, 47, 99, -80, 22, 97, 54, -23, 5, 7]
+NUMS = [3, 47, 99, -80, 22, 97, 54, -23, 5, 7]
 
-# 2a) print list in one line
-print("list:", " ".join(str(x) for x in nums))
 
-# 2b) sorted desc
-print("desc:", " ".join(str(x) for x in sorted(nums, reverse=True)))
+def number_report(numbers: Iterable[int]) -> Dict[str, object]:
+    """Return a dictionary with the stats showcased in the original script."""
 
-# 2c) sum
-print("sum:", sum(nums))
+    numbers = list(numbers)
+    unique: List[int] = []
+    manual_sum = 0
+    manual_max = numbers[0]
+    manual_min = numbers[0]
+    for n in numbers:
+        manual_sum += n
+        if n > manual_max:
+            manual_max = n
+        if n < manual_min:
+            manual_min = n
+        if n not in unique:
+            unique.append(n)
 
-# 3) first and last
-print("first+last:", [nums[0], nums[-1]])
+    return {
+        "list": " ".join(str(x) for x in numbers),
+        "desc": " ".join(str(x) for x in sorted(numbers, reverse=True)),
+        "sum": sum(numbers),
+        "first_last": [numbers[0], numbers[-1]],
+        ">50": [x for x in numbers if x > 50],
+        "<10": [x for x in numbers if x < 10],
+        "squares": " ".join(str(x * x) for x in numbers),
+        "no_dups": unique,
+        "no_dups_count": len(unique),
+        "avg": sum(numbers) / len(numbers),
+        "max": max(numbers),
+        "min": min(numbers),
+        "manual_sum": manual_sum,
+        "manual_avg": manual_sum / len(numbers),
+        "manual_max": manual_max,
+        "manual_min": manual_min,
+    }
 
-# 4) > 50
-print(">50:", [x for x in nums if x > 50])
-
-# 5) < 10
-print("<10:", [x for x in nums if x < 10])
-
-# 6) squares
-print("squares:", " ".join(str(x*x) for x in nums))
-
-# 7) no duplicates + count
-no_dups = []
-for x in nums:
-    if x not in no_dups:
-        no_dups.append(x)
-print("no_dups:", no_dups, "count:", len(no_dups))
-
-# 8) average
-print("avg:", sum(nums) / len(nums))
-
-# 9) largest
-print("max:", max(nums))
-
-# 10) smallest
-print("min:", min(nums))
-
-# 11) Bonus: sum, avg, max, min without built-ins
-s = 0
-mx = nums[0]
-mn = nums[0]
-for x in nums:
-    s += x
-    if x > mx: mx = x
-    if x < mn: mn = x
-print("manual sum:", s, "manual avg:", s/len(nums), "manual max:", mx, "manual min:", mn)
 
 # ---------- Exercise 3: Working on a paragraph ----------
-para = (
+PARAGRAPH = (
     "Learning Python is fun. It helps you think clearly! "
     "Python has simple syntax, yet it is powerful. Keep practicing?"
 )
 
-# characters (with spaces)
-chars = len(para)
 
-# sentences: count ., !, ?
-sentences = para.count(".") + para.count("!") + para.count("?")
-if sentences == 0:
-    sentences = 1  # avoid division by zero
+def analyse_paragraph(text: str) -> Dict[str, object]:
+    """Return stats for the supplied paragraph."""
 
-# words (split on whitespace)
-words = para.split()
-word_count = len(words)
+    sentences = text.count(".") + text.count("!") + text.count("?")
+    if sentences == 0:
+        sentences = 1
+    words = text.split()
+    cleaned = [w.strip(".,!?;:").lower() for w in words]
+    freq = Counter(cleaned)
+    non_unique = sum(count for count in freq.values() if count > 1)
 
-# unique words (lowercased, strip simple punctuation)
-cleaned = []
-for w in words:
-    cleaned.append(w.strip(".,!?;:").lower())
-unique_words = set(cleaned)
-unique_count = len(unique_words)
+    return {
+        "chars": len(text),
+        "sentences": sentences,
+        "words": len(words),
+        "unique_words": len(set(cleaned)),
+        "non_whitespace": sum(1 for ch in text if not ch.isspace()),
+        "avg_words_per_sentence": round(len(words) / sentences, 2),
+        "non_unique_word_total": non_unique,
+    }
 
-# bonus: non-whitespace chars
-non_ws = sum(1 for ch in para if not ch.isspace())
-
-# bonus: average words per sentence
-avg_w_per_sent = word_count / sentences
-
-# bonus: number of non-unique words (words that appear more than once)
-from collections import Counter
-freq = Counter(cleaned)
-non_unique_total = sum(c for c in freq.values() if c > 1)
-
-print("chars:", chars)
-print("sentences:", sentences)
-print("words:", word_count)
-print("unique words:", unique_count)
-print("non-whitespace chars:", non_ws)
-print("avg words/sentence:", round(avg_w_per_sent, 2))
-print("non-unique words total count:", non_unique_total)
 
 # ---------- Exercise 4: Frequency Of The Words ----------
-text = input("Enter a line for word frequency: ")
-tokens = text.split()  # keep punctuation attached, case-sensitive (like the example)
-from collections import Counter
-counts = Counter(tokens)
-for token in sorted(counts.keys()):
-    print(f"{token}:{counts[token]}")
+def word_frequency(tokens: Iterable[str]) -> Dict[str, int]:
+    """Return a frequency mapping like the original script."""
+
+    return dict(sorted(Counter(tokens).items()))
+
+
+def _cli() -> None:
+    """Run the original console interaction for the exercises."""
+
+    raw = input("Enter D values (comma-separated): ")
+    parsed = [int(part.strip()) for part in raw.split(",") if part.strip()]
+    print(",".join(str(v) for v in q_values(parsed)))
+
+    report = number_report(NUMS)
+    print("list:", report["list"])
+    print("desc:", report["desc"])
+    print("sum:", report["sum"])
+    print("first+last:", report["first_last"])
+    print(">50:", report[">50"])
+    print("<10:", report["<10"])
+    print("squares:", report["squares"])
+    print("no_dups:", report["no_dups"], "count:", report["no_dups_count"])
+    print("avg:", report["avg"])
+    print("max:", report["max"])
+    print("min:", report["min"])
+    print(
+        "manual sum:",
+        report["manual_sum"],
+        "manual avg:",
+        report["manual_avg"],
+        "manual max:",
+        report["manual_max"],
+        "manual min:",
+        report["manual_min"],
+    )
+
+    stats = analyse_paragraph(PARAGRAPH)
+    print("chars:", stats["chars"])
+    print("sentences:", stats["sentences"])
+    print("words:", stats["words"])
+    print("unique words:", stats["unique_words"])
+    print("non-whitespace chars:", stats["non_whitespace"])
+    print("avg words/sentence:", stats["avg_words_per_sentence"])
+    print("non-unique words total count:", stats["non_unique_word_total"])
+
+    text = input("Enter a line for word frequency: ")
+    frequencies = word_frequency(text.split())
+    for token, count in frequencies.items():
+        print(f"{token}:{count}")
+
+
+if __name__ == "__main__":
+    _cli()
