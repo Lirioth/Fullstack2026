@@ -86,7 +86,88 @@ You are tall enough to ride.
 
 ---
 
-## 🎨 Customization tips (optional)
+## � **Exercise-by-Exercise Expected Outputs**
+
+<details>
+<summary>📋 Click to expand detailed outputs for each exercise</summary>
+
+### Exercise 1 - Hello World
+```
+Hello world
+Hello world
+Hello world
+Hello world
+```
+
+### Exercise 2 - Arithmetic
+```
+768032
+```
+(Result of `(99³) × 8`)
+
+### Exercise 3 - Comparisons
+```
+False
+True  
+False
+TypeError
+False
+```
+
+### Exercise 4 - Computer Brand
+```
+I have a ASUS computer.
+```
+
+### Exercise 5 - Personal Info
+```
+My name is Kevin, I'm 31 years old and my shoe size is 40.
+```
+
+### Exercise 6 - Comparison
+```
+Hello World
+```
+(Only prints if `a > b`)
+
+### Exercise 7 - Odd/Even
+```
+Enter a number: 7
+Odd
+```
+or
+```
+Enter a number: 10
+Even
+```
+
+### Exercise 8 - Name Match
+```
+What is your name? Alice
+Nice to meet you, Alice!
+```
+or
+```
+What is your name? Kevin
+Hey, we have the same name! :)
+```
+
+### Exercise 9 - Height Check
+```
+Enter your height in cm: 150
+You are tall enough to ride.
+```
+or
+```
+Enter your height in cm: 140
+You need to grow some more to ride.
+```
+
+</details>
+
+---
+
+## �🎨 Customization tips (optional)
 
 - Change `computer_brand`, `name`, `age`, `shoe_size` to your values.  
 - Make Exercise 6 dynamic by asking the user for `a` and `b` with `input()` and `int(...)`.  

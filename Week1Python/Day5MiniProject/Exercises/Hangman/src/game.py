@@ -79,3 +79,11 @@ class HangmanGame:
     def guessed_letters(self) -> str:
         """Return a sorted string of guessed letters (for display)."""
         return ' '.join(sorted(self.guessed))
+
+    def __repr__(self) -> str:
+        """Return developer-friendly representation for debugging."""
+        return (
+            f"HangmanGame(secret={'*' * len(self.secret)}, "
+            f"wrong={self.wrong}/{self.max_wrong}, "
+            f"guessed={len(self.guessed)} letters)"
+        )

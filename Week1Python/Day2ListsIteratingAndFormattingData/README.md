@@ -71,6 +71,8 @@ cd Exercises/ExercisesXPGold
 python exercisesxpgold.py
 ```
 
+⚠️ **Performance Note**: Exercise 7 has been optimized! The original approach created 1 million list items (~8MB memory, ~500ms runtime). The current implementation uses Gauss's formula for instant calculation. This demonstrates the importance of choosing the right algorithm!
+
 ### 3. 🥇 Advanced Techniques
 Master complex iteration patterns:
 ```bash
