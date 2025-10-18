@@ -1,5 +1,30 @@
-# 🥉 Exercises XP - Sequence / List / Set / Tuple
-# ✅ Improved: Added main() guard to prevent execution on import
+"""
+📋 Day 2 - Exercises XP
+=======================
+Comprehensive exercises covering:
+- Set operations and unique collections
+- Tuple immutability patterns
+- List manipulation methods
+- Float sequence generation
+- Loop iteration with enumerate()
+- Interactive user input handling
+- Pizza pricing calculator
+- Cinema ticket pricing system
+- Sandwich order processing
+
+Author: Week1Python Course
+Python Version: 3.8+
+"""
+
+# 🎯 Constants
+BASE_PIZZA_PRICE = 10.00
+TOPPING_PRICE = 2.50
+TICKET_PRICE_INFANT = 0  # < 3 years
+TICKET_PRICE_CHILD = 10  # 3-12 years
+TICKET_PRICE_ADULT = 15  # > 12 years
+RESTRICTED_MOVIE_MIN_AGE = 16
+RESTRICTED_MOVIE_MAX_AGE = 21
+
 
 def main():
     """Run all Day 2 exercises in sequence."""
@@ -71,11 +96,12 @@ def main():
         t = input("Enter a topping (or 'quit' to finish): ")
         if t.lower() == "quit":
             break
-        toppings.append(t)
-        print("Adding " + t + " to your pizza.")
-    total_price = 10 + 2.5 * len(toppings)
-    print("Toppings:", toppings)
-    print("Total price: $" + format(total_price, ".2f"))
+        if t.strip():  # Only add non-empty toppings
+            toppings.append(t)
+            print(f"✅ Adding {t} to your pizza.")
+    total_price = BASE_PIZZA_PRICE + (TOPPING_PRICE * len(toppings))
+    print(f"\n🍕 Toppings: {', '.join(toppings)}")
+    print(f"💰 Total price: ${total_price:.2f}")
 
     # -------- Exercise 9: Cinemax Tickets --------
     ages = []
@@ -85,15 +111,18 @@ def main():
             break
         if a.isdigit():
             ages.append(int(a))
+    
     total = 0
     for age in ages:
         if age < 3:
-            total += 0
+            price = TICKET_PRICE_INFANT
         elif age <= 12:
-            total += 10
+            price = TICKET_PRICE_CHILD
         else:
-            total += 15
-    print("Total ticket cost:", total)
+            price = TICKET_PRICE_ADULT
+        total += price
+    
+    print(f"🎬 Total ticket cost: ${total}")
 
     # Bonus: restricted movie ages 16–21
     allowed = []
@@ -102,10 +131,10 @@ def main():
         if a.lower() == "done":
             break
         if a.isdigit():
-            n = int(a)
-            if 16 <= n <= 21:
-                allowed.append(n)
-    print("Allowed attendees ages:", allowed)
+            age = int(a)
+            if RESTRICTED_MOVIE_MIN_AGE <= age <= RESTRICTED_MOVIE_MAX_AGE:
+                allowed.append(age)
+    print(f"🔞 Allowed attendees ages: {allowed}")
 
     # -------- Exercise 10: Sandwich Orders --------
     sandwich_orders = ["Tuna", "Pastrami", "Avocado", "Pastrami", "Egg", "Chicken", "Pastrami"]

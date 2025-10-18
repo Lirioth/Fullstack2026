@@ -57,7 +57,7 @@ python exercisesxp.py
 - **Exercise 2**: 📦 **Tuples** - Immutability and concatenation techniques
 - **Exercise 3**: 📝 **Basket List** - Methods: `remove()`, `append()`, `insert()`, `count()`, `clear()`
 - **Exercise 4**: 🔢 **Floats** - Build sequences with decimal increments and conditionals
-- **Exercise 5**: � **For Loop** - `range()` and `enumerate()` iteration patterns
+- **Exercise 5**: 🔄 **For Loop** - `range()` and `enumerate()` iteration patterns
 - **Exercise 6**: ⏳ **While Loop** - Input validation until conditions met
 - **Exercise 7**: 🍎 **Favorite Fruits** - String parsing with `.split()` and membership testing
 - **Exercise 8**: 🍕 **Pizza Toppings** - Interactive order builder with price calculation

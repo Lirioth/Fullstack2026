@@ -1,4 +1,21 @@
-"""Interactive exercises for Day 1."""
+"""
+📝 Day 1 - Exercises XP
+=======================
+Fundamental Python exercises covering:
+- Variables and data types
+- Input/output operations
+- Conditional logic and comparisons
+- String manipulation and formatting
+- Boolean operations
+- Type conversions
+
+Author: Week1Python Course
+Python Version: 3.8+
+"""
+
+# 🎯 Constants
+HEIGHT_REQUIREMENT_CM = 145  # Minimum height to ride in centimeters
+MY_NAME = "Kevin"  # Used in exercise 8 for name comparison
 
 
 def exercise_1() -> None:
@@ -74,22 +91,22 @@ def exercise_7() -> None:
 
 def exercise_8() -> None:
     """Check if the user shares the same name."""
-    my_name = "Kevin"
     user_name = input("What is your name? ")
-    if user_name.strip().lower() == my_name.lower():
+    if user_name.strip().lower() == MY_NAME.lower():
         print("Hey, we have the same name! :)")
     else:
-        print("Nice to meet you, " + user_name + "!")
+        print(f"Nice to meet you, {user_name}!")
 
 
 def exercise_9() -> None:
-    """Check whether the user is tall enough to ride."""
+    """Check whether the user is tall enough to ride (>= 145cm)."""
     height = read_int("Enter your height in cm: ")
-    # ✅ Fixed: Use >= to include exactly 145cm as tall enough
-    if height >= 145:
-        print("You are tall enough to ride.")
+    # ✅ Uses >= to include exactly 145cm as tall enough
+    if height >= HEIGHT_REQUIREMENT_CM:
+        print(f"✅ You are tall enough to ride! ({height}cm)")
     else:
-        print("You need to grow some more to ride.")
+        needed = HEIGHT_REQUIREMENT_CM - height
+        print(f"❌ You need to grow {needed}cm more to ride.")
 
 
 def main() -> None:

@@ -1,3 +1,22 @@
+"""
+🗂️ Day 3 - Exercises XP (Dictionaries)
+=======================================
+Practice with:
+- zip() and dict() constructor for list pairing
+- Age-based pricing logic with dictionaries
+- Nested dictionary manipulation and updates
+- Multiple indexing strategies for same data
+
+Author: Week1Python Course
+Python Version: 3.8+
+"""
+
+# 🎯 Constants for Cinemax pricing
+TICKET_FREE_AGE = 3
+TICKET_CHILD_AGE = 12
+TICKET_CHILD_PRICE = 10
+TICKET_ADULT_PRICE = 15
+
 # Exercise 1: Converting Lists into Dictionaries
 keys = ['Ten', 'Twenty', 'Thirty']
 values = [10, 20, 30]

@@ -3,6 +3,38 @@
 Master Python fundamentals through progressive daily exercises and exciting mini-projects. This comprehensive week builds from basic syntax to complete applications!
 
 ---
+
+## 🚀 Quickstart
+
+```bash
+# Navigate to Week 1
+cd Week1Python
+
+# Start with Day 1 - Basic Exercises
+cd Day1StartingWithPython/Exercises/ExercisesXP
+python exercisesxp.py
+
+# Continue with Day 2 - Lists and Iteration
+cd ../../Day2ListsIteratingAndFormattingData/Exercises/ExercisesXP
+python exercisesxp.py
+```
+
+---
+
+## 📖 Table of Contents
+
+- [🎯 Learning Objectives](#-learning-objectives)
+- [📅 Daily Breakdown](#-daily-breakdown)
+  - [📚 Day 1: Starting With Python](#-day1startingwithpython---foundations)
+  - [📋 Day 2: Lists, Iterating and Formatting Data](#-day2listsiteratingandformattingdata---data-structures)
+  - [🗂️ Day 3: Dictionaries](#️-day3dictionaries---key-value-data-management)
+  - [⚙️ Day 4: Functions](#️-day4functions---code-organization-and-reusability)
+  - [🎮 Day 5: Mini Projects](#-day5miniproject---integration-and-application)
+- [📊 Weekly Schedule](#-weekly-schedule)
+- [🏆 Assessment & Progression](#-assessment--progression)
+
+---
+
 ## 🎯 Learning Objectives
 By the end of Week1, you should be able to:
 - ✅ Write clean, readable Python code using proper syntax and style
@@ -160,10 +192,10 @@ By the end of Week1, you should be able to:
   - **Weather System**: Temperature reporting with conditional responses
 - **🥈 ExercisesXPGold**: Advanced function patterns and algorithms
 - **🥇 ExercisesXPNinja**: Complex function composition and optimization
-- **� DailyChallenge**: **SolveTheMatrix** - Multi-dimensional data processing
+- **💪 DailyChallenge**: **SolveTheMatrix** - Multi-dimensional data processing
 - **⚡ TimedChallenge**: **Count Occurrence** - Efficient string analysis
 
-**�🚀 Advanced Topics:**
+**🚀 Advanced Topics:**
 - `*args` and `**kwargs` for flexible parameter handling
 - Lambda functions and functional programming concepts
 - Function composition and higher-order functions
@@ -183,7 +215,7 @@ By the end of Week1, you should be able to:
 
 #### 🎯 **Main Projects:**
 
-**� Tic-Tac-Toe Game**
+**🎮 Tic-Tac-Toe Game**
 - Complete 3x3 grid-based strategy game
 - Two-player turn management system
 - Input validation with friendly error messages

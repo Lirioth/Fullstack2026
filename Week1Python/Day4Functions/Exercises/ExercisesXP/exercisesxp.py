@@ -1,4 +1,26 @@
+"""
+⚙️ Day 4 - Exercises XP
+=======================
+Function practice covering:
+- Basic definition and calling
+- Default parameters
+- Random number generation
+- List manipulation in-place
+- Multi-function systems with composition
+
+Author: Week1Python Course
+Python Version: 3.8+
+"""
+
 import random
+
+# 🌡️ Temperature thresholds for weather advice
+TEMP_FREEZING = 0  # Below this: freezing
+TEMP_CHILLY = 16   # 0-16: chilly
+TEMP_NICE = 24     # 16-24: nice weather
+TEMP_WARM = 33     # 24-33: warm
+TEMP_MIN = -10     # Minimum temperature
+TEMP_MAX = 40      # Maximum temperature
 
 
 # Exercise 1 🎯
@@ -44,21 +66,48 @@ def make_great(names: list[str]) -> None:
         names[i] = names[i] + " the Great"
 
 # Exercise 7 🎯
-def get_random_temp():
-    return random.randint(-10, 40)
-def report_weather() -> None:
-    t = get_random_temp()
-    print(f"The temperature right now is {t} degrees Celsius.")
-    if t < 0:
-        print("Brrr, that's freezing! Wear some extra layers today.")
-    elif t < 16:
-        print("Quite chilly! Don't forget your coat.")
-    elif t < 24:
-        print("Nice weather.")
-    elif t < 33:
-        print("A bit warm, stay hydrated.")
+def get_random_temp(min_temp: int = TEMP_MIN, max_temp: int = TEMP_MAX) -> int:
+    """
+    Generate random temperature in Celsius.
+    
+    Args:
+        min_temp: Minimum temperature (default: -10)
+        max_temp: Maximum temperature (default: 40)
+        
+    Returns:
+        Random integer temperature
+    """
+    return random.randint(min_temp, max_temp)
+
+
+def get_temp_advice(temp: int) -> str:
+    """
+    Get appropriate advice message for given temperature.
+    
+    Args:
+        temp: Temperature in Celsius
+        
+    Returns:
+        Advice string with emoji
+    """
+    if temp < TEMP_FREEZING:
+        return "🥶 Brrr, that's freezing! Wear some extra layers today."
+    elif temp < TEMP_CHILLY:
+        return "🧥 Quite chilly! Don't forget your coat."
+    elif temp < TEMP_NICE:
+        return "😊 Nice weather."
+    elif temp < TEMP_WARM:
+        return "☀️ A bit warm, stay hydrated."
     else:
-        print("It's really hot! Stay cool.")
+        return "🔥 It's really hot! Stay cool."
+
+
+def report_weather() -> None:
+    """Display current random temperature with appropriate advice."""
+    temp = get_random_temp()
+    advice = get_temp_advice(temp)
+    print(f"🌡️ The temperature right now is {temp} degrees Celsius.")
+    print(advice)
 
 
 def main() -> None:

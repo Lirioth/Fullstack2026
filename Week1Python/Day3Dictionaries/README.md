@@ -88,7 +88,7 @@ Complex nested dictionary manipulation
   - Counting keys with `len()`
   - Merging dictionaries with `.update()`
 
-#### **Exercise 4: � Disney Characters - Multiple Indexing Strategies**
+#### **Exercise 4: 🎭 Disney Characters - Multiple Indexing Strategies**
 Create three different dictionary indexing approaches
 - **Dict 1**: Character → Index mapping
 - **Dict 2**: Index → Character mapping  
@@ -189,7 +189,7 @@ Track your mastery of dictionary operations and data modeling:
 - [ ] 🎨 Model real-world entities with appropriate structures
 
 ### 🥇 **Advanced Skills** (Optional)
-- [ ] � Complete ExercisesXPNinja car management system
+- [ ] 🥷 Complete ExercisesXPNinja car management system
 - [ ] ⚡ Apply dictionary comprehensions for data transformation
 - [ ] 🔐 Implement Caesar Cipher encryption/decryption
 - [ ] 🧩 Optimize dictionary operations for performance

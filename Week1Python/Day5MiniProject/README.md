@@ -61,9 +61,9 @@ python tictactoe.py
 ```
 
 **🎯 Features & Implementation:**
-- � **Game Board**: 3x3 grid using nested lists `[[" ", " ", " "], [...], [...]]`
+- 🎲 **Game Board**: 3x3 grid using nested lists `[[" ", " ", " "], [...], [...]]`
 - 🎨 **Visual Display**: Formatted board with row/column headers and separators
-- � **Two-Player System**: Alternating turns between Player X and Player O
+- 👥 **Two-Player System**: Alternating turns between Player X and Player O
 - ✅ **Input Validation**: 
   - Parse "row col" format (e.g., "2 3")
   - Validate coordinates are in range (1-3)
@@ -98,7 +98,7 @@ python main.py
 
 **🚧 Future Enhancements (TODO):**
 - 📊 Score tracking system across multiple games
-- � Multiple difficulty levels (word length selection)
+- 🎚️ Multiple difficulty levels (word length selection)
 - 🗂️ Word categories (animals, countries, technology, etc.)
 
 **🗂️ Modular Structure:**
@@ -215,7 +215,7 @@ Your flagship project demonstrates Python mastery across four key dimensions:
 - [ ] 🔧 Modular structure with separate files
 - [ ] 📊 Score tracking and replay functionality
 
-### � **Challenge Sets Completion**
+### 💪 **Challenge Sets Completion**
 - [ ] 🥉 Complete Challenges Set 1 exercises
 - [ ] 🥈 Complete Challenges Set 2 advanced problems
 - [ ] 💪 Attempt daily challenge problems

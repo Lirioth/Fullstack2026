@@ -90,7 +90,7 @@ Functions that manipulate data structures
 - Working with list references and mutations
 - Global list: `['Harry Houdini', 'David Blaine', 'Criss Angel']`
 
-#### **Exercise 7: �️ Weather System - get_random_temp() & report_weather()**
+#### **Exercise 7: 🌡️ Weather System - get_random_temp() & report_weather()**
 Multi-function systems with conditional responses
 - `get_random_temp()`: Returns random temperature (-10 to 40°C)
 - `report_weather()`: Calls get_random_temp() and provides feedback

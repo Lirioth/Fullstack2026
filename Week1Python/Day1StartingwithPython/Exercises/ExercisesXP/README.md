@@ -86,7 +86,7 @@ You are tall enough to ride.
 
 ---
 
-## � **Exercise-by-Exercise Expected Outputs**
+## 📋 **Exercise-by-Exercise Expected Outputs**
 
 <details>
 <summary>📋 Click to expand detailed outputs for each exercise</summary>
@@ -167,7 +167,7 @@ You need to grow some more to ride.
 
 ---
 
-## �🎨 Customization tips (optional)
+## 🎨 Customization tips (optional)
 
 - Change `computer_brand`, `name`, `age`, `shoe_size` to your values.  
 - Make Exercise 6 dynamic by asking the user for `a` and `b` with `input()` and `int(...)`.  
