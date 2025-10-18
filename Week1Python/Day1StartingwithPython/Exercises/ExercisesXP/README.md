@@ -1,5 +1,5 @@
 # 🏋️ Exercises XP
-A small collection of beginner Python exercises.
+A small collection of Python exercises.
 
 ## 📋 What this script covers
 

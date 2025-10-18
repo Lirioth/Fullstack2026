@@ -1,4 +1,4 @@
-# Exercises XP Gold
+1# Exercises XP Gold
 
 # Exercise 1 : Hello World - I love Python (one line of code)
 print("Hello world\n"*4 + "I love python\n"*3 + "I love python")

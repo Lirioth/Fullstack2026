@@ -1,94 +1,91 @@
--- File: exercisesxpplus.sql
--- Purpose: XP+ — Students table: create table, insert rows, and run required queries.
--- Author: Kevin Cusnir
+-- exercisesxpplus.sql
+-- Purpose: Create PostgreSQL database objects for XP+ Students exercise, insert data, and run the required queries.
 -- Date: 2025-10-18 | TZ: Asia/Jerusalem
 
-/* ------------------------------------------------------------
-   0) Create database (run ONCE as a standalone statement in pgAdmin)
-      If it already exists, skip this step.
-      -- CREATE DATABASE bootcamp;
-   After creating the DB, connect your Query Tool to 'bootcamp'.
-------------------------------------------------------------- */
+-- =====================================================================
+-- STEP 1) (psql only) Create the database (skip in pgAdmin if already created)
+-- =====================================================================
+-- CREATE DATABASE bootcamp;
 
-/* ------------------------------------------------------------
-   1) Create table
-------------------------------------------------------------- */
-CREATE TABLE IF NOT EXISTS public.students (
-  id          SERIAL PRIMARY KEY,
-  first_name  TEXT NOT NULL,
-  last_name   TEXT NOT NULL,
-  birth_date  DATE NOT NULL
+-- =====================================================================
+-- STEP 2) Ensure we're using the default schema inside the selected DB
+-- =====================================================================
+SET search_path TO public;
+
+-- Clean re-runs: drop the table if it exists
+DROP TABLE IF EXISTS public.students CASCADE;
+
+-- Create the students table
+CREATE TABLE public.students (
+    id          INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    first_name  TEXT NOT NULL,
+    last_name   TEXT NOT NULL,
+    birth_date  DATE NOT NULL
 );
 
-/* ------------------------------------------------------------
-   2) Insert the provided data (efficient multi-row insert)
-      Original dates were DD/MM/YYYY — parsed with to_date.
-------------------------------------------------------------- */
+-- Insert the required rows (dates converted to ISO yyyy-mm-dd)
 INSERT INTO public.students (first_name, last_name, birth_date) VALUES
-  ('Marc',   'Benichou', to_date('02/11/1998','DD/MM/YYYY')),
-  ('Yoan',   'Cohen',    to_date('03/12/2010','DD/MM/YYYY')),
-  ('Lea',    'Benichou', to_date('27/07/1987','DD/MM/YYYY')),
-  ('Amelia', 'Dux',      to_date('07/04/1996','DD/MM/YYYY')),
-  ('David',  'Grez',     to_date('14/06/2003','DD/MM/YYYY')),
-  ('Omer',   'Simpson',  to_date('03/10/1980','DD/MM/YYYY'));
+    ('Marc',   'Benichou', '1998-11-02'),
+    ('Yoan',   'Cohen',    '2010-12-03'),
+    ('Lea',    'Benichou', '1987-07-27'),
+    ('Amelia', 'Dux',      '1996-04-07'),
+    ('David',  'Grez',     '2003-06-14'),
+    ('Omer',   'Simpson',  '1980-10-03');
 
-/* 2b) Insert your own row (OPTIONAL) — edit and uncomment
--- INSERT INTO public.students (first_name, last_name, birth_date)
--- VALUES ('YourFirst','YourLast', DATE 'YYYY-MM-DD');
-*/
+-- Insert your own row (adapt if you prefer a different name or date)
+INSERT INTO public.students (first_name, last_name, birth_date) VALUES
+    ('Kevin', 'Cusnir', '1994-06-16');
 
-/* ------------------------------------------------------------
-   3) SELECT queries
-------------------------------------------------------------- */
+-- ========================
+-- Required SELECT queries
+-- ========================
 
--- 3.1 All data
+-- 1) Fetch all of the data from the table
 SELECT * FROM public.students ORDER BY id;
 
--- 3.2 All first_names and last_names
+-- 2) Fetch all of the students first_names and last_names
 SELECT first_name, last_name FROM public.students ORDER BY id;
 
-/* From here on, only first_name and last_name: */
+-- For the following questions, only fetch first_name and last_name
 
--- 3.3 Student with id = 2
+-- a) Student with id = 2
 SELECT first_name, last_name FROM public.students WHERE id = 2;
 
--- 3.4 last_name = 'Benichou' AND first_name = 'Marc'
-SELECT first_name, last_name
-FROM public.students
+-- b) last_name = 'Benichou' AND first_name = 'Marc'
+SELECT first_name, last_name FROM public.students
 WHERE last_name = 'Benichou' AND first_name = 'Marc';
 
--- 3.5 last_name = 'Benichou' OR first_name = 'Marc'
-SELECT first_name, last_name
-FROM public.students
-WHERE last_name = 'Benichou' OR first_name = 'Marc';
+-- c) last_name = 'Benichou' OR first_name = 'Marc'
+SELECT first_name, last_name FROM public.students
+WHERE last_name = 'Benichou' OR first_name = 'Marc'
+ORDER BY last_name, first_name;
 
--- 3.6 first_name contains the letter 'a' (case-insensitive)
-SELECT first_name, last_name
-FROM public.students
-WHERE first_name ILIKE '%a%';
+-- d) first_names contain the letter 'a' (case-insensitive)
+SELECT first_name, last_name FROM public.students
+WHERE first_name ILIKE '%a%'
+ORDER BY first_name;
 
--- 3.7 first_name starts with 'a' (case-insensitive)
-SELECT first_name, last_name
-FROM public.students
-WHERE first_name ILIKE 'a%';
+-- e) first_names start with the letter 'a' (case-insensitive)
+SELECT first_name, last_name FROM public.students
+WHERE first_name ILIKE 'a%'
+ORDER BY first_name;
 
--- 3.8 first_name ends with 'a' (case-insensitive)
-SELECT first_name, last_name
-FROM public.students
-WHERE first_name ILIKE '%a';
+-- f) first_names end with the letter 'a' (case-insensitive)
+SELECT first_name, last_name FROM public.students
+WHERE first_name ILIKE '%a'
+ORDER BY first_name;
 
--- 3.9 second-to-last letter of first_name is 'a' (e.g., 'Leah')
-SELECT first_name, last_name
-FROM public.students
-WHERE first_name ILIKE '%a_';
+-- g) second to last letter of first_name is 'a'
+SELECT first_name, last_name FROM public.students
+WHERE first_name ILIKE '%a_'
+ORDER BY first_name;
 
--- 3.10 ids equal to 1 AND 3 (interpreted as "in (1,3)")
-SELECT first_name, last_name
-FROM public.students
-WHERE id IN (1,3);
+-- h) ids equal to 1 AND 3 (i.e., in the set (1, 3))
+SELECT first_name, last_name FROM public.students
+WHERE id IN (1, 3)
+ORDER BY id;
 
--- 3.11 birth_date >= 2000-01-01 (show all info)
-SELECT *
-FROM public.students
-WHERE birth_date >= DATE '2000-01-01'
-ORDER BY birth_date;
+-- i) birth_dates equal to or after 2000-01-01 (show all info)
+SELECT * FROM public.students
+WHERE birth_date >= '2000-01-01'
+ORDER BY birth_date, id;

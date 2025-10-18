@@ -1,0 +1,4 @@
+# Ignore common local artifacts
+*.env
+*.zip
+.DS_Store

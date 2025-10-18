@@ -54,21 +54,6 @@ python exercisesxpgold.py
 py exercisesxpgold.py
 ```
 
-## 🌟 Optional improvements (nice practice)
-- **Validate input**: wrap `int(input(...))` in `try/except ValueError` to handle non-numbers.
-- **Loop until valid month**: keep asking while `m` not in `1..12`.
-- **Use a dict** mapping instead of `if/elif` (another style):
-  ```python
-  seasons = {
-      "Spring": (3,4,5),
-      "Summer": (6,7,8),
-      "Autumn": (9,10,11),
-      "Winter": (12,1,2)
-  }
-  ```
-- **Localization**: print season names in Spanish/Hebrew if you want to practice i18n.
-- **Unit tests**: write a tiny `def month_to_season(m): ...` and test it.
-
 ## Files
 - `exercisesxpgold.py` — the script.
 - `README.md` — this file.
