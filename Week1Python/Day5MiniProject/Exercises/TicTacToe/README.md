@@ -42,19 +42,20 @@ python tictactoe.py
 
 ## 🎮 Game Rules
 
-1. **Setup**: 3x3 grid numbered 1-9
+1. **Setup**: 3x3 grid with row and column coordinates (1-3)
    ```
-   1 | 2 | 3
-   ---------
-   4 | 5 | 6
-   ---------
-   7 | 8 | 9
+     1 2 3
+   1  | | 
+     -----
+   2  | | 
+     -----
+   3  | | 
    ```
 
 2. **Gameplay**:
    - Player X starts first
    - Players alternate turns
-   - Choose a number (1-9) to place your mark
+   - **Enter "row col" format** (e.g., "2 3" for row 2, column 3)
    - First player to get 3 in a row wins
    - Game ends in tie if board fills with no winner
 
@@ -81,23 +82,78 @@ Current board:
 - **Diagonals**: Checks both diagonal lines (top-left to bottom-right, top-right to bottom-left)
 
 ### Input Validation
-- Rejects numbers outside 1-9 range
+- Rejects numbers outside 1-3 range for rows and columns
 - Prevents overwriting occupied squares
 - Handles invalid input gracefully
+- Clear error messages guide users to correct format
 
 ### Tie Detection
 - Monitors board fullness
 - Declares tie when no moves remain and no winner
 
+### Replay Functionality ✨
+- **Play again option** after each game completes
+- Fresh board automatically created for new game
+- Graceful exit with goodbye message
+- Seamless game flow without restarting program
+
 ## 🧩 Example Game
 
 ```
-Player X, choose a position (1-9): 5
-   |   |  
------------
-   | X |  
------------
-   |   |  
+🎮 Welcome to Tic Tac Toe! 🎮
+
+  1 2 3
+1  | | 
+  -----
+2  | | 
+  -----
+3  | | 
+Player X, enter row and col (1-3 1-3) 🙂: 2 2
+
+  1 2 3
+1  | | 
+  -----
+2  |X| 
+  -----
+3  | | 
+Player O, enter row and col (1-3 1-3) 🙂: 1 1
+
+  1 2 3
+1 O| | 
+  -----
+2  |X| 
+  -----
+3  | | 
+Player X, enter row and col (1-3 1-3) 🙂: 1 3
+
+  1 2 3
+1 O| |X
+  -----
+2  |X| 
+  -----
+3  | | 
+Player O, enter row and col (1-3 1-3) 🙂: 3 1
+
+  1 2 3
+1 O| |X
+  -----
+2  |X| 
+  -----
+3 O| | 
+Player X, enter row and col (1-3 1-3) 🙂: 3 3
+
+  1 2 3
+1 O| |X
+  -----
+2  |X| 
+  -----
+3 O| |X
+Player X wins!
+
+🔄 Play again? (y/n): n
+
+👋 Thanks for playing! Goodbye! 🎉
+```
 
 Player O, choose a position (1-9): 1
  O |   |  

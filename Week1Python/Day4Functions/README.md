@@ -1,6 +1,32 @@
 # 📅 Day 4 - Functions
 
+**Author:** Kevin Cusnir "Lirioth"  
+**Course:** Fullstack Bootcamp 2026  
+**Last Updated:** October 18, 2025
+
 Transform your code with functions! ⚙️ Master modular programming, code reusability, and the DRY (Don't Repeat Yourself) principle for professional-grade applications.
+
+## 📊 Quick Stats
+
+| Metric | Value |
+|--------|-------|
+| **⏰ Duration** | 6-8 hours |
+| **🎯 Difficulty** | 🟡 Intermediate |
+| **📝 Exercises** | 7 (XP) + 5 (Gold) + 3 (Ninja) + 1 (Challenge) |
+| **✅ Prerequisites** | Days 1-3 completion |
+| **🐍 Python Version** | 3.8+ |
+| **📚 Key Topics** | Function Definition, Parameters, Scope, Return Values |
+
+## 📑 Table of Contents
+- [🎯 Learning Objectives](#-learning-objectives)
+- [📚 Topics Covered](#-topics-covered)
+- [🚀 Quick Start](#-quick-start)
+- [🎯 Function Design Best Practices](#-function-design-best-practices)
+- [📁 Directory Structure](#-directory-structure)
+- [🚀 Getting Started](#-getting-started)
+- [📊 Assessment Checklist](#-assessment-checklist)
+- [🔧 Troubleshooting](#-troubleshooting)
+- [🔗 Next Steps](#-next-steps)
 
 ## 🎯 Learning Objectives
 
@@ -751,7 +777,45 @@ def process_data(data_list, operation="sum"):
 
 ---
 
-## 🔗 Next Steps
+## � Assessment Checklist
+
+Track your mastery of function concepts:
+
+### 🥉 Essential (Required)
+- [ ] Define functions with `def` keyword
+- [ ] Call functions with correct arguments
+- [ ] Use `return` to return values from functions
+- [ ] Understand the difference between `print()` and `return`
+- [ ] Write functions with parameters
+- [ ] Use default parameter values
+
+### 🥈 Intermediate (Recommended)
+- [ ] Understand local vs global scope
+- [ ] Create functions that call other functions
+- [ ] Use the `random` module in functions
+- [ ] Write functions with multiple return values
+- [ ] Implement conditional logic within functions
+- [ ] Modify lists in-place vs returning new lists
+- [ ] Write clear docstrings for your functions
+
+### 🥇 Advanced (Optional)
+- [ ] Use `*args` for variable positional arguments
+- [ ] Use `**kwargs` for variable keyword arguments
+- [ ] Create higher-order functions (functions that take functions)
+- [ ] Implement recursion (functions that call themselves)
+- [ ] Use type hints for better code documentation
+- [ ] Design function composition patterns
+
+### 💪 Challenges (Bonus)
+- [ ] Complete all ExercisesXP with elegant solutions
+- [ ] Solve ExercisesXPGold challenges
+- [ ] Master ExercisesXPNinja advanced problems
+- [ ] Complete Solve The Matrix daily challenge
+- [ ] Refactor old code to use functions
+
+---
+
+## �🔗 Next Steps
 
 After mastering functions:
 - **➡️ Day 5**: Apply all skills in a comprehensive mini-project

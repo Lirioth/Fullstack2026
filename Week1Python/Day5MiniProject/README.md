@@ -1,6 +1,31 @@
 # 📅 Day 5 - Mini Project Week
 
+**Author:** Kevin Cusnir "Lirioth"  
+**Course:** Fullstack Bootcamp 2026  
+**Last Updated:** October 18, 2025
+
 🎉 Congratulations! You've reached the capstone of Week 1. Time to showcase your Python mastery with complete, production-ready applications that integrate everything you've learned!
+
+## 📊 Quick Stats
+
+| Metric | Value |
+|--------|-------|
+| **⏰ Duration** | 8-12 hours |
+| **🎯 Difficulty** | 🟡 Intermediate to 🔴 Advanced |
+| **📝 Projects** | 2 Major (Tic-Tac-Toe, Hangman) + 4 Challenge Sets |
+| **✅ Prerequisites** | Days 1-4 completion required |
+| **🐍 Python Version** | 3.8+ |
+| **📚 Key Topics** | Integration, Architecture, Game Logic, Algorithms |
+
+## 📑 Table of Contents
+- [🎯 Learning Objectives](#-learning-objectives)
+- [📚 Week 1 Integration](#-week-1-integration)
+- [📁 Directory Structure](#-directory-structure)
+- [🚀 Projects Portfolio Overview](#-projects-portfolio-overview)
+- [🏗️ Project Architecture Lessons](#️-project-architecture-lessons)
+- [📊 Assessment Checklist](#-assessment-checklist)
+- [🔧 Troubleshooting](#-troubleshooting)
+- [🔗 Next Steps](#-next-steps)
 
 ## 🎯 Learning Objectives
 
@@ -779,6 +804,44 @@ Your flagship project demonstrates Python mastery across four key dimensions:
 - **🔍 Debug systematically**: Use print statements to track values
 - **📚 Reference previous days**: Apply patterns from earlier exercises  
 - **🤝 Ask for help**: Don't hesitate to seek guidance when stuck
+
+---
+
+## 📊 Assessment Checklist
+
+Verify your Week 1 mastery before moving forward:
+
+### 🥉 Essential (Required)
+- [ ] Complete Tic-Tac-Toe game with working win detection
+- [ ] Implement input validation in all projects
+- [ ] Use functions to organize code logically
+- [ ] Apply loops for game flow and repetition
+- [ ] Successfully integrate concepts from Days 1-4
+
+### 🥈 Intermediate (Recommended)
+- [ ] Complete Hangman game with ASCII art
+- [ ] Solve at least 3 challenges from Challenges1 or Challenges2
+- [ ] Implement replay functionality in games
+- [ ] Add error handling for edge cases
+- [ ] Write clear docstrings for all functions
+- [ ] Organize code into logical modules
+
+### 🥇 Advanced (Optional)
+- [ ] Complete Advanced Algorithm challenges
+- [ ] Optimize code for performance
+- [ ] Add advanced features (scoring, difficulty levels)
+- [ ] Implement AI opponent for Tic-Tac-Toe
+- [ ] Create comprehensive test cases
+- [ ] Build additional projects beyond requirements
+
+### 💪 Week 1 Mastery (Bonus)
+- [ ] Complete ALL exercises from Days 1-5 (XP + Gold + Ninja)
+- [ ] Solve all Daily Challenges
+- [ ] Build a custom project combining all concepts
+- [ ] Refactor code with advanced Python patterns
+- [ ] Create a portfolio presentation of your work
+
+---
 
 ## 🎓 Portfolio Presentation
 

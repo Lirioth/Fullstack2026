@@ -1,6 +1,35 @@
 # 📅 Day 3 - Dictionaries
 
+**Author:** Kevin Cusnir "Lirioth"  
+**Course:** Fullstack Bootcamp 2026  
+**Last Updated:** October 18, 2025
+
 Master Python's most versatile data structure! 🗂️ Dictionaries unlock the power of key-value relationships for efficient data modeling and real-world applications.
+
+## 📊 Quick Stats
+
+| Metric | Value |
+|--------|-------|
+| **⏰ Duration** | 5-7 hours |
+| **🎯 Difficulty** | 🟡 Intermediate |
+| **📝 Exercises** | 4 (XP) + 5 (Gold) + 5 (Ninja) + 2 (Challenges) |
+| **✅ Prerequisites** | Days 1-2 completion |
+| **🐍 Python Version** | 3.8+ |
+| **📚 Key Topics** | Key-Value Pairs, Methods, Nested Structures |
+
+## 📑 Table of Contents
+- [🎯 Learning Objectives](#-learning-objectives)
+- [📚 Topics Covered](#-topics-covered)
+- [🎨 Dictionary Structure Visualization](#-dictionary-structure-visualization)
+- [🤔 When to Use Dictionaries vs Other Structures](#-when-to-use-dictionaries-vs-other-structures)
+- [🔍 Real-World Dictionary Examples](#-real-world-dictionary-examples)
+- [🎯 Dictionary Method Cheat Sheet](#-dictionary-method-cheat-sheet)
+- [⚡ Dictionary Performance](#-dictionary-performance)
+- [📁 Directory Structure](#-directory-structure)
+- [🚀 Getting Started](#-getting-started)
+- [📊 Assessment Checklist](#-assessment-checklist)
+- [🔧 Troubleshooting](#-troubleshooting)
+- [🔗 Next Steps](#-next-steps)
 
 ## 🎯 Learning Objectives
 
@@ -468,6 +497,44 @@ filtered = {k: v for k, v in data.items() if v > 10}
 # Merging dictionaries (Python 3.9+)
 merged = dict1 | dict2
 ```
+
+---
+
+## 📊 Assessment Checklist
+
+Track your progress through each skill level:
+
+### 🥉 Essential (Required)
+- [ ] Create dictionaries with `{}` and `dict()` constructor
+- [ ] Access values using bracket notation `dict[key]`
+- [ ] Use `.get()` for safe key access with defaults
+- [ ] Add and modify key-value pairs
+- [ ] Iterate through dictionaries with `.items()`
+- [ ] Understand when to use dictionaries vs lists
+
+### 🥈 Intermediate (Recommended)
+- [ ] Navigate nested dictionary structures
+- [ ] Use dictionary methods: `.keys()`, `.values()`, `.pop()`, `.update()`
+- [ ] Implement age-based or conditional logic with dictionaries
+- [ ] Build dictionaries from lists using `zip()`
+- [ ] Handle missing keys gracefully
+- [ ] Model real-world entities (users, products, etc.)
+
+### 🥇 Advanced (Optional)
+- [ ] Design complex nested data structures
+- [ ] Optimize dictionary operations for performance
+- [ ] Implement data transformation pipelines
+- [ ] Use dictionaries for caching and memoization
+- [ ] Build multiple indexing strategies from same dataset
+- [ ] Handle JSON-like data structures
+
+### 💪 Challenges (Bonus)
+- [ ] Complete Caesar Cipher challenge
+- [ ] Solve Dictionaries daily challenge
+- [ ] Complete Timed Challenges 1 and 2
+- [ ] Build a complete inventory management system
+
+---
 
 ## 🔧 Troubleshooting
 
