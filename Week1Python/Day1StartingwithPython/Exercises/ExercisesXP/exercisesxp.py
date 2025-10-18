@@ -85,7 +85,8 @@ def exercise_8():
 def exercise_9():
     """Check whether the user is tall enough to ride."""
     height = read_int("Enter your height in cm: ")
-    if height > 145:
+    # ✅ Fixed: Use >= to include exactly 145cm as tall enough
+    if height >= 145:
         print("You are tall enough to ride.")
     else:
         print("You need to grow some more to ride.")

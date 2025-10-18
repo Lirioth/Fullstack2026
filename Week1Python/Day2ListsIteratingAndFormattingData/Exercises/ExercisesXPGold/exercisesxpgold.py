@@ -48,8 +48,14 @@ for w in words:
         print("'", letter, "' not found in '", w, "'", sep="")
 
 # Exercise 7: Min, Max, Sum
-nums = list(range(1, 1_000_001))
-print("min:", min(nums), "max:", max(nums), "sum:", sum(nums))
+# ✅ OPTIMIZED: Use mathematical formula instead of creating 1 million items
+# Old approach: nums = list(range(1, 1_000_001))  # ❌ ~8MB memory, slow!
+# New approach: Calculate directly with formulas ⚡
+n = 1_000_000
+min_val = 1
+max_val = n
+sum_val = n * (n + 1) // 2  # 💡 Gauss formula: sum of 1 to n
+print(f"min: {min_val}, max: {max_val}, sum: {sum_val}")
 
 # Exercise 8: List and Tuple
 data = input("Enter comma-separated numbers: ")

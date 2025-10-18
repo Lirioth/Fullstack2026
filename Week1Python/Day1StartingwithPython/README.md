@@ -167,18 +167,6 @@ python3 --version
 >>> help(input)
 >>> help(print)
 ```
-| Problem | Solution |
-|---------|----------|
-| `SyntaxError` | Check indentation and syntax carefully |
-| `NameError` | Ensure variables are defined before use |
-| Input not working | Check `input()` function usage |
-| String errors | Review string concatenation and formatting |
-
-### 💡 Tips for Success
-- **🐌 Start slow**: Focus on understanding rather than speed
-- **🔁 Practice**: Run code frequently to see results
-- **❓ Ask questions**: Use comments to explain your thinking
-- **🐛 Debug actively**: Read error messages carefully
 
 ## 🔗 Next Steps
 

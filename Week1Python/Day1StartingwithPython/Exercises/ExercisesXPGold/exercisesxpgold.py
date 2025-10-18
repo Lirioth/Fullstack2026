@@ -1,4 +1,5 @@
-1# Exercises XP Gold
+# 🥈 Exercises XP Gold — Enhanced Python Practice
+# ✅ Fixed syntax error and added clear section markers
 
 # Exercise 1 : Hello World - I love Python (one line of code)
 print("Hello world\n"*4 + "I love python\n"*3 + "I love python")

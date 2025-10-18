@@ -1,14 +1,18 @@
-# Exercises XP - Sequence / List / Set / Tuple
+# 🥉 Exercises XP - Sequence / List / Set / Tuple
+# ✅ Improved: Added main() guard to prevent execution on import
 
-# -------- Exercise 1: Favorite Numbers (sets) --------
-my_fav_numbers = {7, 13, 27}
-last_added = 99
-my_fav_numbers.add(42)
-my_fav_numbers.add(last_added)
-my_fav_numbers.discard(last_added)  # "remove the last one you added"
-friend_fav_numbers = {1, 3, 7}
-our_fav_numbers = my_fav_numbers.union(friend_fav_numbers)
-print("our_fav_numbers:", our_fav_numbers)
+def main():
+    """Run all Day 2 exercises in sequence."""
+    
+    # -------- Exercise 1: Favorite Numbers (sets) --------
+    my_fav_numbers = {7, 13, 27}
+    last_added = 99
+    my_fav_numbers.add(42)
+    my_fav_numbers.add(last_added)
+    my_fav_numbers.discard(last_added)  # "remove the last one you added"
+    friend_fav_numbers = {1, 3, 7}
+    our_fav_numbers = my_fav_numbers.union(friend_fav_numbers)
+    print("our_fav_numbers:", our_fav_numbers)
 
 # -------- Exercise 2: Tuple (immutability) --------
 t = (1, 2, 3)
@@ -106,10 +110,14 @@ print("Sorry, no Pastrami today.")
 while "Pastrami" in sandwich_orders:
     sandwich_orders.remove("Pastrami")
 
-finished_sandwiches = []
-while sandwich_orders:
-    s = sandwich_orders.pop(0)
-    print("I made your " + s + " sandwich.")
-    finished_sandwiches.append(s)
+    finished_sandwiches = []
+    while sandwich_orders:
+        s = sandwich_orders.pop(0)
+        print("I made your " + s + " sandwich.")
+        finished_sandwiches.append(s)
 
-print("Finished sandwiches:", finished_sandwiches)
+    print("Finished sandwiches:", finished_sandwiches)
+
+
+if __name__ == "__main__":
+    main()

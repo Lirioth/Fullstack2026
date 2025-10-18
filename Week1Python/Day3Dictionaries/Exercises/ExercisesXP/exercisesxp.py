@@ -23,7 +23,20 @@ more_total = 0
 ans = input("Add extra family? (y/n): ").strip().lower()
 while ans == "y":
     nm = input("name: ").strip()
-    ag = int(input("age: ").strip())
+    age_input = input("age: ").strip()
+    
+    # ✅ IMPROVED: Add try/except for input validation
+    try:
+        ag = int(age_input)
+        if ag < 0:
+            print("⚠️ Age cannot be negative. Skipping...")
+            ans = input("Add extra family? (y/n): ").strip().lower()
+            continue
+    except ValueError:
+        print("❌ Invalid age! Please enter a number. Skipping...")
+        ans = input("Add extra family? (y/n): ").strip().lower()
+        continue
+    
     if ag < 3:
         p = 0
     elif ag <= 12:

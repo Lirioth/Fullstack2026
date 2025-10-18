@@ -88,14 +88,18 @@ cd Exercises/Hangman
 python main.py
 ```
 
-**🎯 Features:**
-- 📚 Word selection from categorized word lists
-- 🎨 ASCII art hangman visualization
+**🎯 Current Features:**
+- 📚 Random word selection from word list
+- 🎨 ASCII art hangman visualization (progressive gallows display)
 - ✏️ Letter tracking (guessed letters, remaining attempts)
 - 🔤 Input validation for single letter guesses
 - 🏆 Win/lose condition detection
-- 📊 Score tracking system
 - 🎮 Replay functionality
+
+**🚧 Future Enhancements (TODO):**
+- 📊 Score tracking system across multiple games
+- � Multiple difficulty levels (word length selection)
+- 🗂️ Word categories (animals, countries, technology, etc.)
 
 **🗂️ Modular Structure:**
 - `game.py`: Core game logic and state management

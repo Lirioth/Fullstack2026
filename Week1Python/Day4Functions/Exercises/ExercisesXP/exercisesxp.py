@@ -27,10 +27,19 @@ def make_shirt(size="large", text="I love Python"):
 
 # Exercise 6 🎯
 magician_names = ['Harry Houdini', 'David Blaine', 'Criss Angel']
-def show_magicians(names):
+
+def show_magicians(names: list[str]) -> None:
+    """Display each magician's name."""
     for n in names:
         print(n)
-def make_great(names):
+
+def make_great(names: list[str]) -> None:
+    """
+    Modify list in-place by adding 'the Great' to each name.
+    
+    Note: This function mutates the input list. For a functional approach
+    (no side effects), use: return [name + " the Great" for name in names]
+    """
     for i in range(len(names)):
         names[i] = names[i] + " the Great"
 
