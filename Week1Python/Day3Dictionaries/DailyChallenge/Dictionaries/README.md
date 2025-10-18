@@ -9,9 +9,9 @@ Two small problems written in a clean, readable way with tiny comments.
 ## How to run
 
 ```bash
-python3 dictionaries.py
+python dictionaries.py
 ```
-Run the provided `dictionaries.py` script.
+Run the provided `dictionaries.py` script. The CLI wrapper now lives behind `if __name__ == "__main__"` so importing the helpers leaves your code quiet.
 
 ---
 
@@ -27,23 +27,15 @@ Output: {'m': [0], 'i': [1, 4, 7, 10], 's': [2, 3, 5, 6], 'p': [8, 9]}
 
 **How it works (simple steps):**
 1. Read the string from the user.
-2. Create an empty dict `d = {}`.
-3. Loop over the characters using `enumerate` to get `(index, char)`.
-4. If the char is not in the dict, create a new list with the current index.
-5. Otherwise, append the current index to the existing list.
-6. Print the dictionary.
+2. Pass it to `letter_indices(word)` which builds the dictionary using `enumerate`.
+3. Print the dictionary returned by the helper.
 
-**Tiny code peek:**
+**Helper function:**
 ```python
-word = input("Enter a word: ")
-d = {}
+from dictionaries import letter_indices
 
-for i, ch in enumerate(word):          # i = index, ch = character
-    if ch not in d:                    # first time we see this character
-        d[ch] = [i]                    # start a new list with this index
-    else:
-        d[ch].append(i)                # add another index
-print(d)                               # show the result
+letter_indices("mississippi")
+# -> {'m': [0], 'i': [1, 4, 7, 10], 's': [2, 3, 5, 6], 'p': [8, 9]}
 ```
 
 **Notes:**
@@ -64,22 +56,20 @@ def to_int(s):
 ```
 This removes the dollar sign and commas, then converts to `int`.
 
-**How it works (simple steps):**
-1. Define `to_int` to parse prices like `"$1,000"` into `1000`.
-2. For each `(name, price)` in the dictionary:
-   - Convert `price` and `wallet` to integers.
-   - If `price <= wallet`, push the `name` to a list.
-3. Sort the list alphabetically.
-4. Print the list or `"Nothing"` if it’s empty.
-
-**Tiny code peek (pattern used in the script):**
-```python
 affordable = []
-for name, price in items_purchase.items():
-    if to_int(price) <= to_int(wallet):  # compare ints, not strings
-        affordable.append(name)
 affordable.sort()
-print(affordable if affordable else "Nothing")
+**How it works (simple steps):**
+1. Call `affordable_items(items, wallet)` to get a sorted list of names that fit the budget.
+2. The helper handles currency parsing, comparisons, and empty results.
+3. Print the resulting list or `"Nothing"` if it’s empty.
+
+**Helper function:**
+```python
+from dictionaries import affordable_items
+
+items = {"Water": "$1", "Bread": "$3", "TV": "$1,000", "Fertilizer": "$20"}
+affordable_items(items, "$300")
+# -> ['Bread', 'Fertilizer', 'Water']
 ```
 
 **Examples**
@@ -114,7 +104,7 @@ wallet = "$1"
 
 ## Tips for my future self
 - Keep outputs clear so they’re easy to compare against the expected results.
-- Consider wrapping each challenge in a function and unit‑testing with sample cases.
+- The helpers are already pure functions—drop them straight into unit tests or other projects.
 - If you later support other formats (like `"€1.234"`), extend the parser carefully.
 
 ---

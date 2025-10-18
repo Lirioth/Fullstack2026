@@ -9,11 +9,11 @@ Two tiny console exercises: a birthday lookup (with optional insert) and a fruit
 ## 🚀 How to run
 
 ```bash
-python3 exercisesxpgold.py
+python exercisesxpgold.py
 ```
-Execute the exercises via `exercisesxpgold.py`.
+Execute the exercises via `exercisesxpgold.py`. The interactive flow now lives behind `_cli()`, so importing the module exposes pure helpers without triggering prompts.
 
-This script **📝 asks for input** a few times in the Birthdays section (adding a contact and doing a lookup). The Fruit Shop section just prints results.
+Birthdays still ask for input when you run the CLI; the fruit shop section only prints results.
 
 ---
 
@@ -30,35 +30,16 @@ birthdays = {
 }
 ```
 
-**Steps performed:**
+**Key helpers:**
+- `add_birthday(birthdays, name, date)` returns a new dictionary with the extra entry.
+- `lookup_birthday(birthdays, name)` returns the stored date or `None`.
+
+**Typical flow:**
 1. Print a welcome message.
 2. Print all names with `", ".join(birthdays.keys())`.
-3. Ask the user to add a new name (press Enter to skip).
-4. If provided, ask for a date in `YYYY/MM/DD` and insert into the dict.
-5. Show the names again (so the new one is visible).
-6. Ask **who** to look up; print the birthday if found, otherwise a friendly message.
-
-**Tiny code peek:**
-```python
-# show all names
-print("Names:", ", ".join(birthdays.keys()))
-
-# optional insert
-new_name = input("Add a name (or press Enter to skip): ").strip()
-if new_name != "":
-    new_bday = input("Enter birthday (YYYY/MM/DD): ").strip()
-    birthdays[new_name] = new_bday
-
-# show names again
-print("Names:", ", ".join(birthdays.keys()))
-
-# lookup
-name = input("Who do you want to look up? ").strip()
-if name in birthdays:
-    print(name + "'s birthday is " + birthdays[name])
-else:
-    print("Sorry, we don't have the birthday information for " + name)
-```
+3. Ask the user to add a new name (press Enter to skip); use `add_birthday` if provided.
+4. Show names again so the addition is visible.
+5. Ask **who** to look up; call `lookup_birthday` and display the result.
 
 **Example run (one possible flow):**
 ```
@@ -83,32 +64,26 @@ Kevin's birthday is 1994/06/16
 
 **Goal:** print item prices and compute the **total cost** to buy all stock from a nested dictionary.
 
-**Phase 1:** simple dict `item → price`
-```python
-items = {"banana": 4, "apple": 2, "orange": 1.5, "pear": 3}
-for item, price in items.items():
-    print(item + " costs " + str(price))
-```
+Use `stock_value(items)` to handle the multiplication and summation for you:
 
-**Phase 2:** nested dict with `price` and `stock`, then compute total cost
 ```python
-items = {
+from exercisesxpgold import stock_value
+
+inventory = {
     "banana": {"price": 4, "stock": 10},
     "apple": {"price": 2, "stock": 5},
     "orange": {"price": 1.5, "stock": 24},
-    "pear": {"price": 3, "stock": 1}
+    "pear": {"price": 3, "stock": 1},
 }
 
-total_cost = 0
-for item, info in items.items():
-    total_cost += info["price"] * info["stock"]
-print("Total cost to buy everything:", total_cost)
+stock_value(inventory)
+# -> 162.0
 ```
 
 **Notes:**
 - Multiplying `price * stock` gives the cost to clear that item.
-- The code assumes `price` and `stock` exist for each item.
-- If you need currency formatting later, use `format` or `locale` libraries.
+- The helper assumes `price` and `stock` exist for each item; add guards if your data is messy.
+- Wrap the result in your preferred formatting function if you need currency output.
 
 ---
 
@@ -116,7 +91,7 @@ print("Total cost to buy everything:", total_cost)
 - For the birthdays dict, consider validating dates with `datetime.strptime`.
 - Normalize names (e.g., `.title()`) to reduce case mismatches.
 - For the fruit shop, guard against missing keys with `dict.get` or `try/except`.
-- Wrap each exercise into a function if you plan to unit test.
+- The helpers are already unit-test friendly; the CLI remains only for parity with the original instructions.
 
 ---
 

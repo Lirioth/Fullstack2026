@@ -9,10 +9,9 @@ Compact notes for four small dictionary exercises. Clear steps and tiny code sni
 ## 🚀 How to run
 
 ```bash
-python3 exercisesxp.py
+python exercisesxp.py
 ```
-The script lives in `exercisesxp.py`.
-Parts of the script read input (bonus in Exercise 2), the rest just print.
+The CLI lives in a `_cli()` helper so importing the module exposes the reusable functions without printing anything. Only the optional bonus prompt still asks for live input.
 
 ---
 
@@ -21,15 +20,12 @@ Parts of the script read input (bonus in Exercise 2), the rest just print.
 **🎯 Goal:** build a dictionary from two parallel lists.
 
 ```python
+from exercisesxp import build_dict
+
 keys = ['Ten', 'Twenty', 'Thirty']
 values = [10, 20, 30]
-
-# pair up: ('Ten', 10), ('Twenty', 20), ...
-pairs = zip(keys, values)
-
-# dict from pairs
-d = dict(pairs)
-print(d)  # {'Ten': 10, 'Twenty': 20, 'Thirty': 30}
+build_dict(keys, values)
+# -> {'Ten': 10, 'Twenty': 20, 'Thirty': 30}
 ```
 
 **Notes:**
@@ -44,50 +40,20 @@ print(d)  # {'Ten': 10, 'Twenty': 20, 'Thirty': 30}
 **Rules:** `<3 → $0`, `3–12 → $10`, `>12 → $15`.
 
 ```python
+from exercisesxp import cinemax_report
+
 family = {"rick": 43, "beth": 13, "morty": 5, "summer": 8}
-total = 0
-
-for name, age in family.items():
-    if age < 3:
-        price = 0
-    elif age <= 12:
-        price = 10
-    else:
-        price = 15
-    print(name, "pays", price)  # show each person's price
-    total += price              # add to total
-
-print("total:", total)
+summary = cinemax_report(family)
+summary.lines  # ['rick pays 15', 'beth pays 15', 'morty pays 10', 'summer pays 10']
+summary.total  # 50
 ```
+Returns a `FamilyTicketSummary` dataclass so the calling code can access `lines` and `total` with dot notation.
 
-**Bonus (optional):** interactively add more people and keep a separate `more_total`.
-
-```python
-more_total = 0
-ans = input("Add extra family? (y/n): ").strip().lower()
-
-while ans == "y":
-    nm = input("name: ").strip()
-    ag = int(input("age: ").strip())
-
-    if ag < 3:
-        p = 0
-    elif ag <= 12:
-        p = 10
-    else:
-        p = 15
-
-    print(nm, "pays", p)
-    more_total += p
-    ans = input("Add extra family? (y/n): ").strip().lower()
-
-if more_total:
-    print("extra total:", more_total)
-```
+The `_bonus_prompt()` helper keeps the original interactive add-on. Leave it untouched if you still want the input loop.
 
 **Tips:**
-- Always convert the `age` input with `int(...)`.
-- You can merge totals if you prefer a single final number.
+- `ticket_price(age)` underpins the logic; reuse it for other reports.
+- Keep ages as integers to avoid surprises when parsing input.
 
 ---
 
@@ -96,6 +62,8 @@ if more_total:
 **Goal:** practice updates, insertions, deletions, reading nested data, counting keys, and merging another dict.
 
 ```python
+from exercisesxp import brand_summary
+
 brand = {
     "name": "Zara",
     "creation_date": 1975,
@@ -106,39 +74,15 @@ brand = {
     "major_color": {"France": "blue", "Spain": "red", "US": ["pink", "green"]},
 }
 
-# update a value
-brand["number_stores"] = 2
-
-# format a list into a string
-print("Zara clients:", ", ".join(brand["type_of_clothes"]))
-
-# add a new key
-brand["country_creation"] = "Spain"
-
-# append to a list if present
-if "international_competitors" in brand:
-    brand["international_competitors"].append("Desigual")
-
-# remove a key safely (ignore if missing)
-brand.pop("creation_date", None)
-
-# read nested values
-print("last competitor:", brand["international_competitors"][-1])
-print("US colors:", brand["major_color"]["US"])
-
-# count + list keys
-print("num keys:", len(brand))
-print("keys:", list(brand.keys()))
-
-# merge another dict (overwrites on collisions)
-more_on_zara = {"creation_date": 1975, "number_stores": 10000}
-brand.update(more_on_zara)
-print("merged brand:", brand)
+stats = brand_summary(brand)
+stats["clients"]        # 'men, women, children, home'
+stats["last_competitor"] # 'Desigual'
+stats["merged_brand"]   # full updated dictionary
 ```
 
 **Notes:**
-- After `update`, `number_stores` is `10000` again.
-- `pop("creation_date", None)` prevents `KeyError`.
+- The helper returns a shallow copy so your original `brand` stays untouched.
+- `update_brand()` is factored out if you only need the transformed dictionary.
 
 ---
 
@@ -147,44 +91,22 @@ print("merged brand:", brand)
 **Goal:** build three mappings from the same list of names.
 
 ```python
+from exercisesxp import disney_mappings
+
 users = ["Mickey", "Minnie", "Donald", "Ariel", "Pluto"]
-```
-
-1) **character → index** (original positions):
-```python
-d1 = {}
-for i, u in enumerate(users):
-    d1[u] = i
-print(d1)
-```
-
-2) **index → character** (reverse mapping):
-```python
-d2 = {}
-for i, u in enumerate(users):
-    d2[i] = u
-print(d2)
-```
-
-3) **sorted characters → new indices** (alphabetical order):
-```python
-sorted_users = sorted(users)
-d3 = {}
-for i, u in enumerate(sorted_users):
-    d3[u] = i
-print(d3)
+char_to_index, index_to_char, sorted_mapping = disney_mappings(users)
 ```
 
 **Notes:**
-- `enumerate(seq)` yields `(index, value)`.
-- Sorting changes indices; that’s why we rebuild the mapping.
+- All three dictionaries come back at once as a tuple.
+- Sorting changes indices; that’s why the third mapping rebuilds positions from scratch.
 
 ---
 
 ## Quick tips for future me
-- `dict(zip(a, b))` is a handy pattern for parallel lists.
+- `dict(zip(a, b))` is still a handy pattern, now encapsulated in `build_dict`.
 - For nested dicts, print small parts to confirm shapes before deep access.
-- Keep prints consistent so it’s easy to compare with expected outputs.
+- Plug the helpers straight into tests; the CLI only exists for parity with the original exercise outputs.
 
 ---
 
