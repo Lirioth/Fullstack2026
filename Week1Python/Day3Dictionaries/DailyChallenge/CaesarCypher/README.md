@@ -35,4 +35,14 @@ For each letter: convert to a 0–25 index, add the shift, wrap modulo 26, and c
 ## 📝 File
 - `caesarcipher.py` — single‑file solution (no external deps).
 
-Have fun encrypting like Julius Caesar! 🏺
+---
+
+## 👤 Author
+
+**Kevin Cusnir 'Lirioth'**  
+Repository: [Fullstack2026](https://github.com/Lirioth/Fullstack2026)  
+Week 1 Day 3 - Daily Challenge
+
+---
+
+Have fun encrypting like Julius Caesar! 🏺✨

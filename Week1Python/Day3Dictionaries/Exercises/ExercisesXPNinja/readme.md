@@ -46,3 +46,14 @@ deduplicate_preserve_order([
 # -> ['Honda', 'Volkswagen', 'Toyota', 'Ford Motor', 'Chevrolet']
 ```
 ```
+---
+
+## 👤 Author
+
+**Kevin Cusnir 'Lirioth'**  
+Repository: [Fullstack2026](https://github.com/Lirioth/Fullstack2026)  
+Week 1 Day 3 - Exercises XP Ninja
+
+---
+
+*Happy coding!* 🐍✨

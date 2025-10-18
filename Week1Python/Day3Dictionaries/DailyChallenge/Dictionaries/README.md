@@ -111,3 +111,14 @@ wallet = "$1"
 
 ## License
 MIT — free to use, copy, and modify.
+---
+
+## 👤 Author
+
+**Kevin Cusnir 'Lirioth'**  
+Repository: [Fullstack2026](https://github.com/Lirioth/Fullstack2026)  
+Week 1 Day 3 - Daily Challenge
+
+---
+
+*Happy coding!* 🐍✨

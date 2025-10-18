@@ -672,4 +672,14 @@ Before starting Week2 (OOP), ensure you:
 - Print statement debugging techniques
 
 ---
-**Last Updated**: 📅 October 2025 | **Estimated Completion**: ⏰ 5-7 days
+
+## 👤 Author
+
+**Kevin Cusnir 'Lirioth'**  
+Repository: [Fullstack2026](https://github.com/Lirioth/Fullstack2026)  
+Week 1 Python - Fullstack Bootcamp 2026
+
+---
+
+**Last Updated**: 📅 October 2025 | **Estimated Completion**: ⏰ 5-7 days  
+*Happy coding!* 🐍✨

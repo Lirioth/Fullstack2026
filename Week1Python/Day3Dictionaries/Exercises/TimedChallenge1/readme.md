@@ -18,3 +18,14 @@ You have entered a wrong domain
 ```
 domain wrong a entered have You
 ```
+---
+
+## 👤 Author
+
+**Kevin Cusnir 'Lirioth'**  
+Repository: [Fullstack2026](https://github.com/Lirioth/Fullstack2026)  
+Week 1 Day 3 - Timed Challenge 1
+
+---
+
+*Happy coding!* 🐍✨

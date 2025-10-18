@@ -6,7 +6,18 @@
 
 Welcome to your Python programming journey! 🐍 This day covers the fundamental building blocks that form the foundation of all Python programming.
 
-## 📑 Table of Contents
+## � Quick Stats
+
+| Metric | Value |
+|--------|-------|
+| **⏰ Duration** | 5-7 hours |
+| **🎯 Difficulty** | 🟢 Beginner |
+| **📝 Exercises** | 9 (XP) + 6 (Gold) + 5 (Ninja) + 1 (Daily Challenge) |
+| **✅ Prerequisites** | None - perfect for absolute beginners! |
+| **🐍 Python Version** | 3.8+ |
+| **📚 Key Topics** | Variables, Data Types, Conditionals, Strings |
+
+## �📑 Table of Contents
 - [🎯 Learning Objectives](#-learning-objectives)
 - [📚 Topics Covered](#-topics-covered)
 - [📁 Directory Structure](#-directory-structure)
