@@ -9,11 +9,11 @@ A short practice file with two tiny problems: generating multiples and cleaning 
 ## How to run
 
 ```bash
-python3 dailychallengelistandstrings.py
+python dailychallengelistandstrings.py
 ```
-Run the command from the `ListAndStrings` folder so Python can find the script easily.
+Run the command from the `ListAndStrings` folder. A small `_cli()` wrapper now collects input so importing the module elsewhere stays side-effect free.
 
-The program asks for input twice in Challenge 1 (a number, then a length) and once in Challenge 2 (a word).
+The prompt sequence matches the original exercise: two numbers for Challenge 1 (base and length) and a single word for Challenge 2.
 
 ---
 
@@ -36,20 +36,16 @@ Output: [-3, -6, -9, -12]
 ```
 
 **How it works (step by step):**
-1. Read `number` with `int(input(...))`.
-2. Read `length` with `int(input(...))`.
-3. Build a list using a simple `for` loop from `1` to `length` (inclusive) and append `number * i`.
-4. Print the resulting list.
+1. Convert the two inputs into integers.
+2. Call `multiples(number, length)` which returns the list of requested multiples.
+3. Print the resulting list.
 
-**Tiny code peek:**
+**Helper function:**
 ```python
-number = int(input("Enter a number: "))
-length = int(input("Enter length: "))
+from dailychallengelistandstrings import multiples
 
-multiples = []
-for i in range(1, length + 1):  # go from 1..length
-    multiples.append(number * i) # make each multiple
-print(multiples)                 # show the list
+multiples(7, 5)
+# -> [7, 14, 21, 28, 35]
 ```
 
 **Notes:**
@@ -83,23 +79,15 @@ Output: AaAa   # case-sensitive: 'A' and 'a' are different
 
 **How it works (step by step):**
 1. Read the string from the user.
-2. If it is empty, print an empty string.
-3. Otherwise, start the `result` with the first character.
-4. Walk over the rest of the characters; only append a character if it is **different** from the last character already in `result`.
-5. Print `result`.
+2. Pass it into `collapse_duplicates(word)` to obtain the cleaned version.
+3. Print the return value.
 
-**Tiny code peek:**
+**Helper function:**
 ```python
-word = input("Enter a word: ")
+from dailychallengelistandstrings import collapse_duplicates
 
-if word == "":
-    print("")               # nothing to do
-else:
-    result = word[0]        # start with first char
-    for ch in word[1:]:     # scan the rest
-        if ch != result[-1]:# add only if not same as last
-            result += ch
-    print(result)
+collapse_duplicates("ppoollee")
+# -> "pole"
 ```
 
 **Notes:**
@@ -111,9 +99,9 @@ else:
 
 ## Quick tips for future me
 
-- Keep `print()` outputs clear so it’s easy to compare expected vs actual.
+- Keep the `multiples` and `collapse_duplicates` helpers pure so they stay easy to unit test.
 - Add small guards for input validation if you want stricter behavior (e.g., ensure `length >= 1`).
-- For unit tests later, you can wrap each challenge in a function and test with sample inputs.
+- Replace the CLI with your own prompts by calling `_cli()` or wiring the helpers into a separate UI.
 
 ---
 
