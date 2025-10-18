@@ -1,3 +1,14 @@
+"""
+Daily Challenge - Dictionaries
+==============================
+Comprehensive dictionary manipulation challenges.
+
+Author: Kevin Cusnir 'Lirioth'
+Repository: Fullstack2026
+Week 1 Day 3 - Dictionaries
+Python Version: 3.8+
+"""
+
 from __future__ import annotations
 
 from typing import Dict, List

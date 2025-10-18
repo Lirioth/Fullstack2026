@@ -518,3 +518,11 @@ After mastering dictionaries:
 **📋 Prerequisites**: Days 1-2 completion
 
 Time to unlock the power of dictionaries! 🗝️
+
+---
+
+## 👤 Author
+
+**Kevin Cusnir 'Lirioth'**  
+📂 Repository: [Fullstack2026](https://github.com/Lirioth/Fullstack2026)  
+📅 Week 1 Day 3 - Dictionaries

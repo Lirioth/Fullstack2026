@@ -1,8 +1,14 @@
 #!/usr/bin/env python3
-"""Exercises XP Ninja — Exercise 1: Cars.
-
+"""
+Exercises XP Ninja — Exercise 1: Cars
+=====================================
 Reusable helpers for the manufacturer analysis plus a CLI reproducing the
 original outputs. Import this module elsewhere to reuse the pure functions.
+
+Author: Kevin Cusnir 'Lirioth'
+Repository: Fullstack2026
+Week 1 Day 3 - Dictionaries
+Python Version: 3.8+
 """
 
 from __future__ import annotations

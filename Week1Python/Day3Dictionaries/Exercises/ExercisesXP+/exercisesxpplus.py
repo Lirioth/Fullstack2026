@@ -1,3 +1,14 @@
+"""
+Exercises XP+ - Extended Dictionary Practice
+============================================
+Additional challenges for comprehensive dictionary mastery.
+
+Author: Kevin Cusnir 'Lirioth'
+Repository: Fullstack2026
+Week 1 Day 3 - Dictionaries
+Python Version: 3.8+
+"""
+
 # --- Exercise 1 : Student Grade Summary ---
 student_grades = {
     "Alice": [88, 92, 100],

@@ -1,8 +1,13 @@
 #!/usr/bin/env python3
 """
 Daily Challenge GOLD — Caesar Cipher
-------------------------------------
+====================================
 Single-file Python program to encrypt/decrypt using a Caesar cipher.
+
+Author: Kevin Cusnir 'Lirioth'
+Repository: Fullstack2026
+Week 1 Day 3 - Dictionaries
+Python Version: 3.8+
 
 Features
 - Encrypt and decrypt with any integer shift (positive or negative), preserving case.

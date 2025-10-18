@@ -7,7 +7,9 @@ Practice with:
 - Nested dictionary manipulation and updates
 - Multiple indexing strategies for same data
 
-Author: Week1Python Course
+Author: Kevin Cusnir 'Lirioth'
+Repository: Fullstack2026
+Week 1 Day 3 - Dictionaries
 Python Version: 3.8+
 """
 

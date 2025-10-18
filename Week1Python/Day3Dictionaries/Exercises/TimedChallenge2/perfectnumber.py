@@ -1,9 +1,15 @@
 #!/usr/bin/env python3
-"""Timed Challenge #2 — Perfect Number
-
+"""
+Timed Challenge #2 — Perfect Number
+===================================
 Reads an integer from input and prints True if it is a perfect number,
 else prints False. A perfect number equals the sum of its proper divisors
 (positive divisors excluding the number itself).
+
+Author: Kevin Cusnir 'Lirioth'
+Repository: Fullstack2026
+Week 1 Day 3 - Dictionaries
+Python Version: 3.8+
 
 Examples
 Input : 6   -> True   (1 + 2 + 3 = 6)

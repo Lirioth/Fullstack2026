@@ -1,3 +1,14 @@
+"""
+Exercises XP Gold - Advanced Dictionary Manipulation
+===================================================
+Complex dictionary scenarios for intermediate practice.
+
+Author: Kevin Cusnir 'Lirioth'
+Repository: Fullstack2026
+Week 1 Day 3 - Dictionaries
+Python Version: 3.8+
+"""
+
 from __future__ import annotations
 
 from typing import Dict, Iterable, Tuple

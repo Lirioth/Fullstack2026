@@ -1,7 +1,13 @@
 #!/usr/bin/env python3
-"""Timed Challenge #1 — Reverse the Sentence (word-wise)
-
+"""
+Timed Challenge #1 — Reverse the Sentence (word-wise)
+=====================================================
 Reads a single line from standard input and prints the sentence reversed by words.
+
+Author: Kevin Cusnir 'Lirioth'
+Repository: Fullstack2026
+Week 1 Day 3 - Dictionaries
+Python Version: 3.8+
 
 Example
 Input : You have entered a wrong domain
