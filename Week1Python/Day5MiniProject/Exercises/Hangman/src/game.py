@@ -1,7 +1,14 @@
 """
-Core Hangman game logic.
-- Tracks guesses, wrong attempts, and masked representation.
-- Only letters are maskable ('*'); spaces/punctuation show as-is.
+Hangman Game - Core Logic Module
+=================================
+Complete game state machine for Hangman.
+Tracks guesses, wrong attempts, and masked representation.
+Only letters are maskable ('*'); spaces/punctuation show as-is.
+
+Author: Kevin Cusnir 'Lirioth'
+Repository: Fullstack2026
+Week 1 Day 5 - Mini Project
+Python Version: 3.8+
 """
 from typing import Set
 from .art import HANGMAN, MAX_WRONG

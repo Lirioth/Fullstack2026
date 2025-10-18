@@ -1,8 +1,14 @@
 """
-Exercise 2 — Analyze the given code.
-We provide:
-1) An annotated version with comments next to each line.
-2) A step-by-step trace of variable values and list changes.
+Challenges 2 - Code Analysis Module
+====================================
+Detailed analysis of sorting algorithm code.
+Provides annotated version with comments and step-by-step execution trace.
+Demonstrates selection sort algorithm understanding.
+
+Author: Kevin Cusnir 'Lirioth'
+Repository: Fullstack2026
+Week 1 Day 5 - Mini Project
+Python Version: 3.8+
 """
 
 ANNOTATED = """

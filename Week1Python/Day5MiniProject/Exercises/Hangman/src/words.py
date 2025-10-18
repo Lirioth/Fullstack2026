@@ -1,6 +1,14 @@
 """
-Word source for Hangman.
-Feel free to expand WORDS. Phrases can include spaces/punctuations; letters get masked with '*', others remain visible.
+Hangman Game - Word Source Module
+==================================
+Word and phrase source for Hangman game.
+Includes random word selection function.
+Phrases can include spaces/punctuations; letters get masked with '*', others remain visible.
+
+Author: Kevin Cusnir 'Lirioth'
+Repository: Fullstack2026
+Week 1 Day 5 - Mini Project
+Python Version: 3.8+
 """
 import random
 

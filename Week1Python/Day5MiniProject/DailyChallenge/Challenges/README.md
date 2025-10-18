@@ -1,80 +1,260 @@
-# 💪 Daily Challenge — Challenges (Sorting & Longest Word)
+# 📝 Daily Challenge - String Sorting & Analysis
 
-Short Python solutions for two small problems: **🔤 alphabetical sorting** of a comma-separated string and **📏 finding the longest word** in a sentence.
+Two essential string manipulation challenges: alphabetical sorting of comma-separated input and finding the longest word in a sentence.
 
----
+## 📊 Quick Stats
 
-## 📁 Files
-- `challenges.py` — houses the reusable helpers plus an import-safe CLI runner.
+| Metric | Value |
+|--------|-------|
+| **Difficulty** | ⭐⭐ Beginner-Intermediate |
+| **Python Version** | 3.8+ |
+| **Topics** | String Parsing, Sorting, Regular Expressions |
+| **Exercises** | 2 Complete Solutions |
+| **Concepts** | Input Validation, Text Processing, Algorithm Design |
 
-### 🔍 Key Functions
-- `sort_comma_separated(words: str) -> list[str]` — returns the cleaned, alphabetised tokens for Challenge 1.
-- `longest_word(sentence: str) -> str` — returns the original token matching the longest alphabetic sequence.
+## 🎯 Learning Objectives
 
-## 🚀 How to run
+By completing these challenges, you will:
+
+- ✅ **Parse comma-separated input** handling edge cases
+- ✅ **Implement sorting algorithms** using built-in functions
+- ✅ **Master regular expressions** for text cleaning
+- ✅ **Handle special characters** (punctuation, whitespace)
+- ✅ **Write robust functions** with comprehensive validation
+- ✅ **Practice defensive programming** anticipating invalid input
+
+## 📂 Project Structure
+
+```
+Challenges/
+├── challenges.py           # Both challenge solutions
+└── README.md              # This file
+```
+
+## 🚀 How to Run
+
 ```bash
+# Navigate to the Challenges directory
+cd DailyChallenge/Challenges
+
+# Run interactive prompts
 python challenges.py
-```
-- The CLI now lives behind an `_cli()` helper so imports stay side-effect free.
-- Challenge 1 prompts for the comma-separated list and prints the sorted result.
-- Challenge 2 keeps the original sanity assertions; swap them for your own quick tests when needed.
 
----
-
-## 1️⃣ Challenge 1 — Sorting (comma-separated words)
-**🎯 Goal:** read a single comma-separated string, sort words alphabetically, and print them back joined by commas.
-
-**🔧 Approach:**
-1. `input()` to read the string.
-2. `split(",")` to get raw parts.
-3. `strip()` each part and ignore empty items.
-4. `list.sort()` to order the cleaned list.
-5. `",".join(clean)` to print the comma-separated result.
-
-**Example**
-Input:
-```
-without,hello,bag,world
-```
-Output:
-```
-bag,hello,without,world
+# View built-in test cases
+# (Tests run automatically after user input)
 ```
 
-**Notes / Edge cases**
-- Leading/trailing spaces around words are removed.
-- Empty entries (e.g., double commas `a,,b`) are ignored.
-- Sorting is case-sensitive by default. Pass the result through `sorted(cleaned, key=str.lower)` if you need case-insensitive ordering.
+## 📝 Challenge Details
 
----
+### Challenge 1: Alphabetical Sorting
 
-## Challenge 2 — Longest Word
-**Goal:** return the longest token in a sentence. Punctuation like apostrophes/commas/periods counts as part of the word unless you strip it first.
+**Task**: Accept comma-separated words from user and output them in alphabetical order.
 
-**Approach:**
-1. `split()` by whitespace to get tokens.
-2. Strip non-letter characters with `re.sub(r"[^A-Za-z]", "", token)` before comparing lengths.
-3. Track the longest original token with a simple loop (`>` ensures the **first** longest wins on ties).
-4. Return `""` if the sentence is empty or contains no alphabetic characters.
+#### Input
+```
+Enter comma-separated words: banana,apple,cherry,date
+```
 
-**Examples**
+#### Output
+```
+apple,banana,cherry,date
+```
+
+#### Features
+- **Trimming**: Removes extra whitespace around words
+- **Validation**: Handles empty input gracefully
+- **Case-insensitive sorting**: Optional enhancement
+- **Robust parsing**: Handles irregular spacing
+
+#### Implementation
 ```python
-longest_word("Margaret's toy is a pretty doll.")     # -> "Margaret's"
-longest_word("A thing of beauty is a joy forever.")  # -> "forever."
-longest_word("Forgetfulness is by all means powerless!")  # -> "Forgetfulness"
+def sort_comma_separated(text: str) -> list[str]:
+    """
+    Parse comma-separated string, return sorted list.
+    Strips whitespace, filters empty strings.
+    """
+    entries = [w.strip() for w in text.split(",") if w.strip()]
+    return sorted(entries)
 ```
 
-**Optional tweaks**
-- One-liner: `max(words, key=len)` (keeps the first max on ties).
-- Strip only *trailing* punctuation if desired (changes the spec).
+### Challenge 2: Longest Word Finder
+
+**Task**: Find the longest word in a sentence, preserving original punctuation.
+
+#### Input Examples
+```
+Margaret's toy is a pretty doll.
+A thing of beauty is a joy forever.
+Forgetfulness is by all means powerless!
+```
+
+#### Outputs
+```
+Margaret's      (10 letters)
+forever.        (8 letters)
+Forgetfulness   (13 letters)
+```
+
+#### Key Rules
+1. **Preserve punctuation**: `Margaret's` is one word, return as-is
+2. **Count letters only**: `Wow!!!` has 3 letters, not 6
+3. **Ties**: Return first occurrence
+4. **No words**: Return empty string
+
+#### Implementation Strategy
+```python
+import re
+
+def longest_word(sentence: str) -> str:
+    """
+    Find longest word by letter count.
+    Uses regex to extract only letters for counting.
+    """
+    words = sentence.split()
+    best = ""
+    longest_length = 0
+    
+    for w in words:
+        # Remove all non-letters to count
+        cleaned = re.sub(r"[^a-zA-Z]", "", w)
+        if len(cleaned) > longest_length:
+            longest_length = len(cleaned)
+            best = w  # Return original with punctuation
+    
+    return best
+```
+
+## 💡 Key Concepts
+
+### String Parsing
+```python
+# Split by delimiter
+words = text.split(",")
+
+# Strip whitespace
+clean = word.strip()
+
+# Filter empty strings
+valid = [w for w in words if w]
+```
+
+### Regular Expressions
+```python
+import re
+
+# Remove all non-letters
+letters_only = re.sub(r"[^a-zA-Z]", "", text)
+
+# Match pattern
+if re.match(r"^\w+$", word):
+    # Word contains only alphanumeric
+```
+
+### Sorting
+```python
+# Alphabetical sort
+sorted_list = sorted(words)
+
+# Case-insensitive sort
+sorted_list = sorted(words, key=str.lower)
+
+# Custom comparison
+sorted_list = sorted(words, key=lambda w: len(w))
+```
+
+## 🧩 Test Cases
+
+### Challenge 1: Sorting
+```python
+# Normal case
+"apple,banana,cherry" → ["apple", "banana", "cherry"]
+
+# Extra spaces
+"  apple  ,  banana  " → ["apple", "banana"]
+
+# Empty input
+"" → []
+
+# Single word
+"apple" → ["apple"]
+```
+
+### Challenge 2: Longest Word
+```python
+# With apostrophe
+"Margaret's toy is a pretty doll." → "Margaret's"
+
+# With period
+"A thing of beauty is a joy forever." → "forever."
+
+# With exclamation
+"Forgetfulness is by all means powerless!" → "Forgetfulness"
+
+# Only punctuation
+"!!! 123 ..." → ""
+```
+
+## 🔧 Troubleshooting
+
+| Issue | Solution |
+|-------|----------|
+| **Extra whitespace in output** | Ensure `.strip()` is called on each word |
+| **Punctuation counted as letters** | Use `re.sub(r"[^a-zA-Z]", "", word)` to remove |
+| **Empty strings in result** | Filter with `if w.strip()` before processing |
+| **Incorrect longest word** | Verify you're counting letters, not total characters |
+
+## 🎓 Concepts Demonstrated
+
+1. **Input Validation**
+   - Handling empty input
+   - Filtering invalid data
+   - Defensive programming
+
+2. **String Manipulation**
+   - Splitting by delimiter (`,`)
+   - Stripping whitespace
+   - Preserving original formatting
+
+3. **Regular Expressions**
+   - Pattern matching: `r"[^a-zA-Z]"`
+   - Substitution: `re.sub()`
+   - Character classes
+
+4. **Algorithm Design**
+   - Linear search for maximum
+   - Tracking best candidate
+   - Tie-breaking strategy (first occurrence)
+
+5. **Testing**
+   - Assertion-based validation
+   - Edge case coverage
+   - Automated test suite
+
+## 📝 Code Quality Notes
+
+- ✅ **Type hints** on all function signatures
+- ✅ **Comprehensive docstrings** explaining behavior
+- ✅ **Edge case handling** for empty/invalid input
+- ✅ **Automated tests** with assertions
+- ✅ **Clean code structure** with helper functions
+
+## 🎯 Extension Ideas
+
+Want more practice? Try:
+
+1. **Case variations**: Implement case-sensitive vs case-insensitive sorting option
+2. **Reverse sorting**: Add parameter for descending order
+3. **Length sorting**: Sort by word length instead of alphabet
+4. **Multiple delimiters**: Support semicolons, pipes, etc.
+5. **Word frequency**: Count and display occurrences
+6. **Longest unique words**: Exclude duplicates from consideration
+
+## 👤 Author
+
+**Kevin Cusnir 'Lirioth'**  
+Repository: [Fullstack2026](https://github.com/Lirioth/Fullstack2026)  
+Week 1 Day 5 - Daily Challenge
 
 ---
 
-## Complexity
-- Sorting N words: **O(N log N)** time, O(N) space.
-- Longest word scan: **O(M)** in number of tokens.
-
----
-
-## Testing
-Replace the sample calls at the bottom with your own sentences, or wrap them in `if __name__ == "__main__":` for more control.
+*String mastery unlocked!* 📝✨

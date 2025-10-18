@@ -809,6 +809,15 @@ After completing Week 1:
 - [🧪 Testing Your Code](https://realpython.com/python-testing/)
 
 ---
+
+## 👤 Author
+
+**Kevin Cusnir 'Lirioth'**  
+Repository: [Fullstack2026](https://github.com/Lirioth/Fullstack2026)  
+Week 1 Day 5 - Mini Project
+
+---
+
 **⏱️ Estimated Time**: 6-8 hours  
 **🎯 Difficulty**: Intermediate to Advanced  
 **📋 Prerequisites**: Days 1-4 completion  

@@ -1,6 +1,14 @@
 """
-Exercise 1 — Draw patterns with for-loops.
-All functions return the multi-line string and also print it for demo convenience.
+Challenges 2 - Pattern Drawing Module
+======================================
+ASCII pattern drawing exercises using for-loops.
+All functions return multi-line strings and print for demonstration.
+Includes pyramids, diamonds, and number patterns.
+
+Author: Kevin Cusnir 'Lirioth'
+Repository: Fullstack2026
+Week 1 Day 5 - Mini Project
+Python Version: 3.8+
 """
 
 def pattern_a() -> str:
