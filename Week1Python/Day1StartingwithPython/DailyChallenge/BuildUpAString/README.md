@@ -1,6 +1,29 @@
 # 💪 Daily Challenge — Build up a string
 
-A tiny Python script that checks an input string and prints info step by step.
+**Author:** Kevin Cusnir "Lirioth"  
+**Course:** Fullstack Bootcamp 2026  
+**Last Updated:** October 18, 2025
+
+**A Python script that validates string input and performs step-by-step string analysis.**
+
+## 📊 Quick Stats
+- **⏰ Duration**: 20-30 minutes
+- **🎯 Difficulty**: 🟡 Intermediate
+- **📝 Skills**: String validation, loops, randomization
+- **✅ Prerequisites**: Completed ExercisesXP
+
+---
+
+## 🎯 Learning Objectives
+
+By completing this challenge, you will:
+- ✅ Implement robust input validation
+- ✅ Master string indexing and slicing
+- ✅ Use loops for progressive string building
+- ✅ Apply random module for string shuffling
+- ✅ Create interactive user experiences
+
+---
 
 ## 🔄 What it does (step by step)
 1. **📝 Ask for input**: the script reads a string from the user.
@@ -12,8 +35,7 @@ A tiny Python script that checks an input string and prints info step by step.
 4. **🏗️ Build the string gradually**: prints the string character by character, growing one char per line.
 5. **🎲 Bonus**: creates a **jumbled (shuffled)** version of the string and prints it.
 
-> 💡 Falsy/Truthiness are not used here. This is basic string + loops + indexing.
-> 🎯 The shuffle is random, so the jumbled output will be different each run.
+---
 
 ## 🚀 How to run
 ### Option A — 🖱️ Double click (if you have Python associated to `.py` files)
@@ -174,6 +196,19 @@ print(f"Most common: {freq.most_common(3)}")
 
 ---
 
-## File list
-- `buildupastring.py` — the script
-- `README.md` — this file
+## 📁 Files
+- `buildupastring.py` — Complete implementation
+- `README.md` — This documentation
+
+---
+
+## 👤 About the Author
+
+**Kevin Cusnir "Lirioth"**  
+- 🎓 Fullstack Developer Student  
+- 💻 GitHub: [@Lirioth](https://github.com/Lirioth)  
+- 📧 Repository: [Fullstack2026](https://github.com/Lirioth/Fullstack2026)
+
+---
+
+**Created with ❤️ for mastering string manipulation in Python**

@@ -9,8 +9,12 @@ Fundamental Python exercises covering:
 - Boolean operations
 - Type conversions
 
-Author: Week1Python Course
+Author: Kevin Cusnir "Lirioth"
+GitHub: @Lirioth
+Repository: https://github.com/Lirioth/Fullstack2026
+Course: Fullstack Bootcamp 2026
 Python Version: 3.8+
+Last Updated: October 18, 2025
 """
 
 # 🎯 Constants
@@ -19,35 +23,79 @@ MY_NAME = "Kevin"  # Used in exercise 8 for name comparison
 
 
 def exercise_1() -> None:
-    """Display the classic Hello World message."""
+    """
+    Display the classic Hello World message four times.
+    
+    Uses newline character (\n) to print on separate lines.
+    
+    Example Output:
+        Hello world
+        Hello world
+        Hello world
+        Hello world
+    """
     print("Hello world\nHello world\nHello world\nHello world")
 
 
 def exercise_2() -> None:
-    """Compute a simple arithmetic expression."""
+    """
+    Compute and display (99³) × 8.
+    
+    Demonstrates operator precedence: exponentiation (**) before multiplication (*).
+    
+    Example Output:
+        768032
+    """
     print((99**3) * 8)
 
 
 def exercise_3() -> None:
-    """Show boolean comparisons and exception handling."""
-    print(5 < 3)            # ❗ False
-    print(3 == 3)           # ❗ True
-    print(3 == "3")         # ❗ False
+    """
+    Demonstrate boolean comparisons and type compatibility.
+    
+    Shows:
+    - Numeric comparisons
+    - Equality checks
+    - Type mismatch errors (str vs int)
+    - Case-sensitive string comparison
+    
+    Example Output:
+        False
+        True
+        False
+        TypeError
+        False
+    """
+    print(5 < 3)            # False
+    print(3 == 3)           # True
+    print(3 == "3")         # False
     try:
-        print("3" > 3)      # ❗ TypeError in Python
+        print("3" > 3)      # TypeError in Python
     except TypeError:
         print("TypeError")
-    print("Hello" == "hello")  # ❗ False
+    print("Hello" == "hello")  # False
 
 
 def exercise_4() -> None:
-    """Display the computer brand information."""
+    """
+    Display computer brand using string concatenation.
+    
+    Example Output:
+        I have a ASUS computer.
+    """
     computer_brand = "ASUS"
     print("I have a " + computer_brand + " computer.")
 
 
 def exercise_5() -> None:
-    """Present personal information."""
+    """
+    Present personal information using f-string formatting.
+    
+    Demonstrates modern string interpolation with variables of different types.
+    
+    Example Output:
+        My name is Kevin, I'm 31 years old and my shoe size is 40.
+    """
     name = "Kevin"
     age = 31
     shoe_size = 40
@@ -56,7 +104,14 @@ def exercise_5() -> None:
 
 
 def exercise_6() -> None:
-    """Compare two numbers and greet the world if appropriate."""
+    """
+    Compare two numbers and conditionally greet the world.
+    
+    Only prints if the first number is greater than the second.
+    
+    Example Output:
+        Hello World
+    """
     a = 10
     b = 5
     if a > b:
@@ -97,7 +152,15 @@ def read_int(prompt: str, min_val: int | None = None, max_val: int | None = None
 
 
 def exercise_7() -> None:
-    """Determine whether a number is odd or even."""
+    """
+    Determine whether a user-provided number is odd or even.
+    
+    Uses modulo operator (%) to check divisibility by 2.
+    
+    Example Interaction:
+        Enter a number: 7
+        Odd
+    """
     n = read_int("Enter a number: ")
     if n % 2 == 0:
         print("Even")
@@ -106,7 +169,15 @@ def exercise_7() -> None:
 
 
 def exercise_8() -> None:
-    """Check if the user shares the same name."""
+    """
+    Check if the user shares the same name (case-insensitive).
+    
+    Demonstrates string normalization with .lower() and .strip().
+    
+    Example Interaction:
+        What is your name? Kevin
+        Hey, we have the same name! :)
+    """
     user_name = input("What is your name? ")
     if user_name.strip().lower() == MY_NAME.lower():
         print("Hey, we have the same name! :)")
@@ -115,9 +186,16 @@ def exercise_8() -> None:
 
 
 def exercise_9() -> None:
-    """Check whether the user is tall enough to ride (>= 145cm)."""
+    """
+    Check whether the user meets height requirement (>= 145cm).
+    
+    Validates height input and provides helpful feedback.
+    
+    Example Interaction:
+        Enter your height in cm: 150
+        ✅ You are tall enough to ride! (150cm)
+    """
     height = read_int("Enter your height in cm: ", min_val=0, max_val=300)
-    # ✅ Uses >= to include exactly 145cm as tall enough
     if height >= HEIGHT_REQUIREMENT_CM:
         print(f"✅ You are tall enough to ride! ({height}cm)")
     else:

@@ -1,7 +1,31 @@
-# 🏋️ Exercises XP
-A small collection of Python exercises.
+# 🥉 Exercises XP - Foundation Mastery
 
-## � Quick Reference Table
+**Author:** Kevin Cusnir "Lirioth"  
+**Course:** Fullstack Bootcamp 2026  
+**Last Updated:** October 18, 2025
+
+**Master Python fundamentals through 9 essential beginner-friendly exercises.**
+
+## 📊 Quick Stats
+- **⏰ Duration**: 45-60 minutes
+- **🎯 Difficulty**: 🟢 Beginner
+- **📝 Exercises**: 9
+- **✅ Prerequisites**: None (starts from scratch)
+
+## 🎯 Learning Objectives
+
+By completing these exercises, you will:
+- ✅ Master basic print() formatting and escape sequences
+- ✅ Perform arithmetic operations with various operators
+- ✅ Understand type comparisons and boolean logic
+- ✅ Handle string concatenation and variable assignment
+- ✅ Implement conditional statements (if/elif/else)
+- ✅ Process user input with validation
+- ✅ Apply modulo operator for number analysis
+
+---
+
+## 📋 Quick Reference Table
 
 | Exercise | Concept | Difficulty | Output Type | Key Learning |
 |----------|---------|------------|-------------|--------------|
@@ -17,7 +41,7 @@ A small collection of Python exercises.
 
 ---
 
-## �📋 What this script covers
+## � What this script covers
 
 1) **👋 Hello World (strings + newlines)**  
    Prints "Hello world" four times, using `\n` for new lines.
@@ -185,7 +209,29 @@ You need to grow some more to ride.
 
 ---
 
-## 🐛 Troubleshooting
+## � **Code Structure**
+
+The `exercisesxp.py` file contains:
+- **9 exercise functions**: `exercise_1()` through `exercise_9()`
+- **Helper function**: `read_int()` for validated integer input
+- **Main function**: Runs all exercises sequentially
+
+### 🔍 **Function Map**
+```python
+exercise_1()  → Hello World printing
+exercise_2()  → Arithmetic calculation
+exercise_3()  → Boolean comparisons  
+exercise_4()  → Variable usage
+exercise_5()  → String formatting
+exercise_6()  → Conditional logic
+exercise_7()  → Odd/Even detector (interactive)
+exercise_8()  → Name comparison (interactive)
+exercise_9()  → Height validation (interactive)
+```
+
+---
+
+## �🐛 Troubleshooting
 
 ### Common Issues & Solutions
 
@@ -247,7 +293,13 @@ if user_input.strip().lower() == my_name.lower():
 
 ---
 
-## 📁 Files
+## � About the Author
 
-- `exercisesxp.py` — the script
-- `README.md` — this file
+**Kevin Cusnir "Lirioth"**  
+- 🎓 Fullstack Developer Student  
+- 💻 GitHub: [@Lirioth](https://github.com/Lirioth)  
+- 📧 Repository: [Fullstack2026](https://github.com/Lirioth/Fullstack2026)
+
+---
+
+**Created with ❤️ for learning Python fundamentals**

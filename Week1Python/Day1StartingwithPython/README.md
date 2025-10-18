@@ -1,6 +1,23 @@
 # 📅 Day 1 - Starting with Python
 
+**Author:** Kevin Cusnir "Lirioth"  
+**Course:** Fullstack Bootcamp 2026  
+**Last Updated:** October 18, 2025
+
 Welcome to your Python programming journey! 🐍 This day covers the fundamental building blocks that form the foundation of all Python programming.
+
+## 📑 Table of Contents
+- [🎯 Learning Objectives](#-learning-objectives)
+- [📚 Topics Covered](#-topics-covered)
+- [📁 Directory Structure](#-directory-structure)
+- [✅ Prerequisites](#-prerequisites)
+- [⏰ Time Estimates](#-time-estimates)
+- [🗺️ Learning Path](#️-learning-path)
+- [💡 Key Concepts Quick Reference](#-key-concepts-quick-reference)
+- [🚀 Getting Started](#-getting-started)
+- [📊 Assessment Checklist](#-assessment-checklist)
+- [🔧 Troubleshooting & Common Issues](#-troubleshooting--common-issues)
+- [🔗 Next Steps](#-next-steps)
 
 ## 🎯 Learning Objectives
 
@@ -51,7 +68,7 @@ Day1StartingWithPython/
         └── README.md               # Challenge specifications
 ```
 
-## � Prerequisites
+## ✅ Prerequisites
 
 Before starting Day 1, make sure you have:
 - ✅ **Python 3.8+** installed ([Download](https://www.python.org/downloads/))
@@ -59,10 +76,20 @@ Before starting Day 1, make sure you have:
 - ✅ **Basic terminal/command prompt** knowledge
 - ✅ **No prior programming experience required!** 🎉
 
+### 🖥️ **System Compatibility**
+- **Windows 10/11**: ✅ Fully supported
+- **macOS 10.15+**: ✅ Fully supported  
+- **Linux (Ubuntu 20.04+)**: ✅ Fully supported
+
 **Verify your Python installation:**
 ```bash
+# Windows (PowerShell or CMD)
 python --version
-# Should show: Python 3.8.x or higher
+
+# macOS / Linux
+python3 --version
+
+# Expected output: Python 3.8.x or higher
 ```
 
 ---
@@ -277,7 +304,7 @@ if not is_weekend:
 
 ---
 
-## �🚀 Getting Started
+## 🚀 Getting Started
 
 ### 1. 🥉 **ExercisesXP - Foundation Mastery** (Required)
 **⏰ Time: 45-60 minutes | 🎯 Difficulty: 🟢 Beginner**
@@ -415,6 +442,16 @@ After completing Day 1:
 - [🎮 Python Interactive Shell](https://python.org)
 
 ---
+
+## 👤 About the Author
+
+**Kevin Cusnir "Lirioth"**  
+- 🎓 Fullstack Developer Student  
+- 💻 GitHub: [@Lirioth](https://github.com/Lirioth)  
+- 📧 Repository: [Fullstack2026](https://github.com/Lirioth/Fullstack2026)
+
+---
+
 **⏱️ Estimated Time**: 4-6 hours  
 **🎯 Difficulty**: Beginner  
 **📋 Prerequisites**: Basic computer literacy

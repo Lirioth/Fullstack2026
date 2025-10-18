@@ -7,8 +7,12 @@ Advanced challenges covering:
 3. String length analysis with Lorem Ipsum
 4. Character constraint challenges (no letter 'A')
 
-Author: Week1Python Course
+Author: Kevin Cusnir "Lirioth"
+GitHub: @Lirioth
+Repository: https://github.com/Lirioth/Fullstack2026
+Course: Fullstack Bootcamp 2026
 Python Version: 3.8+
+Last Updated: October 18, 2025
 """
 
 # 🎯 Constants
@@ -16,7 +20,16 @@ MAX_ATTEMPTS = 10  # Prevent infinite loops in challenge
 
 
 def exercise_1_2_terminal_concepts() -> None:
-    """Display informational notes about terminal usage and Python execution."""
+    """
+    Display informational notes about terminal usage and Python execution.
+    
+    Covers:
+    - Running Python from command line
+    - PATH environment variable concept
+    - Platform-specific Python launchers
+    
+    This is educational content, not interactive.
+    """
     print("🥇 Exercise 1-2: Terminal Concepts")
     print("💡 INFO: Use 'python3' in terminal to run Python")
     print("💡 INFO: PATH is a list of directories searched for executables")
@@ -47,10 +60,17 @@ def exercise_3_boolean_outputs() -> None:
 
 
 def exercise_4_text_length() -> None:
-    """Analyze length of a multi-line Lorem Ipsum text block."""
-    print("\n🥇 Exercise 4: Text Length Analysis")
-    # 📝 Lorem Ipsum is dummy text used in publishing/design since the 1500s
-    # It's pseudo-Latin, derived from Cicero's work "De Finibus Bonorum et Malorum" (45 BC)
+    """
+    Analyze length of a multi-line Lorem Ipsum text block.
+    
+    Demonstrates that len() counts ALL characters including:
+    - Spaces
+    - Newlines (\n)
+    - Punctuation
+    
+    Example Output:
+        📏 Text length (including spaces/newlines): 452
+    """
     my_text = """Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
 Ut enim ad minim veniam, quis nostrud exercitation ullamco 
@@ -63,7 +83,30 @@ sunt in culpa qui officia deserunt mollit anim id est laborum."""
 
 
 def exercise_5_no_a_challenge() -> None:
-    """Challenge user to type sentences without letter 'A' with attempt limit."""
+    """
+    Challenge user to type sentences without letter 'A' with attempt limit.
+    
+    Features:
+    - Case-insensitive 'A' detection
+    - Maximum attempt limit (prevents infinite loops)
+    - Best sentence tracking
+    - Statistics display
+    
+    Rules:
+    - Type sentences without letter 'A' or 'a'
+    - Type 'quit' to exit early
+    - Limited to MAX_ATTEMPTS tries
+    
+    Example Interaction:
+        Attempt 1/10 (or 'quit'): hello world
+        ✅ New record: 11 characters!
+        Attempt 2/10 (or 'quit'): bad sentence
+        ❌ Contains 'A'. Try again.
+        Attempt 3/10 (or 'quit'): quit
+        
+        🏆 Best sentence (11 chars):
+           'hello world'
+    """
     print("\n🥇 Exercise 5: No 'A' Challenge")
     print(f"🎯 Challenge: Type sentences WITHOUT the letter 'A'")
     print(f"⚠️ Maximum {MAX_ATTEMPTS} attempts\n")
@@ -78,7 +121,6 @@ def exercise_5_no_a_challenge() -> None:
         if sentence.lower() == "quit":
             break
             
-        # ✅ IMPROVED: Inlined simple check for better readability
         if 'a' in sentence.lower():
             print("❌ Contains 'A'. Try again.")
             continue

@@ -1,4 +1,21 @@
-"""Daily challenge: Build up a string."""
+"""
+Daily Challenge: Build up a string
+===================================
+Interactive string validation and manipulation challenge.
+
+Features:
+- Length validation (exactly 10 characters)
+- Character analysis (first/last)
+- Progressive string building
+- Random string shuffling
+
+Author: Kevin Cusnir "Lirioth"
+GitHub: @Lirioth
+Repository: https://github.com/Lirioth/Fullstack2026
+Course: Fullstack Bootcamp 2026
+Python Version: 3.8+
+Last Updated: October 18, 2025
+"""
 
 from __future__ import annotations
 
@@ -6,7 +23,23 @@ import random
 
 
 def validate_length(text: str) -> tuple[bool, str]:
-    """Return whether the text is exactly 10 characters with a feedback message."""
+    """
+    Validate if text is exactly 10 characters long.
+    
+    Args:
+        text: String to validate
+        
+    Returns:
+        Tuple of (is_valid, feedback_message)
+        
+    Examples:
+        >>> validate_length("hello")
+        (False, 'String not long enough.')
+        >>> validate_length("abcdefghij")
+        (True, 'Perfect string')
+        >>> validate_length("toolongtext")
+        (False, 'String too long.')
+    """
     if len(text) < 10:
         return False, "String not long enough."
     if len(text) > 10:
@@ -15,7 +48,20 @@ def validate_length(text: str) -> tuple[bool, str]:
 
 
 def build_up_text(text: str) -> None:
-    """Print the incremental build-up of the provided text."""
+    """
+    Print the incremental build-up of the provided text.
+    
+    Shows progressive string building, one character at a time.
+    
+    Args:
+        text: String to build up
+        
+    Example:
+        >>> build_up_text("abc")
+        a
+        ab
+        abc
+    """
     built = ""
     for ch in text:
         built += ch
@@ -23,28 +69,66 @@ def build_up_text(text: str) -> None:
 
 
 def jumble_text(text: str) -> str:
-    """Return a shuffled version of the provided text."""
+    """
+    Return a shuffled version of the provided text.
+    
+    Uses random.shuffle() for character rearrangement.
+    Note: Output varies on each run due to randomization.
+    
+    Args:
+        text: String to shuffle
+        
+    Returns:
+        Shuffled string with same characters in random order
+        
+    Example:
+        >>> jumble_text("abc")  # Output varies
+        'bca'  # or 'cab', 'acb', etc.
+    """
     chars = list(text)
     random.shuffle(chars)
     return "".join(chars)
 
 
 def main() -> None:
-    """Run the interactive build-up challenge."""
+    """
+    Run the interactive build-up challenge.
+    
+    Workflow:
+    1. Prompt user for 10-character string
+    2. Validate length
+    3. Display first and last characters
+    4. Build string progressively
+    5. Show shuffled version
+    
+    Example Session:
+        Enter a string (must be exactly 10 characters): abcdefghij
+        Perfect string
+        First character: a
+        Last character: j
+        a
+        ab
+        abc
+        abcd
+        abcde
+        abcdef
+        abcdefg
+        abcdefgh
+        abcdefghi
+        abcdefghij
+        Jumbled string: fdgijbaech
+    """
     user_input = input("Enter a string (must be exactly 10 characters): ")
     is_valid, message = validate_length(user_input)
     print(message)
     if not is_valid:
         return
 
-    # 🧩 Show the first and last characters for quick insights.
     print("First character:", user_input[0])
     print("Last character:", user_input[-1])
 
-    # 🚧 Build the string character by character for visualization.
     build_up_text(user_input)
 
-    # 🔀 Display a jumbled version for fun.
     print("Jumbled string:", jumble_text(user_input))
 
 
