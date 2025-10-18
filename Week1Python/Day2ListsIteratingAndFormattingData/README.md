@@ -86,6 +86,64 @@ Understanding Big-O complexity helps you write faster code:
 
 **💡 Pro Tip:** Use sets when you need fast membership testing (`if x in collection`). Convert list to set: `unique_items = set(my_list)`
 
+## 🎨 Visual Data Structure Examples
+
+### **List Operations Visualized**
+```
+Original List: [1, 2, 3, 4, 5]
+                    ↓
+.append(6)      →  [1, 2, 3, 4, 5, 6]
+                    ↓
+.insert(0, 0)   →  [0, 1, 2, 3, 4, 5, 6]
+                    ↓
+.remove(3)      →  [0, 1, 2, 4, 5, 6]
+                    ↓
+.pop()          →  [0, 1, 2, 4, 5]  (removed 6)
+                    ↓
+.reverse()      →  [5, 4, 2, 1, 0]
+```
+
+### **Set Operations Visualized**
+```
+Set A = {1, 2, 3, 4}        Set B = {3, 4, 5, 6}
+
+Union (A | B or A.union(B)):
+    {1, 2, 3, 4, 5, 6}  ← All unique elements
+
+Intersection (A & B or A.intersection(B)):
+    {3, 4}  ← Only common elements
+
+Difference (A - B or A.difference(B)):
+    {1, 2}  ← In A but not in B
+
+Symmetric Difference (A ^ B):
+    {1, 2, 5, 6}  ← In either A or B, but not both
+```
+
+### **Loop Iteration Patterns**
+```python
+# For loop with range
+for i in range(5):
+    print(i)
+# Output: 0, 1, 2, 3, 4
+
+# For loop with enumerate (index + value)
+fruits = ["apple", "banana", "cherry"]
+for index, fruit in enumerate(fruits):
+    print(f"{index}: {fruit}")
+# Output:
+# 0: apple
+# 1: banana
+# 2: cherry
+
+# While loop with counter
+count = 0
+while count < 3:
+    print(f"Count: {count}")
+    count += 1
+# Output: Count: 0, Count: 1, Count: 2
+```
+
 ## 📁 Directory Structure
 
 ```

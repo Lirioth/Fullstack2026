@@ -168,6 +168,222 @@ python main.py
 
 ---
 
+## 🎬 Project Demos & Visual Examples
+
+### 🎮 Tic-Tac-Toe Gameplay Visualization
+
+**Initial Board:**
+```
+  1 2 3
+1  | | 
+  -----
+2  | | 
+  -----
+3  | | 
+
+Player X's turn...
+```
+
+**Mid-Game:**
+```
+  1 2 3
+1 X|O|X
+  -----
+2 O|X| 
+  -----
+3  |O| 
+
+Player X's turn...
+```
+
+**Victory!**
+```
+  1 2 3
+1 X|O|X
+  -----
+2 O|X|O
+  -----
+3  | |X
+
+🏆 Player X wins! (Diagonal: 1→5→9)
+```
+
+### 🎪 Hangman Game Progress
+
+**Round 1 (6 lives):**
+```
+  +---+
+      |
+      |
+      |
+      |
+ ========
+
+Word: _ _ _ _ _ _
+Lives: 6
+Guessed: []
+Guess a letter: e
+```
+
+**Round 3 (4 lives):**
+```
+  +---+
+  |   |
+  O   |
+      |
+      |
+ ========
+
+Word: P _ _ _ _ N
+Lives: 4
+Guessed: ['E', 'A', 'O']
+Guess a letter: t
+```
+
+**Victory!**
+```
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+ ========
+
+Word: P Y T H O N
+🎉 Congratulations! You won!
+Lives remaining: 2
+```
+
+---
+
+## 🏗️ Project Architecture Lessons
+
+### 📐 Tic-Tac-Toe Structure (MVC Pattern)
+
+```
+📦 tictactoe.py
+│
+├─ 🧠 GAME LOGIC (Model)
+│  ├─ new_board() → [[" "]*3, [" "]*3, [" "]*3]
+│  │     Creates empty 3x3 board
+│  │
+│  ├─ check_win(board, player) → bool
+│  │     Checks rows, columns, diagonals
+│  │
+│  └─ is_tie(board) → bool
+│        Checks if board is full
+│
+├─ 🖥️ DISPLAY (View)
+│  └─ display_board(board) → None
+│        Renders board to console with formatting
+│
+└─ 🎮 USER INTERACTION (Controller)
+   ├─ player_input(board, player) → (row, col)
+   │     Gets and validates move from user
+   │
+   ├─ parse_move(input) → (row, col)
+   │     Converts "2 3" to (1, 2)
+   │
+   ├─ validate_move(board, input) → (row, col)
+   │     Checks if move is legal
+   │
+   └─ play() → None
+         Main game loop orchestration
+
+Benefits of this structure:
+✅ Separation of concerns
+✅ Easy to test individual components
+✅ Clear responsibility boundaries
+✅ Simple to add features (AI, replay, etc.)
+```
+
+### 🎪 Hangman Modular Design
+
+```
+📦 hangman/
+│
+├─ 📁 src/
+│  │
+│  ├─ 📄 game.py (Business Logic)
+│  │  └─ HangmanGame class
+│  │     ├─ __init__(word)
+│  │     ├─ guess_letter(letter) → bool
+│  │     ├─ is_won() → bool
+│  │     ├─ is_lost() → bool
+│  │     └─ get_display_word() → str
+│  │
+│  ├─ 📄 words.py (Data Layer)
+│  │  ├─ WORD_LIST = [...]
+│  │  └─ get_random_word() → str
+│  │
+│  └─ 📄 art.py (Presentation Layer)
+│     └─ HANGMAN_STAGES = [...]
+│         Returns ASCII art for each stage
+│
+└─ 📄 main.py (Entry Point)
+   └─ Main game loop
+      ├─ Create game instance
+      ├─ Display current state
+      ├─ Get user input
+      ├─ Update game state
+      └─ Check win/loss conditions
+
+Architecture Benefits:
+✅ Each file has single responsibility
+✅ Easy to add new word categories
+✅ Simple to change ASCII art
+✅ Game logic independent of display
+✅ Can reuse components in other projects
+```
+
+---
+
+## 🎓 Key Takeaways & Skills Integration
+
+### What You've Learned This Week
+
+| Week 1 Concept | Where You Used It | Why It Matters |
+|----------------|-------------------|----------------|
+| **Variables** | Board state, player names, scores | Storing and tracking data |
+| **Conditionals** | Win checking, input validation | Decision making logic |
+| **Loops** | Game loops, input retry | Repetitive tasks & iteration |
+| **Lists** | Board grid, word letters, guesses | Dynamic data collections |
+| **Dictionaries** | *Not used yet - see challenges!* | Key-value data management |
+| **Functions** | Every game action | Code organization & reuse |
+| **Strings** | Word display, user messages | Text manipulation |
+| **Input/Output** | User interaction, game display | User experience |
+| **Error Handling** | Invalid moves, bad input | Robust applications |
+
+### 🎯 Professional Coding Patterns You've Applied
+
+1. **Input Validation Loop**
+   ```python
+   while True:
+       try:
+           # Get and validate input
+           break  # Exit on success
+       except ValueError:
+           # Show error and retry
+   ```
+
+2. **Game State Management**
+   ```python
+   board = new_board()  # Initialize
+   while not game_over:
+       display_board(board)  # Show state
+       move = get_input()    # Get action
+       update_board(move)    # Update state
+       check_conditions()    # Evaluate
+   ```
+
+3. **Separation of Concerns**
+   - Data (board, words)
+   - Logic (win checking, validation)
+   - Display (rendering, formatting)
+   - Control (game loop, flow)
+
+---
+
 ## 📊 Project Assessment Rubric
 
 Use this rubric to evaluate your project quality and identify areas for improvement:
@@ -189,6 +405,158 @@ Use this rubric to evaluate your project quality and identify areas for improvem
 - **70-79 Points**: 👍 **Good** - Core functionality works, needs refinement
 - **60-69 Points**: 🔧 **Acceptable** - Basic features work, significant improvements needed
 - **< 60 Points**: 📚 **Needs Work** - Review Week 1 fundamentals
+
+---
+
+## 🚀 Extension Challenges
+
+Ready to level up? Try these enhancements to make your projects even better!
+
+### 🥈 Silver Level: Enhance Existing Projects
+
+#### Tic-Tac-Toe Enhancements
+1. **Score Tracking System** ⭐⭐
+   - Track wins for X and O across multiple games
+   - Display statistics after each game
+   - Save high scores to a file
+   
+2. **Larger Board** ⭐⭐
+   - Make board size configurable (4x4, 5x5)
+   - Adjust win condition (4 in a row for 4x4, etc.)
+   
+3. **Better UI** ⭐
+   - Clear screen between moves
+   - Add colors using ANSI codes
+   - Show move history
+   
+4. **Replay System** ⭐
+   - Ask "Play again?" at end
+   - Reset board without restarting program
+
+#### Hangman Enhancements
+1. **Word Categories** ⭐⭐
+   - Animals, Countries, Technology, Food
+   - Let player choose category
+   - Different difficulty per category
+   
+2. **Hint System** ⭐⭐
+   - Player can request 1 hint per game
+   - Reveal random letter or word definition
+   
+3. **Score System** ⭐
+   - Points based on letters remaining
+   - Bonus for quick wins
+   - Track personal best
+   
+4. **Multiplayer** ⭐⭐⭐
+   - Player 1 enters word
+   - Player 2 guesses
+   - Hide input while typing word
+
+### 🥇 Gold Level: Build New Projects
+
+#### 1. **Blackjack Card Game** ⭐⭐⭐
+```python
+# Features to implement:
+- Card deck with shuffle
+- Player vs Dealer
+- Hit/Stand decisions
+- Ace handling (1 or 11)
+- Bust detection
+- Winning conditions
+```
+
+#### 2. **Password Generator** ⭐
+```python
+# Features to implement:
+- Customizable length
+- Include/exclude: uppercase, lowercase, numbers, symbols
+- Check password strength
+- Generate multiple passwords
+```
+
+#### 3. **Todo List Application** ⭐⭐
+```python
+# Features to implement:
+- Add/remove/complete tasks
+- List all tasks
+- Filter by status (pending/complete)
+- Save to file (persistence)
+- Priority levels
+```
+
+#### 4. **Quiz Game** ⭐⭐
+```python
+# Features to implement:
+- Multiple choice questions
+- Score tracking
+- Timer for each question
+- Difficulty levels
+- Results summary
+```
+
+### 🏆 Platinum Level: Advanced Projects
+
+#### 1. **Connect Four** ⭐⭐⭐⭐
+```python
+# Challenges:
+- Vertical board (gravity mechanics)
+- Check diagonal wins in any direction
+- AI opponent with strategy
+- Animated piece dropping
+```
+
+#### 2. **Text-Based RPG** ⭐⭐⭐⭐⭐
+```python
+# Systems to implement:
+- Character stats (HP, attack, defense)
+- Inventory system
+- Combat system
+- Room navigation
+- Item/weapon management
+- Save/load game state
+```
+
+#### 3. **Caesar Cipher Tool** ⭐⭐⭐
+```python
+# Features:
+- Encrypt/decrypt messages
+- Variable shift amount
+- Brute force decoder
+- Handle special characters
+- File encryption
+```
+
+#### 4. **Contact Book Manager** ⭐⭐⭐
+```python
+# CRUD Operations:
+- Create: Add new contacts
+- Read: Search and display contacts
+- Update: Modify existing contacts
+- Delete: Remove contacts
+- Save to JSON file
+- Import/export contacts
+```
+
+### 💡 Learning Path Suggestion
+
+```
+Start Here → Enhance Tic-Tac-Toe (Score tracking)
+    ↓
+    Add Hangman categories
+    ↓
+    Build Password Generator (easiest new project)
+    ↓
+    Build Todo List (file I/O practice)
+    ↓
+    Build Quiz Game (data structures)
+    ↓
+    Build Blackjack (complex logic)
+    ↓
+    Build Connect Four (advanced algorithms)
+    ↓
+Master Level → Build Text-Based RPG
+```
 
 ---
 

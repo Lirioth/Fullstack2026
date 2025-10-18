@@ -219,6 +219,250 @@ print(counter)  # Still prints: 1 (function_b didn't change global)
 
 **💡 Best Practice:** Avoid using `global`. Instead, pass values as parameters and return results!
 
+---
+
+## 🧪 Testing Your Functions
+
+### Why Testing Matters
+Functions should be **predictable** and **reliable**. Here's how to verify they work correctly:
+
+#### Method 1: Simple Assert Statements
+```python
+def add(a: int, b: int) -> int:
+    """Add two numbers."""
+    return a + b
+
+# Test cases (run these after defining the function)
+assert add(2, 3) == 5, "Should add positive numbers"
+assert add(-1, 1) == 0, "Should handle negative numbers"
+assert add(0, 0) == 0, "Should handle zeros"
+print("✅ All add() tests passed!")
+
+def is_even(n: int) -> bool:
+    """Check if number is even."""
+    return n % 2 == 0
+
+# Test cases
+assert is_even(4) == True
+assert is_even(7) == False
+assert is_even(0) == True
+print("✅ All is_even() tests passed!")
+```
+
+#### Method 2: Test Function Pattern
+```python
+def calculate_discount(price: float, percent: float) -> float:
+    """Calculate discounted price."""
+    return price * (1 - percent / 100)
+
+def test_calculate_discount():
+    """Test the discount calculator."""
+    # Test normal case
+    result = calculate_discount(100, 10)
+    assert result == 90, f"Expected 90, got {result}"
+    
+    # Test edge cases
+    assert calculate_discount(100, 0) == 100, "0% discount should return original"
+    assert calculate_discount(100, 100) == 0, "100% discount should be free"
+    
+    # Test with decimals
+    result = calculate_discount(50, 20)
+    assert abs(result - 40) < 0.01, "Should handle decimal precision"
+    
+    print("✅ All discount tests passed!")
+
+# Run the test
+test_calculate_discount()
+```
+
+#### Method 3: Using unittest (Advanced)
+```python
+import unittest
+
+def multiply(a: int, b: int) -> int:
+    """Multiply two numbers."""
+    return a * b
+
+class TestMathFunctions(unittest.TestCase):
+    """Test suite for math functions."""
+    
+    def test_multiply_positive(self):
+        """Test multiplying positive numbers."""
+        self.assertEqual(multiply(2, 3), 6)
+        self.assertEqual(multiply(5, 5), 25)
+    
+    def test_multiply_negative(self):
+        """Test multiplying negative numbers."""
+        self.assertEqual(multiply(-2, 3), -6)
+        self.assertEqual(multiply(-2, -3), 6)
+    
+    def test_multiply_zero(self):
+        """Test multiplying by zero."""
+        self.assertEqual(multiply(5, 0), 0)
+        self.assertEqual(multiply(0, 0), 0)
+
+# Run tests
+if __name__ == "__main__":
+    unittest.main()
+```
+
+### 🎯 What to Test
+
+| Test Type | Description | Example |
+|-----------|-------------|---------|
+| **Normal Cases** | Typical expected inputs | `add(2, 3) → 5` |
+| **Edge Cases** | Boundary values | `add(0, 0) → 0` |
+| **Error Cases** | Invalid inputs | `divide(5, 0) → Error` |
+| **Type Cases** | Different data types | `add(2.5, 3.5) → 6.0` |
+
+---
+
+## 🎯 Function Patterns Cookbook
+
+### Pattern 1: Validator Function
+```python
+def is_valid_email(email: str) -> bool:
+    """
+    Check if email format is valid.
+    
+    Args:
+        email: Email address to validate
+        
+    Returns:
+        True if valid format, False otherwise
+        
+    Example:
+        >>> is_valid_email("user@example.com")
+        True
+        >>> is_valid_email("invalid.email")
+        False
+    """
+    return "@" in email and "." in email.split("@")[1]
+
+# Usage
+email = input("Enter email: ")
+if is_valid_email(email):
+    print("✅ Valid email!")
+else:
+    print("❌ Invalid email format")
+```
+
+### Pattern 2: Transformer Function
+```python
+def normalize_name(name: str) -> str:
+    """
+    Normalize name to title case and trim whitespace.
+    
+    Args:
+        name: Name to normalize
+        
+    Returns:
+        Normalized name
+        
+    Example:
+        >>> normalize_name("  john DOE  ")
+        'John Doe'
+    """
+    return name.strip().title()
+
+# Usage
+raw_name = "  alice SMITH  "
+clean_name = normalize_name(raw_name)
+print(f"Clean name: {clean_name}")  # "Alice Smith"
+```
+
+### Pattern 3: Calculator Function
+```python
+def calculate_total(prices: list[float], tax_rate: float = 0.1) -> float:
+    """
+    Calculate total price with tax.
+    
+    Args:
+        prices: List of item prices
+        tax_rate: Tax rate as decimal (default 0.1 = 10%)
+        
+    Returns:
+        Total price including tax
+        
+    Example:
+        >>> calculate_total([10, 20, 30])
+        66.0
+        >>> calculate_total([10, 20, 30], 0.2)
+        72.0
+    """
+    subtotal = sum(prices)
+    return subtotal * (1 + tax_rate)
+
+# Usage
+cart = [29.99, 49.99, 15.99]
+total = calculate_total(cart, tax_rate=0.08)
+print(f"Total: ${total:.2f}")
+```
+
+### Pattern 4: Factory Function
+```python
+from datetime import datetime
+
+def create_user(name: str, age: int, email: str = None) -> dict:
+    """
+    Create user dictionary with defaults.
+    
+    Args:
+        name: User's name
+        age: User's age
+        email: User's email (optional)
+        
+    Returns:
+        User dictionary with default values
+        
+    Example:
+        >>> user = create_user("Alice", 25, "alice@example.com")
+        >>> user["active"]
+        True
+    """
+    return {
+        "name": name,
+        "age": age,
+        "email": email,
+        "created_at": datetime.now().isoformat(),
+        "active": True,
+        "role": "user"
+    }
+
+# Usage
+new_user = create_user("Bob", 30, "bob@example.com")
+print(f"Created user: {new_user['name']}")
+```
+
+### Pattern 5: Filter Function
+```python
+def filter_adults(people: list[dict]) -> list[dict]:
+    """
+    Filter list to only include adults (age >= 18).
+    
+    Args:
+        people: List of person dictionaries with 'age' key
+        
+    Returns:
+        List containing only adults
+        
+    Example:
+        >>> people = [{"name": "Alice", "age": 25}, {"name": "Bob", "age": 15}]
+        >>> filter_adults(people)
+        [{'name': 'Alice', 'age': 25}]
+    """
+    return [person for person in people if person["age"] >= 18]
+
+# Usage
+users = [
+    {"name": "Alice", "age": 25},
+    {"name": "Bob", "age": 15},
+    {"name": "Charlie", "age": 30}
+]
+adults = filter_adults(users)
+print(f"Found {len(adults)} adults")
+```
+
 ## 📁 Directory Structure
 
 ```

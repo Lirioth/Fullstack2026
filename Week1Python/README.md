@@ -45,6 +45,66 @@ By the end of Week1, you should be able to:
 - 🎮 Build complete interactive applications (Tic-Tac-Toe, Hangman, etc.)
 
 ---
+
+## 📅 Suggested Weekly Schedule
+
+```
+Monday    [████████░░] Day1: Python Basics (4-6h)
+          Focus: Variables, Data Types, Conditionals
+          
+Tuesday   [████████░░] Day2: Lists & Loops (5-7h)
+          Focus: Collections, Iteration, Formatting
+          
+Wednesday [████████░░] Day3: Dictionaries (5-7h)
+          Focus: Key-Value Data, Nested Structures
+          
+Thursday  [████████░░] Day4: Functions (6-8h)
+          Focus: Code Organization, Parameters, Scope
+          
+Friday    [██████████] Day5: Mini Projects (8-10h)
+          Focus: Integration, Tic-Tac-Toe, Hangman
+```
+
+**Total Week Time:** ⏰ 28-38 hours | **Recommended Pace:** 5-8 hours/day
+
+---
+
+## 🖼️ What You'll Build This Week
+
+By Friday, you'll have created these impressive projects:
+
+### 🎮 **Tic-Tac-Toe Game**
+```
+  1 2 3
+1 X|O|X
+  -----
+2 O|X|O
+  -----
+3  | |X
+🏆 Player X wins!
+```
+**Skills Used:** Lists, Loops, Functions, Input Validation
+
+### 🎪 **Hangman Word Game**
+```
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+======
+Word: P _ T H O N
+Lives: 2 | Guessed: A,E,I,O,U,R,S,T
+```
+**Skills Used:** Strings, Random, Functions, Game Logic
+
+### ✨ **Plus More Challenges:**
+- 🔐 Caesar Cipher encryption tool
+- 🧮 Matrix decoder algorithm
+- 📊 Data processing applications
+- 🎯 Problem-solving challenges
+
+---
 ## 📅 Daily Breakdown
 
 ### 📚 Day1StartingWithPython - Foundations
@@ -278,17 +338,56 @@ By the end of Week1, you should be able to:
 ## 💻 Development Environment
 
 ### 🛠️ Setup Requirements
+
+#### Prerequisites Checklist
+- ✅ **Python 3.8+** installed ([Download](https://www.python.org/downloads/))
+- ✅ **VS Code** or any text editor
+- ✅ **Terminal** access (Command Prompt/PowerShell/Bash)
+- ✅ **15 GB** free disk space for projects
+
+#### Verify Your Setup
 ```bash
-# Python 3.8+ required
+# Check Python version (must be 3.8+)
 python --version
 
-# Create virtual environment (recommended)
-python -m venv ../week1_env
-source ../week1_env/bin/activate  # macOS/Linux
-..\week1_env\Scripts\activate     # Windows
+# Test Python works
+python -c "print('✅ Python is ready!')"
 
-# No external packages required for Week1
+# Check pip is available
+pip --version
 ```
+
+#### Create Virtual Environment (Recommended)
+```bash
+# Create virtual environment
+python -m venv ../week1_env
+
+# Activate it
+source ../week1_env/bin/activate  # macOS/Linux
+..\week1_env\Scripts\activate     # Windows PowerShell
+
+# Verify activation (you should see (week1_env) in prompt)
+which python  # macOS/Linux
+where python  # Windows
+
+# No external packages required for Week1! 🎉
+```
+
+#### Quick Setup Test Script
+Create a file `test_setup.py` and run it to verify everything works:
+```python
+# test_setup.py
+import sys
+import random
+
+print(f"✅ Python version: {sys.version}")
+print(f"✅ Random number: {random.randint(1, 100)}")
+print(f"✅ Lists work: {[1, 2, 3]}")
+print(f"✅ Dictionaries work: {{'name': 'Python'}}")
+print("\n🎉 Your environment is ready for Week 1!")
+```
+
+Run with: `python test_setup.py`
 
 ### 🚀 Running Exercises
 ```bash
@@ -306,38 +405,187 @@ python tictactoe.py
 ---
 ## ⚠️ Common Challenges & Solutions
 
-### 🔧 Input Handling Issues
-**Problem**: Scripts hang waiting for user input
+### � Error Guide: "If you see this, do this"
+
+| Error Message | What It Means | Solution |
+|---------------|---------------|----------|
+| `SyntaxError: invalid syntax` | Missing colon or wrong indentation | Check for `:` after `if`, `for`, `def` |
+| `NameError: name 'x' is not defined` | Using variable before creating it | Define variable first: `x = 10` |
+| `TypeError: '>' not supported...` | Comparing different types | Convert: `int(input())` not `input()` |
+| `IndexError: list index out of range` | Accessing non-existent list item | Check: `if i < len(list)` |
+| `KeyError: 'key'` | Dictionary key doesn't exist | Use: `dict.get('key', default)` |
+| `ValueError: invalid literal for int()` | Converting non-number to int | Validate input first or use try/except |
+| `IndentationError` | Inconsistent spaces/tabs | Use 4 spaces (not tabs) everywhere |
+
+### �🔧 Detailed Solutions
+
+#### Problem 1: Input Handling Issues
+**Symptom**: Scripts hang waiting for user input during automated testing
 **Solution**: 
 ```python
-# Wrap interactive code for testing
+# ✅ Good: Wrap interactive code
 def main():
     user_input = input("Enter value: ")
     # ... process input
 
 if __name__ == "__main__":
-    main()
+    main()  # Only runs when script executed directly
+
+# ✅ Better: Add timeout or default for testing
+def get_input_with_default(prompt, default=""):
+    """Get input with optional default for testing."""
+    try:
+        return input(prompt)
+    except EOFError:  # No input available
+        return default
 ```
 
-### 🔄 Type Conversion Errors
-**Problem**: `ValueError` when converting user input
+#### Problem 2: Type Conversion Errors
+**Symptom**: `ValueError: invalid literal for int() with base 10: 'abc'`
 **Solution**:
 ```python
-try:
-    age = int(input("Enter age: "))
-except ValueError:
-    print("Please enter a valid number")
+# ❌ Bad: No validation
+age = int(input("Enter age: "))  # Crashes on non-numeric input
+
+# ✅ Good: Try-except with loop
+while True:
+    try:
+        age = int(input("Enter age: "))
+        break  # Exit loop on success
+    except ValueError:
+        print("❌ Please enter a valid number")
+
+# ✅ Better: Reusable function with validation
+def get_int(prompt, min_val=None, max_val=None):
+    """Get validated integer input."""
+    while True:
+        try:
+            value = int(input(prompt))
+            if min_val is not None and value < min_val:
+                print(f"⚠️ Must be at least {min_val}")
+                continue
+            if max_val is not None and value > max_val:
+                print(f"⚠️ Must be at most {max_val}")
+                continue
+            return value
+        except ValueError:
+            print("❌ Please enter a valid number")
 ```
 
-### 📑 List Index Errors
-**Problem**: `IndexError` when accessing list elements
+#### Problem 3: List Index Errors
+**Symptom**: `IndexError: list index out of range`
 **Solution**:
 ```python
-if 0 <= index < len(my_list):
-    value = my_list[index]
+# ❌ Bad: No boundary check
+items = [1, 2, 3]
+print(items[5])  # Crashes!
+
+# ✅ Good: Check bounds first
+if 0 <= index < len(items):
+    value = items[index]
 else:
-    print("Index out of range")
+    print("❌ Index out of range")
+
+# ✅ Better: Use .get() equivalent for lists
+def safe_get_list(lst, index, default=None):
+    """Safely get list item by index."""
+    return lst[index] if 0 <= index < len(lst) else default
+
+# ✅ Best: Use try-except when appropriate
+try:
+    value = items[index]
+except IndexError:
+    print(f"❌ No item at index {index}")
+    value = None
 ```
+
+#### Problem 4: Dictionary KeyError
+**Symptom**: `KeyError: 'missing_key'`
+**Solution**:
+```python
+user = {"name": "Alice", "age": 25}
+
+# ❌ Bad: Direct access without checking
+email = user["email"]  # Crashes if key missing!
+
+# ✅ Good: Use .get() with default
+email = user.get("email", "No email provided")
+
+# ✅ Better: Check membership first
+if "email" in user:
+    email = user["email"]
+else:
+    email = "No email provided"
+
+# ✅ Best: Use try-except for exceptional cases
+try:
+    email = user["email"]
+except KeyError:
+    print("⚠️ Email not found, using default")
+    email = "no-email@example.com"
+```
+
+#### Problem 5: String/Integer Comparison
+**Symptom**: `TypeError: '>' not supported between instances of 'str' and 'int'`
+**Solution**:
+```python
+# ❌ Bad: Comparing string with number
+age = input("Age: ")  # This is a STRING!
+if age > 18:  # TypeError!
+
+# ✅ Good: Convert first
+age = int(input("Age: "))  # Convert to integer
+if age > 18:
+    print("Adult")
+
+# ✅ Better: Validate and convert
+user_input = input("Age: ")
+if user_input.isdigit():
+    age = int(user_input)
+    if age > 18:
+        print("Adult")
+else:
+    print("❌ Please enter a number")
+```
+
+### 🐛 Debugging Strategies
+
+#### Strategy 1: Print Statement Debugging
+```python
+def calculate_total(prices):
+    print(f"🐛 DEBUG: prices = {prices}")  # Check input
+    total = sum(prices)
+    print(f"🐛 DEBUG: total = {total}")    # Check result
+    return total
+```
+
+#### Strategy 2: Type Checking
+```python
+# Check variable types during debugging
+value = input("Enter number: ")
+print(f"Type: {type(value)}, Value: {value}")  # Shows: <class 'str'>
+```
+
+#### Strategy 3: Break Down Complex Logic
+```python
+# ❌ Hard to debug
+if len([x for x in items if x > 10 and x % 2 == 0]) > 0:
+    # What went wrong?
+
+# ✅ Easy to debug
+filtered = [x for x in items if x > 10 and x % 2 == 0]
+print(f"Filtered items: {filtered}")  # See intermediate result
+if len(filtered) > 0:
+    # Now you can see what's happening!
+```
+
+### 💡 Prevention Tips
+
+1. **Always validate user input** before using it
+2. **Use type hints** to catch type errors early: `def greet(name: str) -> str:`
+3. **Test edge cases**: empty lists, None values, negative numbers
+4. **Read error messages carefully** - they tell you exactly what's wrong!
+5. **Use descriptive variable names** so debugging is easier
 
 ---
 ## ✅ Self-Assessment Checklist
