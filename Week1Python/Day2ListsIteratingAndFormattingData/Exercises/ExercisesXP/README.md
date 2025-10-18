@@ -1,6 +1,28 @@
-# 🏋️ Exercises XP — Sequence / List / Set / Tuple
+# 🥉 Exercises XP — Lists, Sets, Tuples & Iteration
 
-A small, single-file collection that practices **sets, tuples, lists, loops, and user input**.
+**Author:** Kevin Cusnir "Lirioth"  
+**Course:** Fullstack Bootcamp 2026  
+**Last Updated:** October 18, 2025
+
+**Master Python collections through 10 comprehensive exercises covering sets, tuples, lists, loops, and interactive programs.**
+
+## 📊 Quick Stats
+- **⏰ Duration**: 60-90 minutes
+- **🎯 Difficulty**: 🟢 Beginner
+- **📝 Exercises**: 10
+- **✅ Prerequisites**: Day 1 completion
+
+## 🎯 Learning Objectives
+
+By completing these exercises, you will:
+- ✅ Master set operations for unique collections
+- ✅ Understand tuple immutability and use cases
+- ✅ Manipulate lists with various methods
+- ✅ Build numeric sequences with conditionals
+- ✅ Implement for and while loop patterns
+- ✅ Process user input with validation
+- ✅ Create practical calculators and pricing systems
+- ✅ Handle order processing workflows
 
 ---
 
@@ -131,15 +153,58 @@ Finished sandwiches: ['Tuna', 'Avocado', 'Egg', 'Chicken']
 
 ---
 
-## 🌟 Optional improvements
-- **Input validation** with `try/except` for numbers; re-ask on invalid input.
-- **Case-insensitive** comparisons for fruits: compare both sides with `.lower()`.
-- **Avoid duplicate toppings**: switch `toppings` to a `set`.
-- **Use constants**: `BASE_PRICE = 10`, `TOPPING_PRICE = 2.5`.
-- **Refactor** into small functions per exercise for cleaner structure.
+## 📁 Files
+- `exercisesxp.py` — Complete implementation
+- `README.md` — This documentation
 
 ---
 
-## Files
-- `exercisesxp.py` — your script
-- `README.md` — this file
+## 🔧 Troubleshooting
+
+### Common Issues & Solutions
+
+**❌ Problem:** `ValueError: list.remove(x): x not in list`  
+**✅ Solution:** Check if element exists before removing:
+```python
+if item in my_list:
+    my_list.remove(item)
+```
+
+**❌ Problem:** Set order is unpredictable  
+**✅ Solution:** Sets are unordered by design. Use lists if order matters.
+
+**❌ Problem:** `TypeError: 'tuple' object does not support item assignment`  
+**✅ Solution:** Tuples are immutable. Create a new tuple instead:
+```python
+t = (1, 2, 3)
+t = t + (4, 5)  # Creates new tuple
+```
+
+**❌ Problem:** Pizza price calculation incorrect  
+**✅ Solution:** Ensure base price + (topping count × topping price)
+
+**❌ Problem:** Infinite while loop  
+**✅ Solution:** Verify loop has proper exit condition and input validation
+
+---
+
+## 💡 Learning Tips
+
+1. **Sets eliminate duplicates** - Perfect for finding unique values
+2. **Tuples protect data** - Use for constants that shouldn't change
+3. **enumerate() is powerful** - Get both index and value in loops
+4. **Modular functions** - Break complex logic into helper functions
+5. **Validate early** - Check user input before processing
+
+---
+
+## 👤 About the Author
+
+**Kevin Cusnir "Lirioth"**  
+- 🎓 Fullstack Developer Student  
+- 💻 GitHub: [@Lirioth](https://github.com/Lirioth)  
+- 📧 Repository: [Fullstack2026](https://github.com/Lirioth/Fullstack2026)
+
+---
+
+**Created with ❤️ for mastering Python collections**

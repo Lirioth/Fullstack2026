@@ -1,3 +1,18 @@
+"""
+💪 Daily Challenge: Lists & Strings
+===================================
+Two algorithmic challenges:
+1. Generate multiples of a number
+2. Collapse consecutive duplicate characters
+
+Author: Kevin Cusnir "Lirioth"
+GitHub: @Lirioth
+Repository: https://github.com/Lirioth/Fullstack2026
+Course: Fullstack Bootcamp 2026
+Python Version: 3.8+
+Last Updated: October 18, 2025
+"""
+
 # Daily Challenge : Lists & Strings
 
 from __future__ import annotations
@@ -6,7 +21,27 @@ from typing import List
 
 
 def multiples(number: int, length: int) -> List[int]:
-    """Return the first ``length`` multiples of ``number``."""
+    """
+    Return the first ``length`` multiples of ``number``.
+    
+    Args:
+        number: The base number to multiply
+        length: How many multiples to generate (must be non-negative)
+        
+    Returns:
+        List of multiples [number*1, number*2, ..., number*length]
+        
+    Raises:
+        ValueError: If length is negative
+        
+    Examples:
+        >>> multiples(7, 5)
+        [7, 14, 21, 28, 35]
+        >>> multiples(-3, 4)
+        [-3, -6, -9, -12]
+        >>> multiples(5, 0)
+        []
+    """
 
     if length < 0:
         raise ValueError("length must be non-negative")
@@ -14,7 +49,28 @@ def multiples(number: int, length: int) -> List[int]:
 
 
 def collapse_duplicates(word: str) -> str:
-    """Collapse consecutive duplicate characters in ``word``."""
+    """
+    Collapse consecutive duplicate characters in ``word``.
+    
+    Only consecutive duplicates are removed. Non-consecutive repeats remain.
+    Case-sensitive: 'A' and 'a' are different characters.
+    
+    Args:
+        word: String to process
+        
+    Returns:
+        String with consecutive duplicates collapsed to single character
+        
+    Examples:
+        >>> collapse_duplicates("ppoollee")
+        'pole'
+        >>> collapse_duplicates("bookkeeper")
+        'bokeper'
+        >>> collapse_duplicates("AaAa")
+        'AaAa'
+        >>> collapse_duplicates("")
+        ''
+    """
 
     if not word:
         return ""

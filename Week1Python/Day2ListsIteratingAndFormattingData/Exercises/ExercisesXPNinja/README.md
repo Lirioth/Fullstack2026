@@ -1,4 +1,31 @@
-# 🥇 Exercises XP Ninj## 📋 What's inside
+# 🥇 Exercises XP Ninja - Advanced Python Challenges
+
+**Author:** Kevin Cusnir "Lirioth"  
+**Course:** Fullstack Bootcamp 2026  
+**Last Updated:** October 18, 2025
+
+**Push your Python skills with 4 advanced exercises covering mathematical formulas, data analysis, text processing, and algorithms.**
+
+## 📊 Quick Stats
+- **⏰ Duration**: 60-90 minutes
+- **🎯 Difficulty**: 🔴 Advanced
+- **📝 Exercises**: 4
+- **✅ Prerequisites**: Completed ExercisesXP and ExercisesXPGold
+
+## 🎯 Learning Objectives
+
+By completing these exercises, you will:
+- ✅ Implement mathematical formulas in code
+- ✅ Perform comprehensive data analysis on lists
+- ✅ Process and analyze text with statistics
+- ✅ Use Counter for frequency analysis
+- ✅ Master list comprehensions and filtering
+- ✅ Calculate statistics manually (without built-ins)
+- ✅ Apply advanced string manipulation
+
+---
+
+## 📋 What's inside
 
 ### 1️⃣ Exercise 1 — Formula Python Notes
 
@@ -199,14 +226,77 @@ python:2
 
 ---
 
-## Tips for my future self
-
-- Keep the code readable: short variable names are fine but add tiny comments where it helps.
-- Validate inputs if you plan to reuse these snippets.
-- For bigger text tasks, consider `re` (regular expressions) for better tokenization.
-- It’s okay if the print format is basic — clarity first.
+## 📁 Files
+- `exercisesxpninja.py` — Complete implementation with type hints
+- `README.md` — This documentation
 
 ---
 
-## License
-MIT — do whatever you want, just keep a copy of this file.
+## 🔧 Troubleshooting
+
+### Common Issues & Solutions
+
+**❌ Problem:** Formula calculation incorrect  
+**✅ Solution:** Verify operator precedence: `**` before `*` and `/`
+```python
+q = ((2 * C * D) / H) ** 0.5  # Correct
+```
+
+**❌ Problem:** Statistics don't match expected values  
+**✅ Solution:** Check list is unmodified. Use `list()` to copy if needed.
+
+**❌ Problem:** Word frequency shows duplicates  
+**✅ Solution:** Use `.lower()` for case-insensitive counting:
+```python
+cleaned = [w.lower() for w in words]
+```
+
+**❌ Problem:** Sentence count is zero  
+**✅ Solution:** Code handles this with `if sentences == 0: sentences = 1`
+
+---
+
+## 💡 Learning Tips
+
+1. **Type hints improve code** - Makes functions self-documenting
+2. **Counter is powerful** - Use `collections.Counter` for frequency tasks
+3. **Manual implementations** - Building max/min/sum manually teaches algorithms
+4. **List comprehensions** - More Pythonic than explicit loops
+5. **String cleaning** - Always strip punctuation before analysis
+
+---
+
+## 🎓 Advanced Techniques Demonstrated
+
+**Type Hints:**
+```python
+def q_values(d_values: Iterable[int], *, c: int = C, h: int = H) -> List[int]:
+```
+
+**Dictionary Returns:**
+```python
+return {
+    "chars": len(text),
+    "words": len(words),
+    "unique_words": len(set(cleaned))
+}
+```
+
+**Counter Usage:**
+```python
+from collections import Counter
+freq = Counter(words)
+```
+
+---
+
+## 👤 About the Author
+
+**Kevin Cusnir "Lirioth"**  
+- 🎓 Fullstack Developer Student  
+- 💻 GitHub: [@Lirioth](https://github.com/Lirioth)  
+- 📧 Repository: [Fullstack2026](https://github.com/Lirioth/Fullstack2026)
+
+---
+
+**Created with ❤️ for advanced Python mastery**

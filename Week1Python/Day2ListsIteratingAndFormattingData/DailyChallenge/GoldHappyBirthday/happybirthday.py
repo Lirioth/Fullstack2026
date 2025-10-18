@@ -1,9 +1,45 @@
+"""
+🎉 Daily Challenge GOLD: Happy Birthday
+========================================
+Interactive birthday cake generator with ASCII art.
+
+Features:
+- Date parsing and validation
+- Age calculation
+- Candle count based on last digit of age
+- Leap year detection (double cake bonus!)
+- ASCII art generation
+
+Author: Kevin Cusnir "Lirioth"
+GitHub: @Lirioth
+Repository: https://github.com/Lirioth/Fullstack2026
+Course: Fullstack Bootcamp 2026
+Python Version: 3.8+
+Last Updated: October 18, 2025
+"""
+
 # 🎉 Daily Challenge GOLD : Happy birthday (beginner)
 
 from datetime import date, datetime
 import calendar
 
 def print_cake(c):
+    """
+    Print ASCII art birthday cake with specified number of candles.
+    
+    Args:
+        c: Number of candles to display (0-10 recommended)
+        
+    Example:
+        >>> print_cake(3)
+               ___iii___
+              |:H:a:p:p:y:|
+            __|___________|__
+           |^^^^^^^^^^^^^^^^^|
+           |:B:i:r:t:h:d:a:y:|
+           |                 |
+           ~~~~~~~~~~~~~~~~~~~
+    """
     top = "       ___" + ("i" * c) + "___"
     print(top)
     print("      |:H:a:p:p:y:|")
@@ -14,6 +50,12 @@ def print_cake(c):
     print("   ~~~~~~~~~~~~~~~~~~~")
 
 def main():
+    """
+    Main interactive birthday cake program.
+    
+    Prompts for birthdate, calculates age, displays cake with candles.
+    Shows double cake if born in a leap year.
+    """
     s = input("Enter your birthdate (DD/MM/YYYY): ").strip()
 
     try:

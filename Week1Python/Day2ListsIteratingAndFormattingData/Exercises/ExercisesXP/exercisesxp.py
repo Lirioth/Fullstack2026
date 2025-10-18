@@ -12,8 +12,12 @@ Comprehensive exercises covering:
 - Cinema ticket pricing system
 - Sandwich order processing
 
-Author: Week1Python Course
+Author: Kevin Cusnir "Lirioth"
+GitHub: @Lirioth
+Repository: https://github.com/Lirioth/Fullstack2026
+Course: Fullstack Bootcamp 2026
 Python Version: 3.8+
+Last Updated: October 18, 2025
 """
 
 # 🎯 Constants
@@ -91,7 +95,20 @@ def calculate_ticket_price(age: int) -> int:
 
 
 def main():
-    """Run all Day 2 exercises in sequence."""
+    """
+    Run all Day 2 exercises in sequence.
+    
+    Demonstrates:
+    - Set operations (union, add, discard)
+    - Tuple concatenation
+    - List methods (remove, append, insert, count, clear)
+    - Float sequences with conditionals
+    - For loops with range and enumerate
+    - While loops with input validation
+    - String parsing and membership testing
+    - Interactive calculators
+    - Order processing systems
+    """
     
     # -------- Exercise 1: Favorite Numbers (sets) --------
     my_fav_numbers = {7, 13, 27}

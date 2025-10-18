@@ -1,6 +1,29 @@
 # 📅 Day 2 - Lists, Iterating and Formatting Data
 
+**Author:** Kevin Cusnir "Lirioth"  
+**Course:** Fullstack Bootcamp 2026  
+**Last Updated:** October 18, 2025
+
 Master Python's powerful collection types and iteration patterns! 📋 This day transforms you from basic Python user to proficient data handler with practical, real-world applications.
+
+## 📑 Table of Contents
+- [🎯 Learning Objectives](#-learning-objectives)
+- [📚 Topics Covered](#-topics-covered)
+- [📊 Data Structure Comparison](#-data-structure-comparison)
+- [⚡ Performance Insights](#-performance-insights)
+- [🎨 Visual Data Structure Examples](#-visual-data-structure-examples)
+- [📁 Directory Structure](#-directory-structure)
+- [🚀 Getting Started](#-getting-started)
+- [📊 Assessment Checklist](#-assessment-checklist)
+- [🔧 Common Patterns & Best Practices](#-common-patterns--best-practices)
+- [🔧 Troubleshooting](#-troubleshooting)
+- [🔗 Next Steps](#-next-steps)
+
+## 📊 Quick Stats
+- **⏰ Duration**: 5-7 hours
+- **🎯 Difficulty**: 🟡 Intermediate
+- **📝 Exercises**: 10 (XP) + 9 (Gold) + 4 (Ninja) + 2 (Daily Challenges)
+- **✅ Prerequisites**: Day 1 completion
 
 ## 🎯 Learning Objectives
 
@@ -310,6 +333,16 @@ After mastering Day 2:
 - [🎨 String Formatting Guide](https://realpython.com/python-string-formatting/)
 
 ---
+
+## 👤 About the Author
+
+**Kevin Cusnir "Lirioth"**  
+- 🎓 Fullstack Developer Student  
+- 💻 GitHub: [@Lirioth](https://github.com/Lirioth)  
+- 📧 Repository: [Fullstack2026](https://github.com/Lirioth/Fullstack2026)
+
+---
+
 **⏱️ Estimated Time**: 5-7 hours  
 **🎯 Difficulty**: Beginner to Intermediate  
 **📋 Prerequisites**: Day 1 completion

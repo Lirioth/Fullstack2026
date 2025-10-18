@@ -1,3 +1,20 @@
+"""
+🥇 Day 2 - Exercises XP Ninja
+=============================
+Advanced challenges covering:
+1. Mathematical formula implementation (Q = sqrt((2*C*D)/H))
+2. Comprehensive list analysis with manual statistics
+3. Text paragraph analysis with frequency counting
+4. Word frequency mapping with sorted output
+
+Author: Kevin Cusnir "Lirioth"
+GitHub: @Lirioth
+Repository: https://github.com/Lirioth/Fullstack2026
+Course: Fullstack Bootcamp 2026
+Python Version: 3.8+
+Last Updated: October 18, 2025
+"""
+
 # Exercises XP Ninja
 
 from __future__ import annotations
@@ -11,7 +28,21 @@ H = 30
 
 # ---------- Exercise 1: Formula ----------
 def q_values(d_values: Iterable[int], *, c: int = C, h: int = H) -> List[int]:
-    """Return rounded integers calculated with Q = sqrt((2 * c * d) / h)."""
+    """
+    Calculate Q values using the formula: Q = sqrt((2 * c * d) / h).
+    
+    Args:
+        d_values: Iterable of D values to calculate Q for
+        c: Constant C (default: 50)
+        h: Constant H (default: 30)
+        
+    Returns:
+        List of Q values rounded to nearest integer
+        
+    Example:
+        >>> q_values([100, 150, 180])
+        [18, 22, 24]
+    """
 
     results: List[int] = []
     for d in d_values:

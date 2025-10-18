@@ -1,6 +1,28 @@
-# Daily Challenge GOLD — Happy Birthday
+# 💪 Daily Challenge GOLD — Happy Birthday
 
-A tiny Python script that asks for your **birthdate**, computes your **age** to size the candles, and draws a cute ASCII **birthday cake** with candles equal to the **last digit** of your age. If you were **born in a leap year**, it prints **two cakes** (bonus!).
+**Author:** Kevin Cusnir "Lirioth"  
+**Course:** Fullstack Bootcamp 2026  
+**Last Updated:** October 18, 2025
+
+**An interactive birthday celebration program that draws ASCII art cakes with candles based on your age.**
+
+## 📊 Quick Stats
+- **⏰ Duration**: 20-30 minutes
+- **🎯 Difficulty**: 🟡 Intermediate
+- **📝 Modules**: datetime, calendar
+- **✅ Prerequisites**: Basic date handling knowledge
+
+## 🎯 Learning Objectives
+
+By completing this challenge, you will:
+- ✅ Parse date strings with datetime.strptime()
+- ✅ Calculate age from birthdate
+- ✅ Use modulo for digit extraction
+- ✅ Check leap years with calendar module
+- ✅ Create ASCII art programmatically
+- ✅ Handle date validation and errors
+
+---
 
 ## 🎯 What it does (step by step)
 1. **Asks for your birthdate** in the format `DD/MM/YYYY` (example: `16/06/1994`).
@@ -58,6 +80,66 @@ Other nice tweaks:
 - Print the computed **age** explicitly before the cake (`print("Age:", age)`).
 - Internationalize: accept `DD-MM-YYYY` too, or auto-detect separators.
 
-## Files
-- `happybirthday.py` — the script
-- `README.md` — this file
+## 📁 Files
+- `happybirthday.py` — Complete implementation
+- `README.md` — This documentation
+
+---
+
+## 🔧 Troubleshooting
+
+### Common Issues & Solutions
+
+**❌ Problem:** `ValueError: time data does not match format`  
+**✅ Solution:** Ensure date format is exactly DD/MM/YYYY (e.g., 16/06/1994)
+
+**❌ Problem:** Age calculation seems wrong  
+**✅ Solution:** Code accounts for birthday not yet occurred this year:
+```python
+age = today.year - bday.year - ((today.month, today.day) < (bday.month, bday.day))
+```
+
+**❌ Problem:** No candles show (age ends in 0)  
+**✅ Solution:** This is expected! Age 30 → 30 % 10 = 0 candles. Consider using `candles or 10`.
+
+**❌ Problem:** Script crashes on invalid date  
+**✅ Solution:** Code includes try/except for ValueError with helpful message.
+
+---
+
+## 💡 Learning Tips
+
+1. **Date parsing** - strptime() format codes: %d (day), %m (month), %Y (year)
+2. **Tuple comparison** - Python compares tuples element-by-element
+3. **Modulo magic** - `age % 10` gets last digit efficiently
+4. **String multiplication** - `"i" * 3` creates "iii"
+5. **Leap year check** - `calendar.isleap()` handles all edge cases
+
+---
+
+## 🎨 Enhancement Ideas
+
+**Improvements you could add:**
+```python
+# Show age explicitly
+print(f"You are {age} years old!")
+
+# Handle zero candles
+candles = age % 10 or 10  # Show 10 candles for multiples of 10
+
+# Accept different formats
+formats = ["%d/%m/%Y", "%d-%m-%Y", "%Y-%m-%d"]
+```
+
+---
+
+## 👤 About the Author
+
+**Kevin Cusnir "Lirioth"**  
+- 🎓 Fullstack Developer Student  
+- 💻 GitHub: [@Lirioth](https://github.com/Lirioth)  
+- 📧 Repository: [Fullstack2026](https://github.com/Lirioth/Fullstack2026)
+
+---
+
+**Created with ❤️ for celebrating birthdays with code! 🎂**
