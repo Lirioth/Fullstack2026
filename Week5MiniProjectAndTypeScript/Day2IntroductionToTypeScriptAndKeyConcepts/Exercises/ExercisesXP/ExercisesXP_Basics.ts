@@ -59,7 +59,7 @@ export function setInputValueById(id: string, value: string): void {
   const hasDocument = typeof (globalThis as any).document !== "undefined";
   if (!hasDocument) return; // not in a browser
 
-  const el = (document.getElementById(id) as HTMLElement | null);
+  const el = document.getElementById(id) as HTMLElement | null;
   if (!el) return;
 
   // Narrow to HTMLInputElement via runtime check + assertion

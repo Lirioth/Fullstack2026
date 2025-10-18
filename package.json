@@ -4,8 +4,13 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "lint": "eslint \"Week3JavaScriptandDOM/**/*.js\" \"Week5MiniProjectAndTypeScript/**/*.ts\"",
-    "format": "prettier --write \"Week3JavaScriptandDOM/**/*.js\" \"Week5MiniProjectAndTypeScript/**/*.ts\""
+    "lint": "eslint \"Week*/**/*.{js,ts}\"",
+    "lint:fix": "eslint \"Week*/**/*.{js,ts}\" --fix",
+    "format": "prettier --write \"Week*/**/*.{js,ts}\"",
+    "format:check": "prettier --check \"Week*/**/*.{js,ts}\"",
+    "test": "node --test",
+    "dev": "echo 'Development server not configured'",
+    "build": "echo 'Build process not configured'"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.21.0",

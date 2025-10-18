@@ -5,19 +5,19 @@
 
 // 1) Define the types
 export type User = {
-  type: 'user';
+  type: "user";
   name: string;
   age: number;
 };
 
 export type Product = {
-  type: 'product';
+  type: "product";
   id: number;
   price: number;
 };
 
 export type Order = {
-  type: 'order';
+  type: "order";
   orderId: string;
   amount: number;
 };
@@ -26,13 +26,13 @@ export type Mixed = User | Product | Order;
 
 // Optional helpers: runtime type guard predicates
 export function isUser(x: any): x is User {
-  return x && x.type === 'user' && typeof x.name === 'string' && typeof x.age === 'number';
+  return x && x.type === "user" && typeof x.name === "string" && typeof x.age === "number";
 }
 export function isProduct(x: any): x is Product {
-  return x && x.type === 'product' && typeof x.id === 'number' && typeof x.price === 'number';
+  return x && x.type === "product" && typeof x.id === "number" && typeof x.price === "number";
 }
 export function isOrder(x: any): x is Order {
-  return x && x.type === 'order' && typeof x.orderId === 'string' && typeof x.amount === 'number';
+  return x && x.type === "order" && typeof x.orderId === "string" && typeof x.amount === "number";
 }
 
 // 2) handleData implementation with type guards
@@ -65,10 +65,10 @@ export function handleData(items: Array<Mixed | unknown>): string[] {
 // ---- Quick demo ----
 if (require.main === module) {
   const data: Array<Mixed | unknown> = [
-    { type: 'user', name: 'Kevin', age: 30 },
-    { type: 'product', id: 101, price: 49.9 },
-    { type: 'order', orderId: 'ORD-2025-0001', amount: 120.5 },
-    { type: 'mystery', foo: 'bar' }, // unexpected case
+    { type: "user", name: "Kevin", age: 30 },
+    { type: "product", id: 101, price: 49.9 },
+    { type: "order", orderId: "ORD-2025-0001", amount: 120.5 },
+    { type: "mystery", foo: "bar" }, // unexpected case
   ];
 
   const out = handleData(data);

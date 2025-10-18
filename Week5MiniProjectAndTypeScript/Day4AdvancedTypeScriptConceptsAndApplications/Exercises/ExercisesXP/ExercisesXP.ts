@@ -25,8 +25,8 @@ function describeValue(v: number | string): string {
 // In TypeScript, "casting" is a compile-time type assertion; it does NOT convert the value at runtime.
 // For actual conversion use String(value) or value.toString().
 let someValue: any = 12345;
-let casted: string = someValue as string;       // assertion (types only, no runtime conversion)
-let safeString: string = String(someValue);     // real runtime conversion
+let casted: string = someValue as string; // assertion (types only, no runtime conversion)
+let safeString: string = String(someValue); // real runtime conversion
 
 // Exercise 4: Type Assertions with Union Types
 function getFirstElement(arr: Array<number | string>): string {

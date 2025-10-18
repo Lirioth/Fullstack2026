@@ -17,16 +17,20 @@
 
   // Click h2 -> background red
   const h2 = article.querySelector("h2");
-  h2.addEventListener("click", () => { h2.style.backgroundColor = "red"; });
+  h2.addEventListener("click", () => {
+    h2.style.backgroundColor = "red";
+  });
 
   // Click h3 -> hide it
   const h3 = article.querySelector("h3");
-  h3.addEventListener("click", () => { h3.style.display = "none"; });
+  h3.addEventListener("click", () => {
+    h3.style.display = "none";
+  });
 
   // Button -> make all paragraphs bold
   const boldBtn = document.getElementById("boldBtn");
   boldBtn.addEventListener("click", () => {
-    article.querySelectorAll("p").forEach(p => p.style.fontWeight = "700");
+    article.querySelectorAll("p").forEach((p) => (p.style.fontWeight = "700"));
   });
 
   // BONUS: hover h1 -> random font size 0..100 px, reset on leave
@@ -59,15 +63,17 @@
   // Retrieve the form and inputs (by id & by name), then log them
   console.log("Exercise 2 — form:", form);
   console.log("Exercise 2 — inputs by id:", inputF, inputL);
-  console.log("Exercise 2 — inputs by name:",
-              form.querySelector('[name=\"firstname\"]'),
-              form.querySelector('[name=\"lastname\"]'));
+  console.log(
+    "Exercise 2 — inputs by name:",
+    form.querySelector('[name=\"firstname\"]'),
+    form.querySelector('[name=\"lastname\"]')
+  );
 
   form.addEventListener("submit", (e) => {
     e.preventDefault(); // prevent page reload
 
     const first = inputF.value.trim();
-    const last  = inputL.value.trim();
+    const last = inputL.value.trim();
     if (!first || !last) {
       alert("Please fill both first name and last name.");
       return;
@@ -100,12 +106,12 @@
 
   function highlight() {
     // Make all bold text blue
-    allBoldItems.forEach(el => el.style.color = "dodgerblue");
+    allBoldItems.forEach((el) => (el.style.color = "dodgerblue"));
   }
 
   function returnItemsToDefault() {
     // Reset color back to black
-    allBoldItems.forEach(el => el.style.color = "black");
+    allBoldItems.forEach((el) => (el.style.color = "black"));
   }
 
   // Init and attach events
@@ -131,7 +137,7 @@
       return;
     }
     // Volume of a sphere: (4/3) * π * r^3
-    const vol = (4/3) * Math.PI * Math.pow(r, 3);
+    const vol = (4 / 3) * Math.PI * Math.pow(r, 3);
     volumeInput.value = vol.toFixed(4); // keep it readable
   });
 })();

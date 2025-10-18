@@ -9,18 +9,18 @@
 const personA = {
   fullName: "Alice Example",
   massKg: 68,
-  heightM: 1.70,
+  heightM: 1.7,
   bmi() {
-    return this.massKg / (this.heightM ** 2);
+    return this.massKg / this.heightM ** 2;
   },
 };
 
 const personB = {
   fullName: "Bob Sample",
   massKg: 85,
-  heightM: 1.80,
+  heightM: 1.8,
   bmi() {
-    return this.massKg / (this.heightM ** 2);
+    return this.massKg / this.heightM ** 2;
   },
 };
 
@@ -61,7 +61,8 @@ function computeAverage(gradesList) {
   }
   if (gradesList.length === 0) return NaN;
   let sum = 0;
-  for (let i = 0; i < gradesList.length; i++) { // 🔁 classic loop
+  for (let i = 0; i < gradesList.length; i++) {
+    // 🔁 classic loop
     const g = Number(gradesList[i]);
     if (!Number.isFinite(g)) {
       throw new TypeError("All grades must be finite numbers");
@@ -112,8 +113,8 @@ if (require.main === module) {
   compareBmi(personA, personB);
 
   console.log("\n— Exercise 2 — Grades —");
-  findAvg([80, 95, 70, 60, 88]);   // ✅ Pass example
-  findAvg([40, 55, 60]);           // ❌ Fail example
+  findAvg([80, 95, 70, 60, 88]); // ✅ Pass example
+  findAvg([40, 55, 60]); // ❌ Fail example
 }
 
 // Export for testing if needed

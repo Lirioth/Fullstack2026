@@ -15,7 +15,15 @@ function clearAll() {
     if (el) el.textContent = "";
   }
 }
-function runAll(){ ex1(); ex2(); ex3(); ex4(); ex5(); ex6(); ex7(); }
+function runAll() {
+  ex1();
+  ex2();
+  ex3();
+  ex4();
+  ex5();
+  ex6();
+  ex7();
+}
 
 // --------------------
 // Exercise 1
@@ -40,21 +48,21 @@ function ex1() {
 // --------------------
 // Exercise 2
 // --------------------
-const stock = { 
-  banana: 6, 
+const stock = {
+  banana: 6,
   apple: 0,
   pear: 12,
   orange: 32,
-  blueberry: 1
+  blueberry: 1,
 };
-const prices = {    
-  banana: 4, 
-  apple: 2, 
+const prices = {
+  banana: 4,
+  apple: 2,
   pear: 1,
   orange: 1.5,
-  blueberry: 10
+  blueberry: 10,
 };
-const shoppingList = ["banana","orange","apple"]; // 1 each
+const shoppingList = ["banana", "orange", "apple"]; // 1 each
 
 function myBill() {
   // Return total price of shoppingList (only items in stock).
@@ -81,7 +89,7 @@ function ex2() {
 // --------------------
 function changeEnough(itemPrice, amountOfChange) {
   // amountOfChange = [quarters, dimes, nickels, pennies]
-  const values = [0.25, 0.10, 0.05, 0.01];
+  const values = [0.25, 0.1, 0.05, 0.01];
   let sum = 0;
   for (let i = 0; i < amountOfChange.length; i++) {
     sum += amountOfChange[i] * values[i];
@@ -89,13 +97,13 @@ function changeEnough(itemPrice, amountOfChange) {
   return sum >= itemPrice;
 }
 function ex3() {
-  const a = changeEnough(4.25, [25,20,5,0]);
-  const b = changeEnough(14.11, [2,100,0,0]);
-  const c = changeEnough(0.75, [0,0,20,5]);
+  const a = changeEnough(4.25, [25, 20, 5, 0]);
+  const b = changeEnough(14.11, [2, 100, 0, 0]);
+  const c = changeEnough(0.75, [0, 0, 20, 5]);
   printOut("out3", [
     "changeEnough(4.25, [25,20,5,0]) => " + a,
     "changeEnough(14.11,[2,100,0,0]) => " + b,
-    "changeEnough(0.75, [0,0,20,5]) => " + c
+    "changeEnough(0.75, [0,0,20,5]) => " + c,
   ]);
 }
 
@@ -120,7 +128,9 @@ function askText(msg) {
     alert("Please enter a valid text.");
   }
 }
-function hotelCost(nights) { return nights * 140; }
+function hotelCost(nights) {
+  return nights * 140;
+}
 
 function planeRideCost(dest) {
   // Return price per destination (case-insensitive)
@@ -143,7 +153,7 @@ function totalVacationCost() {
 
   const hotel = hotelCost(nights);
   const plane = planeRideCost(dest);
-  const car   = rentalCarCost(days);
+  const car = rentalCarCost(days);
 
   const total = hotel + plane + car;
   return { nights, dest, days, hotel, plane, car, total };
@@ -155,7 +165,7 @@ function ex4() {
     `Plane: $${r.plane} (to ${r.dest})`,
     `Car:   $${r.car} (${r.days} days)`,
     "-------------------------",
-    `Total: $${r.total}`
+    `Total: $${r.total}`,
   ]);
 }
 
@@ -200,7 +210,8 @@ function ex5() {
 
   // Add a border to the <li> that contains “Richard” (second <li> of the first <ul> after rename)
   const liRichard = firstList.querySelector("li:nth-child(2)");
-  if (liRichard && /richard/i.test(liRichard.textContent)) liRichard.style.border = "1px solid #6aa9ff";
+  if (liRichard && /richard/i.test(liRichard.textContent))
+    liRichard.style.border = "1px solid #6aa9ff";
 
   // Change font size of the whole body
   document.body.style.fontSize = "16px";
@@ -238,10 +249,7 @@ function ex6() {
   // Show first and last link text
   const first = ul.firstElementChild;
   const last = ul.lastElementChild;
-  printOut("out6", [
-    "First link: " + first.textContent,
-    "Last link: " + last.textContent
-  ]);
+  printOut("out6", ["First link: " + first.textContent, "Last link: " + last.textContent]);
 }
 
 // --------------------
@@ -253,8 +261,18 @@ function ex7() {
 
   // Two demo books
   const allBooks = [
-    { title: "Atomic Habits", author: "James Clear", image: "https://covers.openlibrary.org/b/id/9255891-L.jpg", alreadyRead: true },
-    { title: "Clean Code", author: "Robert C. Martin", image: "https://covers.openlibrary.org/b/id/8231856-L.jpg", alreadyRead: false }
+    {
+      title: "Atomic Habits",
+      author: "James Clear",
+      image: "https://covers.openlibrary.org/b/id/9255891-L.jpg",
+      alreadyRead: true,
+    },
+    {
+      title: "Clean Code",
+      author: "Robert C. Martin",
+      image: "https://covers.openlibrary.org/b/id/8231856-L.jpg",
+      alreadyRead: false,
+    },
   ];
 
   for (let i = 0; i < allBooks.length; i++) {

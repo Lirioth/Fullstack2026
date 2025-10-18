@@ -35,10 +35,10 @@ function capitalize(s) {
     const ch = str[i];
     if (i % 2 === 0) {
       evenCaps += ch.toUpperCase();
-      oddCaps  += ch;
+      oddCaps += ch;
     } else {
       evenCaps += ch;
-      oddCaps  += ch.toUpperCase();
+      oddCaps += ch.toUpperCase();
     }
   }
   return [evenCaps, oddCaps];
@@ -54,7 +54,9 @@ console.log("Exercise 2 — capitalize('abcdef'):", capitalize("abcdef"));
  * @returns {boolean}
  */
 function isPalindrome(s) {
-  const clean = String(s).toLowerCase().replace(/[^a-z0-9]/g, "");
+  const clean = String(s)
+    .toLowerCase()
+    .replace(/[^a-z0-9]/g, "");
   const rev = clean.split("").reverse().join("");
   return clean.length > 0 && clean === rev;
 }
@@ -84,9 +86,9 @@ function biggestNumberInArray(arrayNumber) {
   return found ? max : 0;
 }
 console.log("Exercise 4 — examples:");
-console.log(biggestNumberInArray([-1,0,3,100,99,2,99])); // 100
-console.log(biggestNumberInArray(['a', 3, 4, 2]));       // 4
-console.log(biggestNumberInArray([]));                   // 0
+console.log(biggestNumberInArray([-1, 0, 3, 100, 99, 2, 99])); // 100
+console.log(biggestNumberInArray(["a", 3, 4, 2])); // 4
+console.log(biggestNumberInArray([])); // 0
 
 // ------------------------------------------------------------
 // Exercise 5: Unique Elements
@@ -108,7 +110,7 @@ function unique(arr) {
   }
   return result;
 }
-console.log("Exercise 5 — unique:", unique([1,2,3,3,3,3,4,5]));
+console.log("Exercise 5 — unique:", unique([1, 2, 3, 3, 3, 3, 4, 5]));
 
 // ------------------------------------------------------------
 // Exercise 6: Calendar (DOM)
@@ -135,8 +137,8 @@ function createCalendar(year, month1to12) {
   const table = document.createElement("table");
   const thead = document.createElement("thead");
   const trh = document.createElement("tr");
-  const headers = ["MO","TU","WE","TH","FR","SA","SU"];
-  headers.forEach(h => {
+  const headers = ["MO", "TU", "WE", "TH", "FR", "SA", "SU"];
+  headers.forEach((h) => {
     const th = document.createElement("th");
     th.textContent = h;
     trh.appendChild(th);

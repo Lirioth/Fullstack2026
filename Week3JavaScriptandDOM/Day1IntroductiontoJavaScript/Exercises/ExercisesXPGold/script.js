@@ -64,7 +64,7 @@
   console.log("Sum:", sum);
 
   // 2) Highest age (no Math.max / no reduce)
-  let max = age[0];                 // start with first element
+  let max = age[0]; // start with first element
   for (let i = 1; i < age.length; i++) {
     if (age[i] > max) max = age[i]; // update if a larger value is found
   }

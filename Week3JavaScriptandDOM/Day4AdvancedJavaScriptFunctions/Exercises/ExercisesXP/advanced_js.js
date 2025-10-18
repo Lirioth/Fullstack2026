@@ -97,18 +97,18 @@ function toGramsDecl(kg) {
   return kg * 1000;
 }
 // b) function expression
-const toGramsExpr = function(kg) {
+const toGramsExpr = function (kg) {
   return kg * 1000;
 };
 // c) one-line arrow
-const toGramsArrow = kg => kg * 1000;
+const toGramsArrow = (kg) => kg * 1000;
 // Difference (one-line comment):
 // Declaration is hoisted with its body; expression is NOT hoisted (only the const/var is).
 
 // -----------------------------
 // Ex. 6 — Fortune teller (IIFE)
 // -----------------------------
-(function(children, partner, location, job) {
+(function (children, partner, location, job) {
   const msg = `You will be a ${job} in ${location}, and married to ${partner} with ${children} kids.`;
   document.getElementById("fortune").textContent = msg;
 })(2, "Alex", "Reykjavik", "Developer");
@@ -116,7 +116,7 @@ const toGramsArrow = kg => kg * 1000;
 // -----------------------------
 // Ex. 7 — Welcome (Navbar via IIFE)
 // -----------------------------
-(function(name) {
+(function (name) {
   const nav = document.getElementById("navbar");
   // Update user name text
   document.getElementById("navUser").textContent = name;
@@ -169,8 +169,8 @@ document.getElementById("btnRunSmall").addEventListener("click", () => {
   lines.push(`winBattle() -> ${winBattle()}`);
   lines.push(`experiencePoints -> ${experiencePoints}`);
   lines.push(`isString('hello') -> ${isString("hello")}`);
-  lines.push(`isString([1,2]) -> ${isString([1,2])}`);
-  lines.push(`add(3,4) -> ${add(3,4)}`);
+  lines.push(`isString([1,2]) -> ${isString([1, 2])}`);
+  lines.push(`add(3,4) -> ${add(3, 4)}`);
   lines.push(`toGramsDecl(2) -> ${toGramsDecl(2)}`);
   lines.push(`toGramsExpr(2) -> ${toGramsExpr(2)}`);
   lines.push(`toGramsArrow(2) -> ${toGramsArrow(2)}`);
@@ -180,5 +180,5 @@ document.getElementById("btnRunSmall").addEventListener("click", () => {
 
 document.getElementById("btnJuice").addEventListener("click", () => {
   makeJuiceV1("medium"); // console-only demo
-  makeJuice("large");    // writes to DOM
+  makeJuice("large"); // writes to DOM
 });

@@ -9,18 +9,18 @@ const resetBtn = document.getElementById("reset");
 
 // Three+ tiny template functions. Each receives an object with the words.
 const templates = [
-  ({noun, adjective, person, verb, place}) =>
+  ({ noun, adjective, person, verb, place }) =>
     `${person} ${verb} a ${adjective} ${noun} in ${place}. Everyone cheered!`,
-  ({noun, adjective, person, verb, place}) =>
+  ({ noun, adjective, person, verb, place }) =>
     `In ${place}, a ${adjective} ${noun} ${verb} while ${person} laughed.`,
-  ({noun, adjective, person, verb, place}) =>
+  ({ noun, adjective, person, verb, place }) =>
     `${person} found a ${adjective} ${noun} near ${place} and ${verb} all day.`,
-  ({noun, adjective, person, verb, place}) =>
+  ({ noun, adjective, person, verb, place }) =>
     `They say in ${place}, ${person} can ${verb} with a ${adjective} ${noun}!`,
 ];
 
 let lastWords = null; // keep the last submitted values
-let lastIdx = -1;     // remember which template was used last
+let lastIdx = -1; // remember which template was used last
 
 function readValues() {
   // Get all values and trim them
@@ -34,7 +34,7 @@ function readValues() {
 
 function validate(values) {
   // Ensure no field is empty; return the first missing key or null
-  for (const key of ["noun","adjective","person","verb","place"]) {
+  for (const key of ["noun", "adjective", "person", "verb", "place"]) {
     if (!values[key]) return key;
   }
   return null;
@@ -59,7 +59,7 @@ form.addEventListener("submit", (e) => {
     return;
   }
   lastWords = values;
-  buildStory(lastWords);    // create a story
+  buildStory(lastWords); // create a story
   shuffleBtn.disabled = false; // enable shuffling now that we have words
 });
 

@@ -37,7 +37,6 @@ console.log("E1 email:", getProperty(adminUser, "email"));
 console.log("E1 adminLevel:", getProperty(adminUser, "adminLevel"));
 console.log("E1 missing:", getProperty(adminUser, "unknown"));
 
-
 // ==================================
 // Exercise 2: Type Casting w/Generics
 // ==================================
@@ -57,7 +56,6 @@ const b1 = castToType<boolean>("true", (v) => String(v).toLowerCase() === "true"
 console.log("E2 number:", n1);
 console.log("E2 boolean:", b1);
 
-
 // ===================================================
 // Exercise 3: Type Assertions with Generic Constraints
 // ===================================================
@@ -73,7 +71,6 @@ function getArrayLength<T extends Array<number> | Array<string>>(items: T): numb
 // ---- Quick test (Ex 3) ----
 console.log("E3 len [1,2,3]:", getArrayLength([1, 2, 3]));
 console.log('E3 len ["a","b"]:', getArrayLength(["a", "b"]));
-
 
 // ================================================
 // Exercise 4: Generic Interfaces with Class Impl.
@@ -102,15 +99,16 @@ class Box<T> implements Storage<T> {
 
 // ---- Quick test (Ex 4) ----
 const boxNum = new Box<number>();
-boxNum.add(10); boxNum.add(20);
+boxNum.add(10);
+boxNum.add(20);
 console.log("E4 boxNum[0]:", boxNum.get(0));
 console.log("E4 boxNum size:", boxNum.size());
 
 const boxStr = new Box<string>();
-boxStr.add("x"); boxStr.add("y");
+boxStr.add("x");
+boxStr.add("y");
 console.log("E4 boxStr[1]:", boxStr.get(1));
 console.log("E4 boxStr size:", boxStr.size());
-
 
 // ==========================================================
 // Exercise 5: Combining Generic Classes with Constraints

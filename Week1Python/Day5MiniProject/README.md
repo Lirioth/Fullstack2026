@@ -1,16 +1,18 @@
-# 📅 Day 5 - Mini Project
+# 📅 Day 5 - Mini Project Week
 
-Congratulations! You've reached the capstone day of Week 1. It's time to integrate everything you've learned into a comprehensive project that demonstrates your Python mastery.
+🎉 Congratulations! You've reached the capstone of Week 1. Time to showcase your Python mastery with complete, production-ready applications that integrate everything you've learned!
 
 ## 🎯 Learning Objectives
 
-By the end of this day, you will be able to:
-- ✅ Integrate all Week 1 concepts into a cohesive project
-- ✅ Plan and structure a multi-component program
-- ✅ Apply problem-solving strategies to complex challenges
-- ✅ Write clean, organized, and documented code
-- ✅ Debug and test your own programs effectively
-- ✅ Present and explain your code solutions
+By the end of this day, you will confidently:
+- 🔗 Integrate all Week 1 concepts (variables, loops, dictionaries, functions) into cohesive applications
+- 🏗️ Plan, structure, and architect multi-component programs
+- 🧩 Apply systematic problem-solving strategies to complex challenges
+- ✨ Write clean, organized, professional-grade documented code
+- 🐛 Debug and test your own programs with systematic approaches
+- 🎤 Present and articulate your code solutions clearly
+- 🎮 Build interactive games with user-friendly interfaces
+- 📈 Implement advanced algorithms and data processing pipelines
 
 ## 📚 Week 1 Integration
 
@@ -48,97 +50,182 @@ Day5MiniProject/
         └── 📄 challenges.py            # Core challenge scripts
 ```
 
-## 🚀 Projects Overview
+## 🚀 Projects Portfolio Overview
 
-### 🎮 Main Project: Tic Tac Toe Game
-**The flagship project that demonstrates comprehensive Python skills:**
+### 🎮 **Flagship Project: Tic-Tac-Toe Game**
+**Complete 3x3 grid strategy game demonstrating Week 1 mastery:**
 
 ```bash
 cd Exercises/TicTacToe
 python tictactoe.py
 ```
 
-**What it includes:**
-- 🎯 Game logic implementation
-- 📋 Board state management using lists
-- 👥 Player turn management with dictionaries
-- ⚙️ Modular functions for game operations
-- 🔄 Input validation and error handling
-- 🏆 Win condition detection algorithms
+**🎯 Features & Implementation:**
+- � **Game Board**: 3x3 grid using nested lists `[[" ", " ", " "], [...], [...]]`
+- 🎨 **Visual Display**: Formatted board with row/column headers and separators
+- � **Two-Player System**: Alternating turns between Player X and Player O
+- ✅ **Input Validation**: 
+  - Parse "row col" format (e.g., "2 3")
+  - Validate coordinates are in range (1-3)
+  - Check cell is empty before placing mark
+  - Friendly error messages with retry prompts
+- 🏆 **Win Detection**: Check rows, columns, and diagonals after each move
+- 🤝 **Draw Detection**: Recognize when board is full with no winner
+- ⚙️ **Modular Functions**:
+  - `new_board()`: Create fresh game board
+  - `display_board(b)`: Render board to console
+  - `parse_move(input)`: Convert input to coordinates
+  - `validate_move(board, input)`: Check move validity
+  - `player_input(b, player)`: Handle player input with validation
+  - `check_win(b)`: Detect winning conditions
+  - `play()`: Main game loop orchestration
 
-### 🧠 Practice Exercise Launchpad
-Run these supporting exercises to reinforce your skills before tackling the daily challenges:
-
-```bash
-cd Exercises/Challenges1
-python challengessolutions.py
-```
-
-```bash
-cd Exercises/Challenges2
-python main.py
-```
+### 🎪 **Hangman Word Guessing Game**
+**Interactive word game with ASCII art visualization:**
 
 ```bash
 cd Exercises/Hangman
 python main.py
 ```
 
-These exercises provide quick wins and targeted practice before diving into the daily challenges.
+**🎯 Features:**
+- 📚 Word selection from categorized word lists
+- 🎨 ASCII art hangman visualization
+- ✏️ Letter tracking (guessed letters, remaining attempts)
+- 🔤 Input validation for single letter guesses
+- 🏆 Win/lose condition detection
+- 📊 Score tracking system
+- 🎮 Replay functionality
 
-### 💪 Daily Challenges
-**Additional practice problems for skill reinforcement:**
+**🗂️ Modular Structure:**
+- `game.py`: Core game logic and state management
+- `words.py`: Word lists and category management
+- `art.py`: ASCII art display functions
+- `main.py`: Game orchestration and user interface
 
+### 💡 **Challenge Sets - Algorithm Practice**
+
+#### **🥉 Challenges Set 1: Foundational Algorithms**
+```bash
+cd Exercises/Challenges1
+python challengessolutions.py
+```
+**Focus**: Core algorithm patterns and problem-solving strategies
+- String manipulation techniques
+- List processing patterns
+- Basic algorithm implementation
+- Solution analysis and optimization
+
+#### **🥈 Challenges Set 2: Advanced Patterns**
+```bash
+cd Exercises/Challenges2
+python main.py
+```
+**📂 Structured Implementation:**
+- `main.py`: Challenge orchestration
+- `src/patterns.py`: Pattern recognition algorithms
+- `src/ex2analysis.py`: Data analysis functions
+
+**Topics**: 
+- Complex data transformations
+- Pattern matching algorithms
+- Statistical analysis
+- Multi-step problem solving
+
+### 💪 **Daily Challenges - Skill Integration**
+
+#### **🧩 Core Challenges Collection**
 ```bash
 cd DailyChallenge/Challenges
 python challenges.py
 ```
+**Categories:**
+- 🔤 String manipulation puzzles
+- 📊 Data processing and transformation tasks  
+- 🧮 Mathematical problem solving
+- 🎯 Logic puzzles and algorithm challenges
 
+#### **🚀 Advanced Algorithm Challenge**
 ```bash
 cd DailyChallenge/AdvancedAlgorithm
 python main.py
 ```
 
-**Challenge categories:**
-- 🔤 String manipulation puzzles
-- 📊 Data processing tasks  
-- 🧮 Mathematical problem solving
-- 🎯 Logic and algorithm challenges
+**📂 Advanced Structure:**
+- `main.py`: Entry point and orchestration
+- `src/pairs.py`: Pair analysis algorithms
+- `src/demodata.py`: Test data generation
 
-## 📊 Assessment & Portfolio
+**Advanced Topics:**
+- Pair analysis and matching algorithms
+- Complex data structure manipulation
+- Performance optimization techniques
+- Edge case handling strategies
 
-### 🎮 Tic Tac Toe Evaluation
-Your main project will be assessed on:
+## 📊 Comprehensive Assessment & Portfolio
 
-#### 🏗️ Code Structure (25%)
-- [ ] Functions are well-defined and single-purpose
-- [ ] Code is organized logically
-- [ ] Appropriate data structures are used
-- [ ] No unnecessary code repetition
+### 🎮 **Tic-Tac-Toe Project Evaluation**
 
-#### ⚙️ Functionality (25%)
-- [ ] Game runs without errors
-- [ ] All game rules are implemented correctly
-- [ ] Input validation works properly
-- [ ] Win/draw conditions are detected accurately
+Your flagship project demonstrates Python mastery across four key dimensions:
 
-#### 🎨 User Experience (25%)
-- [ ] Clear instructions and prompts
-- [ ] Intuitive game interface
-- [ ] Appropriate error messages
-- [ ] Game flow feels natural
+#### 🏗️ **Code Structure & Organization** (25%)
+- [ ] ✅ Functions are well-defined with single, clear purposes
+- [ ] 📦 Code is organized into logical modules/sections
+- [ ] 🎯 Appropriate data structures chosen (lists for board, etc.)
+- [ ] ♻️ DRY principle applied - no unnecessary repetition
+- [ ] 🔧 Helper functions properly abstract complexity
+- [ ] 📊 Clear separation of concerns (display, logic, validation)
 
-#### 📖 Documentation (25%)
-- [ ] Code includes helpful comments
-- [ ] Functions have clear docstrings
-- [ ] README explains how to run the game
-- [ ] Code is readable and well-formatted
+#### ⚙️ **Functionality & Correctness** (25%)
+- [ ] 🚀 Game runs without crashes or errors
+- [ ] ✅ All game rules implemented correctly
+- [ ] 🎯 Input validation catches all invalid moves
+- [ ] 🏆 Win conditions detect all 8 possible winning patterns
+- [ ] 🤝 Draw conditions recognized when board fills
+- [ ] 🔄 Game loop handles turn alternation properly
+- [ ] 📍 Coordinate system works accurately (1-3 range)
 
-### 💪 Challenge Completion
-- [ ] Attempt multiple daily challenges
-- [ ] Apply different Week 1 concepts
-- [ ] Create clean, efficient solutions
-- [ ] Explain your problem-solving approach
+#### 🎨 **User Experience Design** (25%)
+- [ ] 📖 Clear, welcoming instructions at game start
+- [ ] 🎨 Board display is clean and easy to read
+- [ ] 💬 Prompts are intuitive with examples
+- [ ] ⚠️ Error messages are helpful and specific
+- [ ] 🎯 Game flow feels natural and engaging
+- [ ] 😊 Friendly messages with emojis enhance experience
+- [ ] 🔄 Retry logic gracefully handles errors
+
+#### 📖 **Documentation & Code Quality** (25%)
+- [ ] 💬 Code includes helpful inline comments
+- [ ] 📝 Functions have clear, informative docstrings
+- [ ] 📄 README explains project and how to run
+- [ ] 🎨 Code follows PEP 8 style guidelines
+- [ ] 📏 Consistent naming conventions throughout
+- [ ] 🔍 Variable names are descriptive and clear
+- [ ] ✨ Code is readable and maintainable
+
+### 🎪 **Hangman Project Evaluation**
+- [ ] 🎮 Complete game loop with win/lose detection
+- [ ] 🎨 ASCII art displays correctly
+- [ ] 📚 Word selection system functional
+- [ ] ✏️ Letter tracking accurate
+- [ ] 🔧 Modular structure with separate files
+- [ ] 📊 Score tracking and replay functionality
+
+### � **Challenge Sets Completion**
+- [ ] 🥉 Complete Challenges Set 1 exercises
+- [ ] 🥈 Complete Challenges Set 2 advanced problems
+- [ ] 💪 Attempt daily challenge problems
+- [ ] 🚀 Solve advanced algorithm challenges
+- [ ] 📝 Document problem-solving approaches
+- [ ] 🧠 Explain algorithmic thinking process
+
+### 🏆 **Overall Week 1 Mastery**
+- [ ] ✅ All Day 1-4 exercises completed
+- [ ] 🎮 Tic-Tac-Toe fully functional
+- [ ] 🎪 Hangman or alternative project completed
+- [ ] 💡 Multiple challenges solved
+- [ ] 🧠 Can explain code decisions and trade-offs
+- [ ] 📚 Ready to advance to Week 2 (OOP)
 
 ## 🔧 Development Process
 

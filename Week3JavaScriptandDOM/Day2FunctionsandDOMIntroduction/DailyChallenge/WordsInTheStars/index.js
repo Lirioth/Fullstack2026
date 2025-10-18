@@ -25,14 +25,14 @@
 function wordsInTheStars(input) {
   // 🧹 Normalize to an array of non-empty, trimmed strings
   const words = Array.isArray(input)
-    ? input.map(w => String(w).trim()).filter(Boolean)
+    ? input.map((w) => String(w).trim()).filter(Boolean)
     : String(input)
-        .split(',')
-        .map(w => w.trim())
+        .split(",")
+        .map((w) => w.trim())
         .filter(Boolean);
 
   if (words.length === 0) {
-    return ''; // nothing to print
+    return ""; // nothing to print
   }
 
   // 📏 Longest word length → defines the frame width
@@ -41,42 +41,42 @@ function wordsInTheStars(input) {
     if (words[i].length > maxLen) maxLen = words[i].length;
   }
 
-  const border = '*'.repeat(maxLen + 4); // 2 spaces + 2 stars
+  const border = "*".repeat(maxLen + 4); // 2 spaces + 2 stars
   const lines = [];
   lines.push(border);
   for (let i = 0; i < words.length; i++) {
     const w = words[i];
     // 🧱 Pad each word to align columns inside the frame
-    const padded = w + ' '.repeat(maxLen - w.length);
+    const padded = w + " ".repeat(maxLen - w.length);
     lines.push(`* ${padded} *`);
   }
   lines.push(border);
-  return lines.join('\n');
+  return lines.join("\n");
 }
 
 // 🧪 Small demo helpers
 function demo(input) {
   const out = wordsInTheStars(input);
   if (!out) {
-    console.log('⚠️ No words were provided.');
+    console.log("⚠️ No words were provided.");
   } else {
     console.log(out);
   }
 }
 
 // 🖥️ CLI / runtime entry (Node.js or browser console)
-if (typeof module !== 'undefined' && require.main === module) {
+if (typeof module !== "undefined" && require.main === module) {
   // Node.js entry
   const args = process.argv.slice(2);
   if (args.length > 0) {
     // Allow passing the comma-separated words as a single arg or multiple args
-    const joined = args.join(' ');
+    const joined = args.join(" ");
     demo(joined);
   } else {
     // Interactive prompt in Node
-    const readline = require('readline');
+    const readline = require("readline");
     const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
-    rl.question('📝 Enter words separated by commas: ', (answer) => {
+    rl.question("📝 Enter words separated by commas: ", (answer) => {
       demo(answer);
       rl.close();
     });

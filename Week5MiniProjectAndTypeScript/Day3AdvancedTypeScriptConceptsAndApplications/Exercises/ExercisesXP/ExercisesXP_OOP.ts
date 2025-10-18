@@ -133,6 +133,11 @@ if (typeof require !== "undefined" && typeof module !== "undefined" && require.m
   console.log("Calc subtract:", Calculator.subtract(10, 5));
 
   // Ex5
-  const pu: PremiumUser = { id: 101, name: "Kevin Cusnir", email: "kevin@example.com", membershipLevel: "gold" };
+  const pu: PremiumUser = {
+    id: 101,
+    name: "Kevin Cusnir",
+    email: "kevin@example.com",
+    membershipLevel: "gold",
+  };
   printUserDetails(pu);
 }

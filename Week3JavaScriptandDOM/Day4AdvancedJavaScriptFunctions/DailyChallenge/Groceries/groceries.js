@@ -38,23 +38,45 @@ const cloneGroceries = () => {
 
   // Reference the groceries object (no real clone here)
   const shopping = groceries; // Both variables reference the same object
-  console.log("\nBefore changes -> groceries.totalPrice:", groceries.totalPrice, "| groceries.other.paid:", groceries.other.paid);
+  console.log(
+    "\nBefore changes -> groceries.totalPrice:",
+    groceries.totalPrice,
+    "| groceries.other.paid:",
+    groceries.other.paid
+  );
 
   // Change nested fields through 'shopping'
   shopping.totalPrice = "35$";
   shopping.other.paid = false;
 
   // Changes are visible via 'groceries' because 'shopping' is the SAME reference
-  console.log("After changes  -> groceries.totalPrice:", groceries.totalPrice, "| groceries.other.paid:", groceries.other.paid);
+  console.log(
+    "After changes  -> groceries.totalPrice:",
+    groceries.totalPrice,
+    "| groceries.other.paid:",
+    groceries.other.paid
+  );
   console.log("// Explanation: objects/arrays are assigned by REFERENCE, so mutations are shared.");
 
   // (Optional) Show how to make an independent deep copy
   const safeCopy = structuredClone(groceries); // modern deep clone
   safeCopy.totalPrice = "999$";
   safeCopy.other.paid = true;
-  console.log("\nDeep copy test -> safeCopy.totalPrice:", safeCopy.totalPrice, "| groceries.totalPrice:", groceries.totalPrice);
-  console.log("Deep copy paid  -> safeCopy.other.paid:", safeCopy.other.paid, "| groceries.other.paid:", groceries.other.paid);
-  console.log("// Using structuredClone (or JSON.parse(JSON.stringify(...))) creates a SEPARATE object.");
+  console.log(
+    "\nDeep copy test -> safeCopy.totalPrice:",
+    safeCopy.totalPrice,
+    "| groceries.totalPrice:",
+    groceries.totalPrice
+  );
+  console.log(
+    "Deep copy paid  -> safeCopy.other.paid:",
+    safeCopy.other.paid,
+    "| groceries.other.paid:",
+    groceries.other.paid
+  );
+  console.log(
+    "// Using structuredClone (or JSON.parse(JSON.stringify(...))) creates a SEPARATE object."
+  );
 };
 
 // Wire buttons (so you can trigger from the page too)

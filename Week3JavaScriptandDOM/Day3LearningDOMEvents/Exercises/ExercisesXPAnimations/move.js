@@ -26,7 +26,7 @@ function myMove() {
       moveId = null;
       return;
     }
-    pos += 1;                  // move 1px
+    pos += 1; // move 1px
     box.style.left = pos + "px";
   }, 1); // move every millisecond
 }

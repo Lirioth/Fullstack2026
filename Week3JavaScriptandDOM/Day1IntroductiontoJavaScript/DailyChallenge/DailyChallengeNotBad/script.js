@@ -1,5 +1,8 @@
 function checkSentence() {
-  var sentence = prompt("Enter a sentence with 'not' and 'bad':", "The movie is not that bad, I like it");
+  var sentence = prompt(
+    "Enter a sentence with 'not' and 'bad':",
+    "The movie is not that bad, I like it"
+  );
   var result = "";
 
   if (sentence === null || sentence === "") {

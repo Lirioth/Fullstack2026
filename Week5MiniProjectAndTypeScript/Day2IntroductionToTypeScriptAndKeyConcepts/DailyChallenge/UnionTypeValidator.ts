@@ -14,33 +14,33 @@
 export function validateUnionType(value: any, allowedTypes: string[]): boolean {
   for (const t of allowedTypes) {
     switch (t) {
-      case 'string':
-      case 'boolean':
-      case 'undefined':
-      case 'symbol':
-      case 'bigint':
-      case 'function':
+      case "string":
+      case "boolean":
+      case "undefined":
+      case "symbol":
+      case "bigint":
+      case "function":
         if (typeof value === t) return true;
         break;
-      case 'number':
+      case "number":
         // Treat NaN as number per typeof, but often excluded in validation; here we accept it.
-        if (typeof value === 'number') return true;
+        if (typeof value === "number") return true;
         break;
-      case 'object':
+      case "object":
         // typeof null === 'object', but many validators exclude null; here we keep classic object (non-null, non-array).
-        if (value !== null && typeof value === 'object' && !Array.isArray(value)) return true;
+        if (value !== null && typeof value === "object" && !Array.isArray(value)) return true;
         break;
-      case 'array':
+      case "array":
         if (Array.isArray(value)) return true;
         break;
-      case 'null':
+      case "null":
         if (value === null) return true;
         break;
-      case 'date':
+      case "date":
         if (value instanceof Date) return true;
         break;
-      case 'integer':
-        if (typeof value === 'number' && Number.isInteger(value)) return true;
+      case "integer":
+        if (typeof value === "number" && Number.isInteger(value)) return true;
         break;
       default:
         // Fallback: allow matching arbitrary typeof labels if provided
@@ -64,7 +64,7 @@ if (typeof require !== "undefined" && typeof module !== "undefined" && require.m
     true,
     undefined,
     null,
-    Symbol('s'),
+    Symbol("s"),
     10n,
     () => {},
     {},
@@ -74,14 +74,14 @@ if (typeof require !== "undefined" && typeof module !== "undefined" && require.m
   ];
 
   const testSets: Array<{ allowed: string[]; label: string }> = [
-    { allowed: ['string', 'number'], label: "string|number" },
-    { allowed: ['boolean'], label: "boolean" },
-    { allowed: ['object'], label: "object (non-null, non-array)" },
-    { allowed: ['array'], label: "array" },
-    { allowed: ['null'], label: "null" },
-    { allowed: ['date'], label: "date" },
-    { allowed: ['integer'], label: "integer" },
-    { allowed: ['function'], label: "function" },
+    { allowed: ["string", "number"], label: "string|number" },
+    { allowed: ["boolean"], label: "boolean" },
+    { allowed: ["object"], label: "object (non-null, non-array)" },
+    { allowed: ["array"], label: "array" },
+    { allowed: ["null"], label: "null" },
+    { allowed: ["date"], label: "date" },
+    { allowed: ["integer"], label: "integer" },
+    { allowed: ["function"], label: "function" },
   ];
 
   for (const { allowed, label } of testSets) {
