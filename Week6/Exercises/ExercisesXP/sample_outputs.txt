@@ -1,0 +1,38 @@
+EXPECTED RESULTS (summarized)
+
+1) All items (3 rows)
+ id |    name     | price
+----+-------------+-------
+  1 | Small Desk  |   100
+  2 | Large Desk  |   300
+  3 | Fan         |    80
+
+2) Items with price > 80 (2 rows)
+ name       | price
+------------+------
+ Small Desk |  100
+ Large Desk |  300
+
+3) Items with price <= 300 (3 rows)
+ name       | price
+------------+------
+ Fan        |   80
+ Small Desk |  100
+ Large Desk |  300
+
+4) Customers last_name = 'Smith' (0 rows)
+ (no rows)
+
+5) Customers last_name = 'Jones' (2 rows)
+ first_name | last_name
+------------+----------
+ Greg       | Jones
+ Sandra     | Jones
+
+6) Customers first_name <> 'Scott' (4 rows)
+ first_name | last_name
+------------+-----------
+ Melanie    | Johnson
+ Trevor     | Green
+ Greg       | Jones
+ Sandra     | Jones
