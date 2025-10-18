@@ -4,7 +4,51 @@ A small, single-file collection that practices **sets, tuples, lists, loops, and
 
 ---
 
-## ✅ What’s inside (quick tour)
+## 🗺️ Exercise Learning Map
+
+Follow this progression to master Python collections:
+
+```
+📚 FOUNDATION (Exercises 1-4)
+│
+├─ 💖 Exercise 1: Sets → Unique collections & operations
+│   └─ Learn: .add(), .discard(), .union()
+│
+├─ 📦 Exercise 2: Tuples → Immutable sequences
+│   └─ Learn: Concatenation, immutability
+│
+├─ 📝 Exercise 3: Lists → Dynamic arrays
+│   └─ Learn: .remove(), .append(), .insert(), .count(), .clear()
+│
+└─ 🔢 Exercise 4: Floats → Numeric sequences
+    └─ Learn: .is_integer(), type checking
+
+🔄 ITERATION (Exercises 5-6)
+│
+├─ Exercise 5: For Loops → Counted iteration
+│   └─ Learn: range(), enumerate()
+│
+└─ Exercise 6: While Loops → Conditional iteration
+    └─ Learn: Input validation, loop control
+
+💼 APPLICATIONS (Exercises 7-10)
+│
+├─ 🍎 Exercise 7: Fruits → Membership testing
+│   └─ Learn: .split(), 'in' operator
+│
+├─ 🍕 Exercise 8: Pizza → Price calculation
+│   └─ Learn: Accumulator pattern, user loops
+│
+├─ 🎬 Exercise 9: Cinema → Age-based logic
+│   └─ Learn: Conditional pricing, data collection
+│
+└─ 🥪 Exercise 10: Sandwiches → Order processing
+    └─ Learn: List manipulation, FIFO processing
+```
+
+---
+
+## ✅ What's inside (quick tour)
 
 ### 1) 💖 Favorite Numbers — *sets*
 - Start with a set, add items, remove the temporary one with `.discard(...)`.

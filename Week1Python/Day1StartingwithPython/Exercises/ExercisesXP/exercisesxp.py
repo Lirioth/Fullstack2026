@@ -71,13 +71,37 @@ def exercise_6() -> None:
         print("Hello World")
 
 
-def read_int(prompt: str) -> int:
-    """Prompt the user until a valid integer is provided."""
+def read_int(prompt: str, min_val: int | None = None, max_val: int | None = None) -> int:
+    """
+    Prompt the user until a valid integer is provided.
+    
+    Args:
+        prompt: Message to display to user
+        min_val: Minimum acceptable value (inclusive), optional
+        max_val: Maximum acceptable value (inclusive), optional
+        
+    Returns:
+        Valid integer within specified range (if provided)
+        
+    Example:
+        >>> age = read_int("Enter age: ", min_val=0, max_val=120)
+        >>> number = read_int("Enter any number: ")
+    """
     while True:
         try:
-            return int(input(prompt))
+            value = int(input(prompt))
+            
+            # Validate range if specified
+            if min_val is not None and value < min_val:
+                print(f"❌ Value must be at least {min_val}")
+                continue
+            if max_val is not None and value > max_val:
+                print(f"❌ Value must be at most {max_val}")
+                continue
+                
+            return value
         except ValueError:
-            print("Please enter a valid integer 🤖")
+            print("❌ Please enter a valid integer")
 
 
 def exercise_7() -> None:
@@ -100,7 +124,7 @@ def exercise_8() -> None:
 
 def exercise_9() -> None:
     """Check whether the user is tall enough to ride (>= 145cm)."""
-    height = read_int("Enter your height in cm: ")
+    height = read_int("Enter your height in cm: ", min_val=0, max_val=300)
     # ✅ Uses >= to include exactly 145cm as tall enough
     if height >= HEIGHT_REQUIREMENT_CM:
         print(f"✅ You are tall enough to ride! ({height}cm)")

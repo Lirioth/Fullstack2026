@@ -29,6 +29,196 @@ By the end of this day, you will confidently:
 - Understanding when and how to use different parameter types
 - Writing self-documenting code with proper function design
 
+---
+
+## 🎯 Function Design Best Practices
+
+### ✅ DO: Good Function Practices
+
+1. **Single Responsibility Principle**
+   ```python
+   # ✅ Good: Each function does ONE thing
+   def calculate_total(prices):
+       return sum(prices)
+   
+   def apply_discount(total, discount_percent):
+       return total * (1 - discount_percent / 100)
+   
+   def format_price(amount):
+       return f"${amount:.2f}"
+   ```
+
+2. **Clear, Descriptive Names**
+   ```python
+   # ✅ Good: Name tells you what it does
+   def calculate_average_score(scores):
+       return sum(scores) / len(scores)
+   
+   # ❌ Bad: Unclear purpose
+   def do_stuff(x):
+       return sum(x) / len(x)
+   ```
+
+3. **Use Type Hints**
+   ```python
+   # ✅ Good: Types are clear
+   def greet_user(name: str, age: int) -> str:
+       return f"Hello {name}, you are {age} years old"
+   
+   # ❌ Bad: Types are unclear
+   def greet_user(name, age):
+       return f"Hello {name}, you are {age} years old"
+   ```
+
+4. **Add Docstrings**
+   ```python
+   # ✅ Good: Documented
+   def calculate_bmi(weight_kg: float, height_m: float) -> float:
+       """
+       Calculate Body Mass Index.
+       
+       Args:
+           weight_kg: Weight in kilograms
+           height_m: Height in meters
+           
+       Returns:
+           BMI value as float
+           
+       Example:
+           >>> calculate_bmi(70, 1.75)
+           22.86
+       """
+       return weight_kg / (height_m ** 2)
+   ```
+
+5. **Return Values Instead of Printing**
+   ```python
+   # ✅ Good: Returns value (flexible)
+   def double_number(n: int) -> int:
+       return n * 2
+   
+   result = double_number(5)
+   print(f"Result: {result}")  # Can format as needed
+   
+   # ❌ Bad: Prints inside (inflexible)
+   def double_number(n: int) -> None:
+       print(n * 2)  # Can't use the value elsewhere
+   ```
+
+### ❌ DON'T: Common Pitfalls
+
+1. **Too Many Parameters** (> 4 is too many)
+   ```python
+   # ❌ Bad: Too many parameters
+   def create_user(name, age, email, phone, address, city, zip):
+       pass
+   
+   # ✅ Good: Use a dictionary or class
+   def create_user(user_data: dict):
+       pass
+   
+   create_user({
+       "name": "Alice",
+       "age": 25,
+       "email": "alice@example.com"
+   })
+   ```
+
+2. **Modifying Global Variables**
+   ```python
+   # ❌ Bad: Side effects
+   counter = 0
+   def increment():
+       global counter
+       counter += 1
+   
+   # ✅ Good: Pass and return
+   def increment(counter: int) -> int:
+       return counter + 1
+   
+   counter = increment(counter)
+   ```
+
+3. **Doing Too Much**
+   ```python
+   # ❌ Bad: Does everything
+   def process_order(items, customer):
+       total = sum(item['price'] for item in items)
+       discount = total * 0.1 if customer['vip'] else 0
+       final = total - discount
+       tax = final * 0.08
+       grand_total = final + tax
+       send_email(customer['email'], grand_total)
+       update_inventory(items)
+       return grand_total
+   
+   # ✅ Good: Break into smaller functions
+   def calculate_subtotal(items):
+       return sum(item['price'] for item in items)
+   
+   def apply_discount(total, is_vip):
+       return total * 0.1 if is_vip else 0
+   
+   def calculate_tax(amount):
+       return amount * 0.08
+   ```
+
+---
+
+## 🌐 Variable Scope Visualization
+
+Understanding scope prevents bugs and makes code predictable:
+
+```
+🌍 GLOBAL SCOPE (Entire program)
+│
+├─ global_var = 100  ✅ Accessible everywhere
+│
+├─ def outer_function():
+│   │
+│   ├─ 🏠 LOCAL SCOPE (outer_function)
+│   │   │
+│   │   ├─ outer_var = 200  ✅ Accessible in outer_function
+│   │   └─ global_var  ✅ Can READ global variables
+│   │
+│   └─ def inner_function():
+│       │
+│       └─ 🛋️ LOCAL SCOPE (inner_function)
+│           │
+│           ├─ inner_var = 300  ✅ Only in inner_function
+│           ├─ outer_var  ✅ Can READ from outer
+│           └─ global_var  ✅ Can READ global
+```
+
+### Scope Rules:
+```python
+# Global variable
+counter = 0
+
+def function_a():
+    # ✅ Can READ global variable
+    print(counter)  # Works: prints 0
+    
+    # ❌ Cannot MODIFY without 'global' keyword
+    # counter = 1  # Creates NEW local variable!
+    
+    # ✅ To modify global, use 'global' keyword
+    global counter
+    counter = 1  # Now modifies the global counter
+
+def function_b():
+    # Local variable (doesn't affect global)
+    counter = 999
+    print(counter)  # Prints: 999
+
+function_a()
+print(counter)  # Prints: 1 (modified by function_a)
+function_b()
+print(counter)  # Still prints: 1 (function_b didn't change global)
+```
+
+**💡 Best Practice:** Avoid using `global`. Instead, pass values as parameters and return results!
+
 ## 📁 Directory Structure
 
 ```

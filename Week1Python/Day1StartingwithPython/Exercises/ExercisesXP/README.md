@@ -1,7 +1,23 @@
 # 🏋️ Exercises XP
 A small collection of Python exercises.
 
-## 📋 What this script covers
+## � Quick Reference Table
+
+| Exercise | Concept | Difficulty | Output Type | Key Learning |
+|----------|---------|------------|-------------|--------------|
+| 1 | Strings & newlines | 🟢 Easy | Text | `print()` and `\n` |
+| 2 | Operators | 🟢 Easy | Number | Exponentiation `**` |
+| 3 | Comparisons | 🟡 Medium | Booleans | Type comparisons |
+| 4 | Variables | 🟢 Easy | Text | String concatenation |
+| 5 | Type casting | 🟡 Medium | Text | `str()` conversion |
+| 6 | Conditionals | 🟢 Easy | Text | `if` statements |
+| 7 | Input + modulo | 🟡 Medium | Interactive | User input, `%` operator |
+| 8 | String methods | 🟡 Medium | Interactive | `.lower()`, `.strip()` |
+| 9 | Validation | 🟡 Medium | Interactive | Input validation |
+
+---
+
+## �📋 What this script covers
 
 1) **👋 Hello World (strings + newlines)**  
    Prints "Hello world" four times, using `\n` for new lines.
@@ -167,6 +183,48 @@ You need to grow some more to ride.
 
 ---
 
+---
+
+## 🐛 Troubleshooting
+
+### Common Issues & Solutions
+
+**❌ Problem:** `TypeError: '>' not supported between instances of 'str' and 'int'`  
+**✅ Solution:** Use `int(input("..."))` to convert user input to integer
+```python
+# Wrong:
+age = input("Enter age: ")  # This is a string!
+if age > 18:  # Error!
+
+# Correct:
+age = int(input("Enter age: "))  # Convert to integer
+if age > 18:  # Works!
+```
+
+**❌ Problem:** `ValueError: invalid literal for int() with base 10: 'abc'`  
+**✅ Solution:** User entered non-numeric text. Add validation:
+```python
+try:
+    number = int(input("Enter a number: "))
+except ValueError:
+    print("❌ Please enter a valid number")
+```
+
+**❌ Problem:** Height of 145cm not accepted  
+**✅ Solution:** Code uses `>=` for inclusive comparison (145 is tall enough)
+
+**❌ Problem:** Exercise 3 crashes on `"3" > 3`  
+**✅ Solution:** The code includes `try/except` to catch this TypeError safely
+
+**❌ Problem:** Name comparison doesn't work  
+**✅ Solution:** Use `.lower()` and `.strip()` for case-insensitive comparison:
+```python
+if user_input.strip().lower() == my_name.lower():
+    print("Same name!")
+```
+
+---
+
 ## 🎨 Customization tips (optional)
 
 - Change `computer_brand`, `name`, `age`, `shoe_size` to your values.  
@@ -175,7 +233,17 @@ You need to grow some more to ride.
   ```python
   print(f"Nice to meet you, {user_name}!")
   ```
-- Exercise 9: handle non-integer input with a `try/except ValueError` around `int(...)`.
+- Exercise 9: Already handles non-integer input with `try/except ValueError` around `int(...)`.
+
+---
+
+## 💡 Learning Tips
+
+1. **Run each exercise separately** to understand what it does
+2. **Try breaking the code** to see error messages
+3. **Experiment with different inputs** to test edge cases
+4. **Add your own print statements** to debug
+5. **Read error messages carefully** - they tell you what's wrong!
 
 ---
 

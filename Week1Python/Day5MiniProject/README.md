@@ -166,6 +166,136 @@ python main.py
 - Performance optimization techniques
 - Edge case handling strategies
 
+---
+
+## 📊 Project Assessment Rubric
+
+Use this rubric to evaluate your project quality and identify areas for improvement:
+
+### 🎮 Tic-Tac-Toe Evaluation (100 Points Total)
+
+| Criterion | Points | Requirements | Self-Check |
+|-----------|--------|--------------|------------|
+| **🎯 Functionality** | 40 | ✅ Game plays correctly start to finish<br>✅ Win detection works (rows, cols, diagonals)<br>✅ Tie detection works<br>✅ Turn alternation is correct | ⬜ |
+| **🛡️ Input Validation** | 20 | ✅ Handles out-of-bounds input (0, 4, 99)<br>✅ Prevents overwriting occupied cells<br>✅ Accepts valid formats (1 1, 2 3, etc)<br>✅ Clear error messages displayed | ⬜ |
+| **🏗️ Code Quality** | 20 | ✅ Functions are modular and well-named<br>✅ Code has helpful comments<br>✅ No redundant/duplicate code<br>✅ Variables have clear names | ⬜ |
+| **👤 User Experience** | 10 | ✅ Clear instructions for players<br>✅ Board displays cleanly after each move<br>✅ Friendly error messages<br>✅ Winner announcement is clear | ⬜ |
+| **🐛 Error Handling** | 10 | ✅ No crashes on invalid input<br>✅ Handles string input gracefully<br>✅ Edge cases covered (full board, first move) | ⬜ |
+
+### 📈 Scoring Guide:
+
+- **90-100 Points**: 🏆 **Excellent** - Production ready! Could ship to users
+- **80-89 Points**: ⭐ **Great** - Solid work, minor improvements possible
+- **70-79 Points**: 👍 **Good** - Core functionality works, needs refinement
+- **60-69 Points**: 🔧 **Acceptable** - Basic features work, significant improvements needed
+- **< 60 Points**: 📚 **Needs Work** - Review Week 1 fundamentals
+
+---
+
+## 🧪 Testing Your Projects
+
+Systematic testing ensures your code works in all scenarios:
+
+### **Test Plan for Tic-Tac-Toe**
+
+#### ✅ **Test 1: Basic Win - Row**
+```
+Moves: X(1,1), O(2,1), X(1,2), O(2,2), X(1,3)
+Expected: "Player X wins!" (top row complete)
+Status: ⬜ Pass / ⬜ Fail
+```
+
+#### ✅ **Test 2: Basic Win - Column**
+```
+Moves: X(1,1), O(1,2), X(2,1), O(2,2), X(3,1)
+Expected: "Player X wins!" (left column complete)
+Status: ⬜ Pass / ⬜ Fail
+```
+
+#### ✅ **Test 3: Basic Win - Diagonal**
+```
+Moves: X(1,1), O(1,2), X(2,2), O(1,3), X(3,3)
+Expected: "Player X wins!" (diagonal complete)
+Status: ⬜ Pass / ⬜ Fail
+```
+
+#### ✅ **Test 4: Tie Game**
+```
+Fill entire board with no winner
+Expected: "It's a tie!"
+Status: ⬜ Pass / ⬜ Fail
+```
+
+#### ⚠️ **Test 5: Invalid Input - Out of Bounds**
+```
+Input: "5 5"
+Expected: Error message + prompt again
+Status: ⬜ Pass / ⬜ Fail
+```
+
+#### ⚠️ **Test 6: Invalid Input - Non-numeric**
+```
+Input: "abc def"
+Expected: Error message + prompt again
+Status: ⬜ Pass / ⬜ Fail
+```
+
+#### ⚠️ **Test 7: Invalid Input - Occupied Cell**
+```
+X marks (2,2), then O tries (2,2)
+Expected: "Cell occupied" + prompt again
+Status: ⬜ Pass / ⬜ Fail
+```
+
+#### ⚠️ **Test 8: Invalid Input - Wrong Format**
+```
+Input: "1" (only one number)
+Expected: Error message + prompt again
+Status: ⬜ Pass / ⬜ Fail
+```
+
+### **Testing Checklist:**
+
+- [ ] All win conditions tested (3 rows, 3 cols, 2 diagonals)
+- [ ] Tie game works correctly
+- [ ] All invalid inputs handled gracefully
+- [ ] No crashes during entire game
+- [ ] Board displays correctly after each move
+- [ ] Turn alternation works properly
+- [ ] Game ends at appropriate time
+
+---
+
+## 🎯 Code Review Checklist
+
+Before considering your project complete, review:
+
+### **Architecture**
+- [ ] Functions have single, clear responsibilities
+- [ ] No duplicate code (DRY principle)
+- [ ] Related logic is grouped together
+- [ ] Constants are defined (not magic numbers)
+
+### **Readability**
+- [ ] Variable names are descriptive (`player_move` not `pm`)
+- [ ] Functions are documented with docstrings
+- [ ] Complex logic has explanatory comments
+- [ ] Code follows consistent formatting
+
+### **Functionality**
+- [ ] All features work as specified
+- [ ] Edge cases are handled
+- [ ] No known bugs remain
+- [ ] Input validation is thorough
+
+### **User Experience**
+- [ ] Instructions are clear and helpful
+- [ ] Error messages guide the user
+- [ ] Output is well-formatted
+- [ ] Game flow feels natural
+
+---
+
 ## 📊 Comprehensive Assessment & Portfolio
 
 ### 🎮 **Tic-Tac-Toe Project Evaluation**

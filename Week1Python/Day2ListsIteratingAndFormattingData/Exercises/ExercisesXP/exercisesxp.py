@@ -26,6 +26,53 @@ RESTRICTED_MOVIE_MIN_AGE = 16
 RESTRICTED_MOVIE_MAX_AGE = 21
 
 
+def get_valid_age(prompt: str) -> int:
+    """
+    Get a valid age from user with validation.
+    
+    Args:
+        prompt: Message to display to user
+        
+    Returns:
+        Valid age between 0 and 120
+        
+    Example:
+        >>> age = get_valid_age("Enter age: ")
+    """
+    while True:
+        try:
+            age = int(input(prompt))
+            if 0 <= age <= 120:
+                return age
+            print("⚠️ Age must be between 0 and 120")
+        except ValueError:
+            print("❌ Please enter a valid number")
+
+
+def calculate_ticket_price(age: int) -> int:
+    """
+    Calculate cinema ticket price based on age.
+    
+    Args:
+        age: Person's age in years
+        
+    Returns:
+        Ticket price in dollars
+        
+    Example:
+        >>> calculate_ticket_price(10)
+        10
+        >>> calculate_ticket_price(25)
+        15
+    """
+    if age < 3:
+        return TICKET_PRICE_INFANT
+    elif age <= 12:
+        return TICKET_PRICE_CHILD
+    else:
+        return TICKET_PRICE_ADULT
+
+
 def main():
     """Run all Day 2 exercises in sequence."""
     
@@ -112,15 +159,8 @@ def main():
         if a.isdigit():
             ages.append(int(a))
     
-    total = 0
-    for age in ages:
-        if age < 3:
-            price = TICKET_PRICE_INFANT
-        elif age <= 12:
-            price = TICKET_PRICE_CHILD
-        else:
-            price = TICKET_PRICE_ADULT
-        total += price
+    # ✅ IMPROVED: Using helper function for cleaner code
+    total = sum(calculate_ticket_price(age) for age in ages)
     
     print(f"🎬 Total ticket cost: ${total}")
 

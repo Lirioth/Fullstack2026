@@ -28,6 +28,64 @@ By the end of this day, you will confidently:
 - Formatting output for better readability
 - Processing user input into structured data
 
+---
+
+## 📊 Data Structure Comparison
+
+Understanding when to use each data structure is crucial for writing efficient code:
+
+| Feature | List `[]` | Set `{}` | Tuple `()` |
+|---------|-----------|----------|------------|
+| **Ordered** | ✅ Yes | ❌ No | ✅ Yes |
+| **Mutable** | ✅ Yes | ✅ Yes | ❌ No |
+| **Duplicates** | ✅ Allowed | ❌ No | ✅ Allowed |
+| **Indexing** | ✅ `list[0]` | ❌ No | ✅ `tuple[0]` |
+| **Syntax** | `[1, 2, 3]` | `{1, 2, 3}` | `(1, 2, 3)` |
+| **Use Case** | General purpose | Unique items | Constants |
+| **Example** | Shopping cart | Unique tags | GPS coordinates |
+
+### 🎯 When to Use What?
+
+| Your Need | Best Choice | Why? |
+|-----------|-------------|------|
+| Store items in order | 📝 **List** | Maintains insertion order, indexable |
+| Remove duplicates | 🎯 **Set** | Automatically keeps unique values |
+| Protect data from changes | 📦 **Tuple** | Immutable, safe for constants |
+| Fast membership testing | 🎯 **Set** | O(1) lookup vs O(n) for lists |
+| Multiple values to return | 📦 **Tuple** | Common function return pattern |
+
+---
+
+## ⚡ Performance Insights
+
+Understanding Big-O complexity helps you write faster code:
+
+### 📝 List Operations
+| Operation | Complexity | Speed | When to Use |
+|-----------|------------|-------|-------------|
+| `list.append(x)` | O(1) | ⚡ Instant | Adding to end |
+| `list.insert(0, x)` | O(n) | 🐌 Slow | Avoid for large lists |
+| `x in list` | O(n) | 🔍 Linear | Small lists only |
+| `list[i]` | O(1) | ⚡ Instant | Random access |
+| `list.sort()` | O(n log n) | 🚀 Fast | Built-in sorting |
+
+### 🎯 Set Operations
+| Operation | Complexity | Speed | When to Use |
+|-----------|------------|-------|-------------|
+| `set.add(x)` | O(1) | ⚡ Instant | Adding unique items |
+| `x in set` | O(1) | ⚡ Instant | Membership tests |
+| `set1.union(set2)` | O(n+m) | 🚀 Fast | Combining sets |
+| `set1.intersection(set2)` | O(min(n,m)) | 🚀 Fast | Common elements |
+
+### 📦 Tuple Operations
+| Operation | Complexity | Speed | Note |
+|-----------|------------|-------|------|
+| `tuple[i]` | O(1) | ⚡ Instant | Same as lists |
+| `x in tuple` | O(n) | 🔍 Linear | Same as lists |
+| **Creation** | Faster | ⚡ | Less memory than lists |
+
+**💡 Pro Tip:** Use sets when you need fast membership testing (`if x in collection`). Convert list to set: `unique_items = set(my_list)`
+
 ## 📁 Directory Structure
 
 ```
