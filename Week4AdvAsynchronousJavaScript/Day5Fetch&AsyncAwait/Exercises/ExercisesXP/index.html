@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercises XP — Fetch API & Async/Await</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header class="hero">
+      <h1>🚀 Exercises XP — Fetch API & Async/Await</h1>
+      <p class="muted">Run each exercise and watch the console + output panel for results.</p>
+    </header>
+
+    <section class="card">
+      <h2>🌟 Exercise 1 — Giphy API (hilarious)</h2>
+      <p>Fetch from Giphy, check status, log the JSON, handle errors.</p>
+      <button id="ex1" class="btn">Run Exercise 1</button>
+    </section>
+
+    <section class="card">
+      <h2>🌟 Exercise 2 — Giphy API (sun)</h2>
+      <p>Fetch 10 gifs about “sun” starting at offset 2. Check status, log the JSON, handle errors.</p>
+      <button id="ex2" class="btn">Run Exercise 2</button>
+    </section>
+
+    <section class="card">
+      <h2>🌟 Exercise 3 — Async function (SWAPI)</h2>
+      <p>Rewrite with <code>async/await</code>; no <code>.then()</code>. Check status and handle errors.</p>
+      <button id="ex3" class="btn">Run Exercise 3</button>
+    </section>
+
+    <section class="card">
+      <h2>🌟 Exercise 4 — Analyze</h2>
+      <p>What does this code output? <code>calling</code> immediately, then after ~2s <code>resolved</code>.</p>
+      <button id="ex4" class="btn">Run the snippet</button>
+    </section>
+
+    <section class="card">
+      <h2>🧾 Output</h2>
+      <pre id="out" class="out" aria-live="polite"></pre>
+    </section>
+
+    <footer class="muted foot">
+      <p>No hearts. Console shows the full objects; the panel shows summaries. ✅</p>
+    </footer>
+  </main>
+  <script src="js/app.js"></script>
+</body>
+</html>
