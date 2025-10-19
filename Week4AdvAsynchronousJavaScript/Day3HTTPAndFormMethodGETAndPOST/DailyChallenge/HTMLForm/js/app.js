@@ -1,15 +1,12 @@
 // Daily Challenge — HTML Form
-// Requirements:
-// - Build a form with name and last name fields + submit button
-// - On Send, read the inputs and append a JSON string to the DOM
-// - Use English comments and keep it clear; emojis are allowed (but no hearts)
+// On Send, read the inputs and append the JSON string to the DOM.
+// Emojis are allowed (no hearts). Comments in English.
 
-/** Grab references to DOM elements we need */
 const form = document.getElementById('userForm');
 const log = document.getElementById('log');
 const clearBtn = document.getElementById('clear');
 
-/** Utility: create an element with text content and optional class */
+// Small helper to create elements
 function el(tag, text, className){
   const n = document.createElement(tag);
   if (text != null) n.textContent = text;
@@ -17,21 +14,20 @@ function el(tag, text, className){
   return n;
 }
 
-/** Append one JSON entry to the log as a list item */
+// Append one JSON entry (string + pretty-print)
 function appendJsonEntry(obj){
   const li = document.createElement('li');
 
-  // Optional small timestamp (helps students see multiple submissions)
   const stamp = new Date().toLocaleTimeString();
   li.appendChild(el('div', 'Submitted at ' + stamp, 'timestamp'));
 
-  // Show the JSON string (single line) and a pretty version under it
+  // Requirement: append JSON string
   const jsonStr = JSON.stringify(obj);
   const pre = document.createElement('pre');
-  pre.textContent = jsonStr; // requirement: append the JSON string to the DOM
+  pre.textContent = jsonStr;
   li.appendChild(pre);
 
-  // Also show a pretty-printed version for readability (educational bonus)
+  // Bonus: pretty JSON for readability
   const pretty = document.createElement('pre');
   pretty.textContent = JSON.stringify(obj, null, 2);
   pretty.setAttribute('aria-label', 'Pretty JSON');
@@ -40,24 +36,19 @@ function appendJsonEntry(obj){
   log.appendChild(li);
 }
 
-/** Handle form submission: prevent navigation, collect values, append JSON */
+// Handle submit: prevent navigation, collect values, append JSON string
 form.addEventListener('submit', (e) => {
-  e.preventDefault(); // avoid page reload
-
-  // Gather values via FormData + Object.fromEntries
+  e.preventDefault();
   const data = new FormData(form);
   const obj = Object.fromEntries(data.entries());
-
-  // Ensure only the two required fields are present
   const payload = {
     name: obj.name ?? '',
     lastname: obj.lastname ?? ''
   };
-
   appendJsonEntry(payload);
 });
 
-/** Clear the output log (not required by the brief; convenient during testing) */
+// Clear output list
 clearBtn.addEventListener('click', () => {
   log.innerHTML = '';
 });
