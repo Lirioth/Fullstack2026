@@ -463,6 +463,99 @@ After completing Day 1:
 
 ---
 
+## 🐛 Common Errors & Solutions
+
+### Error 1: SyntaxError - Missing quotes
+**What it means**: Forgetting quotes around strings
+
+**Example**:
+```python
+❌ print(Hello World)  # SyntaxError: invalid syntax
+
+✅ print("Hello World")  # Correct - strings need quotes
+```
+
+### Error 2: NameError - Using undefined variable
+**What it means**: Trying to use a variable that doesn't exist
+
+**Example**:
+```python
+❌ print(name)  # NameError: name 'name' is not defined
+
+✅ name = "Alice"  # Define variable first
+   print(name)     # Now it works
+```
+
+### Error 3: TypeError - Wrong data type operation
+**What it means**: Trying to combine incompatible types
+
+**Example**:
+```python
+❌ age = "25"
+   next_year = age + 1  # TypeError: can only concatenate str to str
+
+✅ age = int("25")  # Convert to integer first
+   next_year = age + 1  # Now works: 26
+
+# Or for display:
+✅ age = "25"
+   print("Next year: " + str(int(age) + 1))  # Convert, calculate, convert back
+```
+
+### Error 4: IndentationError - Wrong spacing
+**What it means**: Python requires consistent indentation
+
+**Example**:
+```python
+❌ if age > 18:
+print("Adult")  # IndentationError: expected an indented block
+
+✅ if age > 18:
+    print("Adult")  # Correct - indented with 4 spaces
+```
+
+### Error 5: ValueError - Input conversion fails
+**What it means**: Can't convert string to expected type
+
+**Example**:
+```python
+❌ age = int(input("Age: "))  # User types "twenty" → ValueError
+
+✅ # Add validation
+   age_input = input("Age: ")
+   if age_input.isdigit():
+       age = int(age_input)
+   else:
+       print("Please enter a number")
+```
+
+### Error 6: Using = instead of == in conditions
+**What it means**: Assignment vs comparison
+
+**Example**:
+```python
+❌ if age = 18:  # SyntaxError: invalid syntax
+       print("Eighteen")
+
+✅ if age == 18:  # Correct - use == for comparison
+       print("Eighteen")
+```
+
+### Error 7: Forgetting to convert input()
+**What it means**: input() always returns a string
+
+**Example**:
+```python
+❌ age = input("Age: ")  # Returns "25" as string
+   if age > 18:  # TypeError: '>' not supported between str and int
+
+✅ age = int(input("Age: "))  # Convert to integer
+   if age > 18:  # Now works correctly
+       print("Adult")
+```
+
+---
+
 **⏱️ Estimated Time**: 4-6 hours  
 **🎯 Difficulty**: Beginner  
 **📋 Prerequisites**: Basic computer literacy

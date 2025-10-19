@@ -873,7 +873,174 @@ After completing Week 1:
 
 ---
 
-## 👤 Author
+## � Common Errors & Solutions
+
+### Error 1: Infinite game loops
+**What it means**: Game never ends due to incorrect loop condition
+
+**Example**:
+```python
+❌ while True:
+       # Game logic
+       if someone_won():
+           print("Winner!")
+           # Forgot to break!
+
+✅ game_over = False
+   while not game_over:
+       # Game logic
+       if someone_won() or board_full():
+           game_over = True  # Exit loop
+```
+
+### Error 2: Not validating user input in games
+**What it means**: Assuming user always enters valid data
+
+**Example**:
+```python
+❌ row, col = input("Enter row col: ").split()
+   row = int(row)  # ValueError if user enters text!
+
+✅ try:
+       row, col = input("Enter row col: ").split()
+       row, col = int(row), int(col)
+       if not (1 <= row <= 3 and 1 <= col <= 3):
+           print("Must be 1-3!")
+   except ValueError:
+       print("Enter two numbers separated by space!")
+```
+
+### Error 3: Modifying game state incorrectly
+**What it means**: Not checking if move is valid before applying
+
+**Example**:
+```python
+❌ def make_move(board, row, col, player):
+       board[row][col] = player  # Overwrites existing moves!
+
+✅ def make_move(board, row, col, player):
+       if board[row][col] == " ":  # Check if empty
+           board[row][col] = player
+           return True
+       print("Cell already taken!")
+       return False
+```
+
+### Error 4: Not handling edge cases in win detection
+**What it means**: Missing diagonal checks or off-by-one errors
+
+**Example**:
+```python
+❌ # Missing diagonal check
+   def check_winner(board):
+       # Only checks rows and columns
+       for i in range(3):
+           if all(board[i]):  # Incomplete logic
+               return True
+
+✅ def check_winner(board, player):
+       # Check rows
+       for row in board:
+           if all(cell == player for cell in row):
+               return True
+       # Check columns
+       for col in range(3):
+           if all(board[row][col] == player for row in range(3)):
+               return True
+       # Check diagonals
+       if all(board[i][i] == player for i in range(3)):
+           return True
+       if all(board[i][2-i] == player for i in range(3)):
+           return True
+       return False
+```
+
+### Error 5: File handling errors in Hangman
+**What it means**: Not handling missing or empty word files
+
+**Example**:
+```python
+❌ def load_words():
+       with open("words.txt") as f:
+           return f.read().split()  # FileNotFoundError if missing!
+
+✅ def load_words():
+       try:
+           with open("words.txt") as f:
+               words = [w.strip() for w in f if w.strip()]
+               if not words:
+                   print("Word file is empty!")
+                   return ["python", "developer"]  # Fallback
+               return words
+       except FileNotFoundError:
+           print("words.txt not found, using defaults")
+           return ["python", "developer", "function"]
+```
+
+### Error 6: Not resetting game state between rounds
+**What it means**: Previous game data carries over to new game
+
+**Example**:
+```python
+❌ guessed_letters = []  # Global variable
+   
+   def play_game():
+       # Uses same guessed_letters from last game!
+       
+✅ def play_game():
+       guessed_letters = []  # Fresh state each game
+       # Rest of game logic
+       
+✅ # Or reset explicitly
+   def reset_game():
+       global guessed_letters
+       guessed_letters = []
+```
+
+### Error 7: String comparison case sensitivity
+**What it means**: Not handling uppercase/lowercase input consistently
+
+**Example**:
+```python
+❌ word = "PYTHON"
+   guess = input("Guess a letter: ")  # User types "p"
+   if guess in word:  # False! "p" != "P"
+
+✅ word = "PYTHON"
+   guess = input("Guess a letter: ").upper()
+   if guess in word:  # Now works!
+
+✅ # Or normalize everything
+   word = "python".lower()
+   guess = input("Guess: ").lower()
+```
+
+### Error 8: Not tracking game statistics properly
+**What it means**: Counters or scores not updating correctly
+
+**Example**:
+```python
+❌ def update_score(score):
+       score += 10  # Only modifies local copy!
+       
+   player_score = 0
+   update_score(player_score)
+   # player_score still 0!
+
+✅ def update_score(score):
+       return score + 10
+   
+   player_score = update_score(player_score)
+
+✅ # Or use mutable object
+   stats = {"score": 0, "wins": 0}
+   def update_score(stats):
+       stats["score"] += 10  # Modifies original dict
+```
+
+---
+
+## �👤 Author
 
 **Kevin Cusnir 'Lirioth'**  
 Repository: [Fullstack2026](https://github.com/Lirioth/Fullstack2026)  

@@ -580,6 +580,158 @@ After mastering dictionaries:
 - [🏗️ Working with JSON Data](https://realpython.com/working-with-json-data-in-python/)
 
 ---
+
+## 🐛 Common Errors & Solutions
+
+### Error 1: KeyError - Accessing non-existent key
+**What it means**: Trying to access a key that doesn't exist in the dictionary
+
+**Example**:
+```python
+❌ person = {"name": "Alice", "age": 25}
+   print(person["email"])  # KeyError: 'email'
+
+✅ # Option 1: Use .get() with default value
+   print(person.get("email", "Not provided"))
+
+✅ # Option 2: Check if key exists first
+   if "email" in person:
+       print(person["email"])
+   else:
+       print("Email not found")
+```
+
+### Error 2: Unhashable type as dictionary key
+**What it means**: Using mutable types (lists, dicts) as keys
+
+**Example**:
+```python
+❌ data = {[1, 2]: "value"}  # TypeError: unhashable type: 'list'
+
+✅ # Use immutable types as keys
+   data = {(1, 2): "value"}  # Tuples work
+   data = {"1,2": "value"}   # Strings work
+   data = {frozenset([1, 2]): "value"}  # Frozensets work
+```
+
+### Error 3: Modifying dictionary while iterating
+**What it means**: Changing dictionary size during iteration
+
+**Example**:
+```python
+❌ prices = {"apple": 1.50, "banana": 0.75, "cherry": 2.00}
+   for item in prices:
+       if prices[item] < 1.00:
+           del prices[item]  # RuntimeError!
+
+✅ # Create list of keys first
+   to_remove = [item for item, price in prices.items() if price < 1.00]
+   for item in to_remove:
+       del prices[item]
+
+✅ # Or create new dictionary
+   prices = {item: price for item, price in prices.items() if price >= 1.00}
+```
+
+### Error 4: Confusing .keys(), .values(), .items()
+**What it means**: Using wrong method for iteration needs
+
+**Example**:
+```python
+❌ person = {"name": "Alice", "age": 25}
+   for item in person.items():
+       print(item)  # Prints tuples: ('name', 'Alice')
+
+✅ # For key-value pairs separately
+   for key, value in person.items():
+       print(f"{key}: {value}")
+
+✅ # For just keys
+   for key in person.keys():  # or just: for key in person
+       print(key)
+
+✅ # For just values
+   for value in person.values():
+       print(value)
+```
+
+### Error 5: Not handling nested dictionary access safely
+**What it means**: Accessing deep levels without checking intermediate keys
+
+**Example**:
+```python
+❌ data = {"user": {"profile": {"name": "Alice"}}}
+   email = data["user"]["contact"]["email"]  # KeyError!
+
+✅ # Option 1: Check each level
+   if "user" in data and "contact" in data["user"]:
+       email = data["user"]["contact"].get("email", "No email")
+
+✅ # Option 2: Use try-except
+   try:
+       email = data["user"]["contact"]["email"]
+   except KeyError:
+       email = "Not found"
+
+✅ # Option 3: Use get() chaining
+   email = data.get("user", {}).get("contact", {}).get("email", "Not found")
+```
+
+### Error 6: Overwriting dictionary values accidentally
+**What it means**: Not checking if key already exists before adding
+
+**Example**:
+```python
+❌ scores = {"Alice": 85, "Bob": 92}
+   scores["Alice"] = 78  # Overwrites 85!
+
+✅ # Check before updating
+   if "Alice" in scores:
+       print(f"Warning: Overwriting {scores['Alice']} with 78")
+   scores["Alice"] = 78
+
+✅ # Or use setdefault to avoid overwriting
+   scores.setdefault("Alice", 78)  # Only sets if key doesn't exist
+```
+
+### Error 7: Using list when dictionary is better
+**What it means**: Inefficient data access patterns
+
+**Example**:
+```python
+❌ # Searching through lists of tuples
+   users = [("alice", 25), ("bob", 30), ("charlie", 35)]
+   for name, age in users:
+       if name == "bob":  # O(n) lookup
+           print(age)
+
+✅ # Use dictionary for O(1) lookup
+   users = {"alice": 25, "bob": 30, "charlie": 35}
+   print(users["bob"])  # Instant access
+```
+
+### Error 8: Not using .update() for merging dictionaries
+**What it means**: Manually copying keys one by one
+
+**Example**:
+```python
+❌ dict1 = {"a": 1, "b": 2}
+   dict2 = {"c": 3, "d": 4}
+   for key in dict2:
+       dict1[key] = dict2[key]  # Verbose!
+
+✅ # Use .update() method
+   dict1.update(dict2)
+
+✅ # Or use unpacking (Python 3.5+)
+   merged = {**dict1, **dict2}
+
+✅ # Or use union operator (Python 3.9+)
+   merged = dict1 | dict2
+```
+
+---
+
 **⏱️ Estimated Time**: 4-6 hours  
 **🎯 Difficulty**: Intermediate  
 **📋 Prerequisites**: Days 1-2 completion

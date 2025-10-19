@@ -829,6 +829,159 @@ After mastering functions:
 - [🔧 Advanced Function Techniques](https://realpython.com/python-args-kwargs/)
 
 ---
+
+## 🐛 Common Errors & Solutions
+
+### Error 1: UnboundLocalError - Local variable referenced before assignment
+**What it means**: Trying to modify a global variable inside a function without declaring it
+
+**Example**:
+```python
+❌ count = 0
+   def increment():
+       count += 1  # UnboundLocalError
+   
+✅ # Option 1: Use global keyword
+   count = 0
+   def increment():
+       global count
+       count += 1
+
+✅ # Option 2: Return new value (better practice)
+   count = 0
+   def increment(value):
+       return value + 1
+   count = increment(count)
+```
+
+### Error 2: Missing return statement
+**What it means**: Function doesn't explicitly return, returns None
+
+**Example**:
+```python
+❌ def add_numbers(a, b):
+       result = a + b  # No return!
+   
+   total = add_numbers(5, 3)  # total is None
+
+✅ def add_numbers(a, b):
+       return a + b  # Explicit return
+   
+   total = add_numbers(5, 3)  # total is 8
+```
+
+### Error 3: Positional vs keyword argument order
+**What it means**: Positional arguments must come before keyword arguments
+
+**Example**:
+```python
+❌ def greet(name, greeting="Hello"):
+       return f"{greeting}, {name}!"
+   
+   greet(greeting="Hi", "Alice")  # SyntaxError
+
+✅ greet("Alice", greeting="Hi")  # Correct order
+✅ greet("Alice", "Hi")  # Both positional
+✅ greet(name="Alice", greeting="Hi")  # Both keyword
+```
+
+### Error 4: Mutable default arguments
+**What it means**: Using mutable defaults (list, dict) creates shared reference
+
+**Example**:
+```python
+❌ def add_item(item, items=[]):
+       items.append(item)
+       return items
+   
+   list1 = add_item("apple")  # ["apple"]
+   list2 = add_item("banana")  # ["apple", "banana"] - Unexpected!
+
+✅ def add_item(item, items=None):
+       if items is None:
+           items = []  # Create new list each time
+       items.append(item)
+       return items
+```
+
+### Error 5: Forgetting to call the function
+**What it means**: Using function name without () doesn't execute it
+
+**Example**:
+```python
+❌ def calculate_tax(price):
+       return price * 0.15
+   
+   tax = calculate_tax  # Just assigns function reference
+   print(tax)  # <function calculate_tax at 0x...>
+
+✅ tax = calculate_tax(100)  # Actually calls function
+   print(tax)  # 15.0
+```
+
+### Error 6: Scope confusion - shadowing variables
+**What it means**: Creating local variable with same name as global
+
+**Example**:
+```python
+❌ name = "Global"
+   
+   def change_name():
+       name = "Local"  # Creates NEW local variable
+   
+   change_name()
+   print(name)  # Still "Global" - unchanged!
+
+✅ # If you need to modify:
+   def change_name():
+       global name
+       name = "Modified"
+
+✅ # Better: Return new value
+   def get_new_name():
+       return "Modified"
+   name = get_new_name()
+```
+
+### Error 7: TypeError - Wrong number of arguments
+**What it means**: Calling function with incorrect argument count
+
+**Example**:
+```python
+❌ def calculate_area(width, height):
+       return width * height
+   
+   area = calculate_area(5)  # TypeError: missing 1 required argument
+
+✅ area = calculate_area(5, 10)  # Provide all required arguments
+
+✅ # Or use default value
+   def calculate_area(width, height=10):
+       return width * height
+   area = calculate_area(5)  # height defaults to 10
+```
+
+### Error 8: Confusing *args and **kwargs
+**What it means**: Using wrong unpacking operator
+
+**Example**:
+```python
+❌ def print_info(*data):
+       print(data["name"])  # TypeError: tuple not dict
+
+✅ # Use *args for positional
+   def print_values(*args):
+       for value in args:
+           print(value)
+
+✅ # Use **kwargs for keyword
+   def print_info(**kwargs):
+       print(kwargs["name"])
+       print(kwargs.get("age", "Unknown"))
+```
+
+---
+
 **⏱️ Estimated Time**: 5-7 hours  
 **🎯 Difficulty**: Intermediate  
 **📋 Prerequisites**: Days 1-3 completion

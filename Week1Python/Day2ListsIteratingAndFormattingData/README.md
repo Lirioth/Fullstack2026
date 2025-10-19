@@ -334,7 +334,133 @@ After mastering Day 2:
 
 ---
 
-## 👤 About the Author
+## � Common Errors & Solutions
+
+### Error 1: IndexError - List index out of range
+**What it means**: Trying to access an index that doesn't exist
+
+**Example**:
+```python
+❌ fruits = ["apple", "banana"]
+   print(fruits[2])  # IndexError: list index out of range
+
+✅ # Always check length first
+   if len(fruits) > 2:
+       print(fruits[2])
+   else:
+       print("Not enough items")
+
+✅ # Or use try-except
+   try:
+       print(fruits[2])
+   except IndexError:
+       print("Index doesn't exist")
+```
+
+### Error 2: Modifying list while iterating
+**What it means**: Changing a list's size during iteration causes skipped items
+
+**Example**:
+```python
+❌ numbers = [1, 2, 3, 4, 5]
+   for num in numbers:
+       if num % 2 == 0:
+           numbers.remove(num)  # Skips items!
+
+✅ # Create new list instead
+   numbers = [1, 2, 3, 4, 5]
+   odd_numbers = [num for num in numbers if num % 2 != 0]
+
+✅ # Or iterate over a copy
+   for num in numbers[:]:  # [:] creates a copy
+       if num % 2 == 0:
+           numbers.remove(num)
+```
+
+### Error 3: TypeError - Unhashable type in set
+**What it means**: Sets can't contain mutable types like lists
+
+**Example**:
+```python
+❌ my_set = {[1, 2], [3, 4]}  # TypeError: unhashable type: 'list'
+
+✅ # Use tuples instead (immutable)
+   my_set = {(1, 2), (3, 4)}
+
+✅ # Or convert to frozenset
+   my_set = {frozenset([1, 2]), frozenset([3, 4])}
+```
+
+### Error 4: Infinite while loop
+**What it means**: Loop condition never becomes False
+
+**Example**:
+```python
+❌ i = 0
+   while i < 10:
+       print(i)  # Infinite loop - i never changes!
+
+✅ i = 0
+   while i < 10:
+       print(i)
+       i += 1  # Remember to update the counter!
+```
+
+### Error 5: Using append() vs extend() incorrectly
+**What it means**: append() adds entire object, extend() adds individual items
+
+**Example**:
+```python
+❌ numbers = [1, 2, 3]
+   numbers.append([4, 5])
+   # Result: [1, 2, 3, [4, 5]] - nested list!
+
+✅ numbers = [1, 2, 3]
+   numbers.extend([4, 5])
+   # Result: [1, 2, 3, 4, 5] - flat list
+
+✅ # Or use +=
+   numbers += [4, 5]
+```
+
+### Error 6: Tuple immutability confusion
+**What it means**: Can't change tuple contents, but can change mutable objects inside
+
+**Example**:
+```python
+❌ coordinates = (10, 20)
+   coordinates[0] = 15  # TypeError: tuple doesn't support item assignment
+
+✅ # Tuples are immutable - create new one
+   coordinates = (15, 20)
+
+⚠️  # But mutable objects inside CAN change:
+   data = ([1, 2], 3)
+   data[0].append(4)  # Works! → ([1, 2, 4], 3)
+   # The list inside changed, tuple structure didn't
+```
+
+### Error 7: range() off-by-one errors
+**What it means**: range() stops BEFORE the end value
+
+**Example**:
+```python
+❌ # Trying to print 1 to 10
+   for i in range(1, 10):
+       print(i)  # Only prints 1-9!
+
+✅ for i in range(1, 11):  # Must go to 11 to include 10
+       print(i)  # Prints 1-10
+
+✅ # Or use len() for indexing
+   items = ["a", "b", "c"]
+   for i in range(len(items)):  # 0, 1, 2
+       print(f"{i}: {items[i]}")
+```
+
+---
+
+## �👤 About the Author
 
 **Kevin Cusnir "Lirioth"**  
 - 🎓 Fullstack Developer Student  
