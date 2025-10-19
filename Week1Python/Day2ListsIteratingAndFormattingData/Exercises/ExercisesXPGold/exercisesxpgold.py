@@ -1,24 +1,22 @@
-"""
-🥈 Day 2 - Exercises XP Gold
-============================
-Enhanced practice with:
-1. List concatenation techniques
-2. Modulo operations and filtering
-3. Index searching algorithms
-4. Built-in max/min functions
-5. Character classification
-6. String searching methods
-7. Mathematical optimization (Gauss formula)
-8. Data type conversions
-9. Interactive game development
-
+"""Module: exercisesxpgold
+Purpose: Enhanced Day 2 exercises exploring lists, control flow, and games.
 Author: Kevin Cusnir "Lirioth"
-GitHub: @Lirioth
-Repository: https://github.com/Lirioth/Fullstack2026
-Course: Fullstack Bootcamp 2026
-Python Version: 3.8+
-Last Updated: October 18, 2025
+Created: 2025-10-18
+Last Updated: 2025-10-19
+
+Overview:
+    1. List concatenation techniques
+    2. Modulo operations and filtering
+    3. Index searching algorithms
+    4. Built-in max/min functions
+    5. Character classification
+    6. String searching methods
+    7. Mathematical optimization (Gauss formula)
+    8. Data type conversions
+    9. Interactive game development
 """
+
+from __future__ import annotations
 
 # Exercises XP Gold
 
@@ -142,6 +140,7 @@ def exercise_9_guessing_game() -> None:
         if guess == 'q':
             break
         if not guess.isdigit():
+            # ⚠️ Reject non-numeric guesses before converting to int.
             print("invalid")
             continue
         guess = int(guess)

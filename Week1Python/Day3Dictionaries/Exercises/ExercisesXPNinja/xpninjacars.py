@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
-"""
-Exercises XP Ninja — Exercise 1: Cars
-=====================================
-Reusable helpers for the manufacturer analysis plus a CLI reproducing the
-original outputs. Import this module elsewhere to reuse the pure functions.
-
+"""Module: xpninjacars
+Purpose: Day 3 ninja-level utilities for analysing manufacturer name lists.
 Author: Kevin Cusnir 'Lirioth'
-Repository: Fullstack2026
-Week 1 Day 3 - Dictionaries
-Python Version: 3.8+
+Created: 2025-10-18
+Last Updated: 2025-10-19
+
+Overview:
+    - Parsing comma-separated manufacturer data
+    - Counting membership with case-insensitive filters
+    - Deduplicating while preserving order
+    - Reversing names after alphabetical sorting
 """
 
 from __future__ import annotations
@@ -49,6 +50,7 @@ def deduplicate_preserve_order(names: Iterable[str]) -> List[str]:
     unique: List[str] = []
     for name in names:
         if name not in seen:
+            # ✅ Record the first time we encounter each manufacturer.
             unique.append(name)
             seen.add(name)
     return unique

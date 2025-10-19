@@ -1,29 +1,24 @@
-"""
-🎉 Daily Challenge GOLD: Happy Birthday
-========================================
-Interactive birthday cake generator with ASCII art.
+"""Module: happybirthday
+Purpose: Interactive Day 2 Gold challenge for celebrating birthdays with ASCII art.
+Author: Kevin Cusnir "Lirioth"
+Created: 2025-10-18
+Last Updated: 2025-10-19
 
 Features:
-- Date parsing and validation
-- Age calculation
-- Candle count based on last digit of age
-- Leap year detection (double cake bonus!)
-- ASCII art generation
-
-Author: Kevin Cusnir "Lirioth"
-GitHub: @Lirioth
-Repository: https://github.com/Lirioth/Fullstack2026
-Course: Fullstack Bootcamp 2026
-Python Version: 3.8+
-Last Updated: October 18, 2025
+    - Date parsing and validation
+    - Age calculation
+    - Candle count based on last digit of age
+    - Leap year detection (double cake bonus!)
+    - ASCII art generation
 """
 
-# 🎉 Daily Challenge GOLD : Happy birthday (beginner)
+from __future__ import annotations
 
-from datetime import date, datetime
 import calendar
+from datetime import date, datetime
 
-def print_cake(c):
+
+def print_cake(candles: int) -> None:
     """
     Print ASCII art birthday cake with specified number of candles.
     
@@ -31,7 +26,7 @@ def print_cake(c):
         c: Number of candles to display (0-10 recommended)
         
     Example:
-        >>> print_cake(3)
+    >>> print_cake(3)
                ___iii___
               |:H:a:p:p:y:|
             __|___________|__
@@ -40,7 +35,7 @@ def print_cake(c):
            |                 |
            ~~~~~~~~~~~~~~~~~~~
     """
-    top = "       ___" + ("i" * c) + "___"
+    top = "       ___" + ("i" * candles) + "___"
     print(top)
     print("      |:H:a:p:p:y:|")
     print("    __|___________|__")
@@ -49,7 +44,7 @@ def print_cake(c):
     print("   |                 |")
     print("   ~~~~~~~~~~~~~~~~~~~")
 
-def main():
+def main() -> None:
     """
     Main interactive birthday cake program.
     
@@ -67,9 +62,10 @@ def main():
     today = date.today()
     age = today.year - bday.year - ((today.month, today.day) < (bday.month, bday.day))
 
-    candles = age % 10  # If age ends with 0, this will be 0 🎂
+    candles = age % 10  # ✅ Only print the last digit worth of candles.
 
     if calendar.isleap(bday.year):
+        # 🎉 Leap babies deserve a double celebration!
         print_cake(candles)
         print_cake(candles)
     else:

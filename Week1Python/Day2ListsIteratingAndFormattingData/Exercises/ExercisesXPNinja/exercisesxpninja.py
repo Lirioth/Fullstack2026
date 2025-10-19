@@ -1,23 +1,19 @@
-"""
-🥇 Day 2 - Exercises XP Ninja
-=============================
-Advanced challenges covering:
-1. Mathematical formula implementation (Q = sqrt((2*C*D)/H))
-2. Comprehensive list analysis with manual statistics
-3. Text paragraph analysis with frequency counting
-4. Word frequency mapping with sorted output
-
+"""Module: exercisesxpninja
+Purpose: Advanced Day 2 challenges for formulas, statistics, and text analysis.
 Author: Kevin Cusnir "Lirioth"
-GitHub: @Lirioth
-Repository: https://github.com/Lirioth/Fullstack2026
-Course: Fullstack Bootcamp 2026
-Python Version: 3.8+
-Last Updated: October 18, 2025
-"""
+Created: 2025-10-18
+Last Updated: 2025-10-19
 
-# Exercises XP Ninja
+Overview:
+    1. Mathematical formula implementation (Q = sqrt((2*C*D)/H))
+    2. Comprehensive list analysis with manual statistics
+    3. Text paragraph analysis with frequency counting
+    4. Word frequency mapping with sorted output
+"""
 
 from __future__ import annotations
+
+# Exercises XP Ninja
 
 from collections import Counter
 from typing import Dict, Iterable, List

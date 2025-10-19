@@ -1,20 +1,14 @@
-"""
-Daily Challenge: Build up a string
-===================================
-Interactive string validation and manipulation challenge.
+"""Module: buildupastring
+Purpose: Interactive Day 1 challenge for validating and transforming strings.
+Author: Kevin Cusnir "Lirioth"
+Created: 2025-10-18
+Last Updated: 2025-10-19
 
 Features:
-- Length validation (exactly 10 characters)
-- Character analysis (first/last)
-- Progressive string building
-- Random string shuffling
-
-Author: Kevin Cusnir "Lirioth"
-GitHub: @Lirioth
-Repository: https://github.com/Lirioth/Fullstack2026
-Course: Fullstack Bootcamp 2026
-Python Version: 3.8+
-Last Updated: October 18, 2025
+    - Length validation (exactly 10 characters)
+    - Character analysis (first/last)
+    - Progressive string building
+    - Random string shuffling
 """
 
 from __future__ import annotations
@@ -86,6 +80,7 @@ def jumble_text(text: str) -> str:
         'bca'  # or 'cab', 'acb', etc.
     """
     chars = list(text)
+    # ✅ Shuffle a copy so the original text stays unchanged for later steps.
     random.shuffle(chars)
     return "".join(chars)
 

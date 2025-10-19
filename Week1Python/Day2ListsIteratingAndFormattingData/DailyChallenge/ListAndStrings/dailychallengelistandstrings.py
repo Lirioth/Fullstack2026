@@ -1,21 +1,17 @@
-"""
-💪 Daily Challenge: Lists & Strings
-===================================
-Two algorithmic challenges:
-1. Generate multiples of a number
-2. Collapse consecutive duplicate characters
-
+"""Module: dailychallengelistandstrings
+Purpose: Day 2 challenge utilities for list generation and string cleanup.
 Author: Kevin Cusnir "Lirioth"
-GitHub: @Lirioth
-Repository: https://github.com/Lirioth/Fullstack2026
-Course: Fullstack Bootcamp 2026
-Python Version: 3.8+
-Last Updated: October 18, 2025
-"""
+Created: 2025-10-18
+Last Updated: 2025-10-19
 
-# Daily Challenge : Lists & Strings
+Overview:
+    1. Generate multiples of a number
+    2. Collapse consecutive duplicate characters
+"""
 
 from __future__ import annotations
+
+# Daily Challenge : Lists & Strings
 
 from typing import List
 

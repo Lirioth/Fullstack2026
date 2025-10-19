@@ -1,16 +1,14 @@
-"""
-🗂️ Day 3 - Exercises XP (Dictionaries)
-=======================================
-Practice with:
-- zip() and dict() constructor for list pairing
-- Age-based pricing logic with dictionaries
-- Nested dictionary manipulation and updates
-- Multiple indexing strategies for same data
-
+"""Module: exercisesxp
+Purpose: Day 3 XP dictionary exercises with reusable helpers for reports and mappings.
 Author: Kevin Cusnir 'Lirioth'
-Repository: Fullstack2026
-Week 1 Day 3 - Dictionaries
-Python Version: 3.8+
+Created: 2025-10-18
+Last Updated: 2025-10-19
+
+Overview:
+    - Pair lists using ``zip``
+    - Ticket pricing logic for Cinemax
+    - Zara brand manipulation and summaries
+    - Disney character dictionary mappings
 """
 
 from __future__ import annotations

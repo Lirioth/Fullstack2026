@@ -1,16 +1,12 @@
-"""
-🥈 Day 1 - Exercises XP Gold
-============================
-Enhanced practice with:
-1. String multiplication techniques
-2. Month-to-season mapping with membership testing
-
+"""Module: exercisesxpgold
+Purpose: Enhanced Day 1 exercises focusing on string operations and seasons.
 Author: Kevin Cusnir "Lirioth"
-GitHub: @Lirioth
-Repository: https://github.com/Lirioth/Fullstack2026
-Course: Fullstack Bootcamp 2026
-Python Version: 3.8+
-Last Updated: October 18, 2025
+Created: 2025-10-18
+Last Updated: 2025-10-19
+
+Overview:
+    1. String multiplication techniques
+    2. Month-to-season mapping with membership testing
 """
 
 # 🌸 Season mappings
@@ -63,6 +59,7 @@ def get_valid_month() -> int:
             month = int(input("Enter month (1-12): "))
             if 1 <= month <= 12:
                 return month
+            # ⚠️ Notify the learner when the month is outside the accepted range.
             print("⚠️ Month must be between 1 and 12")
         except ValueError:
             print("⚠️ Please enter a valid number")

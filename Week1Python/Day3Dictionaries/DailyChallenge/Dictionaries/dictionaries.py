@@ -1,12 +1,12 @@
-"""
-Daily Challenge - Dictionaries
-==============================
-Comprehensive dictionary manipulation challenges.
-
+"""Module: dictionaries
+Purpose: Day 3 daily challenge utilities for index mapping and affordability checks.
 Author: Kevin Cusnir 'Lirioth'
-Repository: Fullstack2026
-Week 1 Day 3 - Dictionaries
-Python Version: 3.8+
+Created: 2025-10-18
+Last Updated: 2025-10-19
+
+Overview:
+    - Build letter index dictionaries
+    - Filter affordable items using currency strings
 """
 
 from __future__ import annotations

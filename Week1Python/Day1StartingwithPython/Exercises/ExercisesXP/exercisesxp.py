@@ -1,21 +1,19 @@
-"""
-📝 Day 1 - Exercises XP
-=======================
-Fundamental Python exercises covering:
-- Variables and data types
-- Input/output operations
-- Conditional logic and comparisons
-- String manipulation and formatting
-- Boolean operations
-- Type conversions
-
+"""Module: exercisesxp
+Purpose: Solutions for Day 1 XP exercises covering Python fundamentals.
 Author: Kevin Cusnir "Lirioth"
-GitHub: @Lirioth
-Repository: https://github.com/Lirioth/Fullstack2026
-Course: Fullstack Bootcamp 2026
-Python Version: 3.8+
-Last Updated: October 18, 2025
+Created: 2025-10-18
+Last Updated: 2025-10-19
+
+Overview:
+    - Variables and data types
+    - Input/output operations
+    - Conditional logic and comparisons
+    - String manipulation and formatting
+    - Boolean operations
+    - Type conversions
 """
+
+from __future__ import annotations
 
 # 🎯 Constants
 HEIGHT_REQUIREMENT_CM = 145  # Minimum height to ride in centimeters
@@ -140,6 +138,7 @@ def read_int(prompt: str, min_val: int | None = None, max_val: int | None = None
             
             # Validate range if specified
             if min_val is not None and value < min_val:
+                # ⚠️ Guard against values that fall below the allowed range.
                 print(f"❌ Value must be at least {min_val}")
                 continue
             if max_val is not None and value > max_val:

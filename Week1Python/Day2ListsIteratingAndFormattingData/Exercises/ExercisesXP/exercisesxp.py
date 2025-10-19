@@ -1,24 +1,22 @@
-"""
-📋 Day 2 - Exercises XP
-=======================
-Comprehensive exercises covering:
-- Set operations and unique collections
-- Tuple immutability patterns
-- List manipulation methods
-- Float sequence generation
-- Loop iteration with enumerate()
-- Interactive user input handling
-- Pizza pricing calculator
-- Cinema ticket pricing system
-- Sandwich order processing
-
+"""Module: exercisesxp
+Purpose: Solutions for Day 2 XP exercises focusing on collections and iteration.
 Author: Kevin Cusnir "Lirioth"
-GitHub: @Lirioth
-Repository: https://github.com/Lirioth/Fullstack2026
-Course: Fullstack Bootcamp 2026
-Python Version: 3.8+
-Last Updated: October 18, 2025
+Created: 2025-10-18
+Last Updated: 2025-10-19
+
+Overview:
+    - Set operations and unique collections
+    - Tuple immutability patterns
+    - List manipulation methods
+    - Float sequence generation
+    - Loop iteration with enumerate()
+    - Interactive user input handling
+    - Pizza pricing calculator
+    - Cinema ticket pricing system
+    - Sandwich order processing
 """
+
+from __future__ import annotations
 
 # 🎯 Constants
 BASE_PIZZA_PRICE = 10.00
@@ -65,8 +63,10 @@ def get_valid_age(prompt: str) -> int:
             age = int(input(prompt))
             if 0 <= age <= 120:
                 return age
+            # ⚠️ Keep prompting until the learner provides an age in range.
             print("⚠️ Age must be between 0 and 120")
         except ValueError:
+            # ⚠️ Catch non-numeric input so the loop can continue safely.
             print("❌ Please enter a valid number")
 
 
@@ -90,11 +90,10 @@ def calculate_ticket_price(age: int) -> int:
         return TICKET_PRICE_INFANT
     elif age <= 12:
         return TICKET_PRICE_CHILD
-    else:
-        return TICKET_PRICE_ADULT
+    return TICKET_PRICE_ADULT
 
 
-def main():
+def main() -> None:
     """
     Run all Day 2 exercises in sequence.
     

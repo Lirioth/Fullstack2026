@@ -1,22 +1,18 @@
-"""
-🥇 Day 1 - Exercises XP Ninja
-=============================
-Advanced challenges covering:
-1. Terminal concepts (PATH, aliases) [Informational]
-2. Boolean logic edge cases and arithmetic
-3. String length analysis with Lorem Ipsum
-4. Character constraint challenges (no letter 'A')
-
+"""Module: exercisesxpninja
+Purpose: Advanced Day 1 challenges exploring logic, text analysis, and constraints.
 Author: Kevin Cusnir "Lirioth"
-GitHub: @Lirioth
-Repository: https://github.com/Lirioth/Fullstack2026
-Course: Fullstack Bootcamp 2026
-Python Version: 3.8+
-Last Updated: October 18, 2025
+Created: 2025-10-18
+Last Updated: 2025-10-19
+
+Overview:
+    1. Terminal concepts (PATH, aliases)
+    2. Boolean logic edge cases and arithmetic
+    3. String length analysis with Lorem Ipsum
+    4. Character constraint challenges (no letter 'A')
 """
 
 # 🎯 Constants
-MAX_ATTEMPTS = 10  # Prevent infinite loops in challenge
+MAX_ATTEMPTS = 10  # ⚠️ Prevent infinite loops during the no 'A' challenge.
 
 
 def exercise_1_2_terminal_concepts() -> None:
