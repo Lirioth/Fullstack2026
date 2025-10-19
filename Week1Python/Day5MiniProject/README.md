@@ -6,6 +6,25 @@
 
 🎉 Congratulations! You've reached the capstone of Week 1. Time to showcase your Python mastery with complete, production-ready applications that integrate everything you've learned!
 
+## Overview
+
+Day 5 bundles the entire first week into portfolio-ready mini projects. Tic-Tac-Toe and Hangman demonstrate how to structure multi-module apps with validation, user feedback, and replay loops while the challenge sets push your algorithmic thinking.
+
+## Features
+
+- Two flagship games (Tic-Tac-Toe, Hangman) with modular architecture, validation, and replay support
+- Challenge collections that reinforce problem solving, pattern recognition, and data processing
+- Detailed project walkthroughs, architecture diagrams, and future enhancements checklists
+
+## Quick Start
+
+```bash
+cd Day5MiniProject/Exercises/TicTacToe
+python tictactoe.py
+```
+
+Launch Hangman and the challenge sets by navigating to their directories and running the provided entry scripts.
+
 ## 📊 Quick Stats
 
 | Metric | Value |
@@ -18,6 +37,9 @@
 | **📚 Key Topics** | Integration, Architecture, Game Logic, Algorithms |
 
 ## 📑 Table of Contents
+- [📦 Overview](#overview)
+- [✨ Features](#features)
+- [⚡ Quick Start](#quick-start)
 - [🎯 Learning Objectives](#-learning-objectives)
 - [📚 Week 1 Integration](#-week-1-integration)
 - [📁 Directory Structure](#-directory-structure)
@@ -26,6 +48,7 @@
 - [📊 Assessment Checklist](#-assessment-checklist)
 - [🔧 Troubleshooting](#-troubleshooting)
 - [🔗 Next Steps](#-next-steps)
+- [📄 License](#-license)
 
 ## 🎯 Learning Objectives
 
@@ -873,7 +896,13 @@ After completing Week 1:
 
 ---
 
-## � Common Errors & Solutions
+## � License
+
+This day’s exercises and notes are distributed under the repository’s [MIT License](../../LICENSE).
+
+---
+
+## �🐛 Common Errors & Solutions
 
 ### Error 1: Infinite game loops
 **What it means**: Game never ends due to incorrect loop condition
@@ -1040,7 +1069,7 @@ After completing Week 1:
 
 ---
 
-## �👤 Author
+## 👤 Author
 
 **Kevin Cusnir 'Lirioth'**  
 Repository: [Fullstack2026](https://github.com/Lirioth/Fullstack2026)  

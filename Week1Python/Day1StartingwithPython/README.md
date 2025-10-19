@@ -6,7 +6,26 @@
 
 Welcome to your Python programming journey! 🐍 This day covers the fundamental building blocks that form the foundation of all Python programming.
 
-## � Quick Stats
+## Overview
+
+Day 1 establishes the baseline Python skills used throughout the bootcamp. You will practice variables, input/output, conditionals, and string manipulation while exploring progressively harder XP, Gold, and Ninja challenges plus a daily project.
+
+## Features
+
+- Structured folders for XP, Gold, Ninja, and Daily Challenge tasks
+- Interactive scripts with validation helpers for user input
+- Reference tables and quick guides for beginner-friendly revision
+
+## Quick Start
+
+```bash
+cd Day1StartingWithPython/Exercises/ExercisesXP
+python exercisesxp.py
+```
+
+Run the Gold, Ninja, and Daily Challenge programs from their respective directories using the same pattern.
+
+## 📊 Quick Stats
 
 | Metric | Value |
 |--------|-------|
@@ -17,7 +36,10 @@ Welcome to your Python programming journey! 🐍 This day covers the fundamental
 | **🐍 Python Version** | 3.8+ |
 | **📚 Key Topics** | Variables, Data Types, Conditionals, Strings |
 
-## �📑 Table of Contents
+## 📑 Table of Contents
+- [📦 Overview](#overview)
+- [✨ Features](#features)
+- [⚡ Quick Start](#quick-start)
 - [🎯 Learning Objectives](#-learning-objectives)
 - [📚 Topics Covered](#-topics-covered)
 - [📁 Directory Structure](#-directory-structure)
@@ -29,6 +51,7 @@ Welcome to your Python programming journey! 🐍 This day covers the fundamental
 - [📊 Assessment Checklist](#-assessment-checklist)
 - [🔧 Troubleshooting & Common Issues](#-troubleshooting--common-issues)
 - [🔗 Next Steps](#-next-steps)
+- [📄 License](#-license)
 
 ## 🎯 Learning Objectives
 
@@ -454,7 +477,13 @@ After completing Day 1:
 
 ---
 
-## 👤 About the Author
+## � License
+
+This day’s exercises and notes are distributed under the repository’s [MIT License](../../LICENSE).
+
+---
+
+## �👤 About the Author
 
 **Kevin Cusnir "Lirioth"**  
 - 🎓 Fullstack Developer Student  

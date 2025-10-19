@@ -194,6 +194,8 @@ def main():
             break
         if a.isdigit():
             ages.append(int(a))
+        else:
+            print("⚠️ Please enter a whole number or 'done' to finish.")
     
     # ✅ IMPROVED: Using helper function for cleaner code
     total = sum(calculate_ticket_price(age) for age in ages)
@@ -210,6 +212,10 @@ def main():
             age = int(a)
             if RESTRICTED_MOVIE_MIN_AGE <= age <= RESTRICTED_MOVIE_MAX_AGE:
                 allowed.append(age)
+            else:
+                print("ℹ️ That attendee is outside the 16-21 age window.")
+        else:
+            print("⚠️ Please enter a whole number or 'done' to finish.")
     print(f"🔞 Allowed attendees ages: {allowed}")
 
     # -------- Exercise 10: Sandwich Orders --------

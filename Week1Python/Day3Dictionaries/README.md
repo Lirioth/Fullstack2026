@@ -6,6 +6,25 @@
 
 Master Python's most versatile data structure! 🗂️ Dictionaries unlock the power of key-value relationships for efficient data modeling and real-world applications.
 
+## Overview
+
+Day 3 dives into Python dictionaries and demonstrates how to model real-world entities with nested key/value structures, safe lookups, and transformation patterns that prepare you for APIs and data pipelines.
+
+## Features
+
+- XP, Gold, Ninja, and Daily Challenge tracks that emphasize safe key access and mutation patterns
+- Visual aids that compare dictionaries with lists, sets, and tuples for quick decision-making
+- Real-world scenarios such as ticket pricing, catalog management, and cipher mechanics
+
+## Quick Start
+
+```bash
+cd Day3Dictionaries/Exercises/ExercisesXP
+python exercisesxp.py
+```
+
+Explore the Gold, Ninja, Timed Challenge, and Daily Challenge folders for extended practice using the same command structure.
+
 ## 📊 Quick Stats
 
 | Metric | Value |
@@ -18,6 +37,9 @@ Master Python's most versatile data structure! 🗂️ Dictionaries unlock the p
 | **📚 Key Topics** | Key-Value Pairs, Methods, Nested Structures |
 
 ## 📑 Table of Contents
+- [📦 Overview](#overview)
+- [✨ Features](#features)
+- [⚡ Quick Start](#quick-start)
 - [🎯 Learning Objectives](#-learning-objectives)
 - [📚 Topics Covered](#-topics-covered)
 - [🎨 Dictionary Structure Visualization](#-dictionary-structure-visualization)
@@ -30,6 +52,7 @@ Master Python's most versatile data structure! 🗂️ Dictionaries unlock the p
 - [📊 Assessment Checklist](#-assessment-checklist)
 - [🔧 Troubleshooting](#-troubleshooting)
 - [🔗 Next Steps](#-next-steps)
+- [📄 License](#-license)
 
 ## 🎯 Learning Objectives
 
@@ -581,7 +604,13 @@ After mastering dictionaries:
 
 ---
 
-## 🐛 Common Errors & Solutions
+## � License
+
+This day’s exercises and notes are distributed under the repository’s [MIT License](../../LICENSE).
+
+---
+
+## �🐛 Common Errors & Solutions
 
 ### Error 1: KeyError - Accessing non-existent key
 **What it means**: Trying to access a key that doesn't exist in the dictionary

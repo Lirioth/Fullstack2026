@@ -6,7 +6,29 @@
 
 Master Python's powerful collection types and iteration patterns! 📋 This day transforms you from basic Python user to proficient data handler with practical, real-world applications.
 
+## Overview
+
+Day 2 expands on the fundamentals by introducing Python’s list, tuple, and set toolkits alongside looping patterns. The material blends theory, visual aids, and guided practice so you can build reliable, data-driven console apps.
+
+## Features
+
+- Dedicated XP, Gold, and Ninja exercise tracks targeting progressively harder list and set problems
+- Daily challenges that emphasize formatting and string/list interplay
+- Performance call-outs that compare Big-O costs across list, set, and tuple operations
+
+## Quick Start
+
+```bash
+cd Day2ListsIteratingAndFormattingData/Exercises/ExercisesXP
+python exercisesxp.py
+```
+
+Run the Gold, Ninja, and Daily Challenge programs from their respective folders to explore the extended practice sets.
+
 ## 📑 Table of Contents
+- [📦 Overview](#overview)
+- [✨ Features](#features)
+- [⚡ Quick Start](#quick-start)
 - [🎯 Learning Objectives](#-learning-objectives)
 - [📚 Topics Covered](#-topics-covered)
 - [📊 Data Structure Comparison](#-data-structure-comparison)
@@ -18,6 +40,7 @@ Master Python's powerful collection types and iteration patterns! 📋 This day 
 - [🔧 Common Patterns & Best Practices](#-common-patterns--best-practices)
 - [🔧 Troubleshooting](#-troubleshooting)
 - [🔗 Next Steps](#-next-steps)
+- [📄 License](#-license)
 
 ## 📊 Quick Stats
 - **⏰ Duration**: 5-7 hours
@@ -334,7 +357,7 @@ After mastering Day 2:
 
 ---
 
-## � Common Errors & Solutions
+## 🐛 Common Errors & Solutions
 
 ### Error 1: IndexError - List index out of range
 **What it means**: Trying to access an index that doesn't exist
@@ -440,6 +463,12 @@ After mastering Day 2:
    # The list inside changed, tuple structure didn't
 ```
 
+---
+
+## 📄 License
+
+This day’s exercises and notes are distributed under the repository’s [MIT License](../../LICENSE).
+
 ### Error 7: range() off-by-one errors
 **What it means**: range() stops BEFORE the end value
 
@@ -460,7 +489,7 @@ After mastering Day 2:
 
 ---
 
-## �👤 About the Author
+## 👤 About the Author
 
 **Kevin Cusnir "Lirioth"**  
 - 🎓 Fullstack Developer Student  

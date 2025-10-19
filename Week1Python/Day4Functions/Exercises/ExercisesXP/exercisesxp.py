@@ -26,19 +26,36 @@ TEMP_MAX = 40      # Maximum temperature
 
 
 # Exercise 1 🎯
-def display_message():
+def display_message() -> None:
+    """Print the short reminder used to kick off the warm-up."""
     print("I am learning about functions in Python.")
 
 # Exercise 2 🎯
-def favorite_book(title):
+def favorite_book(title: str) -> None:
+    """Display a formatted message containing the reader's favorite book.
+
+    Args:
+        title: Book title to highlight in the output sentence.
+    """
     print(f"One of my favorite books is {title}.")
 
 # Exercise 3 🎯
-def describe_city(city, country="Unknown"):
+def describe_city(city: str, country: str = "Unknown") -> None:
+    """Print the relationship between a city and its host country.
+
+    Args:
+        city: City name to feature in the message.
+        country: Optional country name; defaults to "Unknown".
+    """
     print(f"{city} is in {country}.")
 
 # Exercise 4 🎯
-def compare_number(n):
+def compare_number(n: int) -> None:
+    """Compare the supplied number with a random value between 1 and 100.
+
+    Args:
+        n: Player-selected number to check against the random draw.
+    """
     r = random.randint(1, 100)
     if n == r:
         print("Success!")
@@ -46,7 +63,13 @@ def compare_number(n):
         print(f"Fail! Your number: {n}, Random number: {r}")
 
 # Exercise 5 🎯
-def make_shirt(size="large", text="I love Python"):
+def make_shirt(size: str = "large", text: str = "I love Python") -> None:
+    """Summarize a shirt order using the requested size and slogan.
+
+    Args:
+        size: Requested shirt size, such as "small", "medium", or "large".
+        text: Message to print on the shirt front.
+    """
     print(f"The size of the shirt is {size} and the text is {text}.")
 
 # Exercise 6 🎯

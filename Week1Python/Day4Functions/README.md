@@ -6,6 +6,25 @@
 
 Transform your code with functions! ⚙️ Master modular programming, code reusability, and the DRY (Don't Repeat Yourself) principle for professional-grade applications.
 
+## Overview
+
+Day 4 consolidates everything learned earlier in the week by focusing on how to design, document, and test functions. You will practice parameter patterns, scope management, return values, and composition techniques that underpin maintainable Python applications.
+
+## Features
+
+- XP, Gold, and Ninja tracks that build towards multi-function consoles and small systems
+- Best-practice playbooks covering docstrings, type hints, unit testing, and scope diagrams
+- Sample architectures showing how to break larger problems into reusable building blocks
+
+## Quick Start
+
+```bash
+cd Day4Functions/Exercises/ExercisesXP
+python exercisesxp.py
+```
+
+Use the same pattern inside the Gold, Ninja, and Daily Challenge directories to explore more advanced prompts.
+
 ## 📊 Quick Stats
 
 | Metric | Value |
@@ -18,6 +37,9 @@ Transform your code with functions! ⚙️ Master modular programming, code reus
 | **📚 Key Topics** | Function Definition, Parameters, Scope, Return Values |
 
 ## 📑 Table of Contents
+- [📦 Overview](#overview)
+- [✨ Features](#features)
+- [⚡ Quick Start](#quick-start)
 - [🎯 Learning Objectives](#-learning-objectives)
 - [📚 Topics Covered](#-topics-covered)
 - [🚀 Quick Start](#-quick-start)
@@ -27,6 +49,7 @@ Transform your code with functions! ⚙️ Master modular programming, code reus
 - [📊 Assessment Checklist](#-assessment-checklist)
 - [🔧 Troubleshooting](#-troubleshooting)
 - [🔗 Next Steps](#-next-steps)
+- [📄 License](#-license)
 
 ## 🎯 Learning Objectives
 
@@ -815,7 +838,7 @@ Track your mastery of function concepts:
 
 ---
 
-## �🔗 Next Steps
+## 🔗 Next Steps
 
 After mastering functions:
 - **➡️ Day 5**: Apply all skills in a comprehensive mini-project
@@ -830,7 +853,13 @@ After mastering functions:
 
 ---
 
-## 🐛 Common Errors & Solutions
+## � License
+
+This day’s exercises and notes are distributed under the repository’s [MIT License](../../LICENSE).
+
+---
+
+## �🐛 Common Errors & Solutions
 
 ### Error 1: UnboundLocalError - Local variable referenced before assignment
 **What it means**: Trying to modify a global variable inside a function without declaring it
