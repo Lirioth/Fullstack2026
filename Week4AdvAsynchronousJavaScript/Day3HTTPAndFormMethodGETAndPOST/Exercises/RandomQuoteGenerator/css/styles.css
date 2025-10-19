@@ -1,0 +1,38 @@
+/* Random Quote Generator (no hearts) */
+:root{
+  --bg:#0f172a; --panel:#0b1220; --ink:#e5e7eb; --muted:#94a3b8;
+  --accent:#22d3ee; --accent-2:#64748b; --border:#1f2937; --radius:14px;
+}
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+.wrap{ max-width:900px; margin:34px auto; padding:0 16px; }
+.hero h1{ margin:.2em 0 .1em; }
+.muted{ color:var(--muted); }
+.card{
+  background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
+  padding:18px; margin:14px 0;
+}
+.display blockquote{
+  margin:0 0 8px; font-size:22px; line-height:1.4;
+}
+.byline{ display:flex; align-items:center; gap:14px; }
+.byline #authorTxt{ font-style:italic; }
+.likes{ margin-left:auto; background:#0b1220; border:1px solid var(--border); padding:4px 10px; border-radius:999px; }
+.row.buttons{ display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; }
+.btn{
+  background:var(--accent); color:#001018; border:0; padding:10px 14px;
+  border-radius:10px; cursor:pointer; font-weight:800;
+}
+.btn.secondary{ background:var(--accent-2); color:#e2e8f0; }
+.btn.primary{ box-shadow: 0 0 0 2px rgba(34,211,238,.15) inset; }
+.form label{ display:block; margin:10px 0 6px; font-weight:600; }
+textarea, input[type="text"]{
+  width:100%; padding:10px 12px; border-radius:10px; border:1px solid #273042;
+  background:#0d1423; color:#fff;
+}
+.metrics{ margin-top:10px; font-size:14px; }
+.foot{ text-align:center; margin:10px 0 24px; }

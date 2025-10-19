@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Random Quote Generator</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header class="hero">
+      <h1>🎲 Random Quote Generator</h1>
+      <p class="muted">Loops, conditionals, array methods, objects, and DOM updates — all in one neat project.</p>
+    </header>
+
+    <!-- Display area -->
+    <section class="card" aria-live="polite" aria-label="Quote display">
+      <div id="display" class="display">
+        <blockquote id="quoteTxt">Press “Generate Quote” to start.</blockquote>
+        <div class="byline">
+          <span id="authorTxt"></span>
+          <span id="likes" class="likes" title="Likes">👍 <span id="likeCount">0</span></span>
+        </div>
+      </div>
+
+      <div class="row buttons">
+        <button id="btnRandom" class="btn primary">🔁 Generate Quote</button>
+        <button id="btnLike" class="btn">👍 Like</button>
+        <button id="btnCharsSpace" class="btn">🔡 Chars (with spaces)</button>
+        <button id="btnCharsNoSpace" class="btn">🔡 Chars (no spaces)</button>
+        <button id="btnWords" class="btn">🧮 Word count</button>
+      </div>
+
+      <div id="metrics" class="metrics muted"></div>
+    </section>
+
+    <!-- Add new quote -->
+    <section class="card">
+      <h2>➕ Add a quote</h2>
+      <form id="addForm" class="form" novalidate>
+        <label>
+          Quote
+          <textarea id="newQuote" name="quote" rows="3" placeholder="The impediment to action advances action. What stands in the way becomes the way."></textarea>
+        </label>
+        <label>
+          Author
+          <input id="newAuthor" name="author" type="text" placeholder="Marcus Aurelius" />
+        </label>
+        <button class="btn" type="submit">Add</button>
+      </form>
+    </section>
+
+    <!-- Filter by author -->
+    <section class="card">
+      <h2>🔎 Filter by author</h2>
+      <form id="filterForm" class="form" novalidate>
+        <label>
+          Author name
+          <input id="filterAuthor" name="author" type="text" placeholder="e.g., Maya Angelou" />
+        </label>
+        <div class="row buttons">
+          <button class="btn" type="submit">Filter</button>
+          <button id="btnClearFilter" class="btn secondary" type="button">Clear</button>
+          <button id="btnPrev" class="btn" type="button" disabled>⏮️ Previous</button>
+          <button id="btnNext" class="btn" type="button" disabled>⏭️ Next</button>
+        </div>
+        <p id="filterStatus" class="muted"></p>
+      </form>
+    </section>
+
+    <footer class="muted foot">
+      <p>Built for practice — conditionals, arrow functions, array methods, and DOM manipulation. ✨</p>
+    </footer>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
