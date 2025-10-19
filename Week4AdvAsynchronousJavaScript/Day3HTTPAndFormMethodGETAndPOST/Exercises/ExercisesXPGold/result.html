@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercise XP Gold — Result</title>
+  <style>
+    body { font-family: Arial, Helvetica, sans-serif; padding: 12px; }
+    section { border: 1px solid #ccc; padding: 10px; max-width: 520px; }
+    p { margin: 6px 0; }
+  </style>
+</head>
+<body>
+  <h1>Submitted Data</h1>
+  <section id="output">
+    <!-- Values will be injected here via DOM -->
+  </section>
+
+  <script>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const name = (params.get('name') || '').trim();
+      const lastname = (params.get('lastname') || '').trim();
+
+      const section = document.getElementById('output');
+      section.innerHTML = '';
+
+      const n = document.createElement('p');
+      n.textContent = 'NAME: ' + (name || '(empty)');
+      section.appendChild(n);
+
+      const l = document.createElement('p');
+      l.textContent = 'LAST NAME: ' + (lastname || '(empty)');
+      section.appendChild(l);
+    })();
+  </script>
+</body>
+</html>
