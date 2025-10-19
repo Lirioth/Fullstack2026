@@ -1,16 +1,19 @@
-"""
-Hangman Game - Core Logic Module
-=================================
-Complete game state machine for Hangman.
-Tracks guesses, wrong attempts, and masked representation.
-Only letters are maskable ('*'); spaces/punctuation show as-is.
-
+"""Module: game
+Purpose: Core Hangman state machine for tracking guesses and rendering progress.
 Author: Kevin Cusnir 'Lirioth'
-Repository: Fullstack2026
-Week 1 Day 5 - Mini Project
-Python Version: 3.8+
+Created: 2025-10-18
+Last Updated: 2025-10-19
+
+Overview:
+    - Maintain guessed letters and wrong-attempt counts
+    - Produce masked views of the secret phrase
+    - Surface helper utilities like gallows art and guessed-letter lists
 """
+
+from __future__ import annotations
+
 from typing import Set
+
 from .art import HANGMAN, MAX_WRONG
 
 def _is_letter(ch: str) -> bool:
@@ -63,6 +66,7 @@ class HangmanGame:
             raise ValueError("Please enter a single letter (A–Z).")
         if ch in self.guessed:
             return 'repeat'
+        # ✅ Track new guesses so we can detect repeats and reveal letters.
         self.guessed.add(ch)
         if ch in self.secret:
             return 'hit'

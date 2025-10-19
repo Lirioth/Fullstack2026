@@ -1,15 +1,15 @@
-"""
-Hangman Game - ASCII Art Module
-================================
-ASCII gallows art for Hangman visual feedback.
-Index into HANGMAN with the number of wrong guesses (0..6).
-Defines MAX_WRONG constant for game over condition.
-
+"""Module: art
+Purpose: Provide ASCII gallows and constants for Hangman feedback.
 Author: Kevin Cusnir 'Lirioth'
-Repository: Fullstack2026
-Week 1 Day 5 - Mini Project
-Python Version: 3.8+
+Created: 2025-10-18
+Last Updated: 2025-10-19
+
+Overview:
+     - ``HANGMAN`` list of 7 art frames
+     - ``MAX_WRONG`` constant indicating the last index (game over)
 """
+
+from __future__ import annotations
 HANGMAN = [
     r"""
      +---+

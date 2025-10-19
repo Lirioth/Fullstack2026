@@ -1,23 +1,27 @@
-"""
-Hangman Game - CLI Runner
-=========================
-Interactive word guessing game with ASCII art visualization.
-Picks a random word and loops for user guesses until win/lose.
-Prevents repeating guesses and displays gallows status each turn.
-
+"""Module: main
+Purpose: CLI entry point for the Hangman mini-project with replay support.
 Author: Kevin Cusnir 'Lirioth'
-Repository: Fullstack2026
-Week 1 Day 5 - Mini Project
-Python Version: 3.8+
+Created: 2025-10-18
+Last Updated: 2025-10-19
+
+Overview:
+    - Pull a random word and render ASCII gallows
+    - Loop on user guesses until the game resolves
+    - Offer replay prompt for continuous play
 """
-from src.words import random_word
+
+from __future__ import annotations
+
 from src.game import HangmanGame
+from src.words import random_word
+
 
 def prompt_guess() -> str:
     """Prompt for a single-letter guess (stripped)."""
     return input("Enter a letter: ").strip()
 
-def main():
+def main() -> None:
+    """Run the Hangman CLI loop with replay support."""
     print("=== HANGMAN 🪢 — Guess the word! ===\n")
     while True:
         secret = random_word()

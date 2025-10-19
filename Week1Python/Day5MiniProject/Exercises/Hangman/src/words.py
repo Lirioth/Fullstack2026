@@ -1,15 +1,16 @@
-"""
-Hangman Game - Word Source Module
-==================================
-Word and phrase source for Hangman game.
-Includes random word selection function.
-Phrases can include spaces/punctuations; letters get masked with '*', others remain visible.
-
+"""Module: words
+Purpose: Provide Hangman word bank and random selection helper.
 Author: Kevin Cusnir 'Lirioth'
-Repository: Fullstack2026
-Week 1 Day 5 - Mini Project
-Python Version: 3.8+
+Created: 2025-10-18
+Last Updated: 2025-10-19
+
+Overview:
+    - ``WORDS`` constant storing candidate words and phrases
+    - ``random_word`` helper returning one entry at random
 """
+
+from __future__ import annotations
+
 import random
 
 WORDS = [
