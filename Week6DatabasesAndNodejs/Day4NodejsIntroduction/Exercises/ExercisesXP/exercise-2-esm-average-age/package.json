@@ -1,0 +1,6 @@
+{
+  "name": "exercise-2-esm-average-age",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module"
+}

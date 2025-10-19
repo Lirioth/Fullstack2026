@@ -1,0 +1,11 @@
+{
+  "name": "math-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tiny math demo using a custom module and lodash.",
+  "main": "app.js",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}

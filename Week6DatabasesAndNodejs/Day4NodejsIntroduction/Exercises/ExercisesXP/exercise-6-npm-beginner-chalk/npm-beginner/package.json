@@ -1,0 +1,11 @@
+{
+  "name": "npm-beginner",
+  "version": "1.0.0",
+  "private": true,
+  "description": "First chalk demo (using v4 for CommonJS require).",
+  "main": "app.js",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.2"
+  }
+}
