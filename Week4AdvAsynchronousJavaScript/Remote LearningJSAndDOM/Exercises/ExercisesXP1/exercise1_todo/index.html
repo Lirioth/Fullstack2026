@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercise 1 — Todo List</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header class="bar">
+      <h1>Todo</h1>
+      <button id="clearAll" class="btn danger" disabled aria-disabled="true">Remove All</button>
+    </header>
+    <section class="add">
+      <label for="newTodo" class="sr-only">New todo</label>
+      <input id="newTodo" type="text" placeholder="What needs to be done?" autocomplete="off" />
+      <button id="addBtn" class="btn">Add</button>
+    </section>
+    <section class="filters" role="group" aria-label="Filters">
+      <button class="chip active" data-filter="all">All</button>
+      <button class="chip" data-filter="active">Active</button>
+      <button class="chip" data-filter="completed">Completed</button>
+    </section>
+    <ul id="list" class="list" aria-live="polite"></ul>
+    <footer class="foot"><span id="count">0 items</span></footer>
+  </main>
+  <script src="js/app.js"></script>
+</body>
+</html>

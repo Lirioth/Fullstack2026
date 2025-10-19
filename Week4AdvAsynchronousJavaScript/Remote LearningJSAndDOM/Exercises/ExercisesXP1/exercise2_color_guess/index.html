@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercise 2 — Color Guess</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header class="bar">
+      <h1>Color Guess</h1>
+      <div class="controls">
+        <label>Difficulty:
+          <select id="difficulty" aria-label="Difficulty">
+            <option value="easy">Easy (3)</option>
+            <option value="medium" selected>Medium (6)</option>
+            <option value="hard">Hard (exact)</option>
+          </select>
+        </label>
+      </div>
+    </header>
+
+    <section class="board">
+      <div class="swatch" id="target" aria-label="Target color"></div>
+      <p id="prompt">Which option matches this RGB?</p>
+      <div id="options" class="grid"></div>
+
+      <div id="hardInputs" class="hard hide">
+        <label>R <input id="r" type="number" min="0" max="255" value="0"></label>
+        <label>G <input id="g" type="number" min="0" max="255" value="0"></label>
+        <label>B <input id="b" type="number" min="0" max="255" value="0"></label>
+        <button id="guessBtn" class="btn">Guess</button>
+      </div>
+    </section>
+
+    <section class="foot">
+      <div id="feedback" aria-live="polite"></div>
+      <div id="countdown" class="muted"></div>
+      <button id="next" class="btn secondary">Next Color</button>
+    </section>
+  </main>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exercise 4 — Whack‑a‑Mole</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header class="bar">
+      <h1>Whack‑a‑Mole</h1>
+      <div class="controls">
+        <button id="startBtn" class="btn">Start (30s)</button>
+        <span id="time" class="muted">Ready</span>
+        <span id="score" class="muted">Score: 0</span>
+      </div>
+    </header>
+
+    <section class="grid" id="grid" aria-label="Mole field"></section>
+
+    <section class="scores">
+      <h2>High Scores (Top 5)</h2>
+      <ol id="highscores"></ol>
+    </section>
+  </main>
+  <script src="js/app.js"></script>
+</body>
+</html>
