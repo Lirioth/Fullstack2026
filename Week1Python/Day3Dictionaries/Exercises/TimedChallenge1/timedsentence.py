@@ -16,11 +16,13 @@ Output: domain wrong a entered have You
 
 def reverse_words(line: str) -> str:
     # Split on any whitespace, reverse, join with single spaces
+    """\nSummary: TODO — explain what `reverse_words` does.\n\nArgs:\n    line: TODO\n\nReturns:\n    TODO\n\nRaises:\n    None\n"""
     words = line.split()
     words.reverse()
     return " ".join(words)
 
 def main() -> None:
+    """\nSummary: TODO — explain what `main` does.\n\nArgs:\n    None\n\nReturns:\n    TODO\n\nRaises:\n    None\n"""
     try:
         line = input()
     except EOFError:

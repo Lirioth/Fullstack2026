@@ -18,10 +18,13 @@ Output:
 """
 
 def count_char(s: str, ch: str) -> int:
+    """\nSummary: TODO — explain what `count_char` does.\n\nArgs:\n    s: TODO
+        ch: TODO\n\nReturns:\n    TODO\n\nRaises:\n    None\n"""
     target = ch[0] if ch else ''
     return sum(1 for c in s if c == target) if target else 0
 
 def main() -> None:
+    """\nSummary: TODO — explain what `main` does.\n\nArgs:\n    None\n\nReturns:\n    TODO\n\nRaises:\n    None\n"""
     try:
         s = input()
     except EOFError:

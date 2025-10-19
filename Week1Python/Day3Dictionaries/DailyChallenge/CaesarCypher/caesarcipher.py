@@ -91,6 +91,7 @@ def _ask_int(prompt: str) -> int:
 
 
 def interactive_main() -> None:
+    """\nSummary: TODO — explain what `interactive_main` does.\n\nArgs:\n    None\n\nReturns:\n    TODO\n\nRaises:\n    None\n"""
     print("""
 == Caesar Cipher ==
 Choose an option:
@@ -123,6 +124,7 @@ Choose an option:
 
 
 def cli_main() -> None:
+    """\nSummary: TODO — explain what `cli_main` does.\n\nArgs:\n    None\n\nReturns:\n    TODO\n\nRaises:\n    None\n"""
     parser = argparse.ArgumentParser(description="Caesar cipher encrypt/decrypt/brute-force.")
     parser.add_argument("--mode", choices=["encrypt", "decrypt", "brute"], help="Operation mode.")
     parser.add_argument("--shift", type=int, default=3, help="Shift amount (ignored in brute mode). Default=3.")
