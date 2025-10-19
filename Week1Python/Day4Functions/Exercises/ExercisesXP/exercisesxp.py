@@ -1,18 +1,17 @@
-"""
-⚙️ Day 4 - Exercises XP
-=======================
-Function practice covering:
-- Basic definition and calling
-- Default parameters
-- Random number generation
-- List manipulation in-place
-- Multi-function systems with composition
-
+"""Module: exercisesxp
+Purpose: Day 4 XP function practice helpers for demonstrations and weather advice.
 Author: Kevin Cusnir 'Lirioth'
-Repository: Fullstack2026
-Week 1 Day 4 - Functions
-Python Version: 3.8+
+Created: 2025-10-18
+Last Updated: 2025-10-19
+
+Overview:
+    - Basic definition and calling patterns
+    - Default parameters and string formatting
+    - Random number utilities for games and weather
+    - List mutation helpers for magician names
 """
+
+from __future__ import annotations
 
 import random
 
@@ -88,6 +87,7 @@ def make_great(names: list[str]) -> None:
     (no side effects), use: return [name + " the Great" for name in names]
     """
     for i in range(len(names)):
+        # ✅ Append the honorific while keeping existing order stable.
         names[i] = names[i] + " the Great"
 
 # Exercise 7 🎯

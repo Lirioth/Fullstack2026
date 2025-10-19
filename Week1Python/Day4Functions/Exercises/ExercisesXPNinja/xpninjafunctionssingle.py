@@ -1,17 +1,14 @@
-"""
-🥷 Exercises XP Ninja — Functions (Single File Edition)
-=======================================================
-Advanced function exercises covering:
-- Full name builder with smart capitalization
-- English ⇄ Morse code translation with validation
-- Star-framed box printer with dynamic sizing
-- Insertion sort algorithm implementation
-
+"""Module: xpninjafunctionssingle
+Purpose: Day 4 ninja exercises with name formatting, Morse translation, and sorting.
 Author: Kevin Cusnir 'Lirioth'
-Repository: Fullstack2026
-Week 1 Day 4 - Functions
-Python Version: 3.8+
-Language: English-only ✅
+Created: 2025-10-18
+Last Updated: 2025-10-19
+
+Overview:
+    - Build full names with smart capitalization
+    - Convert text to and from Morse code with validation
+    - Render star-framed boxes for arbitrary strings
+    - Implement insertion sort with in-place mutation
 """
 
 # 🥷 Exercises XP Ninja — Functions (Single File) ✨
@@ -60,7 +57,9 @@ Language: English-only ✅
 # 1) 🧑‍🤝‍🧑 get_full_name() with smart_cap
 # --------------------------------------
 
-from typing import Optional, Dict, List
+from __future__ import annotations
+
+from typing import Dict, List, Optional
 
 def _cap_hyphen_apostrophe(token: str) -> str:
     """Capitalize a single token that may include hyphens or apostrophes.

@@ -1,14 +1,15 @@
-"""
-💪 Daily Challenge - Solve the Matrix
-======================================
-Column-wise matrix decoder that extracts letters and reconstructs
-a clean English sentence by replacing non-letter sequences with spaces.
-
+"""Module: solvethematrix
+Purpose: Day 4 challenge for decoding columnar matrices into clean sentences.
 Author: Kevin Cusnir 'Lirioth'
-Repository: Fullstack2026
-Week 1 Day 4 - Functions
-Python Version: 3.8+
+Created: 2025-10-18
+Last Updated: 2025-10-19
+
+Overview:
+    - Read matrices column-by-column
+    - Strip non-letter noise while preserving word separation
 """
+
+from __future__ import annotations
 
 # 💪 Daily Challenge - Solve the Matrix
 # ✅ Improved: Wrapped in main() guard and added clearer variable names
@@ -45,6 +46,7 @@ def decode_matrix(matrix_str: str) -> str:
             i += 1
         else:
             if not seen_letter:
+                # ⚠️ Skip leading punctuation until we hit the first alphabetic character.
                 i += 1
                 continue
             j = i

@@ -1,19 +1,19 @@
-"""
-XP Gold — Functions (Retirement, Series Sum, Dice)
-==================================================
-Three function-based exercises covering:
-- Age calculation and retirement logic
-- Series sum with string repetition
-- Random dice simulation and statistics
-
+"""Module: xpgoldfunctions
+Purpose: Day 4 gold exercises for retirement checks, summations, and dice stats.
 Author: Kevin Cusnir 'Lirioth'
-Repository: Fullstack2026
-Week 1 Day 4 - Functions
-Python Version: 3.8+
+Created: 2025-10-18
+Last Updated: 2025-10-19
+
+Overview:
+    - Age calculation with retirement eligibility
+    - Series sum via string repetition
+    - Dice simulation with doubles tracking
 """
 
 # XP Gold — Functions (short & simple)
 # 🚀 Run: python3 xpgoldfunctions.py
+
+from __future__ import annotations
 
 import datetime
 import random
