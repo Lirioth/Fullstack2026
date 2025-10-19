@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Drumset — Mini Project</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main class="wrap">
+    <h1>Drumset</h1>
+    <p class="hint">Press the keys or click/tap the pads.</p>
+
+    <section class="keys" aria-label="Drum pads">
+      <!-- data-key is the keyboard key; data-sample is the sound name (file in ./sounds) -->
+      <button class="key" data-key="A" data-sample="clap" aria-label="Clap (A)">
+        <span class="kbd">A</span><span class="name">Clap</span>
+      </button>
+      <button class="key" data-key="S" data-sample="hihat" aria-label="Hi-Hat (S)">
+        <span class="kbd">S</span><span class="name">Hi‑Hat</span>
+      </button>
+      <button class="key" data-key="D" data-sample="kick" aria-label="Kick (D)">
+        <span class="kbd">D</span><span class="name">Kick</span>
+      </button>
+      <button class="key" data-key="F" data-sample="openhat" aria-label="Open Hat (F)">
+        <span class="kbd">F</span><span class="name">Open‑Hat</span>
+      </button>
+      <button class="key" data-key="G" data-sample="boom" aria-label="Boom (G)">
+        <span class="kbd">G</span><span class="name">Boom</span>
+      </button>
+      <button class="key" data-key="H" data-sample="ride" aria-label="Ride (H)">
+        <span class="kbd">H</span><span class="name">Ride</span>
+      </button>
+      <button class="key" data-key="J" data-sample="snare" aria-label="Snare (J)">
+        <span class="kbd">J</span><span class="name">Snare</span>
+      </button>
+      <button class="key" data-key="K" data-sample="tom" aria-label="Tom (K)">
+        <span class="kbd">K</span><span class="name">Tom</span>
+      </button>
+      <button class="key" data-key="L" data-sample="tink" aria-label="Tink (L)">
+        <span class="kbd">L</span><span class="name">Tink</span>
+      </button>
+    </section>
+
+    <footer class="foot">
+      <p>Put your sound files in <code>/sounds</code> with names like <code>clap.wav</code>, <code>kick.wav</code>…</p>
+      <p class="tiny">Tip: you can use .mp3 if you don't have .wav — the script tries both.</p>
+    </footer>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

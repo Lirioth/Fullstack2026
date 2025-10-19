@@ -1,0 +1,2 @@
+Copy your .wav or .mp3 files here. Expected default names:
+clap, hihat, kick, openhat, boom, ride, snare, tom, tink
