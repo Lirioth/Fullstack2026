@@ -43,25 +43,53 @@ function showError(message = "Oh No! That person isn't available.") {
 
 /**
  * Display character information
+ * Sanitizes input to prevent XSS attacks
  */
 function displayCharacter(character) {
     const { name, height, gender, birth_year, homeworld } = character;
     
+    // Sanitize data to prevent XSS
+    const sanitizedName = escapeHtml(name);
+    const sanitizedHeight = escapeHtml(height);
+    const sanitizedGender = escapeHtml(gender);
+    const sanitizedBirthYear = escapeHtml(birth_year);
+    const sanitizedHomeworld = escapeHtml(homeworld);
+    
     infoContainer.innerHTML = `
-        <h2 class="character-name">${name}</h2>
+        <h2 class="character-name">${sanitizedName}</h2>
         <div class="character-info">
-            <p><strong>Height:</strong> ${height}</p>
-            <p><strong>Gender:</strong> ${gender}</p>
-            <p><strong>Birth Year:</strong> ${birth_year}</p>
-            <p><strong>Home World:</strong> ${homeworld}</p>
+            <p><strong>Height:</strong> ${sanitizedHeight}</p>
+            <p><strong>Gender:</strong> ${sanitizedGender}</p>
+            <p><strong>Birth Year:</strong> ${sanitizedBirthYear}</p>
+            <p><strong>Home World:</strong> ${sanitizedHomeworld}</p>
         </div>
     `;
 }
 
 /**
+ * Escape HTML to prevent XSS attacks
+ */
+function escapeHtml(text) {
+    const map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;'
+    };
+    return String(text).replace(/[&<>"']/g, (m) => map[m]);
+}
+
+/**
  * Fetch character data from SWAPI
+ * Validates character ID before making request
  */
 async function getCharacterData(characterId) {
+    // Validate characterId
+    if (!Number.isInteger(characterId) || characterId < 1 || characterId > 83) {
+        throw new Error('Invalid character ID');
+    }
+    
     try {
         const response = await fetch(`https://www.swapi.tech/api/people/${characterId}`);
         
@@ -70,6 +98,12 @@ async function getCharacterData(characterId) {
         }
         
         const data = await response.json();
+        
+        // Validate response data
+        if (!data || !data.result || !data.result.properties) {
+            throw new Error('Invalid API response');
+        }
+        
         return data.result.properties;
     } catch (error) {
         console.error('Error fetching character:', error);
