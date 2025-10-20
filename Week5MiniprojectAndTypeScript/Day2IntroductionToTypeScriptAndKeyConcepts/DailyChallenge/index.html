@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 7 - Type Assertions</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+    .container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #333;
+      border-bottom: 3px solid #007acc;
+      padding-bottom: 10px;
+    }
+    .input-group {
+      margin: 20px 0;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: #555;
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #ddd;
+      border-radius: 4px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+    input:focus {
+      outline: none;
+      border-color: #007acc;
+    }
+    button {
+      background-color: #007acc;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      background-color: #005999;
+    }
+    .info {
+      background-color: #e7f3ff;
+      border-left: 4px solid #007acc;
+      padding: 15px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌟 Exercise 7: Type Assertions Demo</h1>
+    
+    <div class="input-group">
+      <label for="userInput">User Input:</label>
+      <input type="text" id="userInput" placeholder="TypeScript will set this value">
+    </div>
+
+    <div class="input-group">
+      <label for="anotherInput">Another Input:</label>
+      <input type="text" id="anotherInput">
+    </div>
+
+    <button id="submitBtn">Submit</button>
+
+    <div class="info">
+      <strong>What's happening?</strong>
+      <p>When this page loads, TypeScript uses <strong>type assertions</strong> to:</p>
+      <ul>
+        <li>Cast DOM elements to specific types (HTMLInputElement, HTMLButtonElement)</li>
+        <li>Set the first input's value to "Hello from TypeScript!"</li>
+        <li>Add a placeholder to the second input</li>
+        <li>Attach event listeners to track input changes</li>
+      </ul>
+      <p><em>Open the browser console to see the TypeScript output!</em></p>
+    </div>
+  </div>
+
+  <!-- Load the compiled TypeScript file -->
+  <script src="dist/exercise7.js"></script>
+</body>
+</html>
