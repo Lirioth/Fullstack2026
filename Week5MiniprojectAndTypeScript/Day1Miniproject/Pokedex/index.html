@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Pokemon Logo -->
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg" alt="Pokemon Logo">
+        </div>
+
+        <!-- Instructions -->
+        <div class="instructions">
+            <h2>How to use:</h2>
+            <p><strong>1-</strong> Press the <span class="green-text">green</span> button to get a random Pokémon</p>
+            <p><strong>2-</strong> Press the <span class="bold-text">left</span> and <span class="bold-text">right</span> buttons to see previous and next Pokémon.</p>
+        </div>
+
+        <!-- Pokedex Device -->
+        <div class="pokedex">
+            <!-- Top part with screen -->
+            <div class="pokedex-top">
+                <!-- Decorative dots -->
+                <div class="dots">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+
+                <!-- Screen -->
+                <div class="screen">
+                    <div class="screen-inner" id="screen">
+                        <!-- Pokemon image will be displayed here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Middle hinge -->
+            <div class="hinge"></div>
+
+            <!-- Bottom part with info and controls -->
+            <div class="pokedex-bottom">
+                <!-- Left side - D-Pad controls -->
+                <div class="controls-left">
+                    <div class="dpad">
+                        <button class="dpad-button dpad-up" disabled></button>
+                        <button class="dpad-button dpad-left" id="prevBtn"></button>
+                        <div class="dpad-center"></div>
+                        <button class="dpad-button dpad-right" id="nextBtn"></button>
+                        <button class="dpad-button dpad-down" disabled></button>
+                    </div>
+                    <div class="indicator"></div>
+                </div>
+
+                <!-- Center - Info Display -->
+                <div class="info-display" id="infoDisplay">
+                    <!-- Pokemon info will be displayed here -->
+                    <p class="initial-text">Press the green button to start!</p>
+                </div>
+
+                <!-- Right side - Green button -->
+                <div class="controls-right">
+                    <button class="green-button" id="randomBtn"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
