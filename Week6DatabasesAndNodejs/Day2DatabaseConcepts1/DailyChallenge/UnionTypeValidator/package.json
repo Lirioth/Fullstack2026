@@ -1,0 +1,19 @@
+{
+  "name": "union-type-validator",
+  "version": "1.0.0",
+  "description": "Daily Challenge: Union Type Validator - TypeScript type validation",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc && node dist/index.js",
+    "dev": "tsc --watch",
+    "test": "tsc && node dist/index.js"
+  },
+  "keywords": ["typescript", "union-types", "validation", "type-checking"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "@types/node": "^20.10.0"
+  }
+}
