@@ -353,4 +353,9 @@ This repository is distributed under the [MIT License](LICENSE). Feel free to ex
 **🔖 Version**: 1.2
 **👥 Maintainer**: Course Development Team
 
+### ✨ Changelog Highlights Since May 2024
+- 🚀 Expanded Week5 TypeScript coverage with union types, discriminated guards, and class-driven library simulations.
+- ⚡ Deepened asynchronous JavaScript practice through promise chaining labs and HTTP form integrations in Week4.
+- 🧭 Refined curriculum roadmap with clearer automation ideas, testing goals, and future enhancement milestones.
+
 For questions, suggestions, or contributions, please refer to the main repository or create an issue in the project tracker.
